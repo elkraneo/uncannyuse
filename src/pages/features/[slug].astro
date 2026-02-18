@@ -27,6 +27,12 @@ const catColor: Record<string, string> = {
 const color = catColor[feature.subcategory] ?? '#86868B';
 
 const supportedCount = Object.values(feature.support).filter(s => s.status === 'y').length;
+
+function withSoftBreaks(name: string): string {
+  return name
+    .replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
+    .replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
+}
 ---
 
 <Base title={feature.name} description={feature.description}>
@@ -38,7 +44,7 @@ const supportedCount = Object.values(feature.support).filter(s => s.status === '
       <span class="bc-sep">/</span>
       <span class="bc-cat" style={`color: ${color}`}>{feature.subcategory}</span>
       <span class="bc-sep">/</span>
-      <span class="bc-current">{feature.name}</span>
+      <span class="bc-current" title={feature.name}>{feature.name}</span>
     </nav>
 
     <!-- Header -->
@@ -55,7 +61,7 @@ const supportedCount = Object.values(feature.support).filter(s => s.status === '
         )}
       </div>
 
-      <h1 class="detail-title">{feature.name}</h1>
+      <h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
       <p class="detail-desc">{feature.description}</p>
     </header>
 
@@ -154,6 +160,7 @@ const supportedCount = Object.values(feature.support).filter(s => s.status === '
     gap: 0.5rem;
     font-size: 0.9rem;
     margin-bottom: 2rem;
+    overflow: hidden;
   }
 
   .bc-link {
@@ -176,6 +183,10 @@ const supportedCount = Object.values(feature.support).filter(s => s.status === '
   .bc-current {
     color: var(--text);
     font-weight: 500;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   /* Header */
@@ -229,6 +240,8 @@ const supportedCount = Object.values(feature.support).filter(s => s.status === '
     color: var(--text);
     line-height: 1.15;
     margin-bottom: 0.875rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .detail-desc {
