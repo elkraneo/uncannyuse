@@ -1,7 +1,11 @@
 {
   "_meta": {
     "source": "Xcode 26.3 RC — RealityFoundation.swiftinterface",
-    "sdks": ["iOS 26.2 SDK", "visionOS 26.2 SDK", "macOS 26.2 SDK"],
+    "sdks": [
+      "iOS 26.2 SDK",
+      "visionOS 26.2 SDK",
+      "macOS 26.2 SDK"
+    ],
     "extracted": "2026-02-18",
     "note": "macOS versions inferred from SDK era — verify against Apple docs"
   },
@@ -14,10 +18,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/modelcomponent"
     },
     {
       "id": "opacity-component",
@@ -27,10 +41,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/opacitycomponent"
     },
     {
       "id": "model-sort-group-component",
@@ -40,10 +64,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/modelsortgroupcomponent"
     },
     {
       "id": "model-debug-options-component",
@@ -53,10 +87,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "14.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "14.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/modeldebugoptionscomponent"
     },
     {
       "id": "blend-shape-weights-component",
@@ -66,10 +110,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/blendshapeweightscomponent"
     },
     {
       "id": "adaptive-resolution-component",
@@ -79,10 +133,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/adaptiveresolutioncomponent"
     },
     {
       "id": "billboard-component",
@@ -92,10 +156,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/billboardcomponent"
     },
     {
       "id": "text-component",
@@ -105,10 +179,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/textcomponent"
     },
     {
       "id": "mesh-instances-component",
@@ -118,11 +202,23 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "26.0" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "y", "since": "26.0" }
+        "ios": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "26.0"
+        }
       },
-      "notes": ["New in 26.0"]
+      "notes": [
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/meshinstancescomponent"
     },
     {
       "id": "image-presentation-component",
@@ -132,11 +228,22 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "n" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "n"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["visionOS exclusive", "New in 26.0"]
+      "notes": [
+        "visionOS exclusive",
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/imagepresentationcomponent"
     },
     {
       "id": "environment-blending-component",
@@ -146,11 +253,22 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "n" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "n"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["visionOS exclusive", "New in 26.0"]
+      "notes": [
+        "visionOS exclusive",
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/environmentblendingcomponent"
     },
     {
       "id": "directional-light-component",
@@ -160,10 +278,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/directionallightcomponent"
     },
     {
       "id": "point-light-component",
@@ -173,10 +301,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/pointlightcomponent"
     },
     {
       "id": "spot-light-component",
@@ -186,10 +324,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/spotlightcomponent"
     },
     {
       "id": "image-based-light-component",
@@ -199,10 +347,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/imagebasedlightcomponent"
     },
     {
       "id": "image-based-light-receiver-component",
@@ -212,10 +370,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/imagebasedlightreceivercomponent"
     },
     {
       "id": "environment-lighting-configuration-component",
@@ -225,10 +393,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/environmentlightingconfigurationcomponent"
     },
     {
       "id": "virtual-environment-probe-component",
@@ -238,10 +416,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/virtualenvironmentprobecomponent"
     },
     {
       "id": "dynamic-light-shadow-component",
@@ -251,10 +439,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/dynamiclightshadowcomponent"
     },
     {
       "id": "directional-light-shadow",
@@ -264,10 +462,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/directionallightcomponent/shadow"
     },
     {
       "id": "spot-light-shadow",
@@ -277,10 +485,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/spotlightcomponent/shadow"
     },
     {
       "id": "ambient-audio-component",
@@ -290,10 +508,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/ambientaudiocomponent"
     },
     {
       "id": "channel-audio-component",
@@ -303,10 +531,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/channelaudiocomponent"
     },
     {
       "id": "spatial-audio-component",
@@ -316,10 +554,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/spatialaudiocomponent"
     },
     {
       "id": "audio-mix-groups-component",
@@ -329,10 +577,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/audiomixgroupscomponent"
     },
     {
       "id": "audio-library-component",
@@ -342,10 +600,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/audiolibrarycomponent"
     },
     {
       "id": "reverb-component",
@@ -355,10 +623,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/reverbcomponent"
     },
     {
       "id": "collision-component",
@@ -368,10 +646,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/collisioncomponent"
     },
     {
       "id": "physics-body-component",
@@ -381,10 +669,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/physicsbodycomponent"
     },
     {
       "id": "physics-motion-component",
@@ -394,10 +692,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/physicsmotioncomponent"
     },
     {
       "id": "physics-simulation-component",
@@ -407,10 +715,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/physicssimulationcomponent"
     },
     {
       "id": "physics-joints-component",
@@ -420,10 +738,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/physicsjointscomponent"
     },
     {
       "id": "force-effect-component",
@@ -433,10 +761,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/forceeffectcomponent"
     },
     {
       "id": "character-controller-component",
@@ -446,10 +784,20 @@
       "era": "iOS 15",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "15.0" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "15.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/charactercontrollercomponent"
     },
     {
       "id": "character-controller-state-component",
@@ -459,10 +807,19 @@
       "era": "iOS 15",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "15.0" },
-        "visionos": { "status": "n" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "15.0"
+        },
+        "visionos": {
+          "status": "n"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/charactercontrollerstatecomponent"
     },
     {
       "id": "transform",
@@ -472,10 +829,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/transform"
     },
     {
       "id": "anchoring-component",
@@ -485,10 +852,20 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/anchoringcomponent"
     },
     {
       "id": "world-component",
@@ -498,10 +875,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/worldcomponent"
     },
     {
       "id": "portal-component",
@@ -511,10 +898,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/portalcomponent"
     },
     {
       "id": "portal-crossing-component",
@@ -524,10 +921,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/portalcrossingcomponent"
     },
     {
       "id": "grounding-shadow-component",
@@ -537,10 +944,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/groundingshadowcomponent"
     },
     {
       "id": "scene-understanding-component",
@@ -550,11 +967,22 @@
       "era": "Original",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "13.4" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "y",
+          "since": "13.4"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["Not available on macOS — requires ARKit"]
+      "notes": [
+        "Not available on macOS — requires ARKit"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/sceneunderstandingcomponent"
     },
     {
       "id": "docking-region-component",
@@ -564,11 +992,21 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "n" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "n"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["visionOS exclusive"]
+      "notes": [
+        "visionOS exclusive"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/dockingregioncomponent"
     },
     {
       "id": "attached-transform-component",
@@ -578,11 +1016,23 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "26.0" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "y", "since": "26.0" }
+        "ios": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "26.0"
+        }
       },
-      "notes": ["New in 26.0"]
+      "notes": [
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/attachedtransformcomponent"
     },
     {
       "id": "reference-component",
@@ -592,10 +1042,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/referencecomponent"
     },
     {
       "id": "synchronization-component",
@@ -605,10 +1065,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/synchronizationcomponent"
     },
     {
       "id": "geometric-pins-component",
@@ -618,10 +1088,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/geometricpinscomponent"
     },
     {
       "id": "input-target-component",
@@ -631,10 +1111,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/inputtargetcomponent"
     },
     {
       "id": "hover-effect-component",
@@ -644,10 +1134,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/hovereffectcomponent"
     },
     {
       "id": "gesture-component",
@@ -657,11 +1157,23 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "26.0" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "y", "since": "26.0" }
+        "ios": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "26.0"
+        }
       },
-      "notes": ["New in 26.0"]
+      "notes": [
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/gesturecomponent"
     },
     {
       "id": "manipulation-component",
@@ -671,11 +1183,22 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "n" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "n"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["visionOS exclusive", "New in 26.0"]
+      "notes": [
+        "visionOS exclusive",
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/manipulationcomponent"
     },
     {
       "id": "hit-target",
@@ -685,11 +1208,23 @@
       "era": "26.0",
       "rcp": false,
       "support": {
-        "ios":      { "status": "n" },
-        "visionos": { "status": "y", "since": "26.0" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "n"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "26.0"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["visionOS exclusive", "Nested inside ManipulationComponent", "New in 26.0"]
+      "notes": [
+        "visionOS exclusive",
+        "Nested inside ManipulationComponent",
+        "New in 26.0"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/manipulationcomponent/hittarget"
     },
     {
       "id": "accessibility-component",
@@ -699,10 +1234,20 @@
       "era": "iOS 17",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "17.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "14.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "17.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "14.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/accessibilitycomponent"
     },
     {
       "id": "perspective-camera-component",
@@ -712,10 +1257,20 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "12.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "12.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/perspectivecameracomponent"
     },
     {
       "id": "orthographic-camera-component",
@@ -725,10 +1280,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/orthographiccameracomponent"
     },
     {
       "id": "projective-transform-camera-component",
@@ -738,10 +1303,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/projectivetransformcameracomponent"
     },
     {
       "id": "animation-library-component",
@@ -751,10 +1326,20 @@
       "era": "visionOS 2",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/animationlibrarycomponent"
     },
     {
       "id": "skeletal-poses-component",
@@ -764,10 +1349,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/skeletalposescomponent"
     },
     {
       "id": "ik-component",
@@ -777,10 +1372,20 @@
       "era": "visionOS 2",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "2.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "2.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/ikcomponent"
     },
     {
       "id": "body-tracking-component",
@@ -790,11 +1395,22 @@
       "era": "Original",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "13.0" },
-        "visionos": { "status": "n" },
-        "macos":    { "status": "n" }
+        "ios": {
+          "status": "y",
+          "since": "13.0"
+        },
+        "visionos": {
+          "status": "n"
+        },
+        "macos": {
+          "status": "n"
+        }
       },
-      "notes": ["Requires ARKit body tracking — iOS / iPadOS only", "Not available on visionOS or macOS"]
+      "notes": [
+        "Requires ARKit body tracking — iOS / iPadOS only",
+        "Not available on visionOS or macOS"
+      ],
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/bodytrackingcomponent"
     },
     {
       "id": "video-player-component",
@@ -804,10 +1420,20 @@
       "era": "visionOS 1",
       "rcp": false,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/videoplayercomponent"
     },
     {
       "id": "particle-emitter-component",
@@ -817,10 +1443,20 @@
       "era": "visionOS 1",
       "rcp": true,
       "support": {
-        "ios":      { "status": "y", "since": "18.0" },
-        "visionos": { "status": "y", "since": "1.0" },
-        "macos":    { "status": "y", "since": "15.0" }
-      }
+        "ios": {
+          "status": "y",
+          "since": "18.0"
+        },
+        "visionos": {
+          "status": "y",
+          "since": "1.0"
+        },
+        "macos": {
+          "status": "y",
+          "since": "15.0"
+        }
+      },
+      "docsUrl": "https://developer.apple.com/documentation/realitykit/particleemittercomponent"
     }
   ]
 }
