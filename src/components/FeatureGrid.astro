@@ -107,6 +107,8 @@ const catColor: Record<string, string> = {
     border-radius: 8px;
     overflow: hidden;
     background: var(--surface);
+    /* Minimum width keeps columns legible when scrolling horizontally on mobile */
+    min-width: 480px;
   }
 
   /* ── Column template ─────────────────────────── */
@@ -299,5 +301,25 @@ const catColor: Record<string, string> = {
     font-size: 0.8462rem;
     color: var(--subtle);
     font-weight: 300;
+  }
+
+  /* ── Mobile ──────────────────────────────────── */
+  @media (max-width: 768px) {
+    .grid-shell {
+      min-width: 420px;
+    }
+
+    .grid-header,
+    .grid-row {
+      grid-template-columns: 1fr 88px 88px 88px 52px;
+    }
+
+    .ver {
+      font-size: 0.875rem;
+    }
+
+    .feature-name {
+      font-size: 0.9375rem;
+    }
   }
 </style>

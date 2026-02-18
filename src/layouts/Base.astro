@@ -205,4 +205,30 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
   .footer-source {
     color: var(--muted);
   }
+
+  /* ── Mobile ──────────────────────────────────── */
+  @media (max-width: 640px) {
+    .header-inner {
+      padding: 0 1rem;
+      gap: 1rem;
+    }
+
+    /* Hide "coming soon" nav items — ARKit· Metal· */
+    .nav-soon {
+      display: none;
+    }
+
+    /* Hide "github" text label; keep SVG icon */
+    .gh-link span:last-child {
+      display: none;
+    }
+
+    .site-footer {
+      padding: 1.5rem 1rem;
+    }
+
+    .footer-inner {
+      gap: 0.25rem;
+    }
+  }
 </style>
