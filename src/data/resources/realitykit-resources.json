@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "purpose": "Curated external resources for RealityKit component detail pages.",
+    "updated": "2026-02-18"
+  },
+  "resources": {
+    "billboard-component": [
+      {
+        "title": "BillboardComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/billboardcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-18"
+      }
+    ],
+    "manipulation-component": [
+      {
+        "title": "ManipulationComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/manipulationcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-18"
+      }
+    ]
+  }
+}

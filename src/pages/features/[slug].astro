@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import SupportBadge from "../../components/SupportBadge.astro";
 import rkData from "../../data/features/realitykit-components.json";
 import docsMapData from "../../data/mappings/realitykit-docs-url-map.json";
+import resourcesData from "../../data/resources/realitykit-resources.json";
 import type { Feature } from "../../types";
 
 export function getStaticPaths() {
@@ -48,6 +49,25 @@ function parseSinceValue(since?: string): number {
 const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase().replace(/\./g, "/")}`;
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
 const officialSummary = docsMapById.get(feature.id)?.summary ?? null;
+type ResourceEntry = {
+  title: string;
+  url: string;
+  type: string;
+  source: string;
+  verifiedAt?: string;
+};
+const customResources = ((resourcesData as {
+  resources?: Record<string, ResourceEntry[]>;
+}).resources?.[feature.id] ?? []) as ResourceEntry[];
+const resourcesList: ResourceEntry[] = [
+  {
+    title: "Apple Developer Documentation",
+    url: docsUrl,
+    type: "official-docs",
+    source: "Apple",
+  },
+  ...customResources,
+].filter((item, idx, all) => all.findIndex((other) => other.url === item.url) === idx);
 
 function normalizedText(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -78,6 +98,12 @@ const correctionParams = new URLSearchParams({
   body: correctionBody,
 });
 const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
+const resourcesContributingUrl = "https://github.com/elkraneo/uncannyuse/blob/main/docs/resources-contributing.md";
+const suggestResourceIssueUrl = "https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
+const rcpNote = feature.rcp
+  ? "Available in Reality Composer Pro Add Component menu."
+  : "Not listed in Reality Composer Pro Add Component menu; attach programmatically.";
+const notesList = [rcpNote, ...(feature.notes ?? [])];
 
 const timelineRows = platforms
   .map(p => {
@@ -215,20 +241,54 @@ const timelineRows = platforms
       </div>
     </section>
 
-    <!-- Notes -->
-    {feature.notes && feature.notes.length > 0 && (
-      <section class="section">
-        <h2 class="section-label">// notes</h2>
+    <!-- Notes + Resources -->
+    <section class="section">
+      <h2 class="section-label">// notes & resources</h2>
+      <div class="detail-tabs" role="tablist" aria-label="Detail information tabs">
+        <button type="button" class="detail-tab-btn is-active" role="tab" aria-selected="true" data-detail-tab-btn="notes">
+          notes
+        </button>
+        <button type="button" class="detail-tab-btn" role="tab" aria-selected="false" data-detail-tab-btn="resources">
+          resources
+        </button>
+      </div>
+
+      <div class="detail-tab-panel" data-detail-tab-panel="notes">
         <ul class="notes-list">
-          {feature.notes.map(note => (
+          {notesList.map(note => (
             <li class="note-item">
               <span class="note-bullet">→</span>
               <span>{note}</span>
             </li>
           ))}
         </ul>
-      </section>
-    )}
+      </div>
+
+      <div class="detail-tab-panel" data-detail-tab-panel="resources" hidden>
+        <ul class="resource-list">
+          {resourcesList.map(resource => (
+            <li class="resource-item">
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="resource-link">
+                {resource.title}
+              </a>
+              <span class="resource-meta">
+                {resource.source}
+                {resource.verifiedAt ? ` · verified ${resource.verifiedAt}` : ""}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="resource-actions">
+          <a href={resourcesContributingUrl} target="_blank" rel="noopener noreferrer" class="resource-action-link">
+            contribution guide ↗
+          </a>
+          <a href={suggestResourceIssueUrl} target="_blank" rel="noopener noreferrer" class="resource-action-link">
+            suggest resource ↗
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer nav -->
     <div class="detail-footer">
@@ -251,6 +311,8 @@ const timelineRows = platforms
 <script>
   const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view-btn]');
   const viewPanels = document.querySelectorAll<HTMLElement>('[data-view-panel]');
+  const detailTabButtons = document.querySelectorAll<HTMLButtonElement>('[data-detail-tab-btn]');
+  const detailTabPanels = document.querySelectorAll<HTMLElement>('[data-detail-tab-panel]');
 
   function setView(view: string) {
     viewButtons.forEach(button => {
@@ -266,6 +328,23 @@ const timelineRows = platforms
   viewButtons.forEach(button => {
     button.addEventListener('click', () => {
       setView(button.dataset.viewBtn ?? 'aligned');
+    });
+  });
+
+  function setDetailTab(tab: string) {
+    detailTabButtons.forEach(button => {
+      const selected = button.dataset.detailTabBtn === tab;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    detailTabPanels.forEach(panel => {
+      panel.hidden = panel.dataset.detailTabPanel !== tab;
+    });
+  }
+
+  detailTabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      setDetailTab(button.dataset.detailTabBtn ?? 'notes');
     });
   });
 </script>
@@ -610,6 +689,87 @@ const timelineRows = platforms
     flex-shrink: 0;
     font-size: 0.875rem;
     margin-top: 0.1em;
+  }
+
+  .detail-tabs {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.85rem;
+  }
+
+  .detail-tab-btn {
+    border: none;
+    background: var(--surface-up);
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.875rem;
+    padding: 0.38rem 0.65rem;
+    cursor: pointer;
+  }
+
+  .detail-tab-btn + .detail-tab-btn {
+    border-left: 1px solid var(--border);
+  }
+
+  .detail-tab-btn.is-active {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  .detail-tab-panel {
+    padding-top: 0.15rem;
+  }
+
+  .resource-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .resource-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .resource-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+
+  .resource-link:hover {
+    color: var(--ios);
+    text-decoration: underline;
+  }
+
+  .resource-meta {
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  .resource-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .resource-action-link {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.22rem 0.5rem;
+  }
+
+  .resource-action-link:hover {
+    color: var(--text);
+    background: var(--surface-up);
   }
 
   /* Footer nav */

@@ -1,0 +1,59 @@
+name: Resource suggestion
+description: Suggest a new resource link for a component detail page.
+title: "[resource] <component-id>: <short title>"
+labels:
+  - enhancement
+body:
+  - type: input
+    id: component_id
+    attributes:
+      label: Component ID
+      description: Use the component id from src/data/features/realitykit-components.json
+      placeholder: billboard-component
+    validations:
+      required: true
+
+  - type: input
+    id: resource_title
+    attributes:
+      label: Resource title
+      placeholder: BillboardComponent (Apple docs)
+    validations:
+      required: true
+
+  - type: input
+    id: resource_url
+    attributes:
+      label: Resource URL
+      placeholder: https://developer.apple.com/documentation/realitykit/billboardcomponent
+    validations:
+      required: true
+
+  - type: dropdown
+    id: resource_type
+    attributes:
+      label: Resource type
+      options:
+        - official-docs
+        - sample
+        - article
+        - video
+        - issue
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      placeholder: Apple
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this is useful
+      description: Briefly explain why this resource should appear on the detail page.
+    validations:
+      required: true
