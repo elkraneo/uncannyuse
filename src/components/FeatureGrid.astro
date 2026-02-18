@@ -191,6 +191,14 @@ const catColor: Record<string, string> = {
     animation-delay: calc(var(--row-i, 0) * 12ms);
   }
 
+  /* When motion is reduced (or disabled in DevTools), skip the animation entirely
+     so rows don't stay frozen at opacity:0 from the animation fill-mode */
+  @media (prefers-reduced-motion: reduce) {
+    .grid-row {
+      animation: none;
+    }
+  }
+
   .grid-row:last-child {
     border-bottom: none;
   }
@@ -315,12 +323,14 @@ const catColor: Record<string, string> = {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       min-width: 0;
+      /* Total column widths 360px — fits in 358px content area, no initial scroll */
     }
 
     .grid-header,
     .grid-row {
-      /* name: 130px  ios: 76px  visionos: 82px  macos: 82px  rcp: 44px = 414px */
-      grid-template-columns: 130px 76px 82px 82px 44px;
+      /* name: 118px  ios: 68px  visionos: 68px  macos: 68px  rcp: 38px = 360px
+         fits 390px phone (2×16px page padding = 358px content) with no initial overflow */
+      grid-template-columns: 118px 68px 68px 68px 38px;
     }
 
     /* Name column sticks so component labels are always visible */

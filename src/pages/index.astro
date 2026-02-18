@@ -536,13 +536,14 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
       padding: 1.5rem 1rem 1.25rem;
     }
 
-    /* Stats: single scrollable row, no wrap */
+    /* Stats: single scrollable row, no wrap — extra right padding shows last stat fully */
     .stats-row {
       flex-wrap: nowrap;
       overflow-x: auto;
       scrollbar-width: none;
       gap: 0;
       padding-bottom: 0.25rem;
+      padding-right: 1rem;
     }
 
     .stats-row::-webkit-scrollbar {
