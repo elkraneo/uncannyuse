@@ -161,6 +161,7 @@ function withSoftBreaks(name: string): string {
     border-right: 1px solid var(--border);
     border-top: 2px solid var(--pcol, var(--border));
     position: relative;
+    overflow: hidden;
   }
 
   .grid-header .col-rcp {
@@ -458,6 +459,11 @@ function withSoftBreaks(name: string): string {
 
     .grid-header .col-rcp {
       padding: 0.625rem 0.25rem;
+    }
+
+    .platform-header-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.04em;
     }
 
     .rcp-header-label {
