@@ -56,6 +56,28 @@ function normalizedText(value: string): string {
 const showOfficialSummary = Boolean(
   officialSummary && normalizedText(officialSummary) !== normalizedText(feature.description)
 );
+const pagePath = `/features/${feature.id}`;
+const correctionBody = [
+  "## Component",
+  `${feature.name} (${feature.id})`,
+  "",
+  "## Page",
+  `https://uncannyuse.com${pagePath}`,
+  "",
+  "## What should be corrected?",
+  "- ",
+  "",
+  "## Suggested source/evidence",
+  "- ",
+  "",
+  "## Notes",
+  "- ",
+].join("\n");
+const correctionParams = new URLSearchParams({
+  title: `[correction] ${feature.name}`,
+  body: correctionBody,
+});
+const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
 
 const timelineRows = platforms
   .map(p => {
@@ -83,7 +105,7 @@ const timelineRows = platforms
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/" class="bc-link">realitykit</a>
       <span class="bc-sep">/</span>
-      <span class="bc-cat" style={`color: ${color}`}>{feature.subcategory}</span>
+      <a href={`/?cat=${feature.subcategory}`} class="bc-cat" style={`color: ${color}`}>{feature.subcategory}</a>
       <span class="bc-sep">/</span>
       <span class="bc-current" title={feature.name}>{feature.name}</span>
     </nav>
@@ -210,12 +232,17 @@ const timelineRows = platforms
 
     <!-- Footer nav -->
     <div class="detail-footer">
-      <a href="/" class="back-link">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-          <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        all components
-      </a>
+      <div class="detail-actions">
+        <a href="/" class="back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          all components
+        </a>
+        <a href={suggestCorrectionUrl} target="_blank" rel="noopener noreferrer" class="report-link">
+          suggest correction ↗
+        </a>
+      </div>
     </div>
 
   </article>
@@ -276,6 +303,11 @@ const timelineRows = platforms
 
   .bc-cat {
     text-transform: lowercase;
+    text-decoration: none;
+  }
+
+  .bc-cat:hover {
+    text-decoration: underline;
   }
 
   .bc-current {
@@ -585,6 +617,13 @@ const timelineRows = platforms
     margin-top: 2.5rem;
   }
 
+  .detail-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -597,5 +636,20 @@ const timelineRows = platforms
 
   .back-link:hover {
     color: var(--text);
+  }
+
+  .report-link {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .report-link:hover {
+    color: var(--text);
+    border-color: var(--border-up);
+    background: var(--surface-up);
   }
 </style>

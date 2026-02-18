@@ -168,6 +168,13 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
 
   let activeCat  = 'all';
   let query      = '';
+  const validCats = new Set(['all', ...Array.from(catBtns).map(btn => btn.dataset.cat ?? '').filter(Boolean)]);
+
+  function setActiveCategory(cat: string) {
+    const nextCat = validCats.has(cat) ? cat : 'all';
+    activeCat = nextCat;
+    catBtns.forEach(b => b.classList.toggle('active', (b.dataset.cat ?? '') === nextCat));
+  }
 
   function applyFilter() {
     let visible = 0;
@@ -185,9 +192,7 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
   // Category buttons
   catBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      catBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCat = btn.dataset.cat ?? 'all';
+      setActiveCategory(btn.dataset.cat ?? 'all');
       applyFilter();
     });
   });
@@ -211,11 +216,16 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
   resetBtn.addEventListener('click', () => {
     search.value = '';
     query = '';
-    activeCat = 'all';
-    catBtns.forEach(b => b.classList.remove('active'));
-    catBtns[0]?.classList.add('active');
+    setActiveCategory('all');
     applyFilter();
   });
+
+  // URL-driven initial category, e.g. /?cat=rendering
+  const initialCat = new URLSearchParams(window.location.search).get('cat');
+  if (initialCat) {
+    setActiveCategory(initialCat);
+    applyFilter();
+  }
 </script>
 
 <style>
