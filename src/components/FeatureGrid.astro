@@ -368,7 +368,13 @@ function withSoftBreaks(name: string): string {
 
     .grid-header,
     .grid-row {
-      grid-template-columns: 1fr 68px 68px 68px 52px;
+      /*
+       * Tighter platform columns (60px) give more room to 1fr name column.
+       * 390px phone: 1fr = 390 - 32px(page padding) - (60×3 + 46) = 358 - 226 = 132px
+       * col-name text area = 132 - 16px(inner padding) = 116px ≈ 14–15 chars before ellipsis
+       * "ModelSortGroup…" — much more legible than mid-word wrapping.
+       */
+      grid-template-columns: 1fr 60px 60px 60px 46px;
     }
 
     /* Remove sticky — not needed since table fits in viewport */
@@ -379,6 +385,7 @@ function withSoftBreaks(name: string): string {
       gap: 0.5rem;
       box-shadow: none;
       background: transparent;
+      padding-inline: 0.5rem; /* tighter: 8px each side instead of 16px */
     }
 
     .grid-header .col-name {
@@ -390,17 +397,14 @@ function withSoftBreaks(name: string): string {
       background: var(--surface-up);
     }
 
-    /* Names wrap at camelCase boundaries (zero-width spaces from withSoftBreaks).
-       word-break: normal lets the browser use soft-break points without
-       forcing a break at every zero-width space. */
+    /* Ellipsis truncation — cleaner than wrapping on a narrow column.
+       The zero-width spaces from withSoftBreaks are invisible with nowrap
+       and don't interfere with text-overflow. */
     .feature-name {
       font-size: 0.8125rem;
-      white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: normal;
-      overflow: visible;
-      text-overflow: unset;
-      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       display: block;
     }
 
@@ -415,7 +419,7 @@ function withSoftBreaks(name: string): string {
     }
 
     .ver {
-      font-size: 0.75rem;
+      font-size: 0.6875rem; /* 11px — fits "26.0" in 60px column */
     }
 
     .col-platform {
@@ -427,8 +431,8 @@ function withSoftBreaks(name: string): string {
     }
 
     .rcp-header-label {
-      font-size: 0.6875rem;
-      letter-spacing: 0.05em;
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
     }
   }
 </style>
