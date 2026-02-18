@@ -7,846 +7,975 @@ import resourcesData from "../../data/resources/realitykit-resources.json";
 import type { Feature } from "../../types";
 
 export function getStaticPaths() {
-  return (rkData.features as Feature[]).map(f => ({
-    params: { slug: f.id },
-    props: { feature: f },
-  }));
+	return (rkData.features as Feature[]).map((f) => ({
+		params: { slug: f.id },
+		props: { feature: f },
+	}));
 }
 
 const { feature } = Astro.props as { feature: Feature };
 
 const platforms = [
-  { id: 'ios',      label: 'iOS / iPadOS', color: '#007AFF' },
-  { id: 'visionos', label: 'visionOS',     color: '#AF52DE' },
-  { id: 'macos',    label: 'macOS',        color: '#FF9F0A' },
+	{ id: "ios", label: "iOS / iPadOS", color: "#007AFF" },
+	{ id: "visionos", label: "visionOS", color: "#AF52DE" },
+	{ id: "macos", label: "macOS", color: "#FF9F0A" },
 ];
 
 const catColor: Record<string, string> = {
-  rendering: '#409CFF', lighting: '#FFB340', audio: '#30D158',
-  physics: '#FF453A', spatial: '#BF5AF2', interaction: '#FF6B2B',
-  camera: '#5AC8FA', animation: '#7D7AFF', media: '#FF375F',
+	rendering: "#409CFF",
+	lighting: "#FFB340",
+	audio: "#30D158",
+	physics: "#FF453A",
+	spatial: "#BF5AF2",
+	interaction: "#FF6B2B",
+	camera: "#5AC8FA",
+	animation: "#7D7AFF",
+	media: "#FF375F",
 };
-const color = catColor[feature.subcategory] ?? '#86868B';
+const color = catColor[feature.subcategory] ?? "#86868B";
 
-const supportedCount = Object.values(feature.support).filter(s => s.status === 'y').length;
+const supportedCount = Object.values(feature.support).filter(
+	(s) => s.status === "y",
+).length;
 const docsMapById = new Map(
-  (docsMapData as Array<{ id: string; summary?: string | null; title?: string | null }>)
-    .map((row) => [row.id, row])
+	(
+		docsMapData as Array<{
+			id: string;
+			summary?: string | null;
+			title?: string | null;
+		}>
+	).map((row) => [row.id, row]),
 );
 
 function withSoftBreaks(name: string): string {
-  return name
-    .replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
-    .replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
+	return name
+		.replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
+		.replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
 }
 
 function parseSinceValue(since?: string): number {
-  if (!since) return Number.POSITIVE_INFINITY;
-  const value = Number.parseFloat(since);
-  return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
+	if (!since) return Number.POSITIVE_INFINITY;
+	const value = Number.parseFloat(since);
+	return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
 }
 
 const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase().replace(/\./g, "/")}`;
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
 const officialSummary = docsMapById.get(feature.id)?.summary ?? null;
 type ResourceEntry = {
-  title: string;
-  url: string;
-  type: string;
-  source: string;
-  verifiedAt?: string;
+	title: string;
+	url: string;
+	type: string;
+	source: string;
+	verifiedAt?: string;
 };
-const customResources = ((resourcesData as {
-  resources?: Record<string, ResourceEntry[]>;
-}).resources?.[feature.id] ?? []) as ResourceEntry[];
+const customResources = ((
+	resourcesData as {
+		resources?: Record<string, ResourceEntry[]>;
+	}
+).resources?.[feature.id] ?? []) as ResourceEntry[];
 const resourcesList: ResourceEntry[] = [
-  {
-    title: "Apple Developer Documentation",
-    url: docsUrl,
-    type: "official-docs",
-    source: "Apple",
-  },
-  ...customResources,
-].filter((item, idx, all) => all.findIndex((other) => other.url === item.url) === idx);
+	{
+		title: "Apple Developer Documentation",
+		url: docsUrl,
+		type: "official-docs",
+		source: "Apple",
+	},
+	...customResources,
+].filter(
+	(item, idx, all) => all.findIndex((other) => other.url === item.url) === idx,
+);
 
 function normalizedText(value: string): string {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+	return value
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, " ")
+		.trim();
 }
 
 const showOfficialSummary = Boolean(
-  officialSummary && normalizedText(officialSummary) !== normalizedText(feature.description)
+	officialSummary &&
+	normalizedText(officialSummary) !== normalizedText(feature.description),
 );
 const pagePath = `/features/${feature.id}`;
 const correctionBody = [
-  "## Component",
-  `${feature.name} (${feature.id})`,
-  "",
-  "## Page",
-  `https://uncannyuse.com${pagePath}`,
-  "",
-  "## What should be corrected?",
-  "- ",
-  "",
-  "## Suggested source/evidence",
-  "- ",
-  "",
-  "## Notes",
-  "- ",
+	"## Component",
+	`${feature.name} (${feature.id})`,
+	"",
+	"## Page",
+	`https://uncannyuse.com${pagePath}`,
+	"",
+	"## What should be corrected?",
+	"- ",
+	"",
+	"## Suggested source/evidence",
+	"- ",
+	"",
+	"## Notes",
+	"- ",
 ].join("\n");
 const correctionParams = new URLSearchParams({
-  title: `[correction] ${feature.name}`,
-  body: correctionBody,
+	title: `[correction] ${feature.name}`,
+	body: correctionBody,
 });
 const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
-const suggestResourceIssueUrl = "https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
+const suggestResourceIssueUrl =
+	"https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
 const notesList = feature.notes ?? [];
-const rcpStatusText = feature.rcp ? "In Add Component menu" : "Code-only component";
+const rcpStatusText = feature.rcp
+	? "In Add Component menu"
+	: "Code-only component";
 const rcpDetailText = feature.rcp
-  ? "Add it directly from Reality Composer Pro and tune values in the inspector."
-  : "Not listed in the Add Component menu. Attach it programmatically at runtime.";
+	? "Add it directly from Reality Composer Pro and tune values in the inspector."
+	: "Not listed in the Add Component menu. Attach it programmatically at runtime.";
 
 const timelineRows = platforms
-  .map(p => {
-    const sup = feature.support[p.id as keyof typeof feature.support];
-    return {
-      ...p,
-      status: sup.status,
-      since: sup.since,
-      value: parseSinceValue(sup.since),
-    };
-  })
-  .sort((a, b) => {
-    const aSupported = a.status === 'y' ? 0 : 1;
-    const bSupported = b.status === 'y' ? 0 : 1;
-    if (aSupported !== bSupported) return aSupported - bSupported;
-    if (a.value !== b.value) return a.value - b.value;
-    return a.label.localeCompare(b.label);
-  });
+	.map((p) => {
+		const sup = feature.support[p.id as keyof typeof feature.support];
+		return {
+			...p,
+			status: sup.status,
+			since: sup.since,
+			value: parseSinceValue(sup.since),
+		};
+	})
+	.sort((a, b) => {
+		const aSupported = a.status === "y" ? 0 : 1;
+		const bSupported = b.status === "y" ? 0 : 1;
+		if (aSupported !== bSupported) return aSupported - bSupported;
+		if (a.value !== b.value) return a.value - b.value;
+		return a.label.localeCompare(b.label);
+	});
 ---
 
 <Base title={feature.name} description={feature.description}>
-  <article class="detail">
+	<article class="detail">
+		<!-- Breadcrumb -->
+		<nav class="breadcrumb" aria-label="Breadcrumb">
+			<a href="/" class="bc-link">realitykit</a>
+			<span class="bc-sep">/</span>
+			<a
+				href={`/?cat=${feature.subcategory}`}
+				class="bc-cat"
+				style={`color: ${color}`}>{feature.subcategory}</a
+			>
+			<span class="bc-sep">/</span>
+			<span class="bc-current" title={feature.name}>{feature.name}</span>
+		</nav>
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/" class="bc-link">realitykit</a>
-      <span class="bc-sep">/</span>
-      <a href={`/?cat=${feature.subcategory}`} class="bc-cat" style={`color: ${color}`}>{feature.subcategory}</a>
-      <span class="bc-sep">/</span>
-      <span class="bc-current" title={feature.name}>{feature.name}</span>
-    </nav>
+		<!-- Header -->
+		<header class="detail-header">
+			<div class="header-meta">
+				<span
+					class="cat-tag"
+					style={`color: ${color}; border-color: ${color}33`}
+				>
+					{feature.subcategory}
+				</span>
+				<span class="era-tag">
+					{feature.era === "26.0" ? "↑ new in 26.0" : feature.era}
+				</span>
+				{feature.rcp && <span class="rcp-tag">✓ RCP</span>}
+			</div>
 
-    <!-- Header -->
-    <header class="detail-header">
-      <div class="header-meta">
-        <span class="cat-tag" style={`color: ${color}; border-color: ${color}33`}>
-          {feature.subcategory}
-        </span>
-        <span class="era-tag">
-          {feature.era === '26.0' ? '↑ new in 26.0' : feature.era}
-        </span>
-        {feature.rcp && (
-          <span class="rcp-tag">✓ RCP</span>
-        )}
-      </div>
+			<h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
+			<div class="detail-links">
+				<a
+					class="doc-chip"
+					href={docsUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span class="doc-chip-label">official docs</span>
+					<span class="doc-external" aria-hidden="true">↗</span>
+				</a>
+			</div>
+			<p class="detail-desc">{feature.description}</p>
+			{
+				showOfficialSummary && (
+					<p class="official-summary">
+						<span class="official-summary-label">From Apple docs:</span>{" "}
+						{officialSummary}
+					</p>
+				)
+			}
+		</header>
 
-      <h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
-      <div class="detail-links">
-        <a class="doc-chip" href={docsUrl} target="_blank" rel="noopener noreferrer">
-          <span class="doc-chip-label">official docs</span>
-          <span class="doc-external" aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <p class="detail-desc">{feature.description}</p>
-      {showOfficialSummary && (
-        <p class="official-summary">
-          <span class="official-summary-label">From Apple docs:</span> {officialSummary}
-        </p>
-      )}
-    </header>
+		<!-- Support grid -->
+		<section class="section">
+			<h2 class="section-label">/// platform availability</h2>
+			<div class="view-switch" role="tablist" aria-label="Availability view">
+				<button
+					type="button"
+					class="view-btn is-active"
+					role="tab"
+					aria-selected="true"
+					data-view-btn="aligned"
+				>
+					current aligned
+				</button>
+				<button
+					type="button"
+					class="view-btn"
+					role="tab"
+					aria-selected="false"
+					data-view-btn="timeline"
+				>
+					timeline
+				</button>
+			</div>
 
-    <!-- Support grid -->
-    <section class="section">
-      <h2 class="section-label">// platform availability</h2>
-      <div class="view-switch" role="tablist" aria-label="Availability view">
-        <button type="button" class="view-btn is-active" role="tab" aria-selected="true" data-view-btn="aligned">
-          current aligned
-        </button>
-        <button type="button" class="view-btn" role="tab" aria-selected="false" data-view-btn="timeline">
-          timeline
-        </button>
-      </div>
+			<div data-view-panel="aligned">
+				<div class="platform-grid">
+					{
+						platforms.map((p) => {
+							const sup = feature.support[p.id as keyof typeof feature.support];
+							return (
+								<SupportBadge
+									status={sup.status}
+									since={sup.since}
+									platformId={p.id}
+									platformLabel={p.label}
+									platformColor={p.color}
+								/>
+							);
+						})
+					}
+				</div>
+			</div>
 
-      <div data-view-panel="aligned">
-        <div class="platform-grid">
-          {platforms.map(p => {
-            const sup = feature.support[p.id as keyof typeof feature.support];
-            return (
-              <SupportBadge
-                status={sup.status}
-                since={sup.since}
-                platformId={p.id}
-                platformLabel={p.label}
-                platformColor={p.color}
-              />
-            );
-          })}
-        </div>
-      </div>
+			<div data-view-panel="timeline" hidden>
+				<ul class="timeline-list">
+					{
+						timelineRows.map((row) => (
+							<li class="timeline-row">
+								<span class="timeline-platform" style={`color: ${row.color}`}>
+									{row.label}
+								</span>
+								<span class="timeline-value">
+									{row.status === "y" && row.since
+										? `available since ${row.since}`
+										: "not supported"}
+								</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
 
-      <div data-view-panel="timeline" hidden>
-        <ul class="timeline-list">
-          {timelineRows.map(row => (
-            <li class="timeline-row">
-              <span class="timeline-platform" style={`color: ${row.color}`}>{row.label}</span>
-              <span class="timeline-value">
-                {row.status === 'y' && row.since ? `available since ${row.since}` : 'not supported'}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+			{
+				supportedCount < 3 && (
+					<p class="restrict-note">
+						{supportedCount === 0
+							? "⚠ Not available on any tracked platform"
+							: supportedCount === 1
+								? "⚠ Platform-exclusive component"
+								: "⚠ Not available on all platforms"}
+					</p>
+				)
+			}
+		</section>
 
-      {supportedCount < 3 && (
-        <p class="restrict-note">
-          {supportedCount === 0
-            ? '⚠ Not available on any tracked platform'
-            : supportedCount === 1
-            ? '⚠ Platform-exclusive component'
-            : '⚠ Not available on all platforms'}
-        </p>
-      )}
-    </section>
+		<!-- RCP section -->
+		<section class="section">
+			<h2 class="section-label">/// reality composer pro</h2>
+			<div class="rcp-card" class:list={[feature.rcp ? "rcp-yes" : "rcp-no"]}>
+				<div class="rcp-status">
+					{
+						feature.rcp ? (
+							<span class="rcp-indicator yes">✓</span>
+						) : (
+							<span class="rcp-indicator no">○</span>
+						)
+					}
+					<span class="rcp-title">Add Component menu</span>
+					<span class="rcp-status-chip">{rcpStatusText}</span>
+				</div>
+				<p class="rcp-detail">{rcpDetailText}</p>
+				{
+					!feature.rcp && (
+						<pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
+					)
+				}
+			</div>
+		</section>
 
-    <!-- RCP section -->
-    <section class="section">
-      <h2 class="section-label">// reality composer pro</h2>
-      <div class="rcp-card" class:list={[feature.rcp ? 'rcp-yes' : 'rcp-no']}>
-        <div class="rcp-status">
-          {feature.rcp ? (
-            <span class="rcp-indicator yes">✓</span>
-          ) : (
-            <span class="rcp-indicator no">○</span>
-          )}
-          <span class="rcp-title">Add Component menu</span>
-          <span class="rcp-status-chip">{rcpStatusText}</span>
-        </div>
-        <p class="rcp-detail">{rcpDetailText}</p>
-        {!feature.rcp && (
-          <pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
-        )}
-      </div>
-    </section>
+		<!-- Notes + Resources -->
+		<section class="section">
+			<h2 class="section-label">/// notes & resources</h2>
+			<div
+				class="detail-tabs"
+				role="tablist"
+				aria-label="Detail information tabs"
+			>
+				<button
+					type="button"
+					class="detail-tab-btn is-active"
+					role="tab"
+					aria-selected="true"
+					data-detail-tab-btn="notes"
+				>
+					notes
+				</button>
+				<button
+					type="button"
+					class="detail-tab-btn"
+					role="tab"
+					aria-selected="false"
+					data-detail-tab-btn="resources"
+				>
+					resources
+				</button>
+			</div>
 
-    <!-- Notes + Resources -->
-    <section class="section">
-      <h2 class="section-label">// notes & resources</h2>
-      <div class="detail-tabs" role="tablist" aria-label="Detail information tabs">
-        <button type="button" class="detail-tab-btn is-active" role="tab" aria-selected="true" data-detail-tab-btn="notes">
-          notes
-        </button>
-        <button type="button" class="detail-tab-btn" role="tab" aria-selected="false" data-detail-tab-btn="resources">
-          resources
-        </button>
-      </div>
+			<div class="detail-tab-panel" data-detail-tab-panel="notes">
+				{
+					notesList.length > 0 ? (
+						<ul class="notes-list">
+							{notesList.map((note) => (
+								<li class="note-item">
+									<span class="note-bullet">→</span>
+									<span>{note}</span>
+								</li>
+							))}
+						</ul>
+					) : (
+						<p class="notes-empty">No component-specific notes yet.</p>
+					)
+				}
+			</div>
 
-      <div class="detail-tab-panel" data-detail-tab-panel="notes">
-        {notesList.length > 0 ? (
-          <ul class="notes-list">
-            {notesList.map(note => (
-              <li class="note-item">
-                <span class="note-bullet">→</span>
-                <span>{note}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="notes-empty">
-            No component-specific notes yet.
-          </p>
-        )}
-      </div>
+			<div class="detail-tab-panel" data-detail-tab-panel="resources" hidden>
+				<ul class="resource-list">
+					{
+						resourcesList.map((resource) => (
+							<li class="resource-item">
+								<a
+									href={resource.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="resource-link"
+								>
+									{resource.title}
+								</a>
+								<span class="resource-meta">
+									{resource.source}
+									{resource.verifiedAt
+										? ` · verified ${resource.verifiedAt}`
+										: ""}
+								</span>
+							</li>
+						))
+					}
+				</ul>
 
-      <div class="detail-tab-panel" data-detail-tab-panel="resources" hidden>
-        <ul class="resource-list">
-          {resourcesList.map(resource => (
-            <li class="resource-item">
-              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="resource-link">
-                {resource.title}
-              </a>
-              <span class="resource-meta">
-                {resource.source}
-                {resource.verifiedAt ? ` · verified ${resource.verifiedAt}` : ""}
-              </span>
-            </li>
-          ))}
-        </ul>
+				<div class="resource-actions">
+					<a
+						href={suggestResourceIssueUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="resource-action-link"
+					>
+						suggest resource ↗
+					</a>
+				</div>
+			</div>
+		</section>
 
-        <div class="resource-actions">
-          <a href={suggestResourceIssueUrl} target="_blank" rel="noopener noreferrer" class="resource-action-link">
-            suggest resource ↗
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer nav -->
-    <div class="detail-footer">
-      <div class="detail-actions">
-        <a href="/" class="back-link">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          all components
-        </a>
-        <a href={suggestCorrectionUrl} target="_blank" rel="noopener noreferrer" class="report-link">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 17.25V21h3.75L19.81 7.94l-3.75-3.75L3 17.25Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-            <path d="m14.06 4.19 3.75 3.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-          report correction
-        </a>
-      </div>
-    </div>
-
-  </article>
+		<!-- Footer nav -->
+		<div class="detail-footer">
+			<div class="detail-actions">
+				<a href="/" class="back-link">
+					<svg
+						width="12"
+						height="12"
+						viewBox="0 0 12 12"
+						fill="none"
+						aria-hidden="true"
+					>
+						<path
+							d="M7.5 2L3 6l4.5 4"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+					all components
+				</a>
+				<a
+					href={suggestCorrectionUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="report-link"
+				>
+					<svg
+						width="12"
+						height="12"
+						viewBox="0 0 24 24"
+						fill="none"
+						aria-hidden="true"
+					>
+						<path
+							d="M3 17.25V21h3.75L19.81 7.94l-3.75-3.75L3 17.25Z"
+							stroke="currentColor"
+							stroke-width="1.6"
+							stroke-linejoin="round"></path>
+						<path
+							d="m14.06 4.19 3.75 3.75"
+							stroke="currentColor"
+							stroke-width="1.6"
+							stroke-linecap="round"></path>
+					</svg>
+					report correction
+				</a>
+			</div>
+		</div>
+	</article>
 </Base>
 
 <script>
-  const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view-btn]');
-  const viewPanels = document.querySelectorAll<HTMLElement>('[data-view-panel]');
-  const detailTabButtons = document.querySelectorAll<HTMLButtonElement>('[data-detail-tab-btn]');
-  const detailTabPanels = document.querySelectorAll<HTMLElement>('[data-detail-tab-panel]');
+	const viewButtons =
+		document.querySelectorAll<HTMLButtonElement>("[data-view-btn]");
+	const viewPanels =
+		document.querySelectorAll<HTMLElement>("[data-view-panel]");
+	const detailTabButtons = document.querySelectorAll<HTMLButtonElement>(
+		"[data-detail-tab-btn]",
+	);
+	const detailTabPanels = document.querySelectorAll<HTMLElement>(
+		"[data-detail-tab-panel]",
+	);
 
-  function setView(view: string) {
-    viewButtons.forEach(button => {
-      const selected = button.dataset.viewBtn === view;
-      button.classList.toggle('is-active', selected);
-      button.setAttribute('aria-selected', selected ? 'true' : 'false');
-    });
-    viewPanels.forEach(panel => {
-      panel.hidden = panel.dataset.viewPanel !== view;
-    });
-  }
+	function setView(view: string) {
+		viewButtons.forEach((button) => {
+			const selected = button.dataset.viewBtn === view;
+			button.classList.toggle("is-active", selected);
+			button.setAttribute("aria-selected", selected ? "true" : "false");
+		});
+		viewPanels.forEach((panel) => {
+			panel.hidden = panel.dataset.viewPanel !== view;
+		});
+	}
 
-  viewButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      setView(button.dataset.viewBtn ?? 'aligned');
-    });
-  });
+	viewButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			setView(button.dataset.viewBtn ?? "aligned");
+		});
+	});
 
-  function setDetailTab(tab: string) {
-    detailTabButtons.forEach(button => {
-      const selected = button.dataset.detailTabBtn === tab;
-      button.classList.toggle('is-active', selected);
-      button.setAttribute('aria-selected', selected ? 'true' : 'false');
-    });
-    detailTabPanels.forEach(panel => {
-      panel.hidden = panel.dataset.detailTabPanel !== tab;
-    });
-  }
+	function setDetailTab(tab: string) {
+		detailTabButtons.forEach((button) => {
+			const selected = button.dataset.detailTabBtn === tab;
+			button.classList.toggle("is-active", selected);
+			button.setAttribute("aria-selected", selected ? "true" : "false");
+		});
+		detailTabPanels.forEach((panel) => {
+			panel.hidden = panel.dataset.detailTabPanel !== tab;
+		});
+	}
 
-  detailTabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      setDetailTab(button.dataset.detailTabBtn ?? 'notes');
-    });
-  });
+	detailTabButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			setDetailTab(button.dataset.detailTabBtn ?? "notes");
+		});
+	});
 </script>
 
 <style>
-  .detail {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 5rem;
-    animation: fadeIn 0.2s ease-out;
-  }
-
-  /* Breadcrumb */
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-    overflow: hidden;
-  }
-
-  .bc-link {
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  .bc-link:hover {
-    color: var(--text);
-  }
-
-  .bc-sep {
-    color: var(--subtle);
-  }
-
-  .bc-cat {
-    text-transform: lowercase;
-    text-decoration: none;
-  }
-
-  .bc-cat:hover {
-    text-decoration: underline;
-  }
-
-  .bc-current {
-    color: var(--text);
-    font-weight: 500;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  /* Header */
-  .detail-header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .header-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .cat-tag {
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border: 1px solid;
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .era-tag {
-    font-size: 0.875rem;
-    color: var(--muted);
-    background: var(--surface-up);
-    border: 1px solid var(--border);
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .rcp-tag {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--rcp);
-    background: rgba(48, 209, 88, 0.08);
-    border: 1px solid rgba(48, 209, 88, 0.2);
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .detail-title {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    line-height: 1.15;
-    margin-bottom: 0.875rem;
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-
-  .detail-desc {
-    font-size: 1.0625rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 60ch;
-  }
-
-  .official-summary {
-    margin-top: 0.65rem;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--muted);
-    border-left: 2px solid color-mix(in srgb, #CB3C27 40%, transparent);
-    padding-left: 0.7rem;
-    max-width: 62ch;
-  }
-
-  .official-summary-label {
-    color: #CB3C27;
-    font-weight: 600;
-  }
-
-  .detail-links {
-    margin-bottom: 0.75rem;
-  }
-
-  .doc-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--ios);
-    text-decoration: none;
-    padding: 0;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-
-  .doc-chip:hover {
-    color: #005EC9;
-  }
-
-  .doc-chip-label {
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
-  }
-
-  .doc-external {
-    font-size: 0.75em;
-    line-height: 1;
-    opacity: 0.9;
-  }
-
-  /* Section */
-  .section {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section:last-of-type {
-    border-bottom: none;
-  }
-
-  .section-label {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    margin-bottom: 1rem;
-  }
-
-  /* Platform grid */
-  .platform-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
-
-  @media (max-width: 560px) {
-    .platform-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .restrict-note {
-    margin-top: 0.875rem;
-    font-size: 0.9375rem;
-    color: var(--macos);
-  }
-
-  .view-switch {
-    display: inline-flex;
-    gap: 0;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 0.875rem;
-  }
-
-  .view-btn {
-    border: none;
-    background: var(--surface-up);
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.875rem;
-    padding: 0.42rem 0.7rem;
-    cursor: pointer;
-  }
-
-  .view-btn + .view-btn {
-    border-left: 1px solid var(--border);
-  }
-
-  .view-btn.is-active {
-    color: var(--text);
-    background: var(--surface);
-  }
-
-  .timeline-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
-    padding: 0.75rem 0.85rem;
-  }
-
-  .timeline-row {
-    display: grid;
-    grid-template-columns: minmax(132px, 180px) 1fr;
-    gap: 0.85rem;
-    align-items: center;
-    font-size: 0.9375rem;
-    color: var(--muted);
-  }
-
-  .timeline-platform {
-    font-weight: 600;
-    letter-spacing: 0.01em;
-  }
-
-  .timeline-value {
-    color: var(--text);
-  }
-
-  @media (max-width: 560px) {
-    .timeline-row {
-      grid-template-columns: 1fr;
-      gap: 0.15rem;
-    }
-  }
-
-  /* RCP card */
-  .rcp-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.125rem 1.25rem;
-    background: var(--surface);
-  }
-
-  .rcp-card.rcp-yes {
-    border-color: rgba(48, 209, 88, 0.2);
-    background: rgba(48, 209, 88, 0.04);
-  }
-
-  .rcp-status {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 0.625rem;
-  }
-
-  .rcp-indicator {
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  .rcp-indicator.yes {
-    color: var(--rcp);
-  }
-
-  .rcp-indicator.no {
-    color: var(--subtle);
-  }
-
-  .rcp-title {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .rcp-status-chip {
-    margin-left: auto;
-    font-size: 0.75rem;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.1rem 0.45rem;
-    background: var(--surface-up);
-    line-height: 1.4;
-  }
-
-  .rcp-detail {
-    margin-top: 0.2rem;
-    color: var(--muted);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    max-width: 58ch;
-  }
-
-  .code-snippet {
-    margin-top: 0.875rem;
-    background: var(--surface-up);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 0.625rem 0.875rem;
-    overflow-x: auto;
-  }
-
-  .code-snippet code {
-    font-family: var(--font-mono);
-    font-size: 0.9375rem;
-    color: var(--muted);
-  }
-
-  /* Notes */
-  .notes-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
-  }
-
-  .note-item {
-    display: flex;
-    gap: 0.75rem;
-    font-size: 0.9375rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .note-bullet {
-    color: var(--subtle);
-    flex-shrink: 0;
-    font-size: 0.875rem;
-    margin-top: 0.1em;
-  }
-
-  .notes-empty {
-    font-size: 0.9rem;
-    color: var(--muted);
-    border: 1px dashed var(--border);
-    border-radius: 8px;
-    padding: 0.7rem 0.85rem;
-  }
-
-  .detail-tabs {
-    display: inline-flex;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 0.85rem;
-  }
-
-  .detail-tab-btn {
-    border: none;
-    background: var(--surface-up);
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.875rem;
-    padding: 0.38rem 0.65rem;
-    cursor: pointer;
-  }
-
-  .detail-tab-btn + .detail-tab-btn {
-    border-left: 1px solid var(--border);
-  }
-
-  .detail-tab-btn.is-active {
-    background: var(--surface);
-    color: var(--text);
-  }
-
-  .detail-tab-panel {
-    padding-top: 0.15rem;
-  }
-
-  .resource-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .resource-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.22rem;
-    padding: 0.62rem 0;
-  }
-
-  .resource-item + .resource-item {
-    border-top: 1px dashed var(--border);
-  }
-
-  .resource-link {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.9375rem;
-  }
-
-  .resource-link:hover {
-    color: var(--ios);
-    text-decoration: underline;
-  }
-
-  .resource-meta {
-    color: var(--muted);
-    font-size: 0.8125rem;
-  }
-
-  .resource-actions {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .resource-action-link {
-    font-size: 0.8125rem;
-    color: var(--muted);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 0.22rem 0.5rem;
-  }
-
-  .resource-action-link:hover {
-    color: var(--text);
-    background: var(--surface-up);
-  }
-
-  /* Footer nav */
-  .detail-footer {
-    margin-top: 2.5rem;
-  }
-
-  .detail-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    flex-wrap: wrap;
-  }
-
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.9375rem;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.1s;
-  }
-
-  .back-link:hover {
-    color: var(--text);
-  }
-
-  .report-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.8125rem;
-    color: #B4472B;
-    text-decoration: none;
-    border: 1px solid color-mix(in srgb, #B4472B 32%, transparent);
-    border-radius: 5px;
-    padding: 0.25rem 0.5rem;
-    background: color-mix(in srgb, #B4472B 8%, transparent);
-  }
-
-  .report-link:hover {
-    color: #8D301A;
-    border-color: color-mix(in srgb, #B4472B 55%, transparent);
-    background: color-mix(in srgb, #B4472B 15%, transparent);
-  }
+	.detail {
+		max-width: 760px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 5rem;
+		animation: fadeIn 0.2s ease-out;
+	}
+
+	/* Breadcrumb */
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+		overflow: hidden;
+	}
+
+	.bc-link {
+		color: var(--muted);
+		text-decoration: none;
+	}
+
+	.bc-link:hover {
+		color: var(--text);
+	}
+
+	.bc-sep {
+		color: var(--subtle);
+	}
+
+	.bc-cat {
+		text-transform: lowercase;
+		text-decoration: none;
+	}
+
+	.bc-cat:hover {
+		text-decoration: underline;
+	}
+
+	.bc-current {
+		color: var(--text);
+		font-weight: 500;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/* Header */
+	.detail-header {
+		margin-bottom: 2.5rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.header-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.cat-tag {
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		border: 1px solid;
+		padding: 2px 7px;
+		border-radius: 3px;
+	}
+
+	.era-tag {
+		font-size: 0.875rem;
+		color: var(--muted);
+		background: var(--surface-up);
+		border: 1px solid var(--border);
+		padding: 2px 7px;
+		border-radius: 3px;
+	}
+
+	.rcp-tag {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--rcp);
+		background: rgba(48, 209, 88, 0.08);
+		border: 1px solid rgba(48, 209, 88, 0.2);
+		padding: 2px 7px;
+		border-radius: 3px;
+	}
+
+	.detail-title {
+		font-size: clamp(1.5rem, 3.5vw, 2rem);
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		color: var(--text);
+		line-height: 1.15;
+		margin-bottom: 0.875rem;
+		overflow-wrap: break-word;
+		word-break: break-word;
+	}
+
+	.detail-desc {
+		font-size: 1.0625rem;
+		color: var(--muted);
+		line-height: 1.7;
+		max-width: 60ch;
+	}
+
+	.official-summary {
+		margin-top: 0.65rem;
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: var(--muted);
+		border-left: 2px solid color-mix(in srgb, #cb3c27 40%, transparent);
+		padding-left: 0.7rem;
+		max-width: 62ch;
+	}
+
+	.official-summary-label {
+		color: #cb3c27;
+		font-weight: 600;
+	}
+
+	.detail-links {
+		margin-bottom: 0.75rem;
+	}
+
+	.doc-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: var(--ios);
+		text-decoration: none;
+		padding: 0;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease;
+	}
+
+	.doc-chip:hover {
+		color: #005ec9;
+	}
+
+	.doc-chip-label {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.doc-external {
+		font-size: 0.75em;
+		line-height: 1;
+		opacity: 0.9;
+	}
+
+	/* Section */
+	.section {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.section:last-of-type {
+		border-bottom: none;
+	}
+
+	.section-label {
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+		margin-bottom: 1rem;
+	}
+
+	/* Platform grid */
+	.platform-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+	}
+
+	@media (max-width: 560px) {
+		.platform-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.restrict-note {
+		margin-top: 0.875rem;
+		font-size: 0.9375rem;
+		color: var(--macos);
+	}
+
+	.view-switch {
+		display: inline-flex;
+		gap: 0;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		overflow: hidden;
+		margin-bottom: 0.875rem;
+	}
+
+	.view-btn {
+		border: none;
+		background: var(--surface-up);
+		color: var(--muted);
+		font: inherit;
+		font-size: 0.875rem;
+		padding: 0.42rem 0.7rem;
+		cursor: pointer;
+	}
+
+	.view-btn + .view-btn {
+		border-left: 1px solid var(--border);
+	}
+
+	.view-btn.is-active {
+		color: var(--text);
+		background: var(--surface);
+	}
+
+	.timeline-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		background: var(--surface);
+		padding: 0.75rem 0.85rem;
+	}
+
+	.timeline-row {
+		display: grid;
+		grid-template-columns: minmax(132px, 180px) 1fr;
+		gap: 0.85rem;
+		align-items: center;
+		font-size: 0.9375rem;
+		color: var(--muted);
+	}
+
+	.timeline-platform {
+		font-weight: 600;
+		letter-spacing: 0.01em;
+	}
+
+	.timeline-value {
+		color: var(--text);
+	}
+
+	@media (max-width: 560px) {
+		.timeline-row {
+			grid-template-columns: 1fr;
+			gap: 0.15rem;
+		}
+	}
+
+	/* RCP card */
+	.rcp-card {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 1.125rem 1.25rem;
+		background: var(--surface);
+	}
+
+	.rcp-card.rcp-yes {
+		border-color: rgba(48, 209, 88, 0.2);
+		background: rgba(48, 209, 88, 0.04);
+	}
+
+	.rcp-status {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		margin-bottom: 0.625rem;
+	}
+
+	.rcp-indicator {
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.rcp-indicator.yes {
+		color: var(--rcp);
+	}
+
+	.rcp-indicator.no {
+		color: var(--subtle);
+	}
+
+	.rcp-title {
+		font-size: 0.9375rem;
+		font-weight: 500;
+		color: var(--text);
+	}
+
+	.rcp-status-chip {
+		margin-left: auto;
+		font-size: 0.75rem;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.1rem 0.45rem;
+		background: var(--surface-up);
+		line-height: 1.4;
+	}
+
+	.rcp-detail {
+		margin-top: 0.2rem;
+		color: var(--muted);
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		max-width: 58ch;
+	}
+
+	.code-snippet {
+		margin-top: 0.875rem;
+		background: var(--surface-up);
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 0.625rem 0.875rem;
+		overflow-x: auto;
+	}
+
+	.code-snippet code {
+		font-family: var(--font-mono);
+		font-size: 0.9375rem;
+		color: var(--muted);
+	}
+
+	/* Notes */
+	.notes-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-top: 0.25rem;
+	}
+
+	.note-item {
+		display: flex;
+		gap: 0.75rem;
+		font-size: 0.9375rem;
+		color: var(--muted);
+		line-height: 1.6;
+	}
+
+	.note-bullet {
+		color: var(--subtle);
+		flex-shrink: 0;
+		font-size: 0.875rem;
+		margin-top: 0.1em;
+	}
+
+	.notes-empty {
+		font-size: 0.9rem;
+		color: var(--muted);
+		border: 1px dashed var(--border);
+		border-radius: 8px;
+		padding: 0.7rem 0.85rem;
+	}
+
+	.detail-tabs {
+		display: inline-flex;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		overflow: hidden;
+		margin-bottom: 0.85rem;
+	}
+
+	.detail-tab-btn {
+		border: none;
+		background: var(--surface-up);
+		color: var(--muted);
+		font: inherit;
+		font-size: 0.875rem;
+		padding: 0.38rem 0.65rem;
+		cursor: pointer;
+	}
+
+	.detail-tab-btn + .detail-tab-btn {
+		border-left: 1px solid var(--border);
+	}
+
+	.detail-tab-btn.is-active {
+		background: var(--surface);
+		color: var(--text);
+	}
+
+	.detail-tab-panel {
+		padding-top: 0.15rem;
+	}
+
+	.resource-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.resource-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.22rem;
+		padding: 0.62rem 0;
+	}
+
+	.resource-item + .resource-item {
+		border-top: 1px dashed var(--border);
+	}
+
+	.resource-link {
+		color: var(--text);
+		text-decoration: none;
+		font-size: 0.9375rem;
+	}
+
+	.resource-link:hover {
+		color: var(--ios);
+		text-decoration: underline;
+	}
+
+	.resource-meta {
+		color: var(--muted);
+		font-size: 0.8125rem;
+	}
+
+	.resource-actions {
+		margin-top: 0.75rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.resource-action-link {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		text-decoration: none;
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 0.22rem 0.5rem;
+	}
+
+	.resource-action-link:hover {
+		color: var(--text);
+		background: var(--surface-up);
+	}
+
+	/* Footer nav */
+	.detail-footer {
+		margin-top: 2.5rem;
+	}
+
+	.detail-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.9rem;
+		flex-wrap: wrap;
+	}
+
+	.back-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.9375rem;
+		color: var(--muted);
+		text-decoration: none;
+		transition: color 0.1s;
+	}
+
+	.back-link:hover {
+		color: var(--text);
+	}
+
+	.report-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-size: 0.8125rem;
+		color: #b4472b;
+		text-decoration: none;
+		border: 1px solid color-mix(in srgb, #b4472b 32%, transparent);
+		border-radius: 5px;
+		padding: 0.25rem 0.5rem;
+		background: color-mix(in srgb, #b4472b 8%, transparent);
+	}
+
+	.report-link:hover {
+		color: #8d301a;
+		border-color: color-mix(in srgb, #b4472b 55%, transparent);
+		background: color-mix(in srgb, #b4472b 15%, transparent);
+	}
 </style>

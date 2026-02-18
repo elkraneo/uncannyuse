@@ -9,656 +9,690 @@ const features = rkData.features as Feature[];
 const rkCategory = categoriesData.categories[0];
 const subcats = rkCategory.subcategories;
 
-const countByCat = subcats.map(s => ({
-  ...s,
-  count: features.filter(f => f.subcategory === s.id).length,
+const countByCat = subcats.map((s) => ({
+	...s,
+	count: features.filter((f) => f.subcategory === s.id).length,
 }));
 
-const totalRcp   = features.filter(f => f.rcp).length;
-const totalNew26 = features.filter(f => f.era === '26.0').length;
-const vosOnly    = features.filter(f => f.support.ios.status === 'n' && f.support.visionos.status === 'y').length;
-const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.support.ios.status === 'y').length;
+const totalRcp = features.filter((f) => f.rcp).length;
+const totalNew26 = features.filter((f) => f.era === "26.0").length;
+const vosOnly = features.filter(
+	(f) => f.support.ios.status === "n" && f.support.visionos.status === "y",
+).length;
+const iosOnly = features.filter(
+	(f) => f.support.visionos.status === "n" && f.support.ios.status === "y",
+).length;
 ---
 
 <Base
-  title="uncannyuse"
-  description="Can I use it? Apple platform compatibility for RealityKit, ARKit, Metal, and hardware-gated features."
+	title="uncannyuse"
+	description="Can I use it? Apple platform compatibility for RealityKit, ARKit, Metal, and hardware-gated features."
 >
+	<!-- ── Hero ─────────────────────────────────── -->
+	<section class="hero">
+		<div class="hero-inner">
+			<div class="hero-kicker">/// apple platform compatibility reference</div>
 
-  <!-- ── Hero ─────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-inner">
+			<h1 class="hero-title">
+				Can&nbsp;I&nbsp;use&nbsp;it?<br />
+				<span class="hero-sub">on iOS · visionOS · macOS ···</span>
+			</h1>
 
-      <div class="hero-kicker">// apple platform compatibility reference</div>
+			<p class="hero-desc">
+				Every public RealityKit component type — which SDK versions expose it,
+				whether Reality Composer Pro surfaces it in the Add Component menu, and
+				what's platform-exclusive.
+			</p>
 
-      <h1 class="hero-title">
-        Can&nbsp;I&nbsp;use&nbsp;it?<br />
-        <span class="hero-sub">on iOS · visionOS · macOS</span>
-      </h1>
+			<!-- Stats -->
+			<div class="stats-row">
+				<div class="stat">
+					<span class="stat-num" style="color: var(--text)"
+						>{features.length}</span
+					>
+					<span class="stat-label">components</span>
+				</div>
+				<div class="stat-divider"></div>
+				<div class="stat">
+					<span class="stat-num" style="color: var(--rcp)">{totalRcp}</span>
+					<span class="stat-label">in&nbsp;RCP</span>
+				</div>
+				<div class="stat-divider"></div>
+				<div class="stat">
+					<span class="stat-num" style="color: var(--visionos)">{vosOnly}</span>
+					<span class="stat-label">visionOS-only</span>
+				</div>
+				<div class="stat-divider"></div>
+				<div class="stat">
+					<span class="stat-num" style="color: var(--ios)">{iosOnly}</span>
+					<span class="stat-label">iOS-only</span>
+				</div>
+				<div class="stat-divider"></div>
+				<div class="stat">
+					<span class="stat-num" style="color: var(--macos)">{totalNew26}</span>
+					<span class="stat-label">new&nbsp;in&nbsp;26.0</span>
+				</div>
+			</div>
+		</div>
+	</section>
 
-      <p class="hero-desc">
-        Every public RealityKit component type — which SDK versions expose it,
-        whether Reality Composer Pro surfaces it in the Add Component menu,
-        and what's platform-exclusive.
-      </p>
+	<!-- ── Main layout ──────────────────────────── -->
+	<div class="page-layout">
+		<!-- Sidebar -->
+		<aside class="sidebar">
+			<div class="sidebar-section">
+				<div class="sidebar-label">// filter</div>
+				<nav id="cat-nav" class="cat-nav">
+					<button class="cat-btn active" data-cat="all">
+						<span class="cat-btn-dot" style="background: var(--muted)"></span>
+						<span class="cat-btn-name">all</span>
+						<span class="cat-btn-count">{features.length}</span>
+					</button>
 
-      <!-- Stats -->
-      <div class="stats-row">
-        <div class="stat">
-          <span class="stat-num" style="color: var(--text)">{features.length}</span>
-          <span class="stat-label">components</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" style="color: var(--rcp)">{totalRcp}</span>
-          <span class="stat-label">in&nbsp;RCP</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" style="color: var(--visionos)">{vosOnly}</span>
-          <span class="stat-label">visionOS-only</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" style="color: var(--ios)">{iosOnly}</span>
-          <span class="stat-label">iOS-only</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" style="color: var(--macos)">{totalNew26}</span>
-          <span class="stat-label">new&nbsp;in&nbsp;26.0</span>
-        </div>
-      </div>
+					{
+						countByCat.map((s) => (
+							<button class="cat-btn" data-cat={s.id} style={`--c: ${s.color}`}>
+								<span class="cat-btn-dot" style={`background: ${s.color}`} />
+								<span class="cat-btn-name">{s.name.toLowerCase()}</span>
+								<span class="cat-btn-count">{s.count}</span>
+							</button>
+						))
+					}
+				</nav>
+			</div>
 
-    </div>
-  </section>
+			<div class="sidebar-section sidebar-legend">
+				<div class="sidebar-label">// legend</div>
+				<div class="legend-item">
+					<span class="legend-sym" style="color: var(--ios)">● 13.0</span>
+					<span class="legend-lbl">supported since</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-sym" style="color: var(--subtle)">—</span>
+					<span class="legend-lbl">not supported</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-sym" style="color: var(--rcp)">✓</span>
+					<span class="legend-lbl">in RCP menu</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-new">↑26</span>
+					<span class="legend-lbl">new in 26.0</span>
+				</div>
+			</div>
+		</aside>
 
-  <!-- ── Main layout ──────────────────────────── -->
-  <div class="page-layout">
+		<!-- Grid area -->
+		<div class="grid-area">
+			<!-- Search bar -->
+			<div class="search-wrap">
+				<svg
+					class="search-icon"
+					width="12"
+					height="12"
+					viewBox="0 0 12 12"
+					fill="none"
+					aria-hidden="true"
+				>
+					<circle
+						cx="5.5"
+						cy="5.5"
+						r="3.75"
+						stroke="currentColor"
+						stroke-width="1.25"></circle>
+					<path
+						d="M8.5 8.5L11 11"
+						stroke="currentColor"
+						stroke-width="1.25"
+						stroke-linecap="round"></path>
+				</svg>
+				<input
+					id="search-input"
+					type="search"
+					placeholder="search components…"
+					autocomplete="off"
+					class="search-input"
+					aria-label="Search components"
+				/>
+				<kbd class="search-hint">⌘K</kbd>
+			</div>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+			<!-- Count -->
+			<div class="result-count" id="result-count">
+				showing <span id="count-num">{features.length}</span> of {
+					features.length
+				}
+			</div>
 
-      <div class="sidebar-section">
-        <div class="sidebar-label">// filter</div>
-        <nav id="cat-nav" class="cat-nav">
-          <button class="cat-btn active" data-cat="all">
-            <span class="cat-btn-dot" style="background: var(--muted)"></span>
-            <span class="cat-btn-name">all</span>
-            <span class="cat-btn-count">{features.length}</span>
-          </button>
+			<div id="grid-wrapper">
+				<FeatureGrid features={features} />
+			</div>
 
-          {countByCat.map(s => (
-            <button class="cat-btn" data-cat={s.id} style={`--c: ${s.color}`}>
-              <span class="cat-btn-dot" style={`background: ${s.color}`}></span>
-              <span class="cat-btn-name">{s.name.toLowerCase()}</span>
-              <span class="cat-btn-count">{s.count}</span>
-            </button>
-          ))}
-        </nav>
-      </div>
-
-      <div class="sidebar-section sidebar-legend">
-        <div class="sidebar-label">// legend</div>
-        <div class="legend-item">
-          <span class="legend-sym" style="color: var(--ios)">● 13.0</span>
-          <span class="legend-lbl">supported since</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-sym" style="color: var(--subtle)">—</span>
-          <span class="legend-lbl">not supported</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-sym" style="color: var(--rcp)">✓</span>
-          <span class="legend-lbl">in RCP menu</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-new">↑26</span>
-          <span class="legend-lbl">new in 26.0</span>
-        </div>
-      </div>
-
-    </aside>
-
-    <!-- Grid area -->
-    <div class="grid-area">
-
-      <!-- Search bar -->
-      <div class="search-wrap">
-        <svg class="search-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-          <circle cx="5.5" cy="5.5" r="3.75" stroke="currentColor" stroke-width="1.25"/>
-          <path d="M8.5 8.5L11 11" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
-        </svg>
-        <input
-          id="search-input"
-          type="search"
-          placeholder="search components…"
-          autocomplete="off"
-          class="search-input"
-          aria-label="Search components"
-        />
-        <kbd class="search-hint">⌘K</kbd>
-      </div>
-
-      <!-- Count -->
-      <div class="result-count" id="result-count">
-        showing <span id="count-num">{features.length}</span> of {features.length}
-      </div>
-
-      <div id="grid-wrapper">
-        <FeatureGrid features={features} />
-      </div>
-
-      <p id="empty-msg" class="empty-msg" role="status" aria-live="polite">
-        no components match · <button id="reset-btn" class="reset-btn">clear filter</button>
-      </p>
-
-    </div>
-  </div>
-
+			<p id="empty-msg" class="empty-msg" role="status" aria-live="polite">
+				no components match · <button id="reset-btn" class="reset-btn"
+					>clear filter</button
+				>
+			</p>
+		</div>
+	</div>
 </Base>
 
 <script>
-  const catBtns    = document.querySelectorAll<HTMLButtonElement>('.cat-btn');
-  const rows       = document.querySelectorAll<HTMLAnchorElement>('.grid-row');
-  const search     = document.getElementById('search-input') as HTMLInputElement;
-  const emptyMsg   = document.getElementById('empty-msg') as HTMLParagraphElement;
-  const countNum   = document.getElementById('count-num') as HTMLSpanElement;
-  const resetBtn   = document.getElementById('reset-btn') as HTMLButtonElement;
+	const catBtns = document.querySelectorAll<HTMLButtonElement>(".cat-btn");
+	const rows = document.querySelectorAll<HTMLAnchorElement>(".grid-row");
+	const search = document.getElementById("search-input") as HTMLInputElement;
+	const emptyMsg = document.getElementById("empty-msg") as HTMLParagraphElement;
+	const countNum = document.getElementById("count-num") as HTMLSpanElement;
+	const resetBtn = document.getElementById("reset-btn") as HTMLButtonElement;
 
-  let activeCat  = 'all';
-  let query      = '';
-  const validCats = new Set(['all', ...Array.from(catBtns).map(btn => btn.dataset.cat ?? '').filter(Boolean)]);
+	let activeCat = "all";
+	let query = "";
+	const validCats = new Set([
+		"all",
+		...Array.from(catBtns)
+			.map((btn) => btn.dataset.cat ?? "")
+			.filter(Boolean),
+	]);
 
-  function setActiveCategory(cat: string) {
-    const nextCat = validCats.has(cat) ? cat : 'all';
-    activeCat = nextCat;
-    catBtns.forEach(b => b.classList.toggle('active', (b.dataset.cat ?? '') === nextCat));
-  }
+	function setActiveCategory(cat: string) {
+		const nextCat = validCats.has(cat) ? cat : "all";
+		activeCat = nextCat;
+		catBtns.forEach((b) =>
+			b.classList.toggle("active", (b.dataset.cat ?? "") === nextCat),
+		);
+	}
 
-  function applyFilter() {
-    let visible = 0;
-    rows.forEach(row => {
-      const cat  = row.dataset.subcategory ?? '';
-      const name = row.dataset.name ?? '';
-      const show = (activeCat === 'all' || cat === activeCat) && name.includes(query);
-      row.hidden = !show;
-      if (show) visible++;
-    });
-    emptyMsg.hidden = visible > 0;
-    countNum.textContent = String(visible);
-  }
+	function applyFilter() {
+		let visible = 0;
+		rows.forEach((row) => {
+			const cat = row.dataset.subcategory ?? "";
+			const name = row.dataset.name ?? "";
+			const show =
+				(activeCat === "all" || cat === activeCat) && name.includes(query);
+			row.hidden = !show;
+			if (show) visible++;
+		});
+		emptyMsg.hidden = visible > 0;
+		countNum.textContent = String(visible);
+	}
 
-  // Category buttons
-  catBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      setActiveCategory(btn.dataset.cat ?? 'all');
-      applyFilter();
-    });
-  });
+	// Category buttons
+	catBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			setActiveCategory(btn.dataset.cat ?? "all");
+			applyFilter();
+		});
+	});
 
-  // Search
-  search.addEventListener('input', () => {
-    query = search.value.trim().toLowerCase();
-    applyFilter();
-  });
+	// Search
+	search.addEventListener("input", () => {
+		query = search.value.trim().toLowerCase();
+		applyFilter();
+	});
 
-  // ⌘K focus
-  document.addEventListener('keydown', e => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      search.focus();
-      search.select();
-    }
-  });
+	// ⌘K focus
+	document.addEventListener("keydown", (e) => {
+		if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+			e.preventDefault();
+			search.focus();
+			search.select();
+		}
+	});
 
-  // Reset
-  resetBtn.addEventListener('click', () => {
-    search.value = '';
-    query = '';
-    setActiveCategory('all');
-    applyFilter();
-  });
+	// Reset
+	resetBtn.addEventListener("click", () => {
+		search.value = "";
+		query = "";
+		setActiveCategory("all");
+		applyFilter();
+	});
 
-  // URL-driven initial category, e.g. /?cat=rendering
-  const initialCat = new URLSearchParams(window.location.search).get('cat');
-  if (initialCat) {
-    setActiveCategory(initialCat);
-    applyFilter();
-  }
+	// URL-driven initial category, e.g. /?cat=rendering
+	const initialCat = new URLSearchParams(window.location.search).get("cat");
+	if (initialCat) {
+		setActiveCategory(initialCat);
+		applyFilter();
+	}
 </script>
 
 <style>
-  /* ── Hero ───────────────────────────────────── */
-  .hero {
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(180deg, rgba(0,122,255,0.03) 0%, transparent 100%);
-  }
+	/* ── Hero ───────────────────────────────────── */
+	.hero {
+		border-bottom: 1px solid var(--border);
+		background: linear-gradient(
+			180deg,
+			rgba(0, 122, 255, 0.03) 0%,
+			transparent 100%
+		);
+	}
 
-  .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 2.5rem;
-  }
+	.hero-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 3rem 1.5rem 2.5rem;
+	}
 
-  .hero-kicker {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    letter-spacing: 0.02em;
-  }
+	.hero-kicker {
+		font-size: 0.9rem;
+		color: var(--muted);
+		margin-bottom: 1rem;
+		letter-spacing: 0.02em;
+	}
 
-  .hero-title {
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
+	.hero-title {
+		font-size: clamp(1.75rem, 4vw, 2.75rem);
+		font-weight: 500;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		color: var(--text);
+		margin-bottom: 1rem;
+	}
 
-  .hero-sub {
-    font-size: 0.45em; /* em relative to parent h1, so this is ~16-20px */
-    font-weight: 400;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    display: block;
-    margin-top: 0.35em;
-  }
+	.hero-sub {
+		font-size: 0.45em; /* em relative to parent h1, so this is ~16-20px */
+		font-weight: 400;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+		display: block;
+		margin-top: 0.35em;
+	}
 
-  .hero-desc {
-    font-size: 1.0625rem;
-    color: var(--muted);
-    max-width: 58ch;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
+	.hero-desc {
+		font-size: 1.0625rem;
+		color: var(--muted);
+		max-width: 58ch;
+		line-height: 1.7;
+		margin-bottom: 2rem;
+	}
 
-  /* ── Stats ──────────────────────────────────── */
-  .stats-row {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    flex-wrap: wrap;
-    row-gap: 0.75rem;
-  }
+	/* ── Stats ──────────────────────────────────── */
+	.stats-row {
+		display: flex;
+		align-items: center;
+		gap: 0;
+		flex-wrap: wrap;
+		row-gap: 0.75rem;
+	}
 
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding-right: 1.5rem;
-  }
+	.stat {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		padding-right: 1.5rem;
+	}
 
-  .stat-num {
-    font-size: 1.6923rem;
-    font-weight: 500;
-    letter-spacing: -0.025em;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
+	.stat-num {
+		font-size: 1.6923rem;
+		font-weight: 500;
+		letter-spacing: -0.025em;
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+	}
 
-  .stat-label {
-    font-size: 0.6923rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
+	.stat-label {
+		font-size: 0.6923rem;
+		color: var(--muted);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
 
-  .stat-divider {
-    width: 1px;
-    height: 2rem;
-    background: var(--border);
-    margin-right: 1.5rem;
-    flex-shrink: 0;
-  }
+	.stat-divider {
+		width: 1px;
+		height: 2rem;
+		background: var(--border);
+		margin-right: 1.5rem;
+		flex-shrink: 0;
+	}
 
-  /* ── Page layout ─────────────────────────────── */
-  .page-layout {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem 5rem;
-    display: grid;
-    grid-template-columns: 188px 1fr;
-    gap: 1.75rem;
-    align-items: start;
-  }
+	/* ── Page layout ─────────────────────────────── */
+	.page-layout {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1.5rem 1.5rem 5rem;
+		display: grid;
+		grid-template-columns: 188px 1fr;
+		gap: 1.75rem;
+		align-items: start;
+	}
 
-  /* ── Sidebar ─────────────────────────────────── */
-  .sidebar {
-    position: sticky;
-    top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+	/* ── Sidebar ─────────────────────────────────── */
+	.sidebar {
+		position: sticky;
+		top: 60px;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
 
-  .sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
+	.sidebar-section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
 
-  .sidebar-label {
-    font-size: 0.6923rem;
-    color: var(--muted);
-    margin-bottom: 0.625rem;
-    letter-spacing: 0.04em;
-  }
+	.sidebar-label {
+		font-size: 0.6923rem;
+		color: var(--muted);
+		margin-bottom: 0.625rem;
+		letter-spacing: 0.04em;
+	}
 
-  /* Category nav */
-  .cat-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
+	/* Category nav */
+	.cat-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+	}
 
-  .cat-btn {
-    display: grid;
-    grid-template-columns: 6px 1fr auto;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
-    text-align: left;
-    padding: 5px 8px;
-    border: none;
-    border-radius: 5px;
-    background: transparent;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 0.9375rem;
-    color: var(--muted);
-    transition: background 0.08s, color 0.08s;
-  }
+	.cat-btn {
+		display: grid;
+		grid-template-columns: 6px 1fr auto;
+		align-items: center;
+		gap: 0.5rem;
+		width: 100%;
+		text-align: left;
+		padding: 5px 8px;
+		border: none;
+		border-radius: 5px;
+		background: transparent;
+		cursor: pointer;
+		font-family: var(--font-mono);
+		font-size: 0.9375rem;
+		color: var(--muted);
+		transition:
+			background 0.08s,
+			color 0.08s;
+	}
 
-  .cat-btn:hover {
-    background: var(--surface-up);
-    color: var(--text);
-  }
+	.cat-btn:hover {
+		background: var(--surface-up);
+		color: var(--text);
+	}
 
-  .cat-btn.active {
-    background: var(--surface-up);
-    color: var(--text);
-    border-left: 2px solid var(--c, var(--muted));
-    padding-left: 6px;
-  }
+	.cat-btn.active {
+		background: var(--surface-up);
+		color: var(--text);
+		border-left: 2px solid var(--c, var(--muted));
+		padding-left: 6px;
+	}
 
-  .cat-btn-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+	.cat-btn-dot {
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
 
-  .cat-btn-name {
-    font-size: 0.9rem;
-  }
+	.cat-btn-name {
+		font-size: 0.9rem;
+	}
 
-  .cat-btn-count {
-    font-size: 0.6923rem;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-  }
+	.cat-btn-count {
+		font-size: 0.6923rem;
+		color: var(--muted);
+		font-variant-numeric: tabular-nums;
+	}
 
-  /* Legend */
-  .sidebar-legend {
-    gap: 0.5rem;
-  }
+	/* Legend */
+	.sidebar-legend {
+		gap: 0.5rem;
+	}
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    white-space: nowrap;
-  }
+	.legend-item {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		white-space: nowrap;
+	}
 
-  .legend-sym {
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-variant-numeric: tabular-nums;
-    min-width: 44px; /* fixed width keeps labels left-aligned */
-  }
+	.legend-sym {
+		font-size: 0.875rem;
+		font-weight: 500;
+		font-variant-numeric: tabular-nums;
+		min-width: 44px; /* fixed width keeps labels left-aligned */
+	}
 
-  .legend-new {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--macos);
-    background: rgba(255, 159, 10, 0.1);
-    border: 1px solid rgba(255, 159, 10, 0.2);
-    padding: 2px 5px;
-    border-radius: 3px;
-    min-width: 44px;
-    text-align: center;
-  }
+	.legend-new {
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--macos);
+		background: rgba(255, 159, 10, 0.1);
+		border: 1px solid rgba(255, 159, 10, 0.2);
+		padding: 2px 5px;
+		border-radius: 3px;
+		min-width: 44px;
+		text-align: center;
+	}
 
-  .legend-lbl {
-    font-size: 0.875rem;
-    color: var(--muted);
-  }
+	.legend-lbl {
+		font-size: 0.875rem;
+		color: var(--muted);
+	}
 
-  /* ── Grid area ───────────────────────────────── */
-  .grid-area {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    min-width: 0;
-  }
+	/* ── Grid area ───────────────────────────────── */
+	.grid-area {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		min-width: 0;
+	}
 
-  /* Search */
-  .search-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
+	/* Search */
+	.search-wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
 
-  .search-icon {
-    position: absolute;
-    left: 0.75rem;
-    color: var(--muted);
-    pointer-events: none;
-    flex-shrink: 0;
-  }
+	.search-icon {
+		position: absolute;
+		left: 0.75rem;
+		color: var(--muted);
+		pointer-events: none;
+		flex-shrink: 0;
+	}
 
-  .search-input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.5rem 3.5rem 0.5rem 2.25rem;
-    color: var(--text);
-    font-family: var(--font-mono);
-    font-size: 0.9375rem;
-    outline: none;
-    transition: border-color 0.1s;
-    -webkit-appearance: none;
-    appearance: none;
-  }
+	.search-input {
+		width: 100%;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 0.5rem 3.5rem 0.5rem 2.25rem;
+		color: var(--text);
+		font-family: var(--font-mono);
+		font-size: 0.9375rem;
+		outline: none;
+		transition: border-color 0.1s;
+		-webkit-appearance: none;
+		appearance: none;
+	}
 
-  .search-input:focus {
-    border-color: var(--border-up);
-    background: var(--surface-up);
-  }
+	.search-input:focus {
+		border-color: var(--border-up);
+		background: var(--surface-up);
+	}
 
-  .search-input::placeholder {
-    color: var(--subtle);
-  }
+	.search-input::placeholder {
+		color: var(--subtle);
+	}
 
-  /* Hide Safari's built-in clear button */
-  .search-input::-webkit-search-cancel-button {
-    display: none;
-  }
+	/* Hide Safari's built-in clear button */
+	.search-input::-webkit-search-cancel-button {
+		display: none;
+	}
 
-  .search-hint {
-    position: absolute;
-    right: 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    color: var(--subtle);
-    background: var(--surface-top);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 1px 5px;
-    pointer-events: none;
-  }
+	.search-hint {
+		position: absolute;
+		right: 0.75rem;
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		color: var(--subtle);
+		background: var(--surface-top);
+		border: 1px solid var(--border);
+		border-radius: 3px;
+		padding: 1px 5px;
+		pointer-events: none;
+	}
 
-  /* Result count */
-  .result-count {
-    font-size: 0.875rem;
-    color: var(--muted);
-    padding-left: 2px;
-  }
+	/* Result count */
+	.result-count {
+		font-size: 0.875rem;
+		color: var(--muted);
+		padding-left: 2px;
+	}
 
-  /* Empty state */
-  .empty-msg {
-    display: none;
-    padding: 3rem;
-    text-align: center;
-    font-size: 0.9375rem;
-    color: var(--muted);
-  }
+	/* Empty state */
+	.empty-msg {
+		display: none;
+		padding: 3rem;
+		text-align: center;
+		font-size: 0.9375rem;
+		color: var(--muted);
+	}
 
-  [hidden] { display: none !important; }
+	[hidden] {
+		display: none !important;
+	}
 
-  .empty-msg:not([hidden]) {
-    display: block;
-  }
+	.empty-msg:not([hidden]) {
+		display: block;
+	}
 
-  .reset-btn {
-    background: none;
-    border: none;
-    font-family: var(--font-mono);
-    font-size: inherit;
-    color: var(--ios);
-    cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
-  }
+	.reset-btn {
+		background: none;
+		border: none;
+		font-family: var(--font-mono);
+		font-size: inherit;
+		color: var(--ios);
+		cursor: pointer;
+		text-decoration: underline;
+		padding: 0;
+	}
 
-  .reset-btn:hover {
-    color: var(--text);
-  }
+	.reset-btn:hover {
+		color: var(--text);
+	}
 
-  @media (max-width: 1024px) {
-    .hero-inner {
-      padding: 2.25rem 1.25rem 2rem;
-    }
+	@media (max-width: 1024px) {
+		.hero-inner {
+			padding: 2.25rem 1.25rem 2rem;
+		}
 
-    .hero-desc {
-      max-width: 62ch;
-      font-size: 1rem;
-    }
+		.hero-desc {
+			max-width: 62ch;
+			font-size: 1rem;
+		}
 
-    .page-layout {
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      padding: 1.25rem 1.25rem 4rem;
-    }
+		.page-layout {
+			grid-template-columns: 1fr;
+			gap: 1.25rem;
+			padding: 1.25rem 1.25rem 4rem;
+		}
 
-    .sidebar {
-      position: static;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1rem 1.25rem;
-    }
+		.sidebar {
+			position: static;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			gap: 1rem 1.25rem;
+		}
 
-    .sidebar-section {
-      min-width: 0;
-    }
+		.sidebar-section {
+			min-width: 0;
+		}
 
-    .sidebar-label {
-      margin-bottom: 0.5rem;
-    }
-  }
+		.sidebar-label {
+			margin-bottom: 0.5rem;
+		}
+	}
 
-  /* ── Mobile ──────────────────────────────────── */
-  @media (max-width: 768px) {
+	/* ── Mobile ──────────────────────────────────── */
+	@media (max-width: 768px) {
+		/* Hero */
+		.hero-inner {
+			padding: 1.5rem 1rem 1.25rem;
+		}
 
-    /* Hero */
-    .hero-inner {
-      padding: 1.5rem 1rem 1.25rem;
-    }
+		.hero-desc {
+			font-size: 0.9375rem;
+			line-height: 1.6;
+			margin-bottom: 1.25rem;
+		}
 
-    .hero-desc {
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-    }
+		/* Stats: compact card grid */
+		.stats-row {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.5rem;
+			overflow: visible;
+			padding: 0;
+		}
 
-    /* Stats: compact card grid */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.5rem;
-      overflow: visible;
-      padding: 0;
-    }
+		.stat {
+			border: 1px solid var(--border);
+			border-radius: 6px;
+			background: var(--surface);
+			padding: 0.5rem 0.625rem;
+		}
 
-    .stat {
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--surface);
-      padding: 0.5rem 0.625rem;
-    }
+		.stat:last-child {
+			grid-column: 1 / -1;
+		}
 
-    .stat:last-child {
-      grid-column: 1 / -1;
-    }
+		.stat-divider {
+			display: none;
+		}
 
-    .stat-divider {
-      display: none;
-    }
+		.stat-num {
+			font-size: 1.375rem;
+		}
 
-    .stat-num {
-      font-size: 1.375rem;
-    }
+		.page-layout {
+			padding: 1rem 1rem 4rem;
+			gap: 1rem;
+		}
 
-    .page-layout {
-      padding: 1rem 1rem 4rem;
-      gap: 1rem;
-    }
+		.sidebar {
+			grid-template-columns: 1fr;
+			gap: 0.875rem;
+		}
 
-    .sidebar {
-      grid-template-columns: 1fr;
-      gap: 0.875rem;
-    }
+		/* Category filter: horizontal pill strip */
+		.cat-nav {
+			flex-direction: row;
+			overflow-x: auto;
+			scrollbar-width: none;
+			gap: 0.375rem;
+			padding-bottom: 0.25rem;
+		}
 
-    /* Category filter: horizontal pill strip */
-    .cat-nav {
-      flex-direction: row;
-      overflow-x: auto;
-      scrollbar-width: none;
-      gap: 0.375rem;
-      padding-bottom: 0.25rem;
-    }
+		.cat-nav::-webkit-scrollbar {
+			display: none;
+		}
 
-    .cat-nav::-webkit-scrollbar {
-      display: none;
-    }
+		/* Pills don't stretch in horizontal mode */
+		.cat-btn {
+			flex-shrink: 0;
+			width: auto;
+			min-height: 34px;
+			padding: 5px 10px;
+			grid-template-columns: 6px auto auto;
+		}
 
-    /* Pills don't stretch in horizontal mode */
-    .cat-btn {
-      flex-shrink: 0;
-      width: auto;
-      min-height: 34px;
-      padding: 5px 10px;
-      grid-template-columns: 6px auto auto;
-    }
+		/* Legend: horizontal wrap */
+		.sidebar-legend {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0.5rem 1.25rem;
+		}
 
-    /* Legend: horizontal wrap */
-    .sidebar-legend {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-    }
+		.sidebar-label {
+			width: 100%;
+		}
 
-    .sidebar-label {
-      width: 100%;
-    }
+		.search-hint {
+			display: none;
+		}
 
-    .search-hint {
-      display: none;
-    }
-
-    /* Grid wrapper — scroll is handled inside FeatureGrid (.grid-shell) */
-  }
+		/* Grid wrapper — scroll is handled inside FeatureGrid (.grid-shell) */
+	}
 </style>
