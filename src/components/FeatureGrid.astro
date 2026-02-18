@@ -32,6 +32,7 @@ function withSoftBreaks(name: string): string {
 }
 ---
 
+<div class="grid-scroll">
 <div class="grid-shell" role="table" aria-label="RealityKit component compatibility">
 
   <!-- Column header row -->
@@ -105,14 +106,21 @@ function withSoftBreaks(name: string): string {
   </div>
 
 </div>
+</div>
 
 <style>
-  /* ── Shell ───────────────────────────────────── */
-  .grid-shell {
+  .grid-scroll {
     border: 1px solid var(--border);
     border-radius: 8px;
-    overflow: hidden;
     background: var(--surface);
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  /* ── Shell ───────────────────────────────────── */
+  .grid-shell {
     /* Minimum width keeps columns legible when scrolling horizontally on mobile */
     min-width: 520px;
   }
@@ -130,6 +138,10 @@ function withSoftBreaks(name: string): string {
     background: var(--surface-up);
     border-bottom: 1px solid var(--border);
     padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    box-shadow: 0 1px 0 var(--border), 0 6px 14px rgba(0, 0, 0, 0.18);
   }
 
   .grid-header .col-name {
@@ -336,9 +348,12 @@ function withSoftBreaks(name: string): string {
      * - Name column sticks to left:0 so it never scrolls away
      * - Fixed column widths → predictable total (~414px, ~56px overflow on 390px)
      */
+    .grid-scroll {
+      max-height: 68vh;
+      overflow-y: auto;
+    }
+
     .grid-shell {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       min-width: 0;
       /* Total column widths 360px — fits in 358px content area, no initial scroll */
     }
