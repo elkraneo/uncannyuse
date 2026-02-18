@@ -33,6 +33,33 @@ function withSoftBreaks(name: string): string {
     .replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
     .replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
 }
+
+function parseSinceValue(since?: string): number {
+  if (!since) return Number.POSITIVE_INFINITY;
+  const value = Number.parseFloat(since);
+  return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
+}
+
+const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase()}`;
+const docsUrl = feature.docsUrl ?? defaultDocsUrl;
+
+const timelineRows = platforms
+  .map(p => {
+    const sup = feature.support[p.id as keyof typeof feature.support];
+    return {
+      ...p,
+      status: sup.status,
+      since: sup.since,
+      value: parseSinceValue(sup.since),
+    };
+  })
+  .sort((a, b) => {
+    const aSupported = a.status === 'y' ? 0 : 1;
+    const bSupported = b.status === 'y' ? 0 : 1;
+    if (aSupported !== bSupported) return aSupported - bSupported;
+    if (a.value !== b.value) return a.value - b.value;
+    return a.label.localeCompare(b.label);
+  });
 ---
 
 <Base title={feature.name} description={feature.description}>
@@ -62,25 +89,55 @@ function withSoftBreaks(name: string): string {
       </div>
 
       <h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
+      <div class="detail-links">
+        <a class="doc-chip" href={docsUrl} target="_blank" rel="noopener noreferrer">
+          <span class="doc-icon" aria-hidden="true">doc</span>
+          <span>docs</span>
+        </a>
+      </div>
       <p class="detail-desc">{feature.description}</p>
     </header>
 
     <!-- Support grid -->
     <section class="section">
       <h2 class="section-label">// platform availability</h2>
-      <div class="platform-grid">
-        {platforms.map(p => {
-          const sup = feature.support[p.id as keyof typeof feature.support];
-          return (
-            <SupportBadge
-              status={sup.status}
-              since={sup.since}
-              platformId={p.id}
-              platformLabel={p.label}
-              platformColor={p.color}
-            />
-          );
-        })}
+      <div class="view-switch" role="tablist" aria-label="Availability view">
+        <button type="button" class="view-btn is-active" role="tab" aria-selected="true" data-view-btn="aligned">
+          current aligned
+        </button>
+        <button type="button" class="view-btn" role="tab" aria-selected="false" data-view-btn="timeline">
+          timeline
+        </button>
+      </div>
+
+      <div data-view-panel="aligned">
+        <div class="platform-grid">
+          {platforms.map(p => {
+            const sup = feature.support[p.id as keyof typeof feature.support];
+            return (
+              <SupportBadge
+                status={sup.status}
+                since={sup.since}
+                platformId={p.id}
+                platformLabel={p.label}
+                platformColor={p.color}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div data-view-panel="timeline" hidden>
+        <ul class="timeline-list">
+          {timelineRows.map(row => (
+            <li class="timeline-row">
+              <span class="timeline-platform" style={`color: ${row.color}`}>{row.label}</span>
+              <span class="timeline-value">
+                {row.status === 'y' && row.since ? `available since ${row.since}` : 'not supported'}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {supportedCount < 3 && (
@@ -144,6 +201,28 @@ function withSoftBreaks(name: string): string {
 
   </article>
 </Base>
+
+<script>
+  const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view-btn]');
+  const viewPanels = document.querySelectorAll<HTMLElement>('[data-view-panel]');
+
+  function setView(view: string) {
+    viewButtons.forEach(button => {
+      const selected = button.dataset.viewBtn === view;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    viewPanels.forEach(panel => {
+      panel.hidden = panel.dataset.viewPanel !== view;
+    });
+  }
+
+  viewButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      setView(button.dataset.viewBtn ?? 'aligned');
+    });
+  });
+</script>
 
 <style>
   .detail {
@@ -251,6 +330,34 @@ function withSoftBreaks(name: string): string {
     max-width: 60ch;
   }
 
+  .detail-links {
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #CB3C27;
+    text-decoration: none;
+    border: 1px solid color-mix(in srgb, #CB3C27 28%, transparent);
+    background: color-mix(in srgb, #CB3C27 8%, transparent);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .doc-chip:hover {
+    color: #A6301E;
+    background: color-mix(in srgb, #CB3C27 15%, transparent);
+  }
+
+  .doc-icon {
+    line-height: 1;
+  }
+
   /* Section */
   .section {
     margin-bottom: 2rem;
@@ -287,6 +394,70 @@ function withSoftBreaks(name: string): string {
     margin-top: 0.875rem;
     font-size: 0.9375rem;
     color: var(--macos);
+  }
+
+  .view-switch {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.875rem;
+  }
+
+  .view-btn {
+    border: none;
+    background: var(--surface-up);
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.875rem;
+    padding: 0.42rem 0.7rem;
+    cursor: pointer;
+  }
+
+  .view-btn + .view-btn {
+    border-left: 1px solid var(--border);
+  }
+
+  .view-btn.is-active {
+    color: var(--text);
+    background: var(--surface);
+  }
+
+  .timeline-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 0.75rem 0.85rem;
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: minmax(132px, 180px) 1fr;
+    gap: 0.85rem;
+    align-items: center;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .timeline-platform {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .timeline-value {
+    color: var(--text);
+  }
+
+  @media (max-width: 560px) {
+    .timeline-row {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
   }
 
   /* RCP card */

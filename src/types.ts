@@ -8,6 +8,7 @@ export interface Feature {
   id: string;
   name: string;
   description: string;
+  docsUrl?: string;
   subcategory: string;
   era: string;
   rcp: boolean;
