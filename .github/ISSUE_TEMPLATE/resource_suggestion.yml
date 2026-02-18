@@ -4,6 +4,19 @@ title: "[resource] <component-id>: <short title>"
 labels:
   - enhancement
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource.
+
+        Before submitting:
+        - confirm the link is directly relevant to the selected component
+        - prefer primary sources (Apple docs, official samples, Apple forums)
+        - avoid duplicates of links already listed on the component page
+
+        If accepted, this will be added to:
+        `src/data/resources/realitykit-resources.json`
+
   - type: input
     id: component_id
     attributes:
