@@ -309,7 +309,7 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
     margin: 0 auto;
     padding: 1.5rem 1.5rem 5rem;
     display: grid;
-    grid-template-columns: 148px 1fr;
+    grid-template-columns: 188px 1fr;
     gap: 1.75rem;
     align-items: start;
   }
@@ -528,6 +528,38 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
     color: var(--text);
   }
 
+  @media (max-width: 1024px) {
+    .hero-inner {
+      padding: 2.25rem 1.25rem 2rem;
+    }
+
+    .hero-desc {
+      max-width: 62ch;
+      font-size: 1rem;
+    }
+
+    .page-layout {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 1.25rem 1.25rem 4rem;
+    }
+
+    .sidebar {
+      position: static;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem 1.25rem;
+    }
+
+    .sidebar-section {
+      min-width: 0;
+    }
+
+    .sidebar-label {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   /* ── Mobile ──────────────────────────────────── */
   @media (max-width: 768px) {
 
@@ -536,30 +568,47 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
       padding: 1.5rem 1rem 1.25rem;
     }
 
-    /* Stats: single scrollable row, no wrap — extra right padding shows last stat fully */
-    .stats-row {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-      gap: 0;
-      padding-bottom: 0.25rem;
-      padding-right: 1rem;
+    .hero-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
     }
 
-    .stats-row::-webkit-scrollbar {
+    /* Stats: compact card grid */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      overflow: visible;
+      padding: 0;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      padding: 0.5rem 0.625rem;
+    }
+
+    .stat:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .stat-divider {
       display: none;
     }
 
-    /* Collapse two-column layout to single column */
+    .stat-num {
+      font-size: 1.375rem;
+    }
+
     .page-layout {
-      grid-template-columns: 1fr;
       padding: 1rem 1rem 4rem;
       gap: 1rem;
     }
 
-    /* Sidebar: un-stick, compress */
     .sidebar {
-      position: static;
+      grid-template-columns: 1fr;
       gap: 0.875rem;
     }
 
@@ -580,7 +629,8 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
     .cat-btn {
       flex-shrink: 0;
       width: auto;
-      padding: 4px 10px;
+      min-height: 34px;
+      padding: 5px 10px;
       grid-template-columns: 6px auto auto;
     }
 
@@ -593,6 +643,10 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
 
     .sidebar-label {
       width: 100%;
+    }
+
+    .search-hint {
+      display: none;
     }
 
     /* Grid wrapper — scroll is handled inside FeatureGrid (.grid-shell) */

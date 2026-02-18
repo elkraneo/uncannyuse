@@ -105,7 +105,7 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    height: 44px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -206,11 +206,41 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
     color: var(--muted);
   }
 
+  @media (max-width: 900px) {
+    .header-inner {
+      padding: 0.6rem 1rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      min-height: 0;
+    }
+
+    .header-spacer {
+      display: none;
+    }
+
+    .gh-link {
+      margin-left: auto;
+    }
+
+    .site-nav {
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+      padding-bottom: 0.2rem;
+    }
+
+    .site-nav::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   /* ── Mobile ──────────────────────────────────── */
   @media (max-width: 640px) {
     .header-inner {
       padding: 0 1rem;
-      gap: 1rem;
+      gap: 0.625rem;
     }
 
     /* Hide "coming soon" nav items — ARKit· Metal· */
@@ -221,6 +251,10 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
     /* Hide "github" text label; keep SVG icon */
     .gh-link span:last-child {
       display: none;
+    }
+
+    .site-nav {
+      gap: 1rem;
     }
 
     .site-footer {

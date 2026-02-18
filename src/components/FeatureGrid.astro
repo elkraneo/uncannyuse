@@ -108,7 +108,7 @@ const catColor: Record<string, string> = {
     overflow: hidden;
     background: var(--surface);
     /* Minimum width keeps columns legible when scrolling horizontally on mobile */
-    min-width: 480px;
+    min-width: 520px;
   }
 
   /* ── Column template ─────────────────────────── */
@@ -311,6 +311,17 @@ const catColor: Record<string, string> = {
     font-weight: 300;
   }
 
+  @media (max-width: 1024px) {
+    .grid-header,
+    .grid-row {
+      grid-template-columns: 1fr 98px 98px 98px 60px;
+    }
+
+    .feature-name {
+      font-size: 0.9375rem;
+    }
+  }
+
   /* ── Mobile ──────────────────────────────────── */
   @media (max-width: 768px) {
     /*
@@ -328,9 +339,7 @@ const catColor: Record<string, string> = {
 
     .grid-header,
     .grid-row {
-      /* name: 118px  ios: 68px  visionos: 68px  macos: 68px  rcp: 38px = 360px
-         fits 390px phone (2×16px page padding = 358px content) with no initial overflow */
-      grid-template-columns: 118px 68px 68px 68px 38px;
+      grid-template-columns: 146px 72px 72px 72px 42px;
     }
 
     /* Name column sticks so component labels are always visible */
@@ -354,15 +363,22 @@ const catColor: Record<string, string> = {
 
     /* Tighter text for compact cells */
     .feature-name {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
     }
 
     .ver {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
     }
 
     .col-platform {
       padding: 0.5rem 0.25rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .grid-header,
+    .grid-row {
+      grid-template-columns: 132px 68px 68px 68px 40px;
     }
   }
 </style>
