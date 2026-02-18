@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import SupportBadge from "../../components/SupportBadge.astro";
 import rkData from "../../data/features/realitykit-components.json";
+import docsMapData from "../../data/mappings/realitykit-docs-url-map.json";
 import type { Feature } from "../../types";
 
 export function getStaticPaths() {
@@ -27,6 +28,10 @@ const catColor: Record<string, string> = {
 const color = catColor[feature.subcategory] ?? '#86868B';
 
 const supportedCount = Object.values(feature.support).filter(s => s.status === 'y').length;
+const docsMapById = new Map(
+  (docsMapData as Array<{ id: string; summary?: string | null; title?: string | null }>)
+    .map((row) => [row.id, row])
+);
 
 function withSoftBreaks(name: string): string {
   return name
@@ -40,8 +45,17 @@ function parseSinceValue(since?: string): number {
   return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
 }
 
-const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase()}`;
+const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase().replace(/\./g, "/")}`;
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
+const officialSummary = docsMapById.get(feature.id)?.summary ?? null;
+
+function normalizedText(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+const showOfficialSummary = Boolean(
+  officialSummary && normalizedText(officialSummary) !== normalizedText(feature.description)
+);
 
 const timelineRows = platforms
   .map(p => {
@@ -91,11 +105,16 @@ const timelineRows = platforms
       <h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
       <div class="detail-links">
         <a class="doc-chip" href={docsUrl} target="_blank" rel="noopener noreferrer">
-          <span class="doc-icon" aria-hidden="true">doc</span>
-          <span>docs</span>
+          <span>official docs</span>
+          <span class="doc-external" aria-hidden="true">↗</span>
         </a>
       </div>
       <p class="detail-desc">{feature.description}</p>
+      {showOfficialSummary && (
+        <p class="official-summary">
+          <span class="official-summary-label">From Apple docs:</span> {officialSummary}
+        </p>
+      )}
     </header>
 
     <!-- Support grid -->
@@ -330,6 +349,21 @@ const timelineRows = platforms
     max-width: 60ch;
   }
 
+  .official-summary {
+    margin-top: 0.65rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--muted);
+    border-left: 2px solid color-mix(in srgb, #CB3C27 40%, transparent);
+    padding-left: 0.7rem;
+    max-width: 62ch;
+  }
+
+  .official-summary-label {
+    color: #CB3C27;
+    font-weight: 600;
+  }
+
   .detail-links {
     margin-bottom: 0.75rem;
   }
@@ -354,8 +388,10 @@ const timelineRows = platforms
     background: color-mix(in srgb, #CB3C27 15%, transparent);
   }
 
-  .doc-icon {
+  .doc-external {
+    font-size: 0.8em;
     line-height: 1;
+    opacity: 0.85;
   }
 
   /* Section */
