@@ -30,74 +30,85 @@ function withSoftBreaks(name: string): string {
     .replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
     .replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
 }
+
+function rowAriaLabel(f: typeof features[number]): string {
+  const parts: string[] = [f.name, f.subcategory];
+  const pMap: [string, string][] = [['ios','iOS'],['visionos','visionOS'],['macos','macOS']];
+  for (const [id, label] of pMap) {
+    const sup = f.support[id as keyof typeof f.support];
+    parts.push(sup.status === 'y' ? `${label} ${sup.since ?? 'supported'}` : `${label} not supported`);
+  }
+  parts.push(f.rcp ? 'in Reality Composer Pro' : 'not in Reality Composer Pro');
+  return parts.join(', ');
+}
 ---
 
 <div class="grid-scroll">
-<div class="grid-shell" role="table" aria-label="RealityKit component compatibility">
+<div class="grid-shell" aria-label="RealityKit component compatibility">
 
   <!-- Column header row -->
-  <div class="grid-header" role="row">
-    <div class="col-name" role="columnheader">
+  <div class="grid-header" aria-hidden="true">
+    <div class="col-name">
       <span class="header-label">component</span>
     </div>
     {platforms.map(p => (
-      <div class="col-platform" role="columnheader" style={`--pcol: ${p.color};`}>
-        <span class="platform-header-label" style={`color: ${p.color}`}>{p.label}</span>
+      <div class="col-platform" style={`--pcol: ${p.color};`}>
+        <span class="platform-header-label">{p.label}</span>
       </div>
     ))}
-    <div class="col-rcp" role="columnheader">
+    <div class="col-rcp">
       <span class="rcp-header-label">RCP</span>
     </div>
   </div>
 
   <!-- Feature rows -->
-  <div class="grid-body" role="rowgroup">
+  <div class="grid-body">
     {features.map((f, i) => {
       const color = catColor[f.subcategory] ?? '#86868B';
       return (
         <a
           href={`/features/${f.id}`}
           class="grid-row"
-          role="row"
+          aria-label={rowAriaLabel(f)}
           data-subcategory={f.subcategory}
           data-name={f.name.toLowerCase()}
           style={`--cat-color: ${color}; --row-i: ${i};`}
         >
           <!-- Name + category -->
-          <div class="col-name" role="cell">
+          <div class="col-name" aria-hidden="true">
             <div class="name-wrap">
               <span class="feature-name" title={f.name}>{withSoftBreaks(f.name)}</span>
               <span class="cat-label" style={`color: ${color}`}>{f.subcategory}</span>
             </div>
             {f.era === '26.0' && (
-              <span class="new-badge" aria-label="New in 26.0">↑26</span>
+              <span class="new-badge">↑26</span>
             )}
           </div>
 
-          <!-- Platform support cells -->
+          <!-- Platform support cells (visual only — info in aria-label) -->
           {platforms.map(p => {
             const sup = f.support[p.id as keyof typeof f.support];
             const yes = sup.status === 'y';
             return (
-              <div class="col-platform" role="cell">
+              <div class="col-platform" aria-hidden="true">
                 {yes ? (
                   <span class="support-yes">
                     <span class="dot" style={`color: ${p.color}`}>●</span>
                     <span class="ver" style={`color: ${p.color}`}>{sup.since ?? '✓'}</span>
                   </span>
                 ) : (
-                  <span class="support-no" aria-label="not supported">—</span>
+                  <span class="support-no">—</span>
                 )}
               </div>
             );
           })}
 
           <!-- RCP -->
-          <div class="col-rcp" role="cell">
+          <div class="col-rcp" aria-hidden="true">
             {f.rcp ? (
-              <span class="rcp-yes" aria-label="available in Reality Composer Pro">✓</span>
+              <span class="rcp-yes">✓</span>
             ) : (
-              <span class="rcp-no" aria-hidden="true">—</span>
+              <span class="rcp-no">—</span>
             )}
           </div>
         </a>
@@ -186,6 +197,13 @@ function withSoftBreaks(name: string): string {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: var(--pcol);
+  }
+
+  @media (prefers-color-scheme: light) {
+    .platform-header-label {
+      color: color-mix(in srgb, var(--pcol), black 50%);
+    }
   }
 
   .rcp-header-label {

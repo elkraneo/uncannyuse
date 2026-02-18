@@ -77,6 +77,13 @@ html {
     --text:        #1D1D1F;
     --muted:       #48484A;
     --subtle:      #AEAEB2;
+
+    /* Platform/accent colors darkened for WCAG AA on light backgrounds.
+       All pass 4.5:1 on --surface-up (#EBEBED), the hardest case. */
+    --ios:         #0055CC;
+    --visionos:    #7B2FAD;
+    --macos:       #8A5100;
+    --rcp:         #166A2F;
   }
 
   /* Lighter dot texture for white background */
