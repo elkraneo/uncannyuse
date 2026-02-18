@@ -73,6 +73,9 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
         <span class="footer-note">
           macOS versions inferred from SDK era — verify against Apple documentation
         </span>
+        <span class="footer-credit">
+          made with ♥ in Berlin by <a href="https://elkraneo.com" target="_blank" rel="noopener noreferrer" class="footer-credit-link">elkraneo</a>
+        </span>
       </div>
     </footer>
 
@@ -81,7 +84,7 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
     <script is:inline>
       kofiWidgetOverlay.draw('elkraneo', {
         'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.text': 'Support',
         'floating-chat.donateButton.background-color': '#ff38b8',
         'floating-chat.donateButton.text-color': '#fff'
       });
@@ -204,6 +207,24 @@ const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
 
   .footer-source {
     color: var(--muted);
+  }
+
+  .footer-credit {
+    font-size: 0.875rem;
+    color: var(--subtle);
+    margin-top: 0.5rem;
+  }
+
+  .footer-credit-link {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-up);
+    transition: color 0.1s, border-color 0.1s;
+  }
+
+  .footer-credit-link:hover {
+    color: var(--text);
+    border-color: var(--muted);
   }
 
   @media (max-width: 900px) {
