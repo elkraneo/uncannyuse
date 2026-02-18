@@ -1,0 +1,381 @@
+---
+import Base from "../../layouts/Base.astro";
+import SupportBadge from "../../components/SupportBadge.astro";
+import rkData from "../../data/features/realitykit-components.json";
+import type { Feature } from "../../types";
+
+export function getStaticPaths() {
+  return (rkData.features as Feature[]).map(f => ({
+    params: { slug: f.id },
+    props: { feature: f },
+  }));
+}
+
+const { feature } = Astro.props as { feature: Feature };
+
+const platforms = [
+  { id: 'ios',      label: 'iOS / iPadOS', color: '#007AFF' },
+  { id: 'visionos', label: 'visionOS',     color: '#AF52DE' },
+  { id: 'macos',    label: 'macOS',        color: '#FF9F0A' },
+];
+
+const catColor: Record<string, string> = {
+  rendering: '#409CFF', lighting: '#FFB340', audio: '#30D158',
+  physics: '#FF453A', spatial: '#BF5AF2', interaction: '#FF6B2B',
+  camera: '#5AC8FA', animation: '#7D7AFF', media: '#FF375F',
+};
+const color = catColor[feature.subcategory] ?? '#86868B';
+
+const supportedCount = Object.values(feature.support).filter(s => s.status === 'y').length;
+---
+
+<Base title={feature.name} description={feature.description}>
+  <article class="detail">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/" class="bc-link">realitykit</a>
+      <span class="bc-sep">/</span>
+      <span class="bc-cat" style={`color: ${color}`}>{feature.subcategory}</span>
+      <span class="bc-sep">/</span>
+      <span class="bc-current">{feature.name}</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="detail-header">
+      <div class="header-meta">
+        <span class="cat-tag" style={`color: ${color}; border-color: ${color}33`}>
+          {feature.subcategory}
+        </span>
+        <span class="era-tag">
+          {feature.era === '26.0' ? '↑ new in 26.0' : feature.era}
+        </span>
+        {feature.rcp && (
+          <span class="rcp-tag">✓ RCP</span>
+        )}
+      </div>
+
+      <h1 class="detail-title">{feature.name}</h1>
+      <p class="detail-desc">{feature.description}</p>
+    </header>
+
+    <!-- Support grid -->
+    <section class="section">
+      <h2 class="section-label">// platform availability</h2>
+      <div class="platform-grid">
+        {platforms.map(p => {
+          const sup = feature.support[p.id as keyof typeof feature.support];
+          return (
+            <SupportBadge
+              status={sup.status}
+              since={sup.since}
+              platformId={p.id}
+              platformLabel={p.label}
+              platformColor={p.color}
+            />
+          );
+        })}
+      </div>
+
+      {supportedCount < 3 && (
+        <p class="restrict-note">
+          {supportedCount === 0
+            ? '⚠ Not available on any tracked platform'
+            : supportedCount === 1
+            ? '⚠ Platform-exclusive component'
+            : '⚠ Not available on all platforms'}
+        </p>
+      )}
+    </section>
+
+    <!-- RCP section -->
+    <section class="section">
+      <h2 class="section-label">// reality composer pro</h2>
+      <div class="rcp-card" class:list={[feature.rcp ? 'rcp-yes' : 'rcp-no']}>
+        <div class="rcp-status">
+          {feature.rcp ? (
+            <span class="rcp-indicator yes">✓</span>
+          ) : (
+            <span class="rcp-indicator no">○</span>
+          )}
+          <span class="rcp-title">Add Component menu</span>
+        </div>
+        <p class="rcp-body">
+          {feature.rcp
+            ? 'Exposed in the RCP Add Component picker. Editable in the entity inspector without writing code.'
+            : 'Not listed in the Add Component menu. Must be attached programmatically at runtime.'}
+        </p>
+        {!feature.rcp && (
+          <pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
+        )}
+      </div>
+    </section>
+
+    <!-- Notes -->
+    {feature.notes && feature.notes.length > 0 && (
+      <section class="section">
+        <h2 class="section-label">// notes</h2>
+        <ul class="notes-list">
+          {feature.notes.map(note => (
+            <li class="note-item">
+              <span class="note-bullet">→</span>
+              <span>{note}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Footer nav -->
+    <div class="detail-footer">
+      <a href="/" class="back-link">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        all components
+      </a>
+    </div>
+
+  </article>
+</Base>
+
+<style>
+  .detail {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .bc-link {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .bc-link:hover {
+    color: var(--text);
+  }
+
+  .bc-sep {
+    color: var(--subtle);
+  }
+
+  .bc-cat {
+    text-transform: lowercase;
+  }
+
+  .bc-current {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Header */
+  .detail-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cat-tag {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .era-tag {
+    font-size: 0.875rem;
+    color: var(--muted);
+    background: var(--surface-up);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .rcp-tag {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--rcp);
+    background: rgba(48, 209, 88, 0.08);
+    border: 1px solid rgba(48, 209, 88, 0.2);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .detail-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 0.875rem;
+  }
+
+  .detail-desc {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 60ch;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  /* Platform grid */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 560px) {
+    .platform-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .restrict-note {
+    margin-top: 0.875rem;
+    font-size: 0.9375rem;
+    color: var(--macos);
+  }
+
+  /* RCP card */
+  .rcp-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.125rem 1.25rem;
+    background: var(--surface);
+  }
+
+  .rcp-card.rcp-yes {
+    border-color: rgba(48, 209, 88, 0.2);
+    background: rgba(48, 209, 88, 0.04);
+  }
+
+  .rcp-status {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .rcp-indicator {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .rcp-indicator.yes {
+    color: var(--rcp);
+  }
+
+  .rcp-indicator.no {
+    color: var(--subtle);
+  }
+
+  .rcp-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .rcp-body {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 52ch;
+  }
+
+  .code-snippet {
+    margin-top: 0.875rem;
+    background: var(--surface-up);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.625rem 0.875rem;
+    overflow-x: auto;
+  }
+
+  .code-snippet code {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  /* Notes */
+  .notes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .note-item {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .note-bullet {
+    color: var(--subtle);
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    margin-top: 0.1em;
+  }
+
+  /* Footer nav */
+  .detail-footer {
+    margin-top: 2.5rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+</style>

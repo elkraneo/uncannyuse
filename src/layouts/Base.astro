@@ -1,0 +1,203 @@
+---
+import "../styles/global.css";
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "uncannyuse",
+  description = "Can I use it on Apple platforms? A compatibility reference for RealityKit, ARKit, Metal, and hardware-gated features.",
+} = Astro.props;
+const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="header-inner">
+
+        <!-- Wordmark -->
+        <a href="/" class="wordmark" aria-label="uncannyuse home">
+          <span class="wordmark-text">uncannyuse</span><span class="cursor" aria-hidden="true">_</span>
+        </a>
+
+        <!-- Nav -->
+        <nav class="site-nav" aria-label="Feature categories">
+          <a href="/" class="nav-link nav-active">RealityKit</a>
+          <span class="nav-soon">ARKit</span>
+          <span class="nav-soon">Metal</span>
+        </nav>
+
+        <div class="header-spacer"></div>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="gh-link"
+          aria-label="GitHub repository"
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          <span>github</span>
+        </a>
+
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-source">
+          // source: Xcode 26.3 RC · RealityFoundation.swiftinterface · RCP framework binaries
+        </span>
+        <span class="footer-note">
+          macOS versions inferred from SDK era — verify against Apple documentation
+        </span>
+      </div>
+    </footer>
+
+    <!-- Ko-fi floating support widget -->
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" is:inline></script>
+    <script is:inline>
+      kofiWidgetOverlay.draw('elkraneo', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#ff38b8',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(5, 5, 7, 0.88);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .wordmark {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+  }
+
+  .wordmark-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .cursor {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ios);
+    animation: blink 1.1s step-end infinite;
+    margin-left: 1px;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.1s;
+    padding-bottom: 2px;
+  }
+
+  .nav-link:hover,
+  .nav-active {
+    color: var(--text);
+    border-bottom: 1px solid var(--border-up);
+  }
+
+  .nav-soon {
+    font-size: 0.9375rem;
+    color: var(--subtle);
+    cursor: default;
+  }
+
+  .nav-soon::after {
+    content: '·';
+    margin-left: 0.25rem;
+    color: var(--subtle);
+  }
+
+  .header-spacer {
+    flex: 1;
+  }
+
+  .gh-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+
+  .gh-link:hover {
+    color: var(--text);
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .footer-source,
+  .footer-note {
+    font-size: 0.875rem;
+    color: var(--subtle);
+  }
+
+  .footer-source {
+    color: var(--muted);
+  }
+</style>

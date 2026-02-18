@@ -1,0 +1,115 @@
+---
+/**
+ * SupportBadge — used on the feature detail page (not in the grid).
+ * Shows a large platform card with status.
+ */
+export interface Props {
+  status: 'y' | 'n' | 'p' | 'h';
+  since?: string;
+  platformId: string;
+  platformLabel: string;
+  platformColor: string;
+}
+const { status, since, platformId, platformLabel, platformColor } = Astro.props;
+
+const supported = status === 'y';
+const partial   = status === 'p';
+const hardware  = status === 'h';
+---
+
+<div class:list={['platform-card', { supported, unsupported: !supported && !partial && !hardware, partial, hardware }]}>
+  <div class="card-platform" style={`color: ${supported || partial || hardware ? platformColor : 'var(--muted)'}`}>
+    {platformLabel}
+  </div>
+
+  <div class="card-status">
+    {supported && (
+      <span class="status-dot" style={`color: ${platformColor}`}>●</span>
+    )}
+    {!supported && !partial && !hardware && (
+      <span class="status-dot-no">○</span>
+    )}
+    {partial && (
+      <span class="status-dot" style={`color: ${platformColor}`}>◐</span>
+    )}
+    {hardware && (
+      <span class="status-dot" style={`color: ${platformColor}`}>◈</span>
+    )}
+
+    <span class="status-version" style={supported || partial ? `color: ${platformColor}` : 'color: var(--subtle)'}>
+      {supported && since ? since : (supported ? '✓' : '—')}
+    </span>
+  </div>
+
+  <div class="card-label">
+    {supported && since
+      ? `since ${platformId === 'macos' ? 'macOS' : platformId === 'visionos' ? 'visionOS' : 'iOS'} ${since}`
+      : supported
+      ? 'supported'
+      : partial
+      ? 'partial'
+      : hardware
+      ? 'hardware gated'
+      : 'not supported'}
+  </div>
+</div>
+
+<style>
+  .platform-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.125rem 1.25rem;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.15s;
+  }
+
+  .supported {
+    border-color: var(--border-up);
+    background: var(--surface-up);
+  }
+
+  .unsupported {
+    opacity: 0.5;
+  }
+
+  .card-platform {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .card-status {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .status-dot {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .status-dot-no {
+    font-size: 0.9rem;
+    line-height: 1;
+    color: var(--subtle);
+  }
+
+  .status-version {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+
+  .card-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.125rem;
+  }
+</style>

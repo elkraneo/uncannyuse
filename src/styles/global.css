@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  /* SF Mono ships with macOS 10.12+ and is available via ui-monospace on Apple platforms.
+     Non-Apple fallbacks: Cascadia Code (Windows), Menlo, Consolas. */
+  --font-mono: 'SF Mono', 'SFMono-Regular', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+  --font-sans: 'SF Mono', 'SFMono-Regular', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+  /* Surface scale — true black to raised */
+  --bg:          #050507;
+  --surface:     #0B0B10;
+  --surface-up:  #111118;
+  --surface-top: #18181F;
+  --surface-hi:  #202028;
+
+  /* Borders — hairlines */
+  --border:      #1A1A26;
+  --border-up:   #252532;
+
+  /* Text — contrast ratios vs #050507:
+     --text:   ~16:1  (AAA)
+     --muted:  ~6:1   (AA, passes for all sizes)
+     --subtle: ~2.5:1 (decorative/non-text use only) */
+  --text:        #E8E8F2;
+  --muted:       #8E8E9E;
+  --subtle:      #4A4A62;
+
+  /* Platform colors */
+  --ios:         #007AFF;
+  --visionos:    #AF52DE;
+  --macos:       #FF9F0A;
+  --rcp:         #30D158;
+
+  /* Category colors as CSS vars */
+  --cat-rendering:    #409CFF;
+  --cat-lighting:     #FFB340;
+  --cat-audio:        #30D158;
+  --cat-physics:      #FF453A;
+  --cat-spatial:      #BF5AF2;
+  --cat-interaction:  #FF6B2B;
+  --cat-camera:       #5AC8FA;
+  --cat-animation:    #7D7AFF;
+  --cat-media:        #FF375F;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Base ───────────────────────────────────────── */
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  /* 16px browser default.
+     Fira Code reads ~1-2px harder than proportional fonts at the same size,
+     so component-level text should be 16px minimum, not 14px. */
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: normal;
+}
+
+/* ─── Light mode ─────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:          #F5F5F7;
+    --surface:     #FFFFFF;
+    --surface-up:  #EBEBED;
+    --surface-top: #E0E0E4;
+    --surface-hi:  #D4D4D8;
+    --border:      #C8C8CC;
+    --border-up:   #B6B6BC;
+    --text:        #1D1D1F;
+    --muted:       #48484A;
+    --subtle:      #AEAEB2;
+  }
+
+  /* Lighter dot texture for white background */
+  body::after {
+    background-image: radial-gradient(circle, rgba(0, 0, 20, 0.07) 1px, transparent 1px);
+  }
+}
+
+body {
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* Dot-grid texture — subtle graph-paper feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(160, 160, 220, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Typography helpers ─────────────────────────── */
+.label {
+  font-size: 0.6875rem; /* 11px — minimum for uppercase labels */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ─── Category dot colors ────────────────────────── */
+.cat-dot-rendering   { background: var(--cat-rendering);   }
+.cat-dot-lighting    { background: var(--cat-lighting);    }
+.cat-dot-audio       { background: var(--cat-audio);       }
+.cat-dot-physics     { background: var(--cat-physics);     }
+.cat-dot-spatial     { background: var(--cat-spatial);     }
+.cat-dot-interaction { background: var(--cat-interaction); }
+.cat-dot-camera      { background: var(--cat-camera);      }
+.cat-dot-animation   { background: var(--cat-animation);   }
+.cat-dot-media       { background: var(--cat-media);       }
+
+/* ─── Category text colors ───────────────────────── */
+.cat-text-rendering   { color: var(--cat-rendering);   }
+.cat-text-lighting    { color: var(--cat-lighting);    }
+.cat-text-audio       { color: var(--cat-audio);       }
+.cat-text-physics     { color: var(--cat-physics);     }
+.cat-text-spatial     { color: var(--cat-spatial);     }
+.cat-text-interaction { color: var(--cat-interaction); }
+.cat-text-camera      { color: var(--cat-camera);      }
+.cat-text-animation   { color: var(--cat-animation);   }
+.cat-text-media       { color: var(--cat-media);       }
+
+/* ─── Animations ─────────────────────────────────── */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

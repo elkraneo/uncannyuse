@@ -1,0 +1,29 @@
+{
+  "platforms": [
+    {
+      "id": "ios",
+      "name": "iOS / iPadOS",
+      "shortName": "iOS",
+      "color": "#007AFF",
+      "versions": ["13", "14", "15", "16", "17", "18", "26"],
+      "latestVersion": "26"
+    },
+    {
+      "id": "visionos",
+      "name": "visionOS",
+      "shortName": "visionOS",
+      "color": "#AF52DE",
+      "versions": ["1", "2", "26"],
+      "latestVersion": "26"
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "shortName": "macOS",
+      "color": "#FF9F0A",
+      "versions": ["12", "13", "14", "15", "26"],
+      "latestVersion": "26",
+      "note": "macOS versions inferred from SDK era — verify against your deployment target"
+    }
+  ]
+}

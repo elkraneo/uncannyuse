@@ -1,0 +1,22 @@
+{
+  "categories": [
+    {
+      "id": "realitykit-components",
+      "name": "RealityKit Components",
+      "shortName": "Components",
+      "description": "Public Component types in the RealityFoundation framework, verified against Xcode 26.3 RC",
+      "icon": "cube",
+      "subcategories": [
+        { "id": "rendering",    "name": "Rendering",    "color": "#007AFF" },
+        { "id": "lighting",     "name": "Lighting",     "color": "#FF9F0A" },
+        { "id": "audio",        "name": "Audio",        "color": "#34C759" },
+        { "id": "physics",      "name": "Physics",      "color": "#FF3B30" },
+        { "id": "spatial",      "name": "Spatial",      "color": "#AF52DE" },
+        { "id": "interaction",  "name": "Interaction",  "color": "#FF6B2B" },
+        { "id": "camera",       "name": "Camera",       "color": "#5AC8FA" },
+        { "id": "animation",    "name": "Animation",    "color": "#5856D6" },
+        { "id": "media",        "name": "Media",        "color": "#FF2D55" }
+      ]
+    }
+  ]
+}

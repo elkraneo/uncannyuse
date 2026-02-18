@@ -1,0 +1,303 @@
+---
+import type { Feature } from "../types";
+
+export interface Props {
+  features: Feature[];
+}
+const { features } = Astro.props;
+
+const platforms = [
+  { id: 'ios',      label: 'iOS',      color: '#007AFF' },
+  { id: 'visionos', label: 'visionOS', color: '#AF52DE' },
+  { id: 'macos',    label: 'macOS',    color: '#FF9F0A' },
+];
+
+// Category color map for left-border
+const catColor: Record<string, string> = {
+  rendering:   '#409CFF',
+  lighting:    '#FFB340',
+  audio:       '#30D158',
+  physics:     '#FF453A',
+  spatial:     '#BF5AF2',
+  interaction: '#FF6B2B',
+  camera:      '#5AC8FA',
+  animation:   '#7D7AFF',
+  media:       '#FF375F',
+};
+---
+
+<div class="grid-shell" role="table" aria-label="RealityKit component compatibility">
+
+  <!-- Column header row -->
+  <div class="grid-header" role="row">
+    <div class="col-name" role="columnheader">
+      <span class="header-label">component</span>
+    </div>
+    {platforms.map(p => (
+      <div class="col-platform" role="columnheader" style={`--pcol: ${p.color};`}>
+        <span class="platform-header-label" style={`color: ${p.color}`}>{p.label}</span>
+      </div>
+    ))}
+    <div class="col-rcp" role="columnheader">
+      <span class="rcp-header-label">RCP</span>
+    </div>
+  </div>
+
+  <!-- Feature rows -->
+  <div class="grid-body" role="rowgroup">
+    {features.map((f, i) => {
+      const color = catColor[f.subcategory] ?? '#86868B';
+      return (
+        <a
+          href={`/features/${f.id}`}
+          class="grid-row"
+          role="row"
+          data-subcategory={f.subcategory}
+          data-name={f.name.toLowerCase()}
+          style={`--cat-color: ${color}; --row-i: ${i};`}
+        >
+          <!-- Name + category -->
+          <div class="col-name" role="cell">
+            <div class="name-wrap">
+              <span class="feature-name">{f.name}</span>
+              <span class="cat-label" style={`color: ${color}`}>{f.subcategory}</span>
+            </div>
+            {f.era === '26.0' && (
+              <span class="new-badge" aria-label="New in 26.0">↑26</span>
+            )}
+          </div>
+
+          <!-- Platform support cells -->
+          {platforms.map(p => {
+            const sup = f.support[p.id as keyof typeof f.support];
+            const yes = sup.status === 'y';
+            return (
+              <div class="col-platform" role="cell">
+                {yes ? (
+                  <span class="support-yes">
+                    <span class="dot" style={`color: ${p.color}`}>●</span>
+                    <span class="ver" style={`color: ${p.color}`}>{sup.since ?? '✓'}</span>
+                  </span>
+                ) : (
+                  <span class="support-no" aria-label="not supported">—</span>
+                )}
+              </div>
+            );
+          })}
+
+          <!-- RCP -->
+          <div class="col-rcp" role="cell">
+            {f.rcp ? (
+              <span class="rcp-yes" aria-label="available in Reality Composer Pro">✓</span>
+            ) : (
+              <span class="rcp-no" aria-hidden="true">—</span>
+            )}
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+</div>
+
+<style>
+  /* ── Shell ───────────────────────────────────── */
+  .grid-shell {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  /* ── Column template ─────────────────────────── */
+  .grid-header,
+  .grid-row {
+    display: grid;
+    grid-template-columns: 1fr 112px 112px 112px 68px;
+    gap: 0;
+  }
+
+  /* ── Header ──────────────────────────────────── */
+  .grid-header {
+    background: var(--surface-up);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .grid-header .col-name {
+    padding: 0.625rem 1rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .grid-header .col-platform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 0;
+    border-right: 1px solid var(--border);
+    border-top: 2px solid var(--pcol, var(--border));
+    position: relative;
+  }
+
+  .grid-header .col-rcp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 0;
+    border-top: 2px solid var(--rcp);
+  }
+
+  .header-label {
+    font-size: 0.6923rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .platform-header-label {
+    font-size: 0.6923rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .rcp-header-label {
+    font-size: 0.6923rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--rcp);
+  }
+
+  /* ── Body ────────────────────────────────────── */
+  .grid-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Row ─────────────────────────────────────── */
+  .grid-row {
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    background: transparent;
+    transition: background 0.08s, border-left-color 0.08s;
+    cursor: pointer;
+    /* Staggered entrance */
+    animation: rowIn 0.25s ease-out both;
+    animation-delay: calc(var(--row-i, 0) * 12ms);
+  }
+
+  .grid-row:last-child {
+    border-bottom: none;
+  }
+
+  .grid-row:hover {
+    background: var(--surface-up);
+    border-left-color: var(--cat-color);
+  }
+
+  /* ── Name cell ───────────────────────────────── */
+  .col-name {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .name-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .feature-name {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cat-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+  }
+
+  .new-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--macos);
+    background: rgba(255, 159, 10, 0.1);
+    border: 1px solid rgba(255, 159, 10, 0.2);
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Platform cell ───────────────────────────── */
+  .col-platform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .support-yes {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+
+  .dot {
+    font-size: 0.5rem;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+  }
+
+  .ver {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .support-no {
+    font-size: 1rem;
+    color: var(--subtle);
+    font-weight: 300;
+  }
+
+  /* ── RCP cell ────────────────────────────────── */
+  .col-rcp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  .rcp-yes {
+    font-size: 0.7692rem;
+    font-weight: 600;
+    color: var(--rcp);
+  }
+
+  .rcp-no {
+    font-size: 0.8462rem;
+    color: var(--subtle);
+    font-weight: 300;
+  }
+</style>

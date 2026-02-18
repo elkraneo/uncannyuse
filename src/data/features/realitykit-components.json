@@ -1,0 +1,826 @@
+{
+  "_meta": {
+    "source": "Xcode 26.3 RC — RealityFoundation.swiftinterface",
+    "sdks": ["iOS 26.2 SDK", "visionOS 26.2 SDK", "macOS 26.2 SDK"],
+    "extracted": "2026-02-18",
+    "note": "macOS versions inferred from SDK era — verify against Apple docs"
+  },
+  "features": [
+    {
+      "id": "model-component",
+      "name": "ModelComponent",
+      "description": "Attaches a 3D mesh with materials to an entity for rendering.",
+      "subcategory": "rendering",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "opacity-component",
+      "name": "OpacityComponent",
+      "description": "Controls the overall opacity of an entity and its descendants.",
+      "subcategory": "rendering",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "model-sort-group-component",
+      "name": "ModelSortGroupComponent",
+      "description": "Groups entities for custom render-order control within a scene.",
+      "subcategory": "rendering",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "model-debug-options-component",
+      "name": "ModelDebugOptionsComponent",
+      "description": "Debug visualization overlays for mesh, normals, and bounds during development.",
+      "subcategory": "rendering",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "14.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "blend-shape-weights-component",
+      "name": "BlendShapeWeightsComponent",
+      "description": "Drives blend shape morph targets on a skinned mesh.",
+      "subcategory": "rendering",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "adaptive-resolution-component",
+      "name": "AdaptiveResolutionComponent",
+      "description": "Hints to the renderer to scale resolution for performance optimisation.",
+      "subcategory": "rendering",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "billboard-component",
+      "name": "BillboardComponent",
+      "description": "Makes an entity always face the active camera.",
+      "subcategory": "rendering",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "text-component",
+      "name": "TextComponent",
+      "description": "Renders attributed 3D text on an entity surface.",
+      "subcategory": "rendering",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "mesh-instances-component",
+      "name": "MeshInstancesComponent",
+      "description": "Renders many instances of a mesh with per-instance transforms in a single draw call.",
+      "subcategory": "rendering",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "26.0" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "y", "since": "26.0" }
+      },
+      "notes": ["New in 26.0"]
+    },
+    {
+      "id": "image-presentation-component",
+      "name": "ImagePresentationComponent",
+      "description": "Controls 2D image presentation mode for entities displayed in visionOS.",
+      "subcategory": "rendering",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "n" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["visionOS exclusive", "New in 26.0"]
+    },
+    {
+      "id": "environment-blending-component",
+      "name": "EnvironmentBlendingComponent",
+      "description": "Configures how an entity blends with the passthrough camera feed in visionOS.",
+      "subcategory": "rendering",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "n" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["visionOS exclusive", "New in 26.0"]
+    },
+    {
+      "id": "directional-light-component",
+      "name": "DirectionalLightComponent",
+      "description": "Infinite directional light source with optional shadow casting.",
+      "subcategory": "lighting",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "point-light-component",
+      "name": "PointLightComponent",
+      "description": "Omnidirectional point light that radiates equally in all directions.",
+      "subcategory": "lighting",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "spot-light-component",
+      "name": "SpotLightComponent",
+      "description": "Cone-shaped spotlight with configurable inner and outer angles.",
+      "subcategory": "lighting",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "image-based-light-component",
+      "name": "ImageBasedLightComponent",
+      "description": "Lights the scene using an HDR environment map for physically-based illumination.",
+      "subcategory": "lighting",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "image-based-light-receiver-component",
+      "name": "ImageBasedLightReceiverComponent",
+      "description": "Marks an entity to receive IBL from a specific ImageBasedLightComponent source.",
+      "subcategory": "lighting",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "environment-lighting-configuration-component",
+      "name": "EnvironmentLightingConfigurationComponent",
+      "description": "Configures how an entity receives environmental lighting contributions.",
+      "subcategory": "lighting",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "virtual-environment-probe-component",
+      "name": "VirtualEnvironmentProbeComponent",
+      "description": "Captures a local environment reflection probe for IBL in the entity's vicinity.",
+      "subcategory": "lighting",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "dynamic-light-shadow-component",
+      "name": "DynamicLightShadowComponent",
+      "description": "Enables real-time shadow casting for dynamic light sources.",
+      "subcategory": "lighting",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "directional-light-shadow",
+      "name": "DirectionalLightComponent.Shadow",
+      "description": "Shadow configuration nested inside DirectionalLightComponent.",
+      "subcategory": "lighting",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "spot-light-shadow",
+      "name": "SpotLightComponent.Shadow",
+      "description": "Shadow configuration nested inside SpotLightComponent.",
+      "subcategory": "lighting",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "ambient-audio-component",
+      "name": "AmbientAudioComponent",
+      "description": "Plays non-directional audio with no distance attenuation — same volume everywhere in the scene.",
+      "subcategory": "audio",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "channel-audio-component",
+      "name": "ChannelAudioComponent",
+      "description": "Plays multi-channel audio routed directly to specific output channels.",
+      "subcategory": "audio",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "spatial-audio-component",
+      "name": "SpatialAudioComponent",
+      "description": "Plays spatially positioned audio with distance attenuation and HRTF rendering.",
+      "subcategory": "audio",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "audio-mix-groups-component",
+      "name": "AudioMixGroupsComponent",
+      "description": "Assigns the entity's audio sources to named mixer groups for bus-level control.",
+      "subcategory": "audio",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "audio-library-component",
+      "name": "AudioLibraryComponent",
+      "description": "Stores a library of named AudioResource objects for runtime playback.",
+      "subcategory": "audio",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "reverb-component",
+      "name": "ReverbComponent",
+      "description": "Applies a reverb convolution effect to all audio sources on this entity.",
+      "subcategory": "audio",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "collision-component",
+      "name": "CollisionComponent",
+      "description": "Defines collision shapes for physics simulation, trigger detection, and raycasting.",
+      "subcategory": "physics",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "physics-body-component",
+      "name": "PhysicsBodyComponent",
+      "description": "Makes an entity participate in rigid-body physics simulation.",
+      "subcategory": "physics",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "physics-motion-component",
+      "name": "PhysicsMotionComponent",
+      "description": "Applies linear and angular velocity to a physics body each frame.",
+      "subcategory": "physics",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "physics-simulation-component",
+      "name": "PhysicsSimulationComponent",
+      "description": "Configures the physics world parameters (gravity, substeps) for a scene region.",
+      "subcategory": "physics",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "physics-joints-component",
+      "name": "PhysicsJointsComponent",
+      "description": "Constrains the relative motion between two physics bodies using joint definitions.",
+      "subcategory": "physics",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "force-effect-component",
+      "name": "ForceEffectComponent",
+      "description": "Applies continuous forces (gravity, vortex, radial) to nearby physics bodies.",
+      "subcategory": "physics",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "character-controller-component",
+      "name": "CharacterControllerComponent",
+      "description": "Kinematic character controller with gravity, step climbing, and slope limiting.",
+      "subcategory": "physics",
+      "era": "iOS 15",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "15.0" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "character-controller-state-component",
+      "name": "CharacterControllerStateComponent",
+      "description": "Read-only state output from CharacterControllerComponent — isOnGround, velocity, etc.",
+      "subcategory": "physics",
+      "era": "iOS 15",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "15.0" },
+        "visionos": { "status": "n" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "transform",
+      "name": "Transform",
+      "description": "Position, rotation, and scale in 3D space — every entity has one.",
+      "subcategory": "spatial",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "anchoring-component",
+      "name": "AnchoringComponent",
+      "description": "Anchors an entity to a real-world surface, image, face, or body part using ARKit.",
+      "subcategory": "spatial",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "world-component",
+      "name": "WorldComponent",
+      "description": "Configures an entity as a world anchor container with its own physics and rendering context.",
+      "subcategory": "spatial",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "portal-component",
+      "name": "PortalComponent",
+      "description": "Creates a portal rendering boundary — entities inside render into a separate world.",
+      "subcategory": "spatial",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "portal-crossing-component",
+      "name": "PortalCrossingComponent",
+      "description": "Controls entity clipping and visibility when an entity crosses a portal boundary.",
+      "subcategory": "spatial",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "grounding-shadow-component",
+      "name": "GroundingShadowComponent",
+      "description": "Projects a fake contact shadow downward onto flat surfaces below the entity.",
+      "subcategory": "spatial",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "scene-understanding-component",
+      "name": "SceneUnderstandingComponent",
+      "description": "Tags scene reconstruction mesh entities with ARKit semantic labels (floor, wall, ceiling).",
+      "subcategory": "spatial",
+      "era": "Original",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "13.4" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["Not available on macOS — requires ARKit"]
+    },
+    {
+      "id": "docking-region-component",
+      "name": "DockingRegionComponent",
+      "description": "Defines a region where other entities automatically snap to a docked pose.",
+      "subcategory": "spatial",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "n" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["visionOS exclusive"]
+    },
+    {
+      "id": "attached-transform-component",
+      "name": "AttachedTransformComponent",
+      "description": "Maintains a fixed transform relative to a moving scene anchor (new in 26.0).",
+      "subcategory": "spatial",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "26.0" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "y", "since": "26.0" }
+      },
+      "notes": ["New in 26.0"]
+    },
+    {
+      "id": "reference-component",
+      "name": "ReferenceComponent",
+      "description": "Identifies an entity by a named reference string for runtime lookup and binding.",
+      "subcategory": "spatial",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "synchronization-component",
+      "name": "SynchronizationComponent",
+      "description": "Synchronises entity transforms and components across SharePlay multiplayer sessions.",
+      "subcategory": "spatial",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "geometric-pins-component",
+      "name": "GeometricPinsComponent",
+      "description": "Attaches child entities to specific named geometric points on a mesh surface.",
+      "subcategory": "spatial",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "input-target-component",
+      "name": "InputTargetComponent",
+      "description": "Makes an entity respond to system input events: tap, drag, pinch, and spatial gestures.",
+      "subcategory": "interaction",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "hover-effect-component",
+      "name": "HoverEffectComponent",
+      "description": "Applies a system-rendered highlight effect when the user's gaze or cursor hovers over the entity.",
+      "subcategory": "interaction",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "gesture-component",
+      "name": "GestureComponent",
+      "description": "Attaches SwiftUI-style gesture recognisers directly to a RealityKit entity (new in 26.0).",
+      "subcategory": "interaction",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "26.0" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "y", "since": "26.0" }
+      },
+      "notes": ["New in 26.0"]
+    },
+    {
+      "id": "manipulation-component",
+      "name": "ManipulationComponent",
+      "description": "Enables direct-manipulation drag, rotate, and scale gestures in visionOS.",
+      "subcategory": "interaction",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "n" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["visionOS exclusive", "New in 26.0"]
+    },
+    {
+      "id": "hit-target",
+      "name": "ManipulationComponent.HitTarget",
+      "description": "Defines the collision shape used for gesture hit-testing in visionOS (nested type).",
+      "subcategory": "interaction",
+      "era": "26.0",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "n" },
+        "visionos": { "status": "y", "since": "26.0" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["visionOS exclusive", "Nested inside ManipulationComponent", "New in 26.0"]
+    },
+    {
+      "id": "accessibility-component",
+      "name": "AccessibilityComponent",
+      "description": "Exposes entity properties (label, value, traits) to VoiceOver and other assistive technologies.",
+      "subcategory": "interaction",
+      "era": "iOS 17",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "17.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "14.0" }
+      }
+    },
+    {
+      "id": "perspective-camera-component",
+      "name": "PerspectiveCameraComponent",
+      "description": "Places a perspective projection camera in the scene for custom render targets.",
+      "subcategory": "camera",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "12.0" }
+      }
+    },
+    {
+      "id": "orthographic-camera-component",
+      "name": "OrthographicCameraComponent",
+      "description": "Places an orthographic (non-perspective) camera — useful for 2D-style or technical renders.",
+      "subcategory": "camera",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "projective-transform-camera-component",
+      "name": "ProjectiveTransformCameraComponent",
+      "description": "Camera with a fully custom projection matrix for non-standard projection needs.",
+      "subcategory": "camera",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "animation-library-component",
+      "name": "AnimationLibraryComponent",
+      "description": "Stores a named library of AnimationResource objects for runtime playback.",
+      "subcategory": "animation",
+      "era": "visionOS 2",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "skeletal-poses-component",
+      "name": "SkeletalPosesComponent",
+      "description": "Drives a character skeleton with fully custom per-bone pose overrides.",
+      "subcategory": "animation",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "ik-component",
+      "name": "IKComponent",
+      "description": "Applies inverse kinematics solvers to reach target positions with a character skeleton.",
+      "subcategory": "animation",
+      "era": "visionOS 2",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "2.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "body-tracking-component",
+      "name": "BodyTrackingComponent",
+      "description": "Animates a character skeleton using real-time ARKit body tracking from the device camera.",
+      "subcategory": "animation",
+      "era": "Original",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "13.0" },
+        "visionos": { "status": "n" },
+        "macos":    { "status": "n" }
+      },
+      "notes": ["Requires ARKit body tracking — iOS / iPadOS only", "Not available on visionOS or macOS"]
+    },
+    {
+      "id": "video-player-component",
+      "name": "VideoPlayerComponent",
+      "description": "Plays a video asset on an entity's surface using AVFoundation.",
+      "subcategory": "media",
+      "era": "visionOS 1",
+      "rcp": false,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    },
+    {
+      "id": "particle-emitter-component",
+      "name": "ParticleEmitterComponent",
+      "description": "Emits configurable particles (fire, sparks, snow, custom) from a RealityKit particle system.",
+      "subcategory": "media",
+      "era": "visionOS 1",
+      "rcp": true,
+      "support": {
+        "ios":      { "status": "y", "since": "18.0" },
+        "visionos": { "status": "y", "since": "1.0" },
+        "macos":    { "status": "y", "since": "15.0" }
+      }
+    }
+  ]
+}
