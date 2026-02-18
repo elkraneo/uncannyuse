@@ -88,6 +88,9 @@ html {
 body {
   min-height: 100dvh;
   position: relative;
+  /* Reserve space at the bottom for the Ko-fi floating button (~72px tall).
+     Prevents it from permanently occluding the footer on mobile. */
+  padding-bottom: 80px;
 }
 
 /* Dot-grid texture — subtle graph-paper feel */
