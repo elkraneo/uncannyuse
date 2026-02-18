@@ -8,7 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     preview: {
-      allowedHosts: ['uncannyuse.com', 'www.uncannyuse.com']
+      allowedHosts: true
     }
   }
 });
