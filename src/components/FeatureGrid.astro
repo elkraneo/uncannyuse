@@ -117,6 +117,9 @@ function withSoftBreaks(name: string): string {
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    /* single-side gutter only — 'both-edges' steals ~30px from each side on Chrome/macOS */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-up) transparent;
   }
 
   /* ── Shell ───────────────────────────────────── */
@@ -131,6 +134,7 @@ function withSoftBreaks(name: string): string {
     display: grid;
     grid-template-columns: 1fr 112px 112px 112px 68px;
     gap: 0;
+    align-items: stretch;
   }
 
   /* ── Header ──────────────────────────────────── */
@@ -165,6 +169,7 @@ function withSoftBreaks(name: string): string {
     justify-content: center;
     padding: 0.625rem 0;
     border-top: 2px solid var(--rcp);
+    border-left: 1px solid var(--border);
   }
 
   .header-label {
@@ -315,6 +320,7 @@ function withSoftBreaks(name: string): string {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0;
+    border-left: 1px solid var(--border);
   }
 
   .rcp-yes {
@@ -343,38 +349,36 @@ function withSoftBreaks(name: string): string {
   /* ── Mobile ──────────────────────────────────── */
   @media (max-width: 768px) {
     /*
-     * Sticky-first-column pattern:
-     * - Grid shell becomes the horizontal scroll container
-     * - Name column sticks to left:0 so it never scrolls away
-     * - Fixed column widths → predictable total (~414px, ~56px overflow on 390px)
+     * 1fr approach: name column takes remaining space, platform columns fixed.
+     * Table always fills its container width — no horizontal scroll, no dead gap.
+     * Word-wrapping on feature-name handles long component names.
+     *
+     * 390px: 1fr = 390 - (68×3 + 52) = 390 - 256 = 134px for name ✓
+     * 320px: 1fr = 320 - 256 = 64px for name (very compact, still readable with wrapping)
      */
     .grid-scroll {
       max-height: 68vh;
       overflow-y: auto;
+      overflow-x: hidden; /* no horizontal scroll — table always fits */
     }
 
     .grid-shell {
       min-width: 0;
-      /* Total column widths 360px — fits in 358px content area, no initial scroll */
     }
 
     .grid-header,
     .grid-row {
-      grid-template-columns: 186px 68px 68px 68px 40px;
+      grid-template-columns: 1fr 68px 68px 68px 52px;
     }
 
-    /* Name column sticks so component labels are always visible */
+    /* Remove sticky — not needed since table fits in viewport */
     .col-name {
-      position: sticky;
-      left: 0;
-      z-index: 2;
-      background: var(--surface);
-      /* Soft shadow separates sticky from scrolling data columns */
-      box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.35);
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
-      gap: 0.35rem;
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: none;
+      background: transparent;
     }
 
     .grid-header .col-name {
@@ -386,27 +390,28 @@ function withSoftBreaks(name: string): string {
       background: var(--surface-up);
     }
 
-    /* Tighter text for compact cells */
+    /* Names wrap at camelCase boundaries (zero-width spaces from withSoftBreaks).
+       word-break: normal lets the browser use soft-break points without
+       forcing a break at every zero-width space. */
     .feature-name {
       font-size: 0.8125rem;
       white-space: normal;
-      overflow: hidden;
-      text-overflow: unset;
-      line-height: 1.2;
-      max-width: 100%;
       overflow-wrap: anywhere;
-      word-break: break-word;
+      word-break: normal;
+      overflow: visible;
+      text-overflow: unset;
+      line-height: 1.25;
       display: block;
     }
 
     .name-wrap {
       width: 100%;
-      gap: 0.3rem;
+      min-width: 0;
+      gap: 0.25rem;
     }
 
     .new-badge {
-      justify-self: start;
-      margin-top: 0;
+      flex-shrink: 0;
     }
 
     .ver {
@@ -414,14 +419,16 @@ function withSoftBreaks(name: string): string {
     }
 
     .col-platform {
-      padding: 0.5rem 0.25rem;
+      padding: 0.5rem 0.125rem;
     }
-  }
 
-  @media (max-width: 420px) {
-    .grid-header,
-    .grid-row {
-      grid-template-columns: 170px 64px 64px 64px 36px;
+    .grid-header .col-rcp {
+      padding: 0.625rem 0.25rem;
+    }
+
+    .rcp-header-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
     }
   }
 </style>
