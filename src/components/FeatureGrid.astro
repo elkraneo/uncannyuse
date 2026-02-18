@@ -305,21 +305,54 @@ const catColor: Record<string, string> = {
 
   /* ── Mobile ──────────────────────────────────── */
   @media (max-width: 768px) {
+    /*
+     * Sticky-first-column pattern:
+     * - Grid shell becomes the horizontal scroll container
+     * - Name column sticks to left:0 so it never scrolls away
+     * - Fixed column widths → predictable total (~414px, ~56px overflow on 390px)
+     */
     .grid-shell {
-      min-width: 420px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      min-width: 0;
     }
 
     .grid-header,
     .grid-row {
-      grid-template-columns: 1fr 88px 88px 88px 52px;
+      /* name: 130px  ios: 76px  visionos: 82px  macos: 82px  rcp: 44px = 414px */
+      grid-template-columns: 130px 76px 82px 82px 44px;
     }
 
-    .ver {
+    /* Name column sticks so component labels are always visible */
+    .col-name {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: var(--surface);
+      /* Soft shadow separates sticky from scrolling data columns */
+      box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.35);
+    }
+
+    .grid-header .col-name {
+      background: var(--surface-up);
+    }
+
+    .grid-row:hover .col-name,
+    .grid-row:focus-within .col-name {
+      background: var(--surface-up);
+    }
+
+    /* Tighter text for compact cells */
+    .feature-name {
       font-size: 0.875rem;
     }
 
-    .feature-name {
-      font-size: 0.9375rem;
+    .ver {
+      font-size: 0.8125rem;
+    }
+
+    .col-platform {
+      padding: 0.5rem 0.25rem;
     }
   }
 </style>

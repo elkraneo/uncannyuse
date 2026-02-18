@@ -594,26 +594,6 @@ const iosOnly    = features.filter(f => f.support.visionos.status === 'n' && f.s
       width: 100%;
     }
 
-    /* Grid wrapper: allow horizontal scroll */
-    #grid-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 0 -1rem;
-      padding: 0 1rem;
-    }
-
-    /* Thin scroll indicator on the grid */
-    #grid-wrapper::-webkit-scrollbar {
-      height: 3px;
-    }
-
-    #grid-wrapper::-webkit-scrollbar-track {
-      background: var(--surface);
-    }
-
-    #grid-wrapper::-webkit-scrollbar-thumb {
-      background: var(--border-up);
-      border-radius: 2px;
-    }
+    /* Grid wrapper — scroll is handled inside FeatureGrid (.grid-shell) */
   }
 </style>
