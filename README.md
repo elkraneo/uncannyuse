@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# uncannyuse
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/elkraneo)
+
+**Can I use it?** — Apple platform compatibility reference for RealityKit, ARKit, Metal, and hardware-gated features across iOS, visionOS, and macOS.
+
+→ [uncannyuse.com](https://uncannyuse.com)
+
+## What it is
+
+A [caniuse.com](https://caniuse.com)-style compatibility matrix for Apple developer APIs, verified directly from Xcode SDK `.swiftinterface` files — not documentation.
+
+Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 RC with:
+
+- iOS / visionOS / macOS version support (minimum SDK version)
+- Reality Composer Pro Add Component menu coverage (28/62)
+- Platform-exclusive flags (5 visionOS-only, 1 iOS-only)
+- New in 26.0 callouts (7 components)
+
+## Data source
+
+All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode 26.3 RC SDK and from binary string analysis of `RealityToolsFoundation.framework`. macOS versions are inferred from SDK era — verify against Apple documentation.
+
+## Stack
+
+- [Astro 5](https://astro.build) — static site generation
+- [Tailwind v4](https://tailwindcss.com) — via `@tailwindcss/vite`
+- SF Mono — system font, zero network requests
+- Dark mode default + `prefers-color-scheme` light mode
+
+## Roadmap
+
+- [ ] ARKit — session configs, anchor types, hardware tiers (LiDAR, chip generation)
+- [ ] Metal — GPU feature sets, ray tracing, mesh shaders per Apple GPU family
+- [ ] Hardware tier dimension (A-series chip, LiDAR, camera)
+- [ ] Compare view
+
+## Commands
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev      # localhost:4321
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Support
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If this saves you time, [buy me a coffee](https://ko-fi.com/elkraneo) ☕
