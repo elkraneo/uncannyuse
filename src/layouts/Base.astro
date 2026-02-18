@@ -9,7 +9,10 @@ const {
 	description = "Can I use it on Apple platforms? A compatibility reference for RealityKit, ARKit, Metal, and hardware-gated features.",
 } = Astro.props;
 const pageTitle = title === "uncannyuse" ? title : `${title} — uncannyuse`;
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const canonicalUrl = siteUrl ? `${siteUrl}${Astro.url.pathname}` : Astro.url.pathname;
 const socialImagePath = "/og-image.jpg";
+const socialImageUrl = siteUrl ? `${siteUrl}${socialImagePath}` : socialImagePath;
 ---
 
 <!doctype html>
@@ -18,14 +21,21 @@ const socialImagePath = "/og-image.jpg";
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="uncannyuse" />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={socialImagePath} />
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:title" content={pageTitle} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={socialImagePath} />
+		<meta property="og:image" content={socialImageUrl} />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="uncannyuse social cover" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl} />
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<link rel="alternate icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
