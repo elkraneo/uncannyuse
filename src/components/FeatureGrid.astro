@@ -24,6 +24,12 @@ const catColor: Record<string, string> = {
   animation:   '#7D7AFF',
   media:       '#FF375F',
 };
+
+function withSoftBreaks(name: string): string {
+  return name
+    .replace(/([A-Z])([A-Z][a-z])/g, "$1\u200b$2")
+    .replace(/([a-z0-9])([A-Z])/g, "$1\u200b$2");
+}
 ---
 
 <div class="grid-shell" role="table" aria-label="RealityKit component compatibility">
@@ -59,7 +65,7 @@ const catColor: Record<string, string> = {
           <!-- Name + category -->
           <div class="col-name" role="cell">
             <div class="name-wrap">
-              <span class="feature-name">{f.name}</span>
+              <span class="feature-name">{withSoftBreaks(f.name)}</span>
               <span class="cat-label" style={`color: ${color}`}>{f.subcategory}</span>
             </div>
             {f.era === '26.0' && (
@@ -339,7 +345,7 @@ const catColor: Record<string, string> = {
 
     .grid-header,
     .grid-row {
-      grid-template-columns: 146px 72px 72px 72px 42px;
+      grid-template-columns: 186px 68px 68px 68px 40px;
     }
 
     /* Name column sticks so component labels are always visible */
@@ -350,6 +356,10 @@ const catColor: Record<string, string> = {
       background: var(--surface);
       /* Soft shadow separates sticky from scrolling data columns */
       box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.35);
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 0.35rem;
     }
 
     .grid-header .col-name {
@@ -364,6 +374,24 @@ const catColor: Record<string, string> = {
     /* Tighter text for compact cells */
     .feature-name {
       font-size: 0.8125rem;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: unset;
+      line-height: 1.2;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      display: block;
+    }
+
+    .name-wrap {
+      width: 100%;
+      gap: 0.3rem;
+    }
+
+    .new-badge {
+      justify-self: start;
+      margin-top: 0;
     }
 
     .ver {
@@ -378,7 +406,7 @@ const catColor: Record<string, string> = {
   @media (max-width: 420px) {
     .grid-header,
     .grid-row {
-      grid-template-columns: 132px 68px 68px 68px 40px;
+      grid-template-columns: 170px 64px 64px 64px 36px;
     }
   }
 </style>
