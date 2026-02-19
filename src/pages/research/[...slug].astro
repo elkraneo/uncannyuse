@@ -16,6 +16,15 @@ const { Content } = await render(claim);
 function formatDate(date: Date): string {
 	return date.toISOString().slice(0, 10);
 }
+
+function isAbsoluteLocalPath(path: string): boolean {
+	return (
+		path.startsWith("/") ||
+		/^[a-zA-Z]:[\\/]/.test(path) ||
+		path.startsWith("\\\\") ||
+		path.startsWith("file://")
+	);
+}
 ---
 
 <Base title={`RCP Claim · ${claim.data.componentId}`} description={claim.data.summary}>
@@ -56,10 +65,31 @@ function formatDate(date: Date): string {
 		<section class="claim-section">
 			<h2>Evidence</h2>
 			<ul class="evidence-list">
-				{claim.data.evidence.map((item: { type: string; path: string; note?: string }) => (
+				{claim.data.evidence.map((item: {
+					type: string;
+					path: string;
+					publicUrl?: string;
+					note?: string;
+				}) => (
 					<li>
 						<div><strong>{item.type}</strong></div>
-						<div><code>{item.path}</code></div>
+						{
+							item.publicUrl ? (
+								<div>
+									<a href={item.publicUrl} target="_blank" rel="noopener noreferrer">
+										open evidence ↗
+									</a>
+								</div>
+							) : isAbsoluteLocalPath(item.path) ? (
+								<div>
+									<em>local-only evidence path (not publicly exposed)</em>
+								</div>
+							) : (
+								<div>
+									<code>{item.path}</code>
+								</div>
+							)
+						}
 						{item.note && <p>{item.note}</p>}
 					</li>
 				))}
@@ -125,6 +155,15 @@ function formatDate(date: Date): string {
 	.evidence-list code,
 	.meta-list code {
 		overflow-wrap: anywhere;
+	}
+
+	.evidence-list a {
+		color: var(--ios);
+		text-decoration: none;
+	}
+
+	.evidence-list a:hover {
+		text-decoration: underline;
 	}
 
 	.prose :global(p),

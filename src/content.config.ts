@@ -29,6 +29,7 @@ const rcpClaims = defineCollection({
 				z.object({
 					type: z.enum(["fixture", "diff", "screenshot", "log", "doc"]),
 					path: z.string().min(1),
+					publicUrl: z.string().url().optional(),
 					note: z.string().optional(),
 				}),
 			)
