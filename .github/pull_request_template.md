@@ -22,6 +22,7 @@
   - `reproSteps`
 - [ ] Claim is atomic (one behavior per claim).
 - [ ] Evidence paths and repro steps are concrete enough for another reviewer to verify.
+- [ ] Added `evidence.publicUrl` where a public artifact is available.
 - [ ] If replacing older knowledge, `status`/`supersedes`/`supersededBy` are updated.
 
 ## Validation

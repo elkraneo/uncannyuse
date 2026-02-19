@@ -29,6 +29,7 @@ reproSteps:
 evidence:
   - type: diff
     path: /absolute/or/repo/path
+    publicUrl: https://example.com/evidence/diff.txt
     note: optional
 supersedes: []
 supersededBy:
@@ -42,6 +43,8 @@ supersededBy:
 - `status`: `confirmed`, `disputed`, `superseded`
 
 `summary` is required and should be a short reviewer-facing synopsis.
+`publicUrl` is optional for evidence artifacts that are publicly reachable.
+Absolute local `path` values are kept for provenance but are not exposed verbatim on public pages.
 
 ## Component ID Source
 
