@@ -1,0 +1,68 @@
+name: Developer Note
+description: Propose a Reality Composer Pro behavior note from observed evidence
+title: "[note] "
+labels:
+  - developer-note
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share what you observed in plain language. A maintainer can convert this into a strict schema-backed note entry in a PR.
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: RealityKit component id or name (for example, `billboard-component`).
+      placeholder: billboard-component
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: What did you observe?
+      description: Keep this atomic. One behavior per note.
+      placeholder: "Example: Allowed Input = Direct sets allowsDirectInput=1 and allowsIndirectInput=0."
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - RCP UI
+        - USDA authored
+        - runtime behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproduction steps
+      description: Steps another developer can follow.
+      placeholder: |
+        1. Open fixture...
+        2. Change one field...
+        3. Save and diff...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence links or files
+      description: Add fixture paths, diff links, screenshots, logs, or docs.
+      placeholder: |
+        - doc: ...
+        - diff: ...
+        - screenshot: ...
+    validations:
+      required: true
+  - type: input
+    id: rcp_version
+    attributes:
+      label: RCP version (if known)
+      placeholder: 26.3 RC
+  - type: input
+    id: xcode_build
+    attributes:
+      label: Xcode build / SDK (if known)
+      placeholder: 26.2 SDK

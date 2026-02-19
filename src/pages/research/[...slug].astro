@@ -27,14 +27,18 @@ function isAbsoluteLocalPath(path: string): boolean {
 }
 ---
 
-<Base title={`RCP Claim · ${claim.data.componentId}`} description={claim.data.summary}>
+<Base title={`Developer Note · ${claim.data.componentId}`} description={claim.data.summary}>
 	<article class="claim-page">
 		<nav class="claim-breadcrumb">
 			<a href={`/features/${claim.data.componentId}`}>← back to component</a>
 		</nav>
 
 		<header class="claim-header">
+			<p class="claim-kicker">Developer note</p>
 			<h1>{claim.data.claim}</h1>
+			<p class="claim-author">
+				by {claim.data.author} · {formatDate(claim.data.date)}
+			</p>
 			<p>{claim.data.summary}</p>
 		</header>
 
@@ -126,12 +130,24 @@ function isAbsoluteLocalPath(path: string): boolean {
 	.claim-header h1 {
 		font-size: clamp(1.4rem, 3vw, 1.9rem);
 		line-height: 1.2;
-		margin-top: 1.2rem;
+		margin-top: 0.55rem;
 	}
 
 	.claim-header p {
 		color: var(--muted);
 		margin-top: 0.6rem;
+	}
+
+	.claim-kicker {
+		font-size: 0.8rem;
+		letter-spacing: 0.04em;
+		color: var(--muted);
+		text-transform: uppercase;
+	}
+
+	.claim-author {
+		font-size: 0.875rem;
+		margin-top: 0.5rem;
 	}
 
 	.claim-section {

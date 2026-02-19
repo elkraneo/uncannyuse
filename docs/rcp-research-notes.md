@@ -1,11 +1,11 @@
-# RCP Reverse-Engineering Claims
+# Reality Composer Pro Developer Notes
 
-This project supports PR-based, evidence-driven RCP research claims as a domain distinct from API/platform compatibility tables.
+This project supports PR-based, evidence-driven RCP research notes as a domain distinct from API/platform compatibility tables.
 
 ## Authoring Flow
 
 1. Create a branch and add one or more Markdown files under `src/content/rcp-claims/`.
-2. Use one file per atomic claim.
+2. Use one file per atomic note.
 3. Open a PR and complete the checklist in `.github/pull_request_template.md`.
 4. CI runs `npm run build`, which validates claim schema and component IDs.
 5. After merge to `main`, deploy rebuild publishes the updated site.
@@ -33,7 +33,8 @@ evidence:
     publicUrl: https://example.com/evidence/diff.txt
     note: optional
 supersedes: []
-supersededBy:
+# optional when replaced by a newer note
+supersededBy: note-id-or-slug
 ```
 
 ## Allowed Values
