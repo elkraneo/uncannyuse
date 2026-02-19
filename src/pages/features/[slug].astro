@@ -122,6 +122,29 @@ const correctionParams = new URLSearchParams({
 const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
 const suggestResourceIssueUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
+const claimBody = [
+	"## Component",
+	`${feature.name} (${feature.id})`,
+	"",
+	"## Proposed claim (atomic)",
+	"- ",
+	"",
+	"## Scope",
+	"- [ ] RCP UI",
+	"- [ ] USDA authored",
+	"- [ ] runtime behavior",
+	"",
+	"## Evidence",
+	"- ",
+	"",
+	"## Repro steps",
+	"1. ",
+].join("\n");
+const suggestClaimParams = new URLSearchParams({
+	title: `[claim] ${feature.name}`,
+	body: claimBody,
+});
+const suggestClaimIssueUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${suggestClaimParams.toString()}`;
 const notesList = feature.notes ?? [];
 const rcpStatusText = feature.rcp
 	? "In Add Component menu"
@@ -348,6 +371,17 @@ function formatClaimValue(
 					<p class="notes-empty">No RCP reverse-engineering claims yet.</p>
 				)
 			}
+			<div class="claim-actions">
+				<a href="/research/" class="claim-action-link">browse all claims</a>
+				<a
+					href={suggestClaimIssueUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="claim-action-link"
+				>
+					propose claim ↗
+				</a>
+			</div>
 		</section>
 
 		<!-- Notes + Resources -->
@@ -916,6 +950,27 @@ function formatClaimValue(
 
 	.claim-link:hover {
 		text-decoration: underline;
+	}
+
+	.claim-actions {
+		margin-top: 0.8rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.claim-action-link {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		text-decoration: none;
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 0.22rem 0.5rem;
+	}
+
+	.claim-action-link:hover {
+		color: var(--text);
+		background: var(--surface-up);
 	}
 
 	/* Notes */
