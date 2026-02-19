@@ -1,0 +1,135 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+	const claims = await getCollection("rcp-claims");
+	return claims.map((claim) => ({
+		params: { slug: claim.slug },
+		props: { claim },
+	}));
+}
+
+const { claim } = Astro.props;
+const { Content } = await render(claim);
+
+function formatDate(date: Date): string {
+	return date.toISOString().slice(0, 10);
+}
+---
+
+<Base title={`RCP Claim · ${claim.data.componentId}`} description={claim.data.summary}>
+	<article class="claim-page">
+		<nav class="claim-breadcrumb">
+			<a href={`/features/${claim.data.componentId}`}>← back to component</a>
+		</nav>
+
+		<header class="claim-header">
+			<h1>{claim.data.claim}</h1>
+			<p>{claim.data.summary}</p>
+		</header>
+
+		<section class="claim-section">
+			<h2>Metadata</h2>
+			<ul class="meta-list">
+				<li><strong>Component:</strong> <code>{claim.data.componentId}</code></li>
+				<li><strong>Status:</strong> {claim.data.status}</li>
+				<li><strong>Confidence:</strong> {claim.data.confidence}</li>
+				<li><strong>Evidence type:</strong> {claim.data.sourceType}</li>
+				<li><strong>Scope:</strong> {claim.data.scope}</li>
+				<li><strong>Author:</strong> {claim.data.author}</li>
+				<li><strong>Date:</strong> {formatDate(claim.data.date)}</li>
+				<li><strong>RCP version:</strong> {claim.data.rcpVersion}</li>
+				<li><strong>Xcode build:</strong> {claim.data.xcodeBuild}</li>
+			</ul>
+		</section>
+
+		<section class="claim-section">
+			<h2>Reproduction</h2>
+			<ol>
+				{claim.data.reproSteps.map((step: string) => (
+					<li>{step}</li>
+				))}
+			</ol>
+		</section>
+
+		<section class="claim-section">
+			<h2>Evidence</h2>
+			<ul class="evidence-list">
+				{claim.data.evidence.map((item: { type: string; path: string; note?: string }) => (
+					<li>
+						<div><strong>{item.type}</strong></div>
+						<div><code>{item.path}</code></div>
+						{item.note && <p>{item.note}</p>}
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="claim-section prose">
+			<h2>Details</h2>
+			<Content />
+		</section>
+	</article>
+</Base>
+
+<style>
+	.claim-page {
+		max-width: 760px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 5rem;
+	}
+
+	.claim-breadcrumb a {
+		color: var(--muted);
+		text-decoration: none;
+	}
+
+	.claim-breadcrumb a:hover {
+		color: var(--text);
+		text-decoration: underline;
+	}
+
+	.claim-header h1 {
+		font-size: clamp(1.4rem, 3vw, 1.9rem);
+		line-height: 1.2;
+		margin-top: 1.2rem;
+	}
+
+	.claim-header p {
+		color: var(--muted);
+		margin-top: 0.6rem;
+	}
+
+	.claim-section {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.claim-section h2 {
+		font-size: 0.95rem;
+		letter-spacing: 0.04em;
+		color: var(--muted);
+		margin-bottom: 0.7rem;
+	}
+
+	.meta-list,
+	.evidence-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.evidence-list code,
+	.meta-list code {
+		overflow-wrap: anywhere;
+	}
+
+	.prose :global(p),
+	.prose :global(li) {
+		color: var(--text);
+		line-height: 1.6;
+	}
+</style>
