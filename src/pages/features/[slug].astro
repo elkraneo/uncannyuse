@@ -390,15 +390,8 @@ function formatClaimDate(date: Date): string {
 								>
 									all
 								</button>
-								<button type="button" class="note-filter-btn" data-note-filter-btn="system-rcp">
+								<button type="button" class="note-filter-btn" data-note-filter-btn="rcp">
 									RCP
-								</button>
-								<button
-									type="button"
-									class="note-filter-btn"
-									data-note-filter-btn="development-note"
-								>
-									development
 								</button>
 								<button
 									type="button"
@@ -414,6 +407,7 @@ function formatClaimDate(date: Date): string {
 										class="claim-item"
 										data-note-item
 										data-note-kind={note.kind}
+										data-note-group={note.kind === "legacy-note" ? "general" : "rcp"}
 										hidden={idx >= 3}
 									>
 										<p class="claim-text">{note.text}</p>
@@ -427,11 +421,7 @@ function formatClaimDate(date: Date): string {
 														: "note-tag-general",
 												]}
 											>
-												{note.kind === "system-rcp"
-													? "RCP"
-													: note.kind === "development-note"
-														? "development"
-														: "general"}
+												{note.kind === "legacy-note" ? "general" : "RCP"}
 											</span>
 											{" "}by {note.author} · {note.date}
 										</p>
@@ -453,6 +443,9 @@ function formatClaimDate(date: Date): string {
 									show all {unifiedNotes.length} notes
 								</button>
 							)}
+							<p class="notes-empty" data-note-filter-empty hidden>
+								No notes match this filter.
+							</p>
 						</>
 					) : (
 						<p class="notes-empty">No notes yet.</p>
@@ -563,6 +556,9 @@ function formatClaimDate(date: Date): string {
 	const showAllNotesBtn = document.querySelector<HTMLButtonElement>(
 		"[data-show-all-notes]",
 	);
+	const noteFilterEmpty = document.querySelector<HTMLElement>(
+		"[data-note-filter-empty]",
+	);
 	const noteFilterButtons = document.querySelectorAll<HTMLButtonElement>(
 		"[data-note-filter-btn]",
 	);
@@ -606,8 +602,8 @@ function formatClaimDate(date: Date): string {
 	function applyNoteFilter() {
 		let matched = 0;
 		noteItems.forEach((item) => {
-			const kind = item.dataset.noteKind ?? "";
-			const include = activeNoteFilter === "all" || kind === activeNoteFilter;
+			const group = item.dataset.noteGroup ?? "";
+			const include = activeNoteFilter === "all" || group === activeNoteFilter;
 			if (!include) {
 				item.hidden = true;
 				return;
@@ -615,6 +611,9 @@ function formatClaimDate(date: Date): string {
 			matched += 1;
 			item.hidden = !showAllNotes && matched > 3;
 		});
+		if (noteFilterEmpty) {
+			noteFilterEmpty.hidden = matched > 0;
+		}
 
 		if (!showAllNotesBtn) return;
 		if (showAllNotes || matched <= 3) {
