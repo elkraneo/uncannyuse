@@ -8,6 +8,15 @@ import type { Feature } from "../types";
 const features = rkData.features as Feature[];
 const rkCategory = categoriesData.categories[0];
 const subcats = rkCategory.subcategories;
+const subcatOrder = new Map(subcats.map((subcategory, index) => [subcategory.id, index]));
+
+const sortedFeatures = [...features].sort((a, b) => {
+	const groupOrderDiff =
+		(subcatOrder.get(a.subcategory) ?? Number.MAX_SAFE_INTEGER) -
+		(subcatOrder.get(b.subcategory) ?? Number.MAX_SAFE_INTEGER);
+	if (groupOrderDiff !== 0) return groupOrderDiff;
+	return a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
+});
 
 const countByCat = subcats.map((s) => ({
 	...s,
@@ -159,13 +168,13 @@ const iosOnly = features.filter(
 
 			<!-- Count -->
 			<div class="result-count" id="result-count">
-				showing <span id="count-num">{features.length}</span> of {
-					features.length
+				showing <span id="count-num">{sortedFeatures.length}</span> of {
+					sortedFeatures.length
 				}
 			</div>
 
 			<div id="grid-wrapper">
-				<FeatureGrid features={features} />
+				<FeatureGrid features={sortedFeatures} />
 			</div>
 
 			<p id="empty-msg" class="empty-msg" role="status" aria-live="polite">
