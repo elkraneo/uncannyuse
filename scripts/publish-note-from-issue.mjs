@@ -98,7 +98,11 @@ const summary = firstSectionValue(sections, ["short summary"]) || "Summary pendi
 const observed = firstSectionValue(sections, ["what did you observe"]) || "Observed behavior submitted via issue form.";
 const expected = firstSectionValue(sections, ["what did you expect"]);
 const axisRaw = firstSectionValue(sections, ["axis"]).toLowerCase();
-const axis = axisRaw === "runtime" || axisRaw === "general" ? axisRaw : "rcp";
+const axis = axisRaw.includes("runtime")
+	? "runtime"
+	: axisRaw.includes("general")
+		? "general"
+		: "rcp";
 const scope = firstSectionValue(sections, ["scope"]) || "USDA authored";
 const confidenceText = firstSectionValue(sections, ["evidence confidence"]) || "low evidence";
 const reproSteps = parseSteps(firstSectionValue(sections, ["reproduction steps"]));

@@ -52,14 +52,16 @@ body:
   - type: dropdown
     id: axis
     attributes:
-      label: Axis
-      description: Choose the primary axis for this note.
+      label: Context (optional)
+      description: |
+        Pick one if it helps triage:
+        - `rcp`: authoring behavior in Reality Composer Pro
+        - `runtime`: behavior when app runs
+        - `general`: broader note
       options:
         - rcp
         - runtime
         - general
-    validations:
-      required: true
   - type: textarea
     id: expected_behavior
     attributes:
@@ -69,24 +71,25 @@ body:
   - type: dropdown
     id: evidence_confidence
     attributes:
-      label: Evidence confidence
-      description: Pick the strongest evidence you currently have.
+      label: Evidence confidence (optional)
+      description: |
+        Optional triage hint:
+        - strong diff: fixture diff or direct authored delta
+        - medium evidence: screenshot/video + repro steps
+        - low evidence: memory/recollection
       options:
         - strong diff (fixture diff or direct authored delta)
         - medium evidence (screenshot/video + reproducible steps)
         - low evidence (memory/recollection only)
-    validations:
-      required: true
   - type: dropdown
     id: scope
     attributes:
-      label: Scope
+      label: Scope (optional)
+      description: Which surface this note describes.
       options:
         - RCP UI
         - USDA authored
         - runtime behavior
-    validations:
-      required: true
   - type: textarea
     id: repro_steps
     attributes:
