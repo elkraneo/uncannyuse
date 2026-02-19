@@ -190,6 +190,17 @@ function formatClaimDate(date: Date): string {
 			</div>
 
 			<h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
+			<div class="detail-links">
+				<a
+					class="doc-chip"
+					href={docsUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span class="doc-chip-label">documentation</span>
+					<span class="doc-external" aria-hidden="true">↗</span>
+				</a>
+			</div>
 			<p class="detail-desc">{feature.description}</p>
 			{
 				showOfficialAbstract && (
@@ -199,17 +210,6 @@ function formatClaimDate(date: Date): string {
 					</p>
 				)
 			}
-			<div class="detail-links">
-				<a
-					class="doc-chip"
-					href={docsUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<span class="doc-chip-label">official documentation</span>
-					<span class="doc-external" aria-hidden="true">↗</span>
-				</a>
-			</div>
 		</header>
 
 		<!-- Support grid -->
