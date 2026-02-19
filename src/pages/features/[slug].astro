@@ -62,7 +62,7 @@ function parseSinceValue(since?: string): number {
 
 const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase().replace(/\./g, "/")}`;
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
-const officialSummary = docsMapById.get(feature.id)?.summary ?? null;
+const officialAbstract = docsMapById.get(feature.id)?.summary ?? null;
 type ResourceEntry = {
 	title: string;
 	url: string;
@@ -94,9 +94,9 @@ function normalizedText(value: string): string {
 		.trim();
 }
 
-const showOfficialSummary = Boolean(
-	officialSummary &&
-	normalizedText(officialSummary) !== normalizedText(feature.description),
+const showOfficialAbstract = Boolean(
+	officialAbstract &&
+	normalizedText(officialAbstract) !== normalizedText(feature.description),
 );
 const pagePath = `/features/${feature.id}`;
 const correctionBody = [
@@ -190,6 +190,15 @@ function formatClaimDate(date: Date): string {
 			</div>
 
 			<h1 class="detail-title">{withSoftBreaks(feature.name)}</h1>
+			<p class="detail-desc">{feature.description}</p>
+			{
+				showOfficialAbstract && (
+					<p class="official-summary">
+						<span class="official-summary-label">Official Abstract:</span>{" "}
+						{officialAbstract}
+					</p>
+				)
+			}
 			<div class="detail-links">
 				<a
 					class="doc-chip"
@@ -197,19 +206,10 @@ function formatClaimDate(date: Date): string {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<span class="doc-chip-label">official docs</span>
+					<span class="doc-chip-label">official documentation</span>
 					<span class="doc-external" aria-hidden="true">↗</span>
 				</a>
 			</div>
-			<p class="detail-desc">{feature.description}</p>
-			{
-				showOfficialSummary && (
-					<p class="official-summary">
-						<span class="official-summary-label">From Apple docs:</span>{" "}
-						{officialSummary}
-					</p>
-				)
-			}
 		</header>
 
 		<!-- Support grid -->
@@ -298,9 +298,9 @@ function formatClaimDate(date: Date): string {
 						rel="noopener noreferrer"
 						class="claim-action-link"
 					>
-						propose note ↗
+						submit note ↗
 					</a>
-					<a href="/research/" class="claim-action-link">browse all notes</a>
+					<a href="/research/" class="claim-action-link">browse all</a>
 				</div>
 			</div>
 			<div
@@ -515,7 +515,7 @@ function formatClaimDate(date: Date): string {
 							stroke-width="1.6"
 							stroke-linecap="round"></path>
 					</svg>
-					report correction
+					report error
 				</a>
 			</div>
 		</div>
