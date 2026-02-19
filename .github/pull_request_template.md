@@ -8,6 +8,7 @@
 - [ ] Added or updated Markdown claim file(s) under `src/content/rcp-claims/`.
 - [ ] `componentId` matches an existing ID from `src/data/features/realitykit-components.json`.
 - [ ] All mandatory fields are present:
+  - `axis`
   - `claim`
   - `summary`
   - `scope`

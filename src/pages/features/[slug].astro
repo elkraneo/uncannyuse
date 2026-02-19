@@ -149,7 +149,8 @@ const componentClaims = (await getCollection("rcp-claims"))
 
 type ComponentNote =
 	| {
-			kind: "system-rcp";
+			kind: "system";
+			axis: "rcp";
 			text: string;
 			summary: string;
 			author: string;
@@ -158,6 +159,7 @@ type ComponentNote =
 	  }
 	| {
 			kind: "development-note";
+			axis: "rcp" | "runtime" | "general";
 			text: string;
 			summary: string;
 			author: string;
@@ -166,6 +168,7 @@ type ComponentNote =
 	  }
 	| {
 			kind: "legacy-note";
+			axis: "general";
 			text: string;
 			summary?: string;
 			author: string;
@@ -175,7 +178,8 @@ type ComponentNote =
 const unifiedNotes: ComponentNote[] = [];
 
 unifiedNotes.push({
-	kind: "system-rcp",
+	kind: "system",
+	axis: "rcp",
 	text: feature.rcp ? "Add Component menu" : "Code-only component",
 	summary: feature.rcp
 		? "Available directly in Reality Composer Pro and editable in the inspector."
@@ -187,6 +191,7 @@ unifiedNotes.push({
 for (const claim of componentClaims) {
 	unifiedNotes.push({
 		kind: "development-note",
+		axis: claim.data.axis,
 		text: claim.data.claim,
 		summary: claim.data.summary,
 		author: claim.data.author,
@@ -198,6 +203,7 @@ for (const claim of componentClaims) {
 for (const note of feature.notes ?? []) {
 	unifiedNotes.push({
 		kind: "legacy-note",
+		axis: "general",
 		text: note,
 		author: "system",
 		date: "undated",
@@ -393,10 +399,13 @@ function formatClaimDate(date: Date): string {
 								<button type="button" class="note-filter-btn" data-note-filter-btn="rcp">
 									RCP
 								</button>
+								<button type="button" class="note-filter-btn" data-note-filter-btn="runtime">
+									runtime
+								</button>
 								<button
 									type="button"
 									class="note-filter-btn"
-									data-note-filter-btn="legacy-note"
+									data-note-filter-btn="general"
 								>
 									general
 								</button>
@@ -407,7 +416,7 @@ function formatClaimDate(date: Date): string {
 										class="claim-item"
 										data-note-item
 										data-note-kind={note.kind}
-										data-note-group={note.kind === "legacy-note" ? "general" : "rcp"}
+										data-note-group={note.axis}
 										hidden={idx >= 3}
 									>
 										<p class="claim-text">{note.text}</p>
@@ -416,12 +425,16 @@ function formatClaimDate(date: Date): string {
 											<span
 												class:list={[
 													"note-tag",
-													note.kind === "system-rcp" || note.kind === "development-note"
+													note.axis === "rcp"
 														? "note-tag-rcp"
 														: "note-tag-general",
 												]}
 											>
-												{note.kind === "legacy-note" ? "general" : "RCP"}
+												{note.axis === "rcp"
+													? "RCP"
+													: note.axis === "runtime"
+														? "runtime"
+														: "general"}
 											</span>
 											{" "}by {note.author} · {note.date}
 										</p>

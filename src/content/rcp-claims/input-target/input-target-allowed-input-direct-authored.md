@@ -1,5 +1,6 @@
 ---
 componentId: input-target-component
+axis: rcp
 claim: InputTarget with Allowed Input = Direct authors `allowsDirectInput = 1` and `allowsIndirectInput = 0`.
 summary: Fixture deltas show Direct mode serializes as explicit booleans on the InputTarget component prim.
 scope: USDA authored

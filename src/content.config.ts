@@ -13,6 +13,7 @@ const rcpClaims = defineCollection({
 	type: "content",
 	schema: z.object({
 		componentId: z.enum(componentIds as [string, ...string[]]),
+		axis: z.enum(["rcp", "runtime", "general"]),
 		claim: z.string().min(10),
 		summary: z.string().min(20),
 		scope: z.enum(["RCP UI", "USDA authored", "runtime behavior"]),

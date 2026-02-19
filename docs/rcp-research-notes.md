@@ -14,6 +14,7 @@ This project supports PR-based, evidence-driven RCP research notes as a domain d
 
 ```yaml
 componentId: billboard-component
+axis: rcp
 claim: Billboard component authors a top-level float blendFactor value in USDA.
 summary: One-sentence evidence-backed summary shown on component pages.
 scope: USDA authored
@@ -40,6 +41,7 @@ supersededBy: note-id-or-slug
 ## Allowed Values
 
 - `scope`: `RCP UI`, `USDA authored`, `runtime behavior`
+- `axis`: `rcp`, `runtime`, `general` (single value)
 - `sourceType`: `direct-diff`, `inference`, `hypothesis`
 - `confidence`: `low`, `medium`, `high`
 - `status`: `confirmed`, `disputed`, `superseded`

@@ -1,5 +1,6 @@
 ---
 componentId: ambient-audio-component
+axis: rcp
 claim: AmbientAudio Preview Resource selection is not authored directly on the AmbientAudio component in current fixtures.
 summary: Resource choice appears in AudioLibrary resources plus RealityKitAudioFile prims, while AmbientAudio keeps only component-local fields like gain.
 scope: USDA authored

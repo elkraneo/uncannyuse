@@ -1,5 +1,6 @@
 ---
 componentId: billboard-component
+axis: rcp
 claim: Billboard component authors a top-level `float blendFactor` value in USDA.
 summary: Fixture diff evidence shows Billboard writes one scalar field (`blendFactor`) directly on the component prim.
 scope: USDA authored
