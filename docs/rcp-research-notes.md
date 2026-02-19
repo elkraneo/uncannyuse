@@ -1,4 +1,4 @@
-# Reality Composer Pro Developer Notes
+# Reality Composer Pro Development Notes
 
 This project supports PR-based, evidence-driven RCP research notes as a domain distinct from API/platform compatibility tables.
 

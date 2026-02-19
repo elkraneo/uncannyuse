@@ -17,7 +17,7 @@ Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 RC w
 - Platform-exclusive flags (5 visionOS-only, 1 iOS-only)
 - New in 26.0 callouts (7 components)
 
-Also includes a PR-driven **Reality Composer Pro developer notes** domain for authored behavior discoveries, separate from API availability tables.
+Also includes a PR-driven **Reality Composer Pro development notes** domain for authored behavior discoveries, separate from API availability tables.
 Browse notes at `/research` on the site.
 
 ## Data source

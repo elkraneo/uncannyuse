@@ -27,14 +27,17 @@ function isAbsoluteLocalPath(path: string): boolean {
 }
 ---
 
-<Base title={`Developer Note · ${claim.data.componentId}`} description={claim.data.summary}>
+<Base
+	title={`Development Note · ${claim.data.componentId}`}
+	description={claim.data.summary}
+>
 	<article class="claim-page">
 		<nav class="claim-breadcrumb">
 			<a href={`/features/${claim.data.componentId}`}>← back to component</a>
 		</nav>
 
 		<header class="claim-header">
-			<p class="claim-kicker">Developer note</p>
+			<p class="claim-kicker">Development note</p>
 			<h1>{claim.data.claim}</h1>
 			<p class="claim-author">
 				by {claim.data.author} · {formatDate(claim.data.date)}
@@ -45,7 +48,10 @@ function isAbsoluteLocalPath(path: string): boolean {
 		<section class="claim-section">
 			<h2>Metadata</h2>
 			<ul class="meta-list">
-				<li><strong>Component:</strong> <code>{claim.data.componentId}</code></li>
+				<li>
+					<strong>Component:</strong>
+					<code>{claim.data.componentId}</code>
+				</li>
 				<li><strong>Status:</strong> {claim.data.status}</li>
 				<li><strong>Confidence:</strong> {claim.data.confidence}</li>
 				<li><strong>Evidence type:</strong> {claim.data.sourceType}</li>
@@ -60,46 +66,50 @@ function isAbsoluteLocalPath(path: string): boolean {
 		<section class="claim-section">
 			<h2>Reproduction</h2>
 			<ol>
-				{claim.data.reproSteps.map((step: string) => (
-					<li>{step}</li>
-				))}
+				{claim.data.reproSteps.map((step: string) => <li>{step}</li>)}
 			</ol>
 		</section>
 
 		<section class="claim-section">
 			<h2>Evidence</h2>
 			<ul class="evidence-list">
-				{claim.data.evidence.map((item: {
-					type: string;
-					path: string;
-					artifactLabel?: string;
-					publicUrl?: string;
-					note?: string;
-				}) => (
-					<li>
-						<div>
-							<strong>{item.artifactLabel ?? item.type}</strong>
-						</div>
-						{
-							item.publicUrl ? (
+				{
+					claim.data.evidence.map(
+						(item: {
+							type: string;
+							path: string;
+							artifactLabel?: string;
+							publicUrl?: string;
+							note?: string;
+						}) => (
+							<li>
 								<div>
-									<a href={item.publicUrl} target="_blank" rel="noopener noreferrer">
-										open evidence ↗
-									</a>
+									<strong>{item.artifactLabel ?? item.type}</strong>
 								</div>
-							) : isAbsoluteLocalPath(item.path) ? (
-								<div>
-									<em>local-only evidence path (not publicly exposed)</em>
-								</div>
-							) : (
-								<div>
-									<code>{item.path}</code>
-								</div>
-							)
-						}
-						{item.note && <p>{item.note}</p>}
-					</li>
-				))}
+								{item.publicUrl ? (
+									<div>
+										<a
+											href={item.publicUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											open evidence ↗
+										</a>
+									</div>
+								) : isAbsoluteLocalPath(item.path) ? (
+									<div>
+										<em>local-only evidence path (not publicly exposed)</em>
+									</div>
+								) : (
+									<div>
+										<code>{item.path}</code>
+									</div>
+								)}
+								{item.note && <p>{item.note}</p>}
+							</li>
+						),
+					)
+				}
 			</ul>
 		</section>
 

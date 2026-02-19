@@ -303,7 +303,11 @@ function formatClaimDate(date: Date): string {
 					<a href="/research/" class="claim-action-link">browse all notes</a>
 				</div>
 			</div>
-			<div class="view-switch" role="tablist" aria-label="Reality Composer Pro view">
+			<div
+				class="view-switch"
+				role="tablist"
+				aria-label="Reality Composer Pro view"
+			>
 				<button
 					type="button"
 					class="view-btn is-active"
@@ -320,7 +324,7 @@ function formatClaimDate(date: Date): string {
 					aria-selected="false"
 					data-rcp-tab-btn="notes"
 				>
-					developer notes
+					development notes
 				</button>
 			</div>
 
@@ -340,7 +344,9 @@ function formatClaimDate(date: Date): string {
 					<p class="rcp-detail">{rcpDetailText}</p>
 					{
 						!feature.rcp && (
-							<pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
+							<pre class="code-snippet">
+								<code>entity.components.set({feature.name}(…))</code>
+							</pre>
 						)
 					}
 				</div>
@@ -352,15 +358,12 @@ function formatClaimDate(date: Date): string {
 						<>
 							<ul class="claim-list">
 								{componentClaims.map((claim, idx) => (
-									<li
-										class="claim-item"
-										data-note-item
-										hidden={idx >= 3}
-									>
+									<li class="claim-item" data-note-item hidden={idx >= 3}>
 										<p class="claim-text">{claim.data.claim}</p>
 										<p class="claim-summary">{claim.data.summary}</p>
 										<p class="claim-byline">
-											by {claim.data.author} · {formatClaimDate(claim.data.date)}
+											by {claim.data.author} ·{" "}
+											{formatClaimDate(claim.data.date)}
 										</p>
 										<a class="claim-link" href={`/research/${claim.slug}/`}>
 											details →
@@ -368,21 +371,19 @@ function formatClaimDate(date: Date): string {
 									</li>
 								))}
 							</ul>
-							{
-								componentClaims.length > 3 && (
-									<button
-										type="button"
-										class="claim-show-all-btn"
-										data-show-all-notes
-										data-total={componentClaims.length}
-									>
-										show all {componentClaims.length} notes
-									</button>
-								)
-							}
+							{componentClaims.length > 3 && (
+								<button
+									type="button"
+									class="claim-show-all-btn"
+									data-show-all-notes
+									data-total={componentClaims.length}
+								>
+									show all {componentClaims.length} notes
+								</button>
+							)}
 						</>
 					) : (
-						<p class="notes-empty">No developer notes yet.</p>
+						<p class="notes-empty">No development notes yet.</p>
 					)
 				}
 			</div>
@@ -532,9 +533,8 @@ function formatClaimDate(date: Date): string {
 	const detailTabPanels = document.querySelectorAll<HTMLElement>(
 		"[data-detail-tab-panel]",
 	);
-	const rcpTabButtons = document.querySelectorAll<HTMLButtonElement>(
-		"[data-rcp-tab-btn]",
-	);
+	const rcpTabButtons =
+		document.querySelectorAll<HTMLButtonElement>("[data-rcp-tab-btn]");
 	const rcpTabPanels = document.querySelectorAll<HTMLElement>(
 		"[data-rcp-tab-panel]",
 	);

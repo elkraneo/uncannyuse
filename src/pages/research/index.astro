@@ -25,15 +25,15 @@ function formatDate(date: Date): string {
 ---
 
 <Base
-	title="Reality Composer Pro Developer Notes"
+	title="Reality Composer Pro Development Notes"
 	description="Reverse-engineering note index for Reality Composer Pro behavior."
 >
 	<article class="research-page">
 		<header class="research-header">
-			<h1>Reality Composer Pro Developer Notes</h1>
+			<h1>Reality Composer Pro Development Notes</h1>
 			<p>
-				Evidence-backed notes grouped by component. Open any note for
-				full metadata, repro steps, and evidence.
+				Evidence-backed notes grouped by component. Open any note for full
+				metadata, repro steps, and evidence.
 			</p>
 			<div class="research-actions">
 				<a href={proposeNoteUrl} target="_blank" rel="noopener noreferrer">
@@ -47,7 +47,9 @@ function formatDate(date: Date): string {
 				<section class="claim-group">
 					<h2>
 						<a href={`/features/${componentId}`}>{componentId}</a>
-						<span>{entries.length} note{entries.length > 1 ? "s" : ""}</span>
+						<span>
+							{entries.length} note{entries.length > 1 ? "s" : ""}
+						</span>
 					</h2>
 					<ul class="claim-list">
 						{entries.map((claim) => (
