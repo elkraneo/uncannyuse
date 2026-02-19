@@ -2,7 +2,7 @@ name: Development Note
 description: Propose a Reality Composer Pro behavior note from observed evidence
 title: "[note] "
 labels:
-  - developer-note
+  - development-note
 body:
   - type: markdown
     attributes:

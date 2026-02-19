@@ -157,7 +157,7 @@ type ComponentNote =
 			link?: string;
 	  }
 	| {
-			kind: "developer-note";
+			kind: "development-note";
 			text: string;
 			summary: string;
 			author: string;
@@ -186,7 +186,7 @@ unifiedNotes.push({
 
 for (const claim of componentClaims) {
 	unifiedNotes.push({
-		kind: "developer-note",
+		kind: "development-note",
 		text: claim.data.claim,
 		summary: claim.data.summary,
 		author: claim.data.author,
@@ -391,15 +391,15 @@ function formatClaimDate(date: Date): string {
 											<span
 												class:list={[
 													"note-tag",
-													note.kind === "system-rcp" || note.kind === "developer-note"
+													note.kind === "system-rcp" || note.kind === "development-note"
 														? "note-tag-rcp"
 														: "note-tag-general",
 												]}
 											>
 												{note.kind === "system-rcp"
 													? "RCP"
-													: note.kind === "developer-note"
-														? "developer"
+													: note.kind === "development-note"
+														? "development"
 														: "general"}
 											</span>
 											{" "}by {note.author} · {note.date}
