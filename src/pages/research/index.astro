@@ -1,0 +1,186 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const claims = (await getCollection("rcp-claims")).sort(
+	(a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const groups = new Map<string, typeof claims>();
+for (const claim of claims) {
+	const existing = groups.get(claim.data.componentId) ?? [];
+	existing.push(claim);
+	groups.set(claim.data.componentId, existing);
+}
+
+const groupedClaims = [...groups.entries()].sort((a, b) =>
+	a[0].localeCompare(b[0]),
+);
+const proposeClaimUrl =
+	"https://github.com/elkraneo/uncannyuse/issues/new?title=%5Bclaim%5D%20&body=%23%23%20Component%0A-%20%0A%0A%23%23%20Proposed%20claim%20(atomic)%0A-%20%0A%0A%23%23%20Scope%0A-%20%5B%20%5D%20RCP%20UI%0A-%20%5B%20%5D%20USDA%20authored%0A-%20%5B%20%5D%20runtime%20behavior%0A%0A%23%23%20Evidence%0A-%20%0A%0A%23%23%20Repro%20steps%0A1.%20";
+
+function formatDate(date: Date): string {
+	return date.toISOString().slice(0, 10);
+}
+---
+
+<Base
+	title="RCP Research Claims"
+	description="Reverse-engineering claim index for Reality Composer Pro behavior."
+>
+	<article class="research-page">
+		<header class="research-header">
+			<h1>RCP Reverse-Engineering Claims</h1>
+			<p>
+				Evidence-backed behavior claims grouped by component. Open any claim for
+				full metadata, repro steps, and evidence.
+			</p>
+			<div class="research-actions">
+				<a href={proposeClaimUrl} target="_blank" rel="noopener noreferrer">
+					propose claim ↗
+				</a>
+			</div>
+		</header>
+
+		{
+			groupedClaims.map(([componentId, entries]) => (
+				<section class="claim-group">
+					<h2>
+						<a href={`/features/${componentId}`}>{componentId}</a>
+						<span>{entries.length} claim{entries.length > 1 ? "s" : ""}</span>
+					</h2>
+					<ul class="claim-list">
+						{entries.map((claim) => (
+							<li class="claim-item">
+								<a href={`/research/${claim.slug}/`} class="claim-title">
+									{claim.data.claim}
+								</a>
+								<p>{claim.data.summary}</p>
+								<div class="claim-meta">
+									<span>{claim.data.status}</span>
+									<span>{claim.data.confidence}</span>
+									<span>{claim.data.scope}</span>
+									<span>{formatDate(claim.data.date)}</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</article>
+</Base>
+
+<style>
+	.research-page {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 5rem;
+	}
+
+	.research-header h1 {
+		font-size: clamp(1.6rem, 3vw, 2.2rem);
+	}
+
+	.research-header p {
+		margin-top: 0.6rem;
+		color: var(--muted);
+		max-width: 65ch;
+	}
+
+	.research-actions {
+		margin-top: 0.75rem;
+	}
+
+	.research-actions a {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		text-decoration: none;
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 0.22rem 0.5rem;
+	}
+
+	.research-actions a:hover {
+		color: var(--text);
+		background: var(--surface-up);
+	}
+
+	.claim-group {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.claim-group h2 {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		align-items: center;
+		font-size: 1rem;
+	}
+
+	.claim-group h2 a {
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.claim-group h2 a:hover {
+		text-decoration: underline;
+	}
+
+	.claim-group h2 span {
+		font-size: 0.8rem;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.1rem 0.45rem;
+	}
+
+	.claim-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
+		margin-top: 0.8rem;
+	}
+
+	.claim-item {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 0.7rem 0.8rem;
+		background: var(--surface);
+	}
+
+	.claim-title {
+		color: var(--text);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.claim-title:hover {
+		color: var(--ios);
+		text-decoration: underline;
+	}
+
+	.claim-item p {
+		margin-top: 0.35rem;
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
+	.claim-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-top: 0.55rem;
+	}
+
+	.claim-meta span {
+		font-size: 0.75rem;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.1rem 0.45rem;
+	}
+</style>

@@ -18,6 +18,7 @@ Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 RC w
 - New in 26.0 callouts (7 components)
 
 Also includes a PR-driven **RCP reverse-engineering claims** domain for authored behavior discoveries, separate from API availability tables.
+Browse claims at `/research` on the site.
 
 ## Data source
 

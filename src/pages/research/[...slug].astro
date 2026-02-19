@@ -68,11 +68,14 @@ function isAbsoluteLocalPath(path: string): boolean {
 				{claim.data.evidence.map((item: {
 					type: string;
 					path: string;
+					artifactLabel?: string;
 					publicUrl?: string;
 					note?: string;
 				}) => (
 					<li>
-						<div><strong>{item.type}</strong></div>
+						<div>
+							<strong>{item.artifactLabel ?? item.type}</strong>
+						</div>
 						{
 							item.publicUrl ? (
 								<div>
