@@ -16,8 +16,8 @@ for (const claim of claims) {
 const groupedClaims = [...groups.entries()].sort((a, b) =>
 	a[0].localeCompare(b[0]),
 );
-const proposeClaimUrl =
-	"https://github.com/elkraneo/uncannyuse/issues/new?title=%5Bclaim%5D%20&body=%23%23%20Component%0A-%20%0A%0A%23%23%20Proposed%20claim%20(atomic)%0A-%20%0A%0A%23%23%20Scope%0A-%20%5B%20%5D%20RCP%20UI%0A-%20%5B%20%5D%20USDA%20authored%0A-%20%5B%20%5D%20runtime%20behavior%0A%0A%23%23%20Evidence%0A-%20%0A%0A%23%23%20Repro%20steps%0A1.%20";
+const proposeNoteUrl =
+	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
 
 function formatDate(date: Date): string {
 	return date.toISOString().slice(0, 10);
@@ -25,19 +25,19 @@ function formatDate(date: Date): string {
 ---
 
 <Base
-	title="RCP Research Claims"
-	description="Reverse-engineering claim index for Reality Composer Pro behavior."
+	title="Reality Composer Pro Developer Notes"
+	description="Reverse-engineering note index for Reality Composer Pro behavior."
 >
 	<article class="research-page">
 		<header class="research-header">
-			<h1>RCP Reverse-Engineering Claims</h1>
+			<h1>Reality Composer Pro Developer Notes</h1>
 			<p>
-				Evidence-backed behavior claims grouped by component. Open any claim for
+				Evidence-backed notes grouped by component. Open any note for
 				full metadata, repro steps, and evidence.
 			</p>
 			<div class="research-actions">
-				<a href={proposeClaimUrl} target="_blank" rel="noopener noreferrer">
-					propose claim ↗
+				<a href={proposeNoteUrl} target="_blank" rel="noopener noreferrer">
+					propose note ↗
 				</a>
 			</div>
 		</header>
@@ -47,7 +47,7 @@ function formatDate(date: Date): string {
 				<section class="claim-group">
 					<h2>
 						<a href={`/features/${componentId}`}>{componentId}</a>
-						<span>{entries.length} claim{entries.length > 1 ? "s" : ""}</span>
+						<span>{entries.length} note{entries.length > 1 ? "s" : ""}</span>
 					</h2>
 					<ul class="claim-list">
 						{entries.map((claim) => (

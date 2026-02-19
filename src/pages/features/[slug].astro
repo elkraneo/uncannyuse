@@ -122,29 +122,8 @@ const correctionParams = new URLSearchParams({
 const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
 const suggestResourceIssueUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
-const claimBody = [
-	"## Component",
-	`${feature.name} (${feature.id})`,
-	"",
-	"## Proposed claim (atomic)",
-	"- ",
-	"",
-	"## Scope",
-	"- [ ] RCP UI",
-	"- [ ] USDA authored",
-	"- [ ] runtime behavior",
-	"",
-	"## Evidence",
-	"- ",
-	"",
-	"## Repro steps",
-	"1. ",
-].join("\n");
-const suggestClaimParams = new URLSearchParams({
-	title: `[claim] ${feature.name}`,
-	body: claimBody,
-});
-const suggestClaimIssueUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${suggestClaimParams.toString()}`;
+const suggestNoteIssueUrl =
+	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
 const notesList = feature.notes ?? [];
 const rcpStatusText = feature.rcp
 	? "In Add Component menu"
@@ -177,19 +156,6 @@ const componentClaims = (await getCollection("rcp-claims"))
 
 function formatClaimDate(date: Date): string {
 	return date.toISOString().slice(0, 10);
-}
-
-function formatClaimValue(
-	key: "status" | "confidence" | "sourceType" | "scope",
-	value: string,
-): string {
-	const labels: Record<string, string> = {
-		status: "status",
-		confidence: "confidence",
-		sourceType: "evidence",
-		scope: "scope",
-	};
-	return `${labels[key]}: ${value}`;
 }
 ---
 
@@ -323,64 +289,102 @@ function formatClaimValue(
 
 		<!-- RCP section -->
 		<section class="section">
-			<h2 class="section-label">/// reality composer pro</h2>
-			<div class="rcp-card" class:list={[feature.rcp ? "rcp-yes" : "rcp-no"]}>
-				<div class="rcp-status">
+			<div class="section-head">
+				<h2 class="section-label">/// reality composer pro</h2>
+				<div class="claim-actions">
+					<a
+						href={suggestNoteIssueUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="claim-action-link"
+					>
+						propose note ↗
+					</a>
+					<a href="/research/" class="claim-action-link">browse all notes</a>
+				</div>
+			</div>
+			<div class="view-switch" role="tablist" aria-label="Reality Composer Pro view">
+				<button
+					type="button"
+					class="view-btn is-active"
+					role="tab"
+					aria-selected="true"
+					data-rcp-tab-btn="overview"
+				>
+					overview
+				</button>
+				<button
+					type="button"
+					class="view-btn"
+					role="tab"
+					aria-selected="false"
+					data-rcp-tab-btn="notes"
+				>
+					developer notes
+				</button>
+			</div>
+
+			<div data-rcp-tab-panel="overview">
+				<div class="rcp-card" class:list={[feature.rcp ? "rcp-yes" : "rcp-no"]}>
+					<div class="rcp-status">
+						{
+							feature.rcp ? (
+								<span class="rcp-indicator yes">✓</span>
+							) : (
+								<span class="rcp-indicator no">○</span>
+							)
+						}
+						<span class="rcp-title">Add Component menu</span>
+						<span class="rcp-status-chip">{rcpStatusText}</span>
+					</div>
+					<p class="rcp-detail">{rcpDetailText}</p>
 					{
-						feature.rcp ? (
-							<span class="rcp-indicator yes">✓</span>
-						) : (
-							<span class="rcp-indicator no">○</span>
+						!feature.rcp && (
+							<pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
 						)
 					}
-					<span class="rcp-title">Add Component menu</span>
-					<span class="rcp-status-chip">{rcpStatusText}</span>
 				</div>
-				<p class="rcp-detail">{rcpDetailText}</p>
+			</div>
+
+			<div data-rcp-tab-panel="notes" hidden>
 				{
-					!feature.rcp && (
-						<pre class="code-snippet"><code>entity.components.set({feature.name}(…))</code></pre>
+					componentClaims.length > 0 ? (
+						<>
+							<ul class="claim-list">
+								{componentClaims.map((claim, idx) => (
+									<li
+										class="claim-item"
+										data-note-item
+										hidden={idx >= 3}
+									>
+										<p class="claim-text">{claim.data.claim}</p>
+										<p class="claim-summary">{claim.data.summary}</p>
+										<p class="claim-byline">
+											by {claim.data.author} · {formatClaimDate(claim.data.date)}
+										</p>
+										<a class="claim-link" href={`/research/${claim.slug}/`}>
+											details →
+										</a>
+									</li>
+								))}
+							</ul>
+							{
+								componentClaims.length > 3 && (
+									<button
+										type="button"
+										class="claim-show-all-btn"
+										data-show-all-notes
+										data-total={componentClaims.length}
+									>
+										show all {componentClaims.length} notes
+									</button>
+								)
+							}
+						</>
+					) : (
+						<p class="notes-empty">No developer notes yet.</p>
 					)
 				}
-			</div>
-		</section>
-
-		<section class="section">
-			<h2 class="section-label">/// rcp reverse-engineering claims</h2>
-			{
-				componentClaims.length > 0 ? (
-					<ul class="claim-list">
-							{componentClaims.map((claim) => (
-								<li class="claim-item">
-									<p class="claim-text">{claim.data.claim}</p>
-									<p class="claim-summary">{claim.data.summary}</p>
-									<div class="claim-meta">
-										<span>{formatClaimValue("status", claim.data.status)}</span>
-										<span>{formatClaimValue("confidence", claim.data.confidence)}</span>
-										<span>{formatClaimValue("sourceType", claim.data.sourceType)}</span>
-										<span>{formatClaimValue("scope", claim.data.scope)}</span>
-										<span>{`date: ${formatClaimDate(claim.data.date)}`}</span>
-									</div>
-									<a class="claim-link" href={`/research/${claim.slug}/`}>
-										view claim details →
-									</a>
-								</li>
-							))}
-						</ul>
-				) : (
-					<p class="notes-empty">No RCP reverse-engineering claims yet.</p>
-				)
-			}
-			<div class="claim-actions">
-				<a href="/research/" class="claim-action-link">browse all claims</a>
-				<a
-					href={suggestClaimIssueUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="claim-action-link"
-				>
-					propose claim ↗
-				</a>
 			</div>
 		</section>
 
@@ -528,6 +532,16 @@ function formatClaimValue(
 	const detailTabPanels = document.querySelectorAll<HTMLElement>(
 		"[data-detail-tab-panel]",
 	);
+	const rcpTabButtons = document.querySelectorAll<HTMLButtonElement>(
+		"[data-rcp-tab-btn]",
+	);
+	const rcpTabPanels = document.querySelectorAll<HTMLElement>(
+		"[data-rcp-tab-panel]",
+	);
+	const noteItems = document.querySelectorAll<HTMLElement>("[data-note-item]");
+	const showAllNotesBtn = document.querySelector<HTMLButtonElement>(
+		"[data-show-all-notes]",
+	);
 
 	function setView(view: string) {
 		viewButtons.forEach((button) => {
@@ -561,6 +575,30 @@ function formatClaimValue(
 		button.addEventListener("click", () => {
 			setDetailTab(button.dataset.detailTabBtn ?? "notes");
 		});
+	});
+
+	function setRcpTab(tab: string) {
+		rcpTabButtons.forEach((button) => {
+			const selected = button.dataset.rcpTabBtn === tab;
+			button.classList.toggle("is-active", selected);
+			button.setAttribute("aria-selected", selected ? "true" : "false");
+		});
+		rcpTabPanels.forEach((panel) => {
+			panel.hidden = panel.dataset.rcpTabPanel !== tab;
+		});
+	}
+
+	rcpTabButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			setRcpTab(button.dataset.rcpTabBtn ?? "overview");
+		});
+	});
+
+	showAllNotesBtn?.addEventListener("click", () => {
+		noteItems.forEach((item) => {
+			item.hidden = false;
+		});
+		showAllNotesBtn.remove();
 	});
 </script>
 
@@ -740,6 +778,15 @@ function formatClaimValue(
 		color: var(--muted);
 		letter-spacing: 0.04em;
 		margin-bottom: 1rem;
+	}
+
+	.section-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		margin-bottom: 0.55rem;
 	}
 
 	/* Platform grid */
@@ -925,19 +972,10 @@ function formatClaimValue(
 		line-height: 1.55;
 	}
 
-	.claim-meta {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.35rem;
-		margin-top: 0.55rem;
-	}
-
-	.claim-meta span {
-		font-size: 0.75rem;
+	.claim-byline {
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
 		color: var(--muted);
-		border: 1px solid var(--border);
-		border-radius: 999px;
-		padding: 0.1rem 0.45rem;
 	}
 
 	.claim-link {
@@ -953,7 +991,6 @@ function formatClaimValue(
 	}
 
 	.claim-actions {
-		margin-top: 0.8rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.6rem;
@@ -971,6 +1008,22 @@ function formatClaimValue(
 	.claim-action-link:hover {
 		color: var(--text);
 		background: var(--surface-up);
+	}
+
+	.claim-show-all-btn {
+		margin-top: 0.75rem;
+		border: 1px solid var(--border);
+		background: var(--surface-up);
+		color: var(--muted);
+		border-radius: 6px;
+		padding: 0.35rem 0.6rem;
+		font: inherit;
+		font-size: 0.8125rem;
+		cursor: pointer;
+	}
+
+	.claim-show-all-btn:hover {
+		color: var(--text);
 	}
 
 	/* Notes */
