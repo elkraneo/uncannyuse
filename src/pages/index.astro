@@ -90,7 +90,17 @@ const iosOnly = features.filter(
 		<!-- Sidebar -->
 		<aside class="sidebar">
 			<div class="sidebar-section">
-				<div class="sidebar-label">// filter</div>
+				<div class="sidebar-filter-head">
+					<div class="sidebar-label">// filter</div>
+					<label class="cat-sort-wrap" for="cat-sort">
+						<span class="cat-sort-label">sort</span>
+						<select id="cat-sort" class="cat-sort" aria-label="Sort filter groups">
+							<option value="group">group</option>
+							<option value="count">count</option>
+							<option value="alpha">a-z</option>
+						</select>
+					</label>
+				</div>
 				<nav id="cat-nav" class="cat-nav">
 					<button class="cat-btn active" data-cat="all">
 						<span class="cat-btn-dot" style="background: var(--muted)"></span>
@@ -188,6 +198,8 @@ const iosOnly = features.filter(
 
 <script>
 	const catBtns = document.querySelectorAll<HTMLButtonElement>(".cat-btn");
+	const catNav = document.getElementById("cat-nav") as HTMLElement;
+	const catSort = document.getElementById("cat-sort") as HTMLSelectElement | null;
 	const rows = document.querySelectorAll<HTMLAnchorElement>(".grid-row");
 	const search = document.getElementById("search-input") as HTMLInputElement;
 	const emptyMsg = document.getElementById("empty-msg") as HTMLParagraphElement;
@@ -202,6 +214,49 @@ const iosOnly = features.filter(
 			.map((btn) => btn.dataset.cat ?? "")
 			.filter(Boolean),
 	]);
+	const allCatBtn =
+		catNav?.querySelector<HTMLButtonElement>('.cat-btn[data-cat="all"]') ?? null;
+	const dynamicCatBtns = Array.from(
+		catNav?.querySelectorAll<HTMLButtonElement>('.cat-btn[data-cat]:not([data-cat="all"])') ??
+			[],
+	);
+	const groupOrder = new Map(
+		dynamicCatBtns.map((btn, index) => [btn.dataset.cat ?? "", index]),
+	);
+
+	function catCount(btn: HTMLButtonElement): number {
+		const value = btn.querySelector(".cat-btn-count")?.textContent?.trim() ?? "0";
+		return Number(value);
+	}
+
+	function catName(btn: HTMLButtonElement): string {
+		return btn.querySelector(".cat-btn-name")?.textContent?.trim() ?? "";
+	}
+
+	function sortCategoryButtons(mode: string) {
+		if (!catNav || !allCatBtn) return;
+		const sorted = [...dynamicCatBtns];
+		if (mode === "count") {
+			sorted.sort((a, b) => {
+				const countDiff = catCount(b) - catCount(a);
+				if (countDiff !== 0) return countDiff;
+				return catName(a).localeCompare(catName(b), undefined, {
+					sensitivity: "base",
+				});
+			});
+		} else if (mode === "alpha") {
+			sorted.sort((a, b) =>
+				catName(a).localeCompare(catName(b), undefined, { sensitivity: "base" }),
+			);
+		} else {
+			sorted.sort(
+				(a, b) =>
+					(groupOrder.get(a.dataset.cat ?? "") ?? 0) -
+					(groupOrder.get(b.dataset.cat ?? "") ?? 0),
+			);
+		}
+		catNav.append(allCatBtn, ...sorted);
+	}
 
 	function setActiveCategory(cat: string) {
 		const nextCat = validCats.has(cat) ? cat : "all";
@@ -262,6 +317,11 @@ const iosOnly = features.filter(
 		setActiveCategory(initialCat);
 		applyFilter();
 	}
+
+	catSort?.addEventListener("change", () => {
+		sortCategoryButtons(catSort.value);
+	});
+	sortCategoryButtons(catSort?.value ?? "group");
 </script>
 
 <style>
@@ -384,6 +444,46 @@ const iosOnly = features.filter(
 		color: var(--muted);
 		margin-bottom: 0.625rem;
 		letter-spacing: 0.04em;
+	}
+
+	.sidebar-filter-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+
+	.sidebar-filter-head .sidebar-label {
+		margin-bottom: 0;
+	}
+
+	.cat-sort-wrap {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+	}
+
+	.cat-sort-label {
+		font-size: 0.6923rem;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+		text-transform: lowercase;
+	}
+
+	.cat-sort {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		color: var(--text);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		line-height: 1;
+		border-radius: 4px;
+		padding: 0.25rem 0.375rem;
+	}
+
+	.cat-sort:focus-visible {
+		outline: 1px solid var(--border-up);
+		outline-offset: 1px;
 	}
 
 	/* Category nav */
@@ -612,6 +712,10 @@ const iosOnly = features.filter(
 		.sidebar-label {
 			margin-bottom: 0.5rem;
 		}
+
+		.sidebar-filter-head {
+			align-items: baseline;
+		}
 	}
 
 	/* ── Mobile ──────────────────────────────────── */
@@ -696,6 +800,11 @@ const iosOnly = features.filter(
 
 		.sidebar-label {
 			width: 100%;
+		}
+
+		.sidebar-filter-head {
+			flex-wrap: wrap;
+			row-gap: 0.25rem;
 		}
 
 		.search-hint {
