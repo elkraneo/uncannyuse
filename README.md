@@ -17,6 +17,8 @@ Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 RC w
 - Platform-exclusive flags (5 visionOS-only, 1 iOS-only)
 - New in 26.0 callouts (7 components)
 
+Also includes a PR-driven **RCP reverse-engineering claims** domain for authored behavior discoveries, separate from API availability tables.
+
 ## Data source
 
 All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode 26.3 RC SDK and from binary string analysis of `RealityToolsFoundation.framework`. macOS versions are inferred from SDK era — verify against Apple documentation.
@@ -43,6 +45,12 @@ npm run dev      # localhost:4321
 npm run build
 npm run preview
 ```
+
+## Contributing RCP research notes
+
+Use Markdown claim entries under `src/content/rcp-claims/` with strict frontmatter validation.
+
+See `/Volumes/Plutonian/_Developer/uncannyuse-Workspace/source/uncannyuse.com/docs/rcp-research-notes.md`.
 
 ## Support
 

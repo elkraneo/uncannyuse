@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import SupportBadge from "../../components/SupportBadge.astro";
+import { getCollection } from "astro:content";
 import rkData from "../../data/features/realitykit-components.json";
 import docsMapData from "../../data/mappings/realitykit-docs-url-map.json";
 import resourcesData from "../../data/resources/realitykit-resources.json";
@@ -146,6 +147,27 @@ const timelineRows = platforms
 		if (a.value !== b.value) return a.value - b.value;
 		return a.label.localeCompare(b.label);
 	});
+
+const componentClaims = (await getCollection("rcp-claims"))
+	.filter((entry) => entry.data.componentId === feature.id)
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatClaimDate(date: Date): string {
+	return date.toISOString().slice(0, 10);
+}
+
+function formatClaimValue(
+	key: "status" | "confidence" | "sourceType" | "scope",
+	value: string,
+): string {
+	const labels: Record<string, string> = {
+		status: "status",
+		confidence: "confidence",
+		sourceType: "evidence",
+		scope: "scope",
+	};
+	return `${labels[key]}: ${value}`;
+}
 ---
 
 <Base title={feature.name} description={feature.description}>
@@ -298,6 +320,34 @@ const timelineRows = platforms
 					)
 				}
 			</div>
+		</section>
+
+		<section class="section">
+			<h2 class="section-label">/// rcp reverse-engineering claims</h2>
+			{
+				componentClaims.length > 0 ? (
+					<ul class="claim-list">
+							{componentClaims.map((claim) => (
+								<li class="claim-item">
+									<p class="claim-text">{claim.data.claim}</p>
+									<p class="claim-summary">{claim.data.summary}</p>
+									<div class="claim-meta">
+										<span>{formatClaimValue("status", claim.data.status)}</span>
+										<span>{formatClaimValue("confidence", claim.data.confidence)}</span>
+										<span>{formatClaimValue("sourceType", claim.data.sourceType)}</span>
+										<span>{formatClaimValue("scope", claim.data.scope)}</span>
+										<span>{`date: ${formatClaimDate(claim.data.date)}`}</span>
+									</div>
+									<a class="claim-link" href={`/research/${claim.slug}/`}>
+										view claim details →
+									</a>
+								</li>
+							))}
+						</ul>
+				) : (
+					<p class="notes-empty">No RCP reverse-engineering claims yet.</p>
+				)
+			}
 		</section>
 
 		<!-- Notes + Resources -->
@@ -812,6 +862,60 @@ const timelineRows = platforms
 		font-family: var(--font-mono);
 		font-size: 0.9375rem;
 		color: var(--muted);
+	}
+
+	.claim-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.claim-item {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 0.75rem 0.85rem;
+		background: var(--surface);
+	}
+
+	.claim-text {
+		font-size: 0.9375rem;
+		color: var(--text);
+		line-height: 1.55;
+	}
+
+	.claim-summary {
+		margin-top: 0.35rem;
+		font-size: 0.875rem;
+		color: var(--muted);
+		line-height: 1.55;
+	}
+
+	.claim-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-top: 0.55rem;
+	}
+
+	.claim-meta span {
+		font-size: 0.75rem;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.1rem 0.45rem;
+	}
+
+	.claim-link {
+		display: inline-block;
+		margin-top: 0.6rem;
+		font-size: 0.875rem;
+		color: var(--ios);
+		text-decoration: none;
+	}
+
+	.claim-link:hover {
+		text-decoration: underline;
 	}
 
 	/* Notes */
