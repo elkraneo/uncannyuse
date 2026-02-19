@@ -17,11 +17,40 @@ body:
     validations:
       required: true
   - type: textarea
-    id: observation
+    id: short_summary
+    attributes:
+      label: Short summary
+      description: One sentence summary used in note cards.
+      placeholder: "Example: Direct input mode writes explicit allowsDirectInput/allowsIndirectInput booleans."
+    validations:
+      required: true
+  - type: textarea
+    id: observed_behavior
     attributes:
       label: What did you observe?
       description: Keep this atomic. One behavior per note.
-      placeholder: "Example: Allowed Input = Direct sets allowsDirectInput=1 and allowsIndirectInput=0."
+      placeholder: |
+        Example:
+        - Set Allowed Input to Direct
+        - Saved scene
+        - Diff shows allowsDirectInput=1 and allowsIndirectInput=0
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: What did you expect? (optional)
+      description: Useful when the observed behavior is surprising or looks like a bug.
+      placeholder: Example: I expected a single enum-like field instead of two booleans.
+  - type: dropdown
+    id: evidence_confidence
+    attributes:
+      label: Evidence confidence
+      description: Pick the strongest evidence you currently have.
+      options:
+        - strong diff (fixture diff or direct authored delta)
+        - medium evidence (screenshot/video + reproducible steps)
+        - low evidence (memory/recollection only)
     validations:
       required: true
   - type: dropdown
