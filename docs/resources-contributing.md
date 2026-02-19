@@ -13,11 +13,13 @@ This project accepts curated resource links for RealityKit components.
   "resources": {
     "component-id": [
       {
-        "title": "Human-readable resource title",
+        "title": "Optional manual title override for the preview card",
         "url": "https://example.com/resource",
         "type": "official-docs | sample | article | video | issue",
         "source": "Apple | GitHub | Forum | Community",
-        "verifiedAt": "YYYY-MM-DD"
+        "verifiedAt": "YYYY-MM-DD",
+        "description": "Optional manual description override for the preview card",
+        "image": "https://example.com/preview-image.jpg"
       }
     ]
   }
@@ -29,7 +31,9 @@ This project accepts curated resource links for RealityKit components.
 - Use a valid existing component id from `src/data/features/realitykit-components.json`.
 - Prefer primary sources first (Apple docs, official sample code, official forums).
 - Avoid duplicate URLs for the same component.
-- Keep titles concise and specific.
+- `title`, `description`, and `image` are optional overrides.
+- If omitted, preview values are fetched from OG/Twitter/meta tags at build time.
+- Keep manual titles concise and specific when you provide them.
 - Set `verifiedAt` to the date you checked the link.
 
 ## PR Checklist

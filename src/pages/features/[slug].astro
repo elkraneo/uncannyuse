@@ -64,11 +64,13 @@ const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${f
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
 const officialAbstract = docsMapById.get(feature.id)?.summary ?? null;
 type ResourceEntry = {
-	title: string;
+	title?: string;
 	url: string;
 	type: string;
 	source: string;
 	verifiedAt?: string;
+	description?: string;
+	image?: string;
 };
 const customResources = ((
 	resourcesData as {
@@ -77,7 +79,6 @@ const customResources = ((
 ).resources?.[feature.id] ?? []) as ResourceEntry[];
 const resourcesList: ResourceEntry[] = [
 	{
-		title: "Apple Developer Documentation",
 		url: docsUrl,
 		type: "official-docs",
 		source: "Apple",
@@ -85,6 +86,139 @@ const resourcesList: ResourceEntry[] = [
 	...customResources,
 ].filter(
 	(item, idx, all) => all.findIndex((other) => other.url === item.url) === idx,
+);
+
+type ResourcePreview = ResourceEntry & {
+	previewTitle: string;
+	previewDescription?: string;
+	previewImage?: string;
+	domain: string;
+};
+
+const resourcePreviewCache = new Map<string, Promise<ResourcePreview>>();
+
+function decodeHtmlEntities(value: string): string {
+	return value
+		.replace(/&amp;/g, "&")
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;/g, "'")
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">");
+}
+
+function stripHtml(value: string): string {
+	return decodeHtmlEntities(value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim());
+}
+
+function getMetaContent(html: string, key: string): string | undefined {
+	const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	const patterns = [
+		new RegExp(
+			`<meta[^>]+(?:property|name)=["']${escapedKey}["'][^>]*content=["']([^"']+)["'][^>]*>`,
+			"i",
+		),
+		new RegExp(
+			`<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${escapedKey}["'][^>]*>`,
+			"i",
+		),
+	];
+	for (const pattern of patterns) {
+		const match = html.match(pattern);
+		if (match?.[1]) return stripHtml(match[1]);
+	}
+	return undefined;
+}
+
+function getHtmlTitle(html: string): string | undefined {
+	const match = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+	return match?.[1] ? stripHtml(match[1]) : undefined;
+}
+
+function getDomain(url: string): string {
+	try {
+		return new URL(url).hostname.replace(/^www\./, "");
+	} catch {
+		return url;
+	}
+}
+
+function initialsFromDomain(domain: string): string {
+	return domain
+		.split(".")
+		.filter(Boolean)
+		.slice(0, 2)
+		.map((part) => part[0]?.toUpperCase() ?? "")
+		.join("");
+}
+
+async function fetchResourcePreview(resource: ResourceEntry): Promise<ResourcePreview> {
+	const cached = resourcePreviewCache.get(resource.url);
+	if (cached) return cached;
+
+	const fallback: ResourcePreview = {
+		...resource,
+		previewTitle: resource.title ?? resource.url,
+		previewDescription: resource.description,
+		previewImage: resource.image,
+		domain: getDomain(resource.url),
+	};
+
+	const request = (async () => {
+		try {
+			const response = await fetch(resource.url, {
+				redirect: "follow",
+				headers: {
+					"User-Agent": "Mozilla/5.0 (compatible; uncannyuse-link-preview/1.0)",
+				},
+				signal: AbortSignal.timeout(3500),
+			});
+			if (!response.ok) return fallback;
+			const contentType = response.headers.get("content-type") ?? "";
+			if (!contentType.includes("text/html")) return fallback;
+			const html = (await response.text()).slice(0, 250_000);
+
+			const ogTitle =
+				getMetaContent(html, "og:title") ??
+				getMetaContent(html, "twitter:title") ??
+				getHtmlTitle(html) ??
+				resource.url;
+			const ogDescription =
+				resource.description ??
+				getMetaContent(html, "og:description") ??
+				getMetaContent(html, "twitter:description") ??
+				getMetaContent(html, "description");
+
+			const rawImage =
+				resource.image ??
+				getMetaContent(html, "og:image") ??
+				getMetaContent(html, "twitter:image");
+			let ogImage = rawImage;
+			if (rawImage) {
+				try {
+					ogImage = new URL(rawImage, resource.url).toString();
+				} catch {
+					ogImage = undefined;
+				}
+			}
+
+				return {
+					...resource,
+					previewTitle: resource.title ?? ogTitle,
+					previewDescription: ogDescription,
+					previewImage: ogImage,
+					domain: getDomain(resource.url),
+				};
+		} catch {
+			return fallback;
+		}
+	})();
+
+	resourcePreviewCache.set(resource.url, request);
+	return request;
+}
+
+const resourcesWithPreview = await Promise.all(
+	resourcesList.map((resource) => fetchResourcePreview(resource)),
 );
 
 function normalizedText(value: string): string {
@@ -509,7 +643,7 @@ function formatClaimDate(date: Date): string {
 			<div class="detail-tab-panel" data-detail-tab-panel="resources" hidden>
 				<ul class="resource-list">
 					{
-						resourcesList.map((resource) => (
+						resourcesWithPreview.map((resource) => (
 							<li class="resource-item">
 								<a
 									href={resource.url}
@@ -517,14 +651,40 @@ function formatClaimDate(date: Date): string {
 									rel="noopener noreferrer"
 									class="resource-link"
 								>
-									{resource.title}
+									<span class="resource-preview-media" aria-hidden="true">
+										{resource.previewImage ? (
+											<img
+												src={resource.previewImage}
+												alt=""
+												class="resource-preview-image"
+												loading="lazy"
+												decoding="async"
+												referrerpolicy="no-referrer"
+											/>
+										) : (
+											<span class="resource-preview-fallback">
+												{initialsFromDomain(resource.domain)}
+											</span>
+										)}
+									</span>
+									<span class="resource-preview-body">
+										<span class="resource-preview-title">{resource.previewTitle}</span>
+										{resource.previewDescription && (
+											<span class="resource-preview-description">
+												{resource.previewDescription}
+											</span>
+										)}
+										<span class="resource-meta">
+											{resource.domain}
+											{" · "}
+											{resource.source}
+											{resource.verifiedAt
+												? ` · verified ${resource.verifiedAt}`
+												: ""}
+										</span>
+									</span>
+									<span class="resource-preview-external" aria-hidden="true">↗</span>
 								</a>
-								<span class="resource-meta">
-									{resource.source}
-									{resource.verifiedAt
-										? ` · verified ${resource.verifiedAt}`
-										: ""}
-								</span>
 							</li>
 						))
 					}
@@ -1142,10 +1302,7 @@ function formatClaimDate(date: Date): string {
 	}
 
 	.resource-item {
-		display: flex;
-		flex-direction: column;
-		gap: 0.22rem;
-		padding: 0.62rem 0;
+		padding: 0;
 	}
 
 	.resource-item + .resource-item {
@@ -1153,19 +1310,78 @@ function formatClaimDate(date: Date): string {
 	}
 
 	.resource-link {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		gap: 0.7rem;
+		align-items: center;
+		padding: 0.62rem 0;
 		color: var(--text);
 		text-decoration: none;
-		font-size: 0.9375rem;
+		border-radius: 6px;
 	}
 
 	.resource-link:hover {
-		color: var(--ios);
-		text-decoration: underline;
+		background: color-mix(in srgb, var(--surface-up) 72%, transparent);
+	}
+
+	.resource-preview-media {
+		width: 48px;
+		height: 48px;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+		overflow: hidden;
+		background: var(--surface-up);
+		display: grid;
+		place-items: center;
+	}
+
+	.resource-preview-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.resource-preview-fallback {
+		font-size: 0.72rem;
+		color: var(--muted);
+		letter-spacing: 0.06em;
+	}
+
+	.resource-preview-body {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		gap: 0.2rem;
+	}
+
+	.resource-preview-title {
+		font-size: 0.92rem;
+		line-height: 1.35;
+		color: var(--text);
+	}
+
+	.resource-preview-description {
+		font-size: 0.8rem;
+		line-height: 1.4;
+		color: var(--muted);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	.resource-meta {
 		color: var(--muted);
-		font-size: 0.8125rem;
+		font-size: 0.75rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.resource-preview-external {
+		font-size: 0.9rem;
+		color: var(--muted);
 	}
 
 	.resource-actions {

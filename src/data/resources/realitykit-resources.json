@@ -1,9 +1,105 @@
 {
   "_meta": {
     "purpose": "Curated external resources for RealityKit component detail pages.",
-    "updated": "2026-02-18"
+    "updated": "2026-02-19"
   },
   "resources": {
+    "model-component": [
+      {
+        "title": "ModelComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/modelcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Break into the RealityKit debugger",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10172/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "opacity-component": [
+      {
+        "title": "OpacityComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/opacitycomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "model-sort-group-component": [
+      {
+        "title": "ModelSortGroupComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/modelsortgroupcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Support immersive video playback in visionOS apps",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/296/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "model-debug-options-component": [
+      {
+        "title": "ModelDebugOptionsComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/modeldebugoptionscomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "blend-shape-weights-component": [
+      {
+        "title": "BlendShapeWeightsComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/blendshapeweightscomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Compose interactive 3D content in Reality Composer Pro",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10102/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "adaptive-resolution-component": [
+      {
+        "title": "AdaptiveResolutionComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/adaptiveresolutioncomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Bring your iOS or iPadOS game to visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10093/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
     "billboard-component": [
       {
         "title": "BillboardComponent",
@@ -11,6 +107,701 @@
         "type": "official-docs",
         "source": "Apple",
         "verifiedAt": "2026-02-18"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "text-component": [
+      {
+        "title": "TextComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/textcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "mesh-instances-component": [
+      {
+        "title": "MeshInstancesComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/meshinstancescomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "What’s new in RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/287/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "image-presentation-component": [
+      {
+        "title": "ImagePresentationComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/imagepresentationcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "What’s new in RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/287/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "environment-blending-component": [
+      {
+        "title": "EnvironmentBlendingComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/environmentblendingcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "What’s new in RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/287/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "directional-light-component": [
+      {
+        "title": "DirectionalLightComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/directionallightcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "point-light-component": [
+      {
+        "title": "PointLightComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/pointlightcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "spot-light-component": [
+      {
+        "title": "SpotLightComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/spotlightcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "image-based-light-component": [
+      {
+        "title": "ImageBasedLightComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/imagebasedlightcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "image-based-light-receiver-component": [
+      {
+        "title": "ImageBasedLightReceiverComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/imagebasedlightreceivercomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Explore rendering for spatial computing",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10095/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "environment-lighting-configuration-component": [
+      {
+        "title": "EnvironmentLightingConfigurationComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/environmentlightingconfigurationcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "virtual-environment-probe-component": [
+      {
+        "title": "VirtualEnvironmentProbeComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/virtualenvironmentprobecomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "dynamic-light-shadow-component": [
+      {
+        "title": "DynamicLightShadowComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/dynamiclightshadowcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "directional-light-shadow": [
+      {
+        "title": "DirectionalLightComponent.Shadow",
+        "url": "https://developer.apple.com/documentation/realitykit/directionallightcomponent/shadow",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "spot-light-shadow": [
+      {
+        "title": "SpotLightComponent.Shadow",
+        "url": "https://developer.apple.com/documentation/realitykit/spotlightcomponent/shadow",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "ambient-audio-component": [
+      {
+        "title": "AmbientAudioComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/ambientaudiocomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Work with Reality Composer Pro content in Xcode",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10273/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "channel-audio-component": [
+      {
+        "title": "ChannelAudioComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/channelaudiocomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "spatial-audio-component": [
+      {
+        "title": "SpatialAudioComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/spatialaudiocomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit audio",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/111801/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "audio-mix-groups-component": [
+      {
+        "title": "AudioMixGroupsComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/audiomixgroupscomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit audio",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/111801/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "audio-library-component": [
+      {
+        "title": "AudioLibraryComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/audiolibrarycomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Compose interactive 3D content in Reality Composer Pro",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10102/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "reverb-component": [
+      {
+        "title": "ReverbComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/reverbcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit audio",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/111801/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "collision-component": [
+      {
+        "title": "CollisionComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/collisioncomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Develop your first immersive app",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10203/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "physics-body-component": [
+      {
+        "title": "PhysicsBodyComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/physicsbodycomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "What’s new in RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/287/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "physics-motion-component": [
+      {
+        "title": "PhysicsMotionComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/physicsmotioncomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "physics-simulation-component": [
+      {
+        "title": "PhysicsSimulationComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/physicssimulationcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "physics-joints-component": [
+      {
+        "title": "PhysicsJointsComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/physicsjointscomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "force-effect-component": [
+      {
+        "title": "ForceEffectComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/forceeffectcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "character-controller-component": [
+      {
+        "title": "CharacterControllerComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/charactercontrollercomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "character-controller-state-component": [
+      {
+        "title": "CharacterControllerStateComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/charactercontrollerstatecomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "transform": [
+      {
+        "title": "Transform",
+        "url": "https://developer.apple.com/documentation/realitykit/transform",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Building Apps with RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2019/605/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "anchoring-component": [
+      {
+        "title": "AnchoringComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/anchoringcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Explore object tracking for visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10101/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "world-component": [
+      {
+        "title": "WorldComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/worldcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10081/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "portal-component": [
+      {
+        "title": "PortalComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/portalcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "portal-crossing-component": [
+      {
+        "title": "PortalCrossingComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/portalcrossingcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "grounding-shadow-component": [
+      {
+        "title": "GroundingShadowComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/groundingshadowcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "scene-understanding-component": [
+      {
+        "title": "SceneUnderstandingComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/sceneunderstandingcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Dive into RealityKit 2",
+        "url": "https://developer.apple.com/videos/play/wwdc2021/10074/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "docking-region-component": [
+      {
+        "title": "DockingRegionComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/dockingregioncomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "attached-transform-component": [
+      {
+        "title": "AttachedTransformComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/attachedtransformcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "reference-component": [
+      {
+        "title": "ReferenceComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/referencecomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "synchronization-component": [
+      {
+        "title": "SynchronizationComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/synchronizationcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "geometric-pins-component": [
+      {
+        "title": "GeometricPinsComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/geometricpinscomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "input-target-component": [
+      {
+        "title": "InputTargetComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/inputtargetcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Better together: SwiftUI and RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/274/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "hover-effect-component": [
+      {
+        "title": "HoverEffectComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/hovereffectcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Build a spatial drawing app with RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10104/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "gesture-component": [
+      {
+        "title": "GestureComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/gesturecomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Better together: SwiftUI and RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/274/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
       }
     ],
     "manipulation-component": [
@@ -20,6 +811,189 @@
         "type": "official-docs",
         "source": "Apple",
         "verifiedAt": "2026-02-18"
+      },
+      {
+        "title": "What’s new in RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2025/287/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "hit-target": [
+      {
+        "title": "ManipulationComponent.HitTarget",
+        "url": "https://developer.apple.com/documentation/realitykit/manipulationcomponent/hittarget",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "accessibility-component": [
+      {
+        "title": "AccessibilityComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/accessibilitycomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Create accessible spatial experiences",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10034/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "perspective-camera-component": [
+      {
+        "title": "PerspectiveCameraComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/perspectivecameracomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "orthographic-camera-component": [
+      {
+        "title": "OrthographicCameraComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/orthographiccameracomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "projective-transform-camera-component": [
+      {
+        "title": "ProjectiveTransformCameraComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/projectivetransformcameracomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "animation-library-component": [
+      {
+        "title": "AnimationLibraryComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/animationlibrarycomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Compose interactive 3D content in Reality Composer Pro",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10102/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "skeletal-poses-component": [
+      {
+        "title": "SkeletalPosesComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/skeletalposescomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Compose interactive 3D content in Reality Composer Pro",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10102/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "ik-component": [
+      {
+        "title": "IKComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/ikcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Compose interactive 3D content in Reality Composer Pro",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10102/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "body-tracking-component": [
+      {
+        "title": "BodyTrackingComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/bodytrackingcomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Discover RealityKit APIs for iOS, macOS, and visionOS",
+        "url": "https://developer.apple.com/videos/play/wwdc2024/10103/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "video-player-component": [
+      {
+        "title": "VideoPlayerComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/videoplayercomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10081/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
+      }
+    ],
+    "particle-emitter-component": [
+      {
+        "title": "ParticleEmitterComponent",
+        "url": "https://developer.apple.com/documentation/realitykit/particleemittercomponent",
+        "type": "official-docs",
+        "source": "Apple",
+        "verifiedAt": "2026-02-19"
+      },
+      {
+        "title": "Enhance your spatial computing app with RealityKit",
+        "url": "https://developer.apple.com/videos/play/wwdc2023/10081/",
+        "type": "wwdc-session",
+        "source": "Apple WWDC",
+        "verifiedAt": "2026-02-19"
       }
     ]
   }
