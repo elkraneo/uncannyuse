@@ -17,8 +17,48 @@ const groupedClaims = [...groups.entries()].sort((a, b) =>
 	a[0].localeCompare(b[0]),
 );
 const componentOptions = groupedClaims.map(([componentId]) => componentId);
-const proposeNoteUrl =
-	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
+const proposeNoteBody = [
+	"### Component",
+	"[component-id]",
+	"",
+	"### Short summary",
+	"[one sentence summary]",
+	"",
+	"### What did you observe?",
+	"- ",
+	"",
+	"### Axis",
+	"rcp",
+	"",
+	"### What did you expect? (optional)",
+	"- ",
+	"",
+	"### Evidence confidence",
+	"strong diff (fixture diff or direct authored delta)",
+	"",
+	"### Scope",
+	"USDA authored",
+	"",
+	"### Reproduction steps",
+	"1. ",
+	"2. ",
+	"3. ",
+	"",
+	"### Evidence links or files",
+	"- ",
+	"",
+	"### RCP version (if known)",
+	"26.3 RC",
+	"",
+	"### Xcode build / SDK (if known)",
+	"26.2 SDK",
+].join("\n");
+const proposeNoteParams = new URLSearchParams({
+	template: "developer_note.yml",
+	title: "[note] ",
+	body: proposeNoteBody,
+});
+const proposeNoteUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${proposeNoteParams.toString()}`;
 
 function formatDate(date: Date): string {
 	return date.toISOString().slice(0, 10);

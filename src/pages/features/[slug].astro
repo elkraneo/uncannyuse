@@ -122,8 +122,48 @@ const correctionParams = new URLSearchParams({
 const suggestCorrectionUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${correctionParams.toString()}`;
 const suggestResourceIssueUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
-const suggestNoteIssueUrl =
-	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
+const noteBody = [
+	"### Component",
+	feature.id,
+	"",
+	"### Short summary",
+	`[one sentence summary for ${feature.name}]`,
+	"",
+	"### What did you observe?",
+	"- ",
+	"",
+	"### Axis",
+	"rcp",
+	"",
+	"### What did you expect? (optional)",
+	"- ",
+	"",
+	"### Evidence confidence",
+	"strong diff (fixture diff or direct authored delta)",
+	"",
+	"### Scope",
+	"USDA authored",
+	"",
+	"### Reproduction steps",
+	"1. ",
+	"2. ",
+	"3. ",
+	"",
+	"### Evidence links or files",
+	"- ",
+	"",
+	"### RCP version (if known)",
+	"26.3 RC",
+	"",
+	"### Xcode build / SDK (if known)",
+	"26.2 SDK",
+].join("\n");
+const noteParams = new URLSearchParams({
+	template: "developer_note.yml",
+	title: `[note] ${feature.name}: `,
+	body: noteBody,
+});
+const suggestNoteIssueUrl = `https://github.com/elkraneo/uncannyuse/issues/new?${noteParams.toString()}`;
 
 const timelineRows = platforms
 	.map((p) => {
