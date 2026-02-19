@@ -7,11 +7,20 @@ body:
   - type: markdown
     attributes:
       value: |
-        Share what you observed in plain language. A maintainer can convert this into a strict schema-backed note entry in a PR.
+        Use this form for one atomic development note.
+        
+        Flow:
+        1. Fill every required field below.
+        2. Submit the issue.
+        3. Maintainer comments `/publish`.
+        4. Bot opens a draft PR with the generated markdown note.
+        
+        If `/publish` fails, the workflow will comment back with what is missing.
   - type: markdown
     attributes:
       value: |
         Maintainers: comment `/publish` on this issue to generate a draft note PR automatically.
+        The `Component` value must match an existing component id (for example `billboard-component`).
   - type: input
     id: component
     attributes:
