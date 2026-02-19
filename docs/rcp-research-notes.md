@@ -32,7 +32,8 @@ evidence:
     publicUrl: https://example.com/evidence/diff.txt
     note: optional
 supersedes: []
-supersededBy:
+# optional when replaced by a newer claim
+supersededBy: claim-id-or-slug
 ```
 
 ## Allowed Values

@@ -50,7 +50,7 @@ npm run preview
 
 Use Markdown claim entries under `src/content/rcp-claims/` with strict frontmatter validation.
 
-See `/Volumes/Plutonian/_Developer/uncannyuse-Workspace/source/uncannyuse.com/docs/rcp-research-notes.md`.
+See `docs/rcp-research-notes.md`.
 
 ## Support
 
