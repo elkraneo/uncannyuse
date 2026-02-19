@@ -8,6 +8,10 @@ body:
     attributes:
       value: |
         Share what you observed in plain language. A maintainer can convert this into a strict schema-backed note entry in a PR.
+  - type: markdown
+    attributes:
+      value: |
+        Maintainers: comment `/publish` on this issue to generate a draft note PR automatically.
   - type: input
     id: component
     attributes:

@@ -10,6 +10,16 @@ This project supports PR-based, evidence-driven RCP research notes as a domain d
 4. CI runs `npm run build`, which validates claim schema and component IDs.
 5. After merge to `main`, deploy rebuild publishes the updated site.
 
+## Maintainer Shortcut
+
+For issues created from `.github/ISSUE_TEMPLATE/developer_note.yml`, maintainers can comment:
+
+```text
+/publish
+```
+
+This triggers `.github/workflows/publish-note-from-issue.yml`, which generates a markdown note file and opens a PR automatically.
+
 ## Required Frontmatter
 
 ```yaml
