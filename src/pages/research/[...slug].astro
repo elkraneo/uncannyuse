@@ -18,7 +18,12 @@ function formatDate(date: Date): string {
 }
 
 function isAbsoluteLocalPath(path: string): boolean {
-	return path.startsWith("/");
+	return (
+		path.startsWith("/") ||
+		/^[a-zA-Z]:[\\/]/.test(path) ||
+		path.startsWith("\\\\") ||
+		path.startsWith("file://")
+	);
 }
 ---
 
