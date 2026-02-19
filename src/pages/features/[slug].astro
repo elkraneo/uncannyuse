@@ -382,9 +382,40 @@ function formatClaimDate(date: Date): string {
 				{
 					unifiedNotes.length > 0 ? (
 						<>
+							<div class="note-filter-row" role="group" aria-label="Note type filter">
+								<button
+									type="button"
+									class="note-filter-btn is-active"
+									data-note-filter-btn="all"
+								>
+									all
+								</button>
+								<button type="button" class="note-filter-btn" data-note-filter-btn="system-rcp">
+									RCP
+								</button>
+								<button
+									type="button"
+									class="note-filter-btn"
+									data-note-filter-btn="development-note"
+								>
+									development
+								</button>
+								<button
+									type="button"
+									class="note-filter-btn"
+									data-note-filter-btn="legacy-note"
+								>
+									general
+								</button>
+							</div>
 							<ul class="claim-list">
 								{unifiedNotes.map((note, idx) => (
-									<li class="claim-item" data-note-item hidden={idx >= 3}>
+									<li
+										class="claim-item"
+										data-note-item
+										data-note-kind={note.kind}
+										hidden={idx >= 3}
+									>
 										<p class="claim-text">{note.text}</p>
 										{note.summary && <p class="claim-summary">{note.summary}</p>}
 										<p class="claim-byline">
@@ -532,6 +563,11 @@ function formatClaimDate(date: Date): string {
 	const showAllNotesBtn = document.querySelector<HTMLButtonElement>(
 		"[data-show-all-notes]",
 	);
+	const noteFilterButtons = document.querySelectorAll<HTMLButtonElement>(
+		"[data-note-filter-btn]",
+	);
+	let activeNoteFilter = "all";
+	let showAllNotes = false;
 
 	function setView(view: string) {
 		viewButtons.forEach((button) => {
@@ -567,12 +603,47 @@ function formatClaimDate(date: Date): string {
 		});
 	});
 
-	showAllNotesBtn?.addEventListener("click", () => {
+	function applyNoteFilter() {
+		let matched = 0;
 		noteItems.forEach((item) => {
-			item.hidden = false;
+			const kind = item.dataset.noteKind ?? "";
+			const include = activeNoteFilter === "all" || kind === activeNoteFilter;
+			if (!include) {
+				item.hidden = true;
+				return;
+			}
+			matched += 1;
+			item.hidden = !showAllNotes && matched > 3;
 		});
-		showAllNotesBtn.remove();
+
+		if (!showAllNotesBtn) return;
+		if (showAllNotes || matched <= 3) {
+			showAllNotesBtn.hidden = true;
+			return;
+		}
+		showAllNotesBtn.hidden = false;
+		showAllNotesBtn.textContent = `show all ${matched} notes`;
+	}
+
+	noteFilterButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			activeNoteFilter = button.dataset.noteFilterBtn ?? "all";
+			showAllNotes = false;
+			noteFilterButtons.forEach((btn) => {
+				const selected = btn === button;
+				btn.classList.toggle("is-active", selected);
+				btn.setAttribute("aria-pressed", selected ? "true" : "false");
+			});
+			applyNoteFilter();
+		});
 	});
+
+	showAllNotesBtn?.addEventListener("click", () => {
+		showAllNotes = true;
+		applyNoteFilter();
+	});
+
+	applyNoteFilter();
 </script>
 
 <style>
@@ -915,6 +986,29 @@ function formatClaimDate(date: Date): string {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.6rem;
+	}
+
+	.note-filter-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin-bottom: 0.7rem;
+	}
+
+	.note-filter-btn {
+		border: 1px solid var(--border);
+		background: var(--surface-up);
+		color: var(--muted);
+		border-radius: 999px;
+		padding: 0.16rem 0.55rem;
+		font: inherit;
+		font-size: 0.78rem;
+		cursor: pointer;
+	}
+
+	.note-filter-btn.is-active {
+		color: var(--text);
+		background: var(--surface);
 	}
 
 	.claim-action-link {

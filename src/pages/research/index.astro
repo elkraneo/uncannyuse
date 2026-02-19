@@ -16,6 +16,7 @@ for (const claim of claims) {
 const groupedClaims = [...groups.entries()].sort((a, b) =>
 	a[0].localeCompare(b[0]),
 );
+const componentOptions = groupedClaims.map(([componentId]) => componentId);
 const proposeNoteUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
 
@@ -40,11 +41,27 @@ function formatDate(date: Date): string {
 					propose note ↗
 				</a>
 			</div>
+			<div class="research-filters">
+				<input
+					id="notes-search"
+					type="search"
+					placeholder="search notes…"
+					aria-label="Search notes"
+				/>
+				<select id="component-filter" aria-label="Filter by component">
+					<option value="all">all components</option>
+					{
+						componentOptions.map((componentId) => (
+							<option value={componentId}>{componentId}</option>
+						))
+					}
+				</select>
+			</div>
 		</header>
 
 		{
 			groupedClaims.map(([componentId, entries]) => (
-				<section class="claim-group">
+				<section class="claim-group" data-claim-group data-component={componentId}>
 					<h2>
 						<a href={`/features/${componentId}`}>{componentId}</a>
 						<span>
@@ -53,7 +70,12 @@ function formatDate(date: Date): string {
 					</h2>
 					<ul class="claim-list">
 						{entries.map((claim) => (
-							<li class="claim-item">
+							<li
+								class="claim-item"
+								data-claim-item
+								data-component={componentId}
+								data-search={`${claim.data.claim} ${claim.data.summary}`.toLowerCase()}
+							>
 								<a href={`/research/${claim.slug}/`} class="claim-title">
 									{claim.data.claim}
 								</a>
@@ -72,6 +94,34 @@ function formatDate(date: Date): string {
 		}
 	</article>
 </Base>
+
+<script>
+	const searchInput = document.getElementById("notes-search") as HTMLInputElement | null;
+	const componentFilter = document.getElementById("component-filter") as HTMLSelectElement | null;
+	const claimItems = document.querySelectorAll<HTMLElement>("[data-claim-item]");
+	const claimGroups = document.querySelectorAll<HTMLElement>("[data-claim-group]");
+
+	function applyFilters() {
+		const query = (searchInput?.value ?? "").trim().toLowerCase();
+		const component = componentFilter?.value ?? "all";
+
+		claimItems.forEach((item) => {
+			const itemComponent = item.dataset.component ?? "";
+			const haystack = item.dataset.search ?? "";
+			const matchesComponent = component === "all" || itemComponent === component;
+			const matchesQuery = query.length === 0 || haystack.includes(query);
+			item.hidden = !(matchesComponent && matchesQuery);
+		});
+
+		claimGroups.forEach((group) => {
+			const visibleItems = group.querySelectorAll<HTMLElement>("[data-claim-item]:not([hidden])");
+			group.hidden = visibleItems.length === 0;
+		});
+	}
+
+	searchInput?.addEventListener("input", applyFilters);
+	componentFilter?.addEventListener("change", applyFilters);
+</script>
 
 <style>
 	.research-page {
@@ -106,6 +156,24 @@ function formatDate(date: Date): string {
 	.research-actions a:hover {
 		color: var(--text);
 		background: var(--surface-up);
+	}
+
+	.research-filters {
+		margin-top: 0.8rem;
+		display: flex;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+
+	.research-filters input,
+	.research-filters select {
+		border: 1px solid var(--border);
+		background: var(--surface-up);
+		color: var(--text);
+		border-radius: 6px;
+		padding: 0.35rem 0.55rem;
+		font: inherit;
+		font-size: 0.85rem;
 	}
 
 	.claim-group {
