@@ -1,4 +1,4 @@
-name: Validate RCP Claims
+name: Site Build
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site (includes content schema validation)
+      - name: Build site
         run: npm run build

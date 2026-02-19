@@ -1,0 +1,37 @@
+name: Claims Schema
+
+on:
+  pull_request:
+    paths:
+      - "src/content/rcp-claims/**"
+      - "src/content.config.ts"
+      - "src/pages/research/**"
+      - "docs/rcp-research-notes.md"
+  push:
+    branches:
+      - main
+    paths:
+      - "src/content/rcp-claims/**"
+      - "src/content.config.ts"
+      - "src/pages/research/**"
+      - "docs/rcp-research-notes.md"
+
+jobs:
+  validate-claims:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate claims via Astro build
+        run: npm run build
