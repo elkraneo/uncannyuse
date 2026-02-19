@@ -124,13 +124,6 @@ const suggestResourceIssueUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=resource_suggestion.yml";
 const suggestNoteIssueUrl =
 	"https://github.com/elkraneo/uncannyuse/issues/new?template=developer_note.yml";
-const notesList = feature.notes ?? [];
-const rcpStatusText = feature.rcp
-	? "In Add Component menu"
-	: "Code-only component";
-const rcpDetailText = feature.rcp
-	? "Add it directly from Reality Composer Pro and tune values in the inspector."
-	: "Not listed in the Add Component menu. Attach it programmatically at runtime.";
 
 const timelineRows = platforms
 	.map((p) => {
@@ -153,6 +146,63 @@ const timelineRows = platforms
 const componentClaims = (await getCollection("rcp-claims"))
 	.filter((entry) => entry.data.componentId === feature.id)
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+type ComponentNote =
+	| {
+			kind: "system-rcp";
+			text: string;
+			summary: string;
+			author: string;
+			date: string;
+			link?: string;
+	  }
+	| {
+			kind: "developer-note";
+			text: string;
+			summary: string;
+			author: string;
+			date: string;
+			link: string;
+	  }
+	| {
+			kind: "legacy-note";
+			text: string;
+			summary?: string;
+			author: string;
+			date: string;
+	  };
+
+const unifiedNotes: ComponentNote[] = [];
+
+unifiedNotes.push({
+	kind: "system-rcp",
+	text: feature.rcp ? "Add Component menu" : "Code-only component",
+	summary: feature.rcp
+		? "Available directly in Reality Composer Pro and editable in the inspector."
+		: "Not listed in Reality Composer Pro Add Component menu. Attach programmatically at runtime.",
+	author: "system",
+	date: "current",
+});
+
+for (const claim of componentClaims) {
+	unifiedNotes.push({
+		kind: "developer-note",
+		text: claim.data.claim,
+		summary: claim.data.summary,
+		author: claim.data.author,
+		date: formatClaimDate(claim.data.date),
+		link: `/research/${claim.slug}/`,
+	});
+}
+
+for (const note of feature.notes ?? []) {
+	unifiedNotes.push({
+		kind: "legacy-note",
+		text: note,
+		author: "system",
+		date: "undated",
+	});
+}
 
 function formatClaimDate(date: Date): string {
 	return date.toISOString().slice(0, 10);
@@ -287,10 +337,10 @@ function formatClaimDate(date: Date): string {
 			}
 		</section>
 
-		<!-- RCP section -->
+		<!-- Notes + Resources -->
 		<section class="section">
 			<div class="section-head">
-				<h2 class="section-label">/// reality composer pro</h2>
+				<h2 class="section-label">/// notes & resources</h2>
 				<div class="claim-actions">
 					<a
 						href={suggestNoteIssueUrl}
@@ -300,98 +350,9 @@ function formatClaimDate(date: Date): string {
 					>
 						submit note ↗
 					</a>
-					<a href="/research/" class="claim-action-link">browse all</a>
+					<a href="/research/" class="claim-action-link">browse all notes</a>
 				</div>
 			</div>
-			<div
-				class="view-switch"
-				role="tablist"
-				aria-label="Reality Composer Pro view"
-			>
-				<button
-					type="button"
-					class="view-btn is-active"
-					role="tab"
-					aria-selected="true"
-					data-rcp-tab-btn="overview"
-				>
-					overview
-				</button>
-				<button
-					type="button"
-					class="view-btn"
-					role="tab"
-					aria-selected="false"
-					data-rcp-tab-btn="notes"
-				>
-					development notes
-				</button>
-			</div>
-
-			<div data-rcp-tab-panel="overview">
-				<div class="rcp-card" class:list={[feature.rcp ? "rcp-yes" : "rcp-no"]}>
-					<div class="rcp-status">
-						{
-							feature.rcp ? (
-								<span class="rcp-indicator yes">✓</span>
-							) : (
-								<span class="rcp-indicator no">○</span>
-							)
-						}
-						<span class="rcp-title">Add Component menu</span>
-						<span class="rcp-status-chip">{rcpStatusText}</span>
-					</div>
-					<p class="rcp-detail">{rcpDetailText}</p>
-					{
-						!feature.rcp && (
-							<pre class="code-snippet">
-								<code>entity.components.set({feature.name}(…))</code>
-							</pre>
-						)
-					}
-				</div>
-			</div>
-
-			<div data-rcp-tab-panel="notes" hidden>
-				{
-					componentClaims.length > 0 ? (
-						<>
-							<ul class="claim-list">
-								{componentClaims.map((claim, idx) => (
-									<li class="claim-item" data-note-item hidden={idx >= 3}>
-										<p class="claim-text">{claim.data.claim}</p>
-										<p class="claim-summary">{claim.data.summary}</p>
-										<p class="claim-byline">
-											by {claim.data.author} ·{" "}
-											{formatClaimDate(claim.data.date)}
-										</p>
-										<a class="claim-link" href={`/research/${claim.slug}/`}>
-											details →
-										</a>
-									</li>
-								))}
-							</ul>
-							{componentClaims.length > 3 && (
-								<button
-									type="button"
-									class="claim-show-all-btn"
-									data-show-all-notes
-									data-total={componentClaims.length}
-								>
-									show all {componentClaims.length} notes
-								</button>
-							)}
-						</>
-					) : (
-						<p class="notes-empty">No development notes yet.</p>
-					)
-				}
-			</div>
-		</section>
-
-		<!-- Notes + Resources -->
-		<section class="section">
-			<h2 class="section-label">/// notes & resources</h2>
 			<div
 				class="detail-tabs"
 				role="tablist"
@@ -419,17 +380,51 @@ function formatClaimDate(date: Date): string {
 
 			<div class="detail-tab-panel" data-detail-tab-panel="notes">
 				{
-					notesList.length > 0 ? (
-						<ul class="notes-list">
-							{notesList.map((note) => (
-								<li class="note-item">
-									<span class="note-bullet">→</span>
-									<span>{note}</span>
-								</li>
-							))}
-						</ul>
+					unifiedNotes.length > 0 ? (
+						<>
+							<ul class="claim-list">
+								{unifiedNotes.map((note, idx) => (
+									<li class="claim-item" data-note-item hidden={idx >= 3}>
+										<p class="claim-text">{note.text}</p>
+										{note.summary && <p class="claim-summary">{note.summary}</p>}
+										<p class="claim-byline">
+											<span
+												class:list={[
+													"note-tag",
+													note.kind === "system-rcp" || note.kind === "developer-note"
+														? "note-tag-rcp"
+														: "note-tag-general",
+												]}
+											>
+												{note.kind === "system-rcp"
+													? "RCP"
+													: note.kind === "developer-note"
+														? "developer"
+														: "general"}
+											</span>
+											{" "}by {note.author} · {note.date}
+										</p>
+										{note.link && (
+											<a class="claim-link" href={note.link}>
+												details →
+											</a>
+										)}
+									</li>
+								))}
+							</ul>
+							{unifiedNotes.length > 3 && (
+								<button
+									type="button"
+									class="claim-show-all-btn"
+									data-show-all-notes
+									data-total={unifiedNotes.length}
+								>
+									show all {unifiedNotes.length} notes
+								</button>
+							)}
+						</>
 					) : (
-						<p class="notes-empty">No component-specific notes yet.</p>
+						<p class="notes-empty">No notes yet.</p>
 					)
 				}
 			</div>
@@ -533,11 +528,6 @@ function formatClaimDate(date: Date): string {
 	const detailTabPanels = document.querySelectorAll<HTMLElement>(
 		"[data-detail-tab-panel]",
 	);
-	const rcpTabButtons =
-		document.querySelectorAll<HTMLButtonElement>("[data-rcp-tab-btn]");
-	const rcpTabPanels = document.querySelectorAll<HTMLElement>(
-		"[data-rcp-tab-panel]",
-	);
 	const noteItems = document.querySelectorAll<HTMLElement>("[data-note-item]");
 	const showAllNotesBtn = document.querySelector<HTMLButtonElement>(
 		"[data-show-all-notes]",
@@ -574,23 +564,6 @@ function formatClaimDate(date: Date): string {
 	detailTabButtons.forEach((button) => {
 		button.addEventListener("click", () => {
 			setDetailTab(button.dataset.detailTabBtn ?? "notes");
-		});
-	});
-
-	function setRcpTab(tab: string) {
-		rcpTabButtons.forEach((button) => {
-			const selected = button.dataset.rcpTabBtn === tab;
-			button.classList.toggle("is-active", selected);
-			button.setAttribute("aria-selected", selected ? "true" : "false");
-		});
-		rcpTabPanels.forEach((panel) => {
-			panel.hidden = panel.dataset.rcpTabPanel !== tab;
-		});
-	}
-
-	rcpTabButtons.forEach((button) => {
-		button.addEventListener("click", () => {
-			setRcpTab(button.dataset.rcpTabBtn ?? "overview");
 		});
 	});
 
@@ -872,79 +845,6 @@ function formatClaimDate(date: Date): string {
 		}
 	}
 
-	/* RCP card */
-	.rcp-card {
-		border: 1px solid var(--border);
-		border-radius: 8px;
-		padding: 1.125rem 1.25rem;
-		background: var(--surface);
-	}
-
-	.rcp-card.rcp-yes {
-		border-color: rgba(48, 209, 88, 0.2);
-		background: rgba(48, 209, 88, 0.04);
-	}
-
-	.rcp-status {
-		display: flex;
-		align-items: center;
-		gap: 0.625rem;
-		margin-bottom: 0.625rem;
-	}
-
-	.rcp-indicator {
-		font-size: 0.9rem;
-		font-weight: 600;
-	}
-
-	.rcp-indicator.yes {
-		color: var(--rcp);
-	}
-
-	.rcp-indicator.no {
-		color: var(--subtle);
-	}
-
-	.rcp-title {
-		font-size: 0.9375rem;
-		font-weight: 500;
-		color: var(--text);
-	}
-
-	.rcp-status-chip {
-		margin-left: auto;
-		font-size: 0.75rem;
-		color: var(--muted);
-		border: 1px solid var(--border);
-		border-radius: 999px;
-		padding: 0.1rem 0.45rem;
-		background: var(--surface-up);
-		line-height: 1.4;
-	}
-
-	.rcp-detail {
-		margin-top: 0.2rem;
-		color: var(--muted);
-		font-size: 0.9375rem;
-		line-height: 1.6;
-		max-width: 58ch;
-	}
-
-	.code-snippet {
-		margin-top: 0.875rem;
-		background: var(--surface-up);
-		border: 1px solid var(--border);
-		border-radius: 5px;
-		padding: 0.625rem 0.875rem;
-		overflow-x: auto;
-	}
-
-	.code-snippet code {
-		font-family: var(--font-mono);
-		font-size: 0.9375rem;
-		color: var(--muted);
-	}
-
 	.claim-list {
 		list-style: none;
 		display: flex;
@@ -975,6 +875,27 @@ function formatClaimDate(date: Date): string {
 	.claim-byline {
 		margin-top: 0.5rem;
 		font-size: 0.8rem;
+		color: var(--muted);
+	}
+
+	.note-tag {
+		display: inline-flex;
+		align-items: center;
+		font-size: 0.72rem;
+		line-height: 1;
+		padding: 0.12rem 0.35rem;
+		border-radius: 999px;
+		border: 1px solid var(--border);
+		margin-right: 0.32rem;
+	}
+
+	.note-tag-rcp {
+		color: #34c759;
+		border-color: rgba(52, 199, 89, 0.35);
+		background: rgba(52, 199, 89, 0.09);
+	}
+
+	.note-tag-general {
 		color: var(--muted);
 	}
 
@@ -1024,30 +945,6 @@ function formatClaimDate(date: Date): string {
 
 	.claim-show-all-btn:hover {
 		color: var(--text);
-	}
-
-	/* Notes */
-	.notes-list {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		margin-top: 0.25rem;
-	}
-
-	.note-item {
-		display: flex;
-		gap: 0.75rem;
-		font-size: 0.9375rem;
-		color: var(--muted);
-		line-height: 1.6;
-	}
-
-	.note-bullet {
-		color: var(--subtle);
-		flex-shrink: 0;
-		font-size: 0.875rem;
-		margin-top: 0.1em;
 	}
 
 	.notes-empty {
