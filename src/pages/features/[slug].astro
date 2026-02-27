@@ -107,7 +107,12 @@ function decodeHtmlEntities(value: string): string {
 }
 
 function stripHtml(value: string): string {
-	return decodeHtmlEntities(value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim());
+	return decodeHtmlEntities(
+		value
+			.replace(/<[^>]*>/g, " ")
+			.replace(/\s+/g, " ")
+			.trim(),
+	);
 }
 
 function getMetaContent(html: string, key: string): string | undefined {
@@ -151,7 +156,9 @@ function initialsFromDomain(domain: string): string {
 		.join("");
 }
 
-async function fetchResourcePreview(resource: ResourceEntry): Promise<ResourcePreview> {
+async function fetchResourcePreview(
+	resource: ResourceEntry,
+): Promise<ResourcePreview> {
 	const cached = resourcePreviewCache.get(resource.url);
 	if (cached) return cached;
 
@@ -201,13 +208,13 @@ async function fetchResourcePreview(resource: ResourceEntry): Promise<ResourcePr
 				}
 			}
 
-				return {
-					...resource,
-					previewTitle: resource.title ?? ogTitle,
-					previewDescription: ogDescription,
-					previewImage: ogImage,
-					domain: getDomain(resource.url),
-				};
+			return {
+				...resource,
+				previewTitle: resource.title ?? ogTitle,
+				previewDescription: ogDescription,
+				previewImage: ogImage,
+				domain: getDomain(resource.url),
+			};
 		} catch {
 			return fallback;
 		}
@@ -232,6 +239,7 @@ const showOfficialAbstract = Boolean(
 	officialAbstract &&
 	normalizedText(officialAbstract) !== normalizedText(feature.description),
 );
+const schemaDetailPath = `/features/${feature.id}/schema`;
 const pagePath = `/features/${feature.id}`;
 const correctionBody = [
 	"## Component",
@@ -517,6 +525,21 @@ function formatClaimDate(date: Date): string {
 			}
 		</section>
 
+		{feature.rcp && (
+			<section class="section schema-intro">
+				<h2 class="section-label">/// rcp authored schema</h2>
+				<p class="schema-intro-copy">
+					Raw USDA sample and schema notes for <span class="mono"
+						>{feature.name}</span
+					>.
+				</p>
+				<a class="schema-intro-link" href={schemaDetailPath}>
+					open schema details <span aria-hidden="true">→</span>
+				</a>
+			</section>
+		)}
+		<div class="section-divider" aria-hidden="true"></div>
+
 		<!-- Notes + Resources -->
 		<section class="section">
 			<div class="section-head">
@@ -562,7 +585,11 @@ function formatClaimDate(date: Date): string {
 				{
 					unifiedNotes.length > 0 ? (
 						<>
-							<div class="note-filter-row" role="group" aria-label="Note type filter">
+							<div
+								class="note-filter-row"
+								role="group"
+								aria-label="Note type filter"
+							>
 								<button
 									type="button"
 									class="note-filter-btn is-active"
@@ -570,10 +597,18 @@ function formatClaimDate(date: Date): string {
 								>
 									all
 								</button>
-								<button type="button" class="note-filter-btn" data-note-filter-btn="rcp">
+								<button
+									type="button"
+									class="note-filter-btn"
+									data-note-filter-btn="rcp"
+								>
 									RCP
 								</button>
-								<button type="button" class="note-filter-btn" data-note-filter-btn="runtime">
+								<button
+									type="button"
+									class="note-filter-btn"
+									data-note-filter-btn="runtime"
+								>
 									runtime
 								</button>
 								<button
@@ -594,7 +629,9 @@ function formatClaimDate(date: Date): string {
 										hidden={idx >= 3}
 									>
 										<p class="claim-text">{note.text}</p>
-										{note.summary && <p class="claim-summary">{note.summary}</p>}
+										{note.summary && (
+											<p class="claim-summary">{note.summary}</p>
+										)}
 										<p class="claim-byline">
 											<span
 												class:list={[
@@ -609,8 +646,8 @@ function formatClaimDate(date: Date): string {
 													: note.axis === "runtime"
 														? "runtime"
 														: "general"}
-											</span>
-											{" "}by {note.author} · {note.date}
+											</span>{" "}
+											by {note.author} · {note.date}
 										</p>
 										{note.link && (
 											<a class="claim-link" href={note.link}>
@@ -668,7 +705,9 @@ function formatClaimDate(date: Date): string {
 										)}
 									</span>
 									<span class="resource-preview-body">
-										<span class="resource-preview-title">{resource.previewTitle}</span>
+										<span class="resource-preview-title">
+											{resource.previewTitle}
+										</span>
 										{resource.previewDescription && (
 											<span class="resource-preview-description">
 												{resource.previewDescription}
@@ -683,7 +722,9 @@ function formatClaimDate(date: Date): string {
 												: ""}
 										</span>
 									</span>
-									<span class="resource-preview-external" aria-hidden="true">↗</span>
+									<span class="resource-preview-external" aria-hidden="true">
+										↗
+									</span>
 								</a>
 							</li>
 						))
@@ -1017,15 +1058,57 @@ function formatClaimDate(date: Date): string {
 		opacity: 0.9;
 	}
 
+	.schema-intro {
+		background: linear-gradient(120deg, #f8fffb 0%, #f4f7ff 100%);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem 1.1rem;
+	}
+
+	.schema-intro-copy {
+		margin: 0.45rem 0 0;
+		font-size: 0.96rem;
+		color: var(--muted);
+		line-height: 1.55;
+	}
+
+	.schema-intro-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		margin-top: 0.8rem;
+		font-size: 0.85rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #0f6a58;
+		border: 1px solid #8ed0c0;
+		border-radius: 999px;
+		padding: 0.45rem 0.78rem;
+		background: #eaf8f4;
+		text-decoration: none;
+	}
+
+	.schema-intro-link:hover {
+		background: #dcf3ec;
+		border-color: #79c4b2;
+	}
+
+	.mono {
+		font-family:
+			ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+			"Liberation Mono", "Courier New", monospace;
+	}
+
 	/* Section */
 	.section {
 		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid var(--border);
 	}
 
-	.section:last-of-type {
-		border-bottom: none;
+	.section-divider {
+		height: 1px;
+		background: var(--border);
+		margin: 0 0 2rem 0;
 	}
 
 	.section-label {

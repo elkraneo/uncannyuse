@@ -1,0 +1,737 @@
+---
+import Base from "../../../layouts/Base.astro";
+import rkData from "../../../data/features/realitykit-components.json";
+import fixtureSchemas from "../../../data/schemas/fixture-schemas.json";
+import type { Feature } from "../../../types";
+
+type SchemaField = {
+	name: string;
+	type: string;
+	base: string;
+	variants: string;
+	notes: string;
+};
+
+type MatrixRow = {
+	variant: string;
+	values: Record<string, string>;
+	note: string;
+};
+
+type SchemaDraft = {
+	slug: string;
+	componentName: string;
+	componentId: string;
+	primSignature: string;
+	coverage: string;
+	risk: string;
+	baseline: string;
+	introducedBlock: string;
+	sparseExamples: string;
+	fields: SchemaField[];
+	matrix: MatrixRow[];
+	sourceFolder?: string;
+};
+
+function escapeHtml(value: string): string {
+	return value
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
+}
+
+function highlightUsda(source: string): string {
+	let html = escapeHtml(source);
+	const placeholders: string[] = [];
+
+	function stash(pattern: RegExp, className: string) {
+		html = html.replace(pattern, (match) => {
+			const idx =
+				placeholders.push(`<span class="${className}">${match}</span>`) - 1;
+			return `@@TOKEN_${idx}@@`;
+		});
+	}
+
+	// Protect strings and comments first so later passes don't style inside them.
+	stash(/"([^"\\]|\\.)*"/g, "usda-string");
+	stash(/#[^\n]*/g, "usda-comment");
+
+	html = html
+		.replace(
+			/\b(def|uniform|rel|prepend|token|bool|string|double|float|float2|float3|float4|int|uint)\b/g,
+			'<span class="usda-key">$1</span>',
+		)
+		.replace(
+			/\b(RealityKitComponent|RealityKitDict|RealityKit[A-Za-z0-9_]+)\b/g,
+			'<span class="usda-type">$1</span>',
+		)
+		.replace(/\b(-?\d+(?:\.\d+)?)\b/g, '<span class="usda-number">$1</span>');
+
+	html = html.replace(/@@TOKEN_(\d+)@@/g, (_, n) => placeholders[Number(n)] ?? "");
+	return html;
+}
+
+const generatedDrafts = (
+	fixtureSchemas as {
+		bySlug?: Record<string, SchemaDraft>;
+	}
+).bySlug ?? {};
+
+export function getStaticPaths() {
+	return (rkData.features as Feature[])
+		.filter((feature) => feature.rcp)
+		.map((feature) => ({
+			params: { slug: feature.id },
+			props: { feature },
+		}));
+}
+
+const { feature } = Astro.props as { feature: Feature };
+const draft = generatedDrafts[feature.id];
+const highlightedIntroducedBlock = draft ? highlightUsda(draft.introducedBlock) : "";
+
+// Split sparseExamples into individual variant blocks for annotated display
+type SparseVariant = { filename: string; block: string; highlighted: string };
+const sparseVariants: SparseVariant[] = [];
+if (draft?.sparseExamples) {
+	const parts = draft.sparseExamples.split(/(?=^# )/m);
+	for (const part of parts) {
+		const trimmed = part.trim();
+		if (!trimmed) continue;
+		const firstNewline = trimmed.indexOf("\n");
+		const commentLine = trimmed.slice(0, firstNewline).replace(/^#\s*/, "").trim();
+		const block = trimmed.slice(firstNewline + 1).trim();
+		sparseVariants.push({
+			filename: commentLine,
+			block,
+			highlighted: highlightUsda(block),
+		});
+	}
+}
+
+const sparseFields = draft
+	? draft.fields
+			.filter((field) => field.base === "omitted" || field.variants !== field.base)
+	: [];
+const baselineRow = draft?.matrix.find((row) => row.variant === draft.baseline);
+const baselineFieldCount = draft ? draft.fields.filter((f) => f.base !== "omitted").length : 0;
+const sparseOnlyCount = draft ? draft.fields.filter((f) => f.base === "omitted").length : 0;
+const fixtureRepoUrl =
+	draft?.sourceFolder
+		? `https://github.com/elkraneo/RCPComponentDiffFixtures/tree/main/${encodeURI(
+				draft.sourceFolder.replace(/^RCPComponentDiffFixtures\//, ""),
+			)}`
+		: null;
+const fixtureLinkLabel = draft?.sourceFolder
+	? draft.sourceFolder.split("/").pop() ?? draft.sourceFolder
+	: null;
+const isWip = draft ? draft.fields.length === 0 : false;
+---
+
+<Base
+	title={draft ? `${feature.name} Schema` : `${feature.name} Schema (pending)`}
+	description={
+		draft
+			? `RCP authored USDA schema details for ${feature.name}.`
+			: `Schema details for ${feature.name} are not published yet.`
+	}
+>
+	<article class="schema-page">
+		<nav class="crumbs" aria-label="Breadcrumb">
+			<a href="/">realitykit</a>
+			<span>/</span>
+			<a href={`/features/${feature.id}`}>{feature.name}</a>
+			<span>/</span>
+			<strong>schema</strong>
+		</nav>
+
+		{
+			draft ? (
+				<>
+					<header class="hero">
+						<p class="kicker">/// rcp authored schema</p>
+						<h1>{draft.componentName}</h1>
+						<p class="subhead">
+							Exact USDA block introduced by RCP plus fixture-backed contract evidence.
+						</p>
+						<div class="meta">
+							<span><b>ID:</b> {draft.componentId}</span>
+							<span><b>Baseline:</b> {draft.baseline}</span>
+							{
+								draft.sourceFolder && (
+									<span>
+										<b>Fixture:</b>{" "}
+										<a href={fixtureRepoUrl!} target="_blank" rel="noopener noreferrer">
+											{fixtureLinkLabel}
+										</a>
+									</span>
+								)
+							}
+						</div>
+					</header>
+
+					{isWip && (
+						<div class="wip-banner">
+							<span class="wip-label">WIP</span>
+							Schema analysis for this component is incomplete. The fixture data exists but field extraction is not yet supported for this shape.
+						</div>
+					)}
+
+					<section class="panel quick-read">
+						<h2>Quick Read</h2>
+						<p>
+							<code>{draft.componentName}</code> has <strong>{draft.fields.length} field{draft.fields.length !== 1 ? "s" : ""}</strong>.
+							{sparseOnlyCount === draft.fields.length
+								? " None are written in the baseline — RCP uses sparse authoring, emitting each field only when it differs from the engine default."
+								: sparseOnlyCount > 0
+									? ` ${baselineFieldCount} written in baseline, ${sparseOnlyCount} sparse-only (emitted only when changed).`
+									: " All fields are written in the baseline."}
+						</p>
+						<p>
+							Authored as <code>{draft.primSignature}</code> with <code>info:id = "{draft.componentId}"</code>.
+						</p>
+					</section>
+
+					<section class="panel">
+						<h2>Introduced USD Block</h2>
+						<div class="code-shell">
+							<div class="code-head">
+								<span class="code-lang">USDA</span>
+							</div>
+							<pre><code set:html={highlightedIntroducedBlock}></code></pre>
+						</div>
+					</section>
+
+					{sparseVariants.length > 0 && (
+						<section class="panel">
+							<h2>Sparse Patch Examples</h2>
+							<p class="panel-desc">Each fixture shows the USDA block RCP writes when a single parameter is changed in the inspector.</p>
+							<div class="variant-stack">
+								{sparseVariants.map((v) => (
+									<div class="variant-card">
+										<div class="variant-label">{v.filename}</div>
+										<div class="code-shell">
+											<div class="code-head">
+												<span class="code-lang">USDA</span>
+											</div>
+											<pre><code set:html={v.highlighted}></code></pre>
+										</div>
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+
+					<section class="panel">
+						<h2>Fields</h2>
+						<div class="field-grid">
+							{draft.fields.map((field) => (
+								<div class="field-card">
+									<div class="field-head">
+										<code class="field-name">{field.name}</code>
+										<span class="type-badge">{field.type}</span>
+									</div>
+									<dl class="field-detail">
+										<div class="field-row">
+											<dt>Baseline</dt>
+											<dd>
+												{field.base === "omitted"
+													? <span class="dim">not written — sparse only</span>
+													: <code>{field.base}</code>}
+											</dd>
+										</div>
+										<div class="field-row">
+											<dt>Written as</dt>
+											<dd><code>{field.variants}</code></dd>
+										</div>
+										{field.notes && field.base !== "omitted" && (
+											<div class="field-row">
+												<dt>Note</dt>
+												<dd>{field.notes}</dd>
+											</div>
+										)}
+									</dl>
+								</div>
+							))}
+						</div>
+					</section>
+
+					<section class="panel">
+						<details class="matrix-details">
+							<summary>
+								<h2>Observed Authoring Matrix</h2>
+								<span class="matrix-hint">{draft.matrix.length} fixture{draft.matrix.length !== 1 ? "s" : ""} &times; {draft.fields.length} field{draft.fields.length !== 1 ? "s" : ""}</span>
+							</summary>
+							<div class="matrix-scroll">
+								<table>
+									<thead>
+										<tr>
+											<th>Variant</th>
+											{
+												draft.fields.map((field) => (
+													<th><code>{field.name}</code></th>
+												))
+											}
+											<th>Interpretation</th>
+										</tr>
+									</thead>
+									<tbody>
+										{
+											draft.matrix.map((row) => (
+												<tr>
+													<td>{row.variant}</td>
+													{
+														draft.fields.map((field) => {
+															const val = row.values[field.name] ?? "omitted";
+															return (
+																<td class={val === "omitted" ? "cell-omitted" : "cell-authored"}>
+																	<code>{val}</code>
+																</td>
+															);
+														})
+													}
+													<td>{row.note}</td>
+												</tr>
+											))
+										}
+									</tbody>
+								</table>
+							</div>
+						</details>
+					</section>
+				</>
+			) : (
+				<>
+					<header class="hero">
+						<p class="kicker">/// rcp authored schema</p>
+						<h1>{feature.name}</h1>
+						<p class="subhead">
+							Schema page scaffold is live. Fixture-backed USDA evidence has not been
+							published for this component yet.
+						</p>
+						<div class="meta">
+							<span><b>Baseline:</b> Not set</span>
+						</div>
+					</header>
+
+					<section class="panel">
+						<h2>Introduced USD Block</h2>
+						<div class="code-shell">
+							<div class="code-head">
+								<span class="code-lang">USDA</span>
+							</div>
+							<pre><code># Fixture-backed USDA block not published yet.</code></pre>
+						</div>
+					</section>
+
+					<section class="panel">
+						<h2>Status</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Section</th>
+									<th>Status</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Canonical Shape</td>
+									<td>Pending</td>
+									<td>No fixture-derived field matrix yet.</td>
+								</tr>
+								<tr>
+									<td>Observed Authoring Matrix</td>
+									<td>Pending</td>
+									<td>Variant diffs not linked yet.</td>
+								</tr>
+								<tr>
+									<td>Contract Deltas</td>
+									<td>Pending</td>
+									<td>Requires baseline + at least one authored variant.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section class="pending">
+						<a href={`/features/${feature.id}`}>Return to component page</a>
+					</section>
+				</>
+			)
+		}
+	</article>
+</Base>
+
+<style>
+	.schema-page {
+		max-width: 1024px;
+		margin: 0 auto;
+		padding: 2rem 1rem 3rem;
+	}
+
+	.crumbs {
+		display: flex;
+		gap: 0.45rem;
+		align-items: center;
+		font-size: 0.82rem;
+		margin-bottom: 1.2rem;
+		color: var(--muted);
+	}
+
+	.crumbs a {
+		color: var(--ios);
+		text-decoration: none;
+	}
+
+	.hero {
+		margin-bottom: 1.25rem;
+	}
+
+	.kicker {
+		margin: 0;
+		font-size: 0.8rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	h1 {
+		margin: 0.35rem 0 0.4rem;
+		font-size: clamp(1.4rem, 2.8vw, 2rem);
+	}
+
+	.subhead {
+		margin: 0;
+		max-width: 70ch;
+		color: var(--muted);
+		line-height: 1.6;
+	}
+
+	.meta {
+		margin-top: 0.8rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		font-size: 0.82rem;
+	}
+
+	.meta span {
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.3rem 0.6rem;
+		background: var(--surface-up);
+	}
+
+	.meta a {
+		color: var(--ios);
+		text-decoration: underline;
+		text-underline-offset: 0.12em;
+	}
+
+	.panel {
+		margin-top: 0.9rem;
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		background: var(--surface);
+		padding: 0.85rem;
+		min-width: 0;
+	}
+
+	.panel h2 {
+		margin: 0 0 0.65rem;
+		font-size: 0.88rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.quick-read p {
+		margin: 0.45rem 0;
+		line-height: 1.55;
+		color: var(--text);
+	}
+
+	.quick-read ul {
+		margin: 0.35rem 0 0.45rem 1.1rem;
+	}
+
+	.quick-read li {
+		margin: 0.2rem 0;
+	}
+
+	pre {
+		margin: 0;
+		padding: 0.75rem;
+		background: var(--surface-up);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow-x: auto;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.code-shell {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: clip;
+		min-width: 0;
+	}
+
+	.code-head {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 0.4rem 0.55rem;
+		border-bottom: 1px solid var(--border);
+		background: color-mix(in srgb, var(--surface-top) 70%, var(--surface) 30%);
+	}
+
+	.code-lang {
+		font-size: 0.72rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+		border: 1px solid var(--border-up);
+		background: var(--surface-up);
+		border-radius: 999px;
+		padding: 0.2rem 0.48rem;
+	}
+
+	.code-shell pre {
+		border: 0;
+		border-radius: 0;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+
+	th,
+	td {
+		border-bottom: 1px solid var(--border);
+		padding: 0.5rem 0.4rem;
+		vertical-align: top;
+		text-align: left;
+	}
+
+	th {
+		font-size: 0.76rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	code {
+		font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+			"Liberation Mono", "Courier New", monospace;
+		font-size: 0.82em;
+	}
+
+	:global(.usda-key) {
+		color: color-mix(in srgb, var(--ios) 75%, white);
+		font-weight: 600;
+	}
+
+	:global(.usda-type) {
+		color: color-mix(in srgb, var(--visionos) 72%, white);
+	}
+
+	:global(.usda-string) {
+		color: color-mix(in srgb, var(--rcp) 78%, white);
+	}
+
+	:global(.usda-number) {
+		color: color-mix(in srgb, var(--macos) 80%, white);
+	}
+
+	:global(.usda-comment) {
+		color: var(--muted);
+		font-style: italic;
+	}
+
+	/* --- WIP banner --- */
+	.wip-banner {
+		margin-top: 0.9rem;
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+		border: 1px solid color-mix(in srgb, var(--rcp) 40%, transparent);
+		border-radius: 8px;
+		padding: 0.6rem 0.75rem;
+		background: color-mix(in srgb, var(--rcp) 6%, transparent);
+		font-size: 0.84rem;
+		color: var(--muted);
+		line-height: 1.5;
+	}
+
+	.wip-label {
+		flex-shrink: 0;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		color: var(--rcp);
+		border: 1px solid var(--rcp);
+		border-radius: 999px;
+		padding: 0.15rem 0.45rem;
+	}
+
+	/* --- Panel description --- */
+	.panel-desc {
+		margin: 0 0 0.6rem;
+		font-size: 0.85rem;
+		color: var(--muted);
+		line-height: 1.5;
+	}
+
+	/* --- Field cards --- */
+	.field-grid {
+		display: grid;
+		gap: 0.55rem;
+	}
+
+	.field-card {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 0.65rem 0.75rem;
+		background: var(--surface-up);
+	}
+
+	.field-head {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.45rem;
+	}
+
+	.field-name {
+		font-size: 0.92rem;
+		font-weight: 600;
+	}
+
+	.type-badge {
+		font-size: 0.7rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: color-mix(in srgb, var(--visionos) 72%, white);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.15rem 0.45rem;
+		background: var(--surface);
+	}
+
+	.field-detail {
+		margin: 0;
+	}
+
+	.field-row {
+		display: flex;
+		gap: 0.5rem;
+		font-size: 0.84rem;
+		line-height: 1.55;
+		padding: 0.15rem 0;
+	}
+
+	.field-row dt {
+		flex-shrink: 0;
+		width: 5.5rem;
+		color: var(--muted);
+		font-weight: 500;
+	}
+
+	.field-row dd {
+		margin: 0;
+	}
+
+	.dim {
+		color: var(--muted);
+		font-style: italic;
+	}
+
+	/* --- Variant cards --- */
+	.variant-stack {
+		display: grid;
+		gap: 0.55rem;
+	}
+
+	.variant-label {
+		font-size: 0.82rem;
+		font-weight: 600;
+		margin-bottom: 0.3rem;
+		color: var(--text);
+		padding-left: 0.1rem;
+	}
+
+	/* --- Collapsible matrix --- */
+	.matrix-details summary {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+		list-style: none;
+	}
+
+	.matrix-details summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.matrix-details summary::before {
+		content: "▸";
+		font-size: 0.8rem;
+		color: var(--muted);
+		transition: transform 0.15s;
+	}
+
+	.matrix-details[open] summary::before {
+		transform: rotate(90deg);
+	}
+
+	.matrix-details summary h2 {
+		margin: 0;
+	}
+
+	.matrix-hint {
+		font-size: 0.76rem;
+		color: var(--muted);
+	}
+
+	.matrix-scroll {
+		margin-top: 0.6rem;
+		overflow-x: auto;
+	}
+
+	.cell-omitted {
+		opacity: 0.35;
+	}
+
+	.cell-authored code {
+		color: color-mix(in srgb, var(--ios) 80%, white);
+		font-weight: 500;
+	}
+
+	.pending {
+		border: 1px dashed var(--border);
+		border-radius: 10px;
+		padding: 1rem;
+		background: var(--surface-up);
+	}
+
+	@media (max-width: 780px) {
+		table {
+			font-size: 0.82rem;
+		}
+
+		.field-row {
+			flex-direction: column;
+			gap: 0.1rem;
+		}
+
+		.field-row dt {
+			width: auto;
+		}
+	}
+</style>

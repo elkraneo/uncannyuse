@@ -1,0 +1,2545 @@
+{
+  "generatedAt": "2026-02-27T13:37:36.056Z",
+  "bySlug": {
+    "accessibility-component": {
+      "slug": "accessibility-component",
+      "componentName": "AccessibilityComponent",
+      "componentId": "RealityKit.Accessibility",
+      "primSignature": "def RealityKitComponent \"Accessibility\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    bool isEnabled = 0\n    string label = \"\"\n    string value = \"\"\n}",
+      "sparseExamples": "# AccessibilityElement.usda\ndef RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    bool isEnabled = 1\n    string label = \"Custom Label\"\n    string value = \"This component makes my entity accessible \"\n}\n\n# Label.usda\ndef RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    string label = \"Some Label\"\n}",
+      "fields": [
+        {
+          "name": "isEnabled",
+          "type": "bool",
+          "base": "0",
+          "variants": "1",
+          "notes": ""
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "base": "\"\"",
+          "variants": "\"Custom Label\", \"Some Label\"",
+          "notes": ""
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "base": "\"\"",
+          "variants": "\"This component makes my entity accessible \", \"Some Value\"",
+          "notes": ""
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "AccessibilityElement.usda",
+          "note": "3 field changes",
+          "values": {
+            "isEnabled": "1",
+            "label": "\"Custom Label\"",
+            "value": "\"This component makes my entity accessible \""
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "isEnabled": "0",
+            "label": "\"\"",
+            "value": "\"\""
+          }
+        },
+        {
+          "variant": "Label.usda",
+          "note": "3 field changes",
+          "values": {
+            "isEnabled": "omitted",
+            "label": "\"Some Label\"",
+            "value": "omitted"
+          }
+        },
+        {
+          "variant": "Value.usda",
+          "note": "3 field changes",
+          "values": {
+            "isEnabled": "omitted",
+            "label": "omitted",
+            "value": "\"Some Value\""
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Accessibility"
+    },
+    "ambient-audio-component": {
+      "slug": "ambient-audio-component",
+      "componentName": "AmbientAudioComponent",
+      "componentId": "RealityKit.AmbientAudio",
+      "primSignature": "def RealityKitComponent \"AmbientAudio\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"AmbientAudio\"\n{\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n    float gain = 0\n}",
+      "sparseExamples": "# Gain.usda\ndef RealityKitComponent \"AmbientAudio\"\n{\n    float gain = -35.13125\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n}\n\n# Resource.usda\ndef RealityKitComponent \"AmbientAudio\"\n{\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n}",
+      "fields": [
+        {
+          "name": "gain",
+          "type": "float",
+          "base": "0",
+          "variants": "-35.13125",
+          "notes": ""
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "gain": "0"
+          }
+        },
+        {
+          "variant": "Gain.usda",
+          "note": "1 field change",
+          "values": {
+            "gain": "-35.13125"
+          }
+        },
+        {
+          "variant": "Resource.usda",
+          "note": "1 field change",
+          "values": {
+            "gain": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Ambient Audio"
+    },
+    "anchoring-component": {
+      "slug": "anchoring-component",
+      "componentName": "AnchoringComponent",
+      "componentId": "RealityKit.Anchoring",
+      "primSignature": "def RealityKitComponent \"Anchoring\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n    }\n}",
+      "sparseExamples": "# Orientation.usda\ndef RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n        matrix4d transform = ( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )\n    }\n}\n\n# Position.usda\ndef RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n        matrix4d transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )\n    }\n}",
+      "fields": [
+        {
+          "name": "transform",
+          "type": "matrix4d",
+          "base": "omitted",
+          "variants": "( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) ), ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) ), ( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "type",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Hand\", \"Head\", \"Object\"",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "transform": "omitted",
+            "type": "omitted"
+          }
+        },
+        {
+          "variant": "Orientation.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )",
+            "type": "omitted"
+          }
+        },
+        {
+          "variant": "Position.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )",
+            "type": "omitted"
+          }
+        },
+        {
+          "variant": "Scale.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",
+            "type": "omitted"
+          }
+        },
+        {
+          "variant": "Target/Hand.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "omitted",
+            "type": "\"Hand\""
+          }
+        },
+        {
+          "variant": "Target/Head.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "omitted",
+            "type": "\"Head\""
+          }
+        },
+        {
+          "variant": "Target/Object.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "omitted",
+            "type": "\"Object\""
+          }
+        },
+        {
+          "variant": "Target/Plane.usda",
+          "note": "1 field change",
+          "values": {
+            "transform": "omitted",
+            "type": "\"Plane\""
+          }
+        },
+        {
+          "variant": "Target/World.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "transform": "omitted",
+            "type": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Anchoring"
+    },
+    "animation-library-component": {
+      "slug": "animation-library-component",
+      "componentName": "AnimationLibraryComponent",
+      "componentId": "RealityKit.AnimationLibrary",
+      "primSignature": "def RealityKitComponent \"AnimationLibrary\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n}",
+      "sparseExamples": "# AddOne.usda\ndef RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n\n    def RealityKitAnimationFile \"blendshape\"\n    {\n        uniform asset file = @../blendshape.usdc@\n        uniform string name = \"blendshape\"\n    }\n}\n\n# AddTwo.usda\ndef RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n\n    def RealityKitAnimationFile \"blendshape\"\n    {\n        uniform asset file = @../blendshape.usdc@\n        uniform string name = \"blendshape\"\n    }\n\n    def RealityKitAnimationFile \"keyframe__rotation_\"\n    {\n        uniform asset file = @../keyframe (rotation).usdc@\n        uniform string name = \"keyframe (rotation)\"\n    }\n}",
+      "fields": [],
+      "matrix": [
+        {
+          "variant": "AddOne.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        },
+        {
+          "variant": "AddTwo.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        },
+        {
+          "variant": "MissingResource.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        },
+        {
+          "variant": "RemoveOne.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        },
+        {
+          "variant": "UnitsSeconds.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Animation Library"
+    },
+    "audio-library-component": {
+      "slug": "audio-library-component",
+      "componentName": "AudioLibraryComponent",
+      "componentId": "RealityKit.AudioLibrary",
+      "primSignature": "def RealityKitComponent \"AudioLibrary\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"AudioLibrary\"\n{\n    uniform token info:id = \"RealityKit.AudioLibrary\"\n}",
+      "sparseExamples": "# Files.usda\ndef RealityKitComponent \"AudioLibrary\"\n{\n    uniform token info:id = \"RealityKit.AudioLibrary\"\n\n    def RealityKitDict \"resources\"\n    {\n        string[] keys = [\"1bells.wav\"]\n        rel values = </Root/_1bells_wav>\n    }\n}",
+      "fields": [
+        {
+          "name": "keys",
+          "type": "string[]",
+          "base": "omitted",
+          "variants": "[\"1bells.wav\"]",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "values",
+          "type": "rel",
+          "base": "omitted",
+          "variants": "</Root/_1bells_wav>",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "keys": "omitted",
+            "values": "omitted"
+          }
+        },
+        {
+          "variant": "Files.usda",
+          "note": "2 field changes",
+          "values": {
+            "keys": "[\"1bells.wav\"]",
+            "values": "</Root/_1bells_wav>"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Audio Library"
+    },
+    "billboard-component": {
+      "slug": "billboard-component",
+      "componentName": "BillboardComponent",
+      "componentId": "RealityKit.Billboard",
+      "primSignature": "def RealityKitComponent \"Billboard\"",
+      "coverage": "Partial",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"Billboard\"\n{\n    float blendFactor = 0\n    uniform token info:id = \"RealityKit.Billboard\"\n}",
+      "sparseExamples": "# Variant patch examples not available yet.",
+      "fields": [
+        {
+          "name": "blendFactor",
+          "type": "float",
+          "base": "0",
+          "variants": "0",
+          "notes": ""
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "blendFactor": "0"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Billboard"
+    },
+    "channel-audio-component": {
+      "slug": "channel-audio-component",
+      "componentName": "ChannelAudioComponent",
+      "componentId": "RealityKit.ChannelAudio",
+      "primSignature": "def RealityKitComponent \"ChannelAudio\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"ChannelAudio\"\n{\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}",
+      "sparseExamples": "# ALL.usda\ndef RealityKitComponent \"ChannelAudio\"\n{\n    float gain = -21.279995\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}\n\n# Gain.usda\ndef RealityKitComponent \"ChannelAudio\"\n{\n    float gain = -23.45\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}",
+      "fields": [
+        {
+          "name": "gain",
+          "type": "float",
+          "base": "omitted",
+          "variants": "-21.279995, -23.45",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "ALL.usda",
+          "note": "1 field change",
+          "values": {
+            "gain": "-21.279995"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "gain": "omitted"
+          }
+        },
+        {
+          "variant": "Gain.usda",
+          "note": "1 field change",
+          "values": {
+            "gain": "-23.45"
+          }
+        },
+        {
+          "variant": "Resource.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "gain": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Channel Audio"
+    },
+    "character-controller-component": {
+      "slug": "character-controller-component",
+      "componentName": "CharacterControllerComponent",
+      "componentId": "RealityKit.CharacterController",
+      "primSignature": "def RealityKitComponent \"CharacterController\"",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n        }\n    }\n}",
+      "sparseExamples": "# Collision Filter/BASE.usda\ndef RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n        }\n    }\n}\n\n# Collision Filter/GroupAll.usda\ndef RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n            uint group = 4294967295\n        }\n    }\n}",
+      "fields": [
+        {
+          "name": "extents",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(0.05, 0, 0), (0, 0.03, 0)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "group",
+          "type": "uint",
+          "base": "omitted",
+          "variants": "4294967295",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "skinWidth",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.02",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "slopeLimit",
+          "type": "float",
+          "base": "omitted",
+          "variants": "1.5707964",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "stepLimit",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.4",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Collision Filter/BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Collision Filter/GroupAll.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "4294967295",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Collision Filter/GroupDefault.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Collision Filter/MaskAll.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Collision Filter/MaskDefault.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Height.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "omitted",
+            "extents": "(0.05, 0, 0)",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "Radius.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "omitted",
+            "extents": "(0, 0.03, 0)",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "SkinWidth.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "0.02",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "SlopeLimit.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "1.5707964",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "StepLimit.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "0.4"
+          }
+        },
+        {
+          "variant": "UpVector.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "UpVectorOnly_Z.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        },
+        {
+          "variant": "UpVectorOnly.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "extents": "omitted",
+            "skinWidth": "omitted",
+            "slopeLimit": "omitted",
+            "stepLimit": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Character Controller"
+    },
+    "collision-component": {
+      "slug": "collision-component",
+      "componentName": "CollisionComponent",
+      "componentId": "RealityKit.Collider",
+      "primSignature": "def RealityKitComponent \"Collider\"",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"Collider\"\n{\n    uint group = 1\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}",
+      "sparseExamples": "# Filter/Group/All.usda\ndef RealityKitComponent \"Collider\"\n{\n    uint group = 4294967295\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}\n\n# Filter/Group/Default.usda\ndef RealityKitComponent \"Collider\"\n{\n    uint group = 1\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}",
+      "fields": [
+        {
+          "name": "extent",
+          "type": "float3",
+          "base": "(0.2, 0.2, 0.2)",
+          "variants": "(0.2, 0.2, 0.2)",
+          "notes": ""
+        },
+        {
+          "name": "group",
+          "type": "uint",
+          "base": "1",
+          "variants": "4294967295",
+          "notes": ""
+        },
+        {
+          "name": "height",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.2",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "mask",
+          "type": "uint",
+          "base": "4294967295",
+          "variants": "1",
+          "notes": ""
+        },
+        {
+          "name": "radius",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "shapeType",
+          "type": "token",
+          "base": "\"Box\"",
+          "variants": "\"Capsule\", \"Sphere\"",
+          "notes": ""
+        },
+        {
+          "name": "type",
+          "type": "token",
+          "base": "\"Default\"",
+          "variants": "\"Trigger\"",
+          "notes": ""
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Filter/Group/All.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "4294967295",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Filter/Group/Default.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Filter/Mask/All.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Filter/Mask/Default.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "1",
+            "mask": "1",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Mode/Default.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Mode/Trigger.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Trigger\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Shape/Box.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Box\"",
+            "height": "omitted",
+            "radius": "omitted"
+          }
+        },
+        {
+          "variant": "Shape/Capsule.usda",
+          "note": "3 field changes",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Capsule\"",
+            "height": "0.2",
+            "radius": "0.1"
+          }
+        },
+        {
+          "variant": "Shape/Sphere.usda",
+          "note": "2 field changes",
+          "values": {
+            "group": "1",
+            "mask": "4294967295",
+            "type": "\"Default\"",
+            "extent": "(0.2, 0.2, 0.2)",
+            "shapeType": "\"Sphere\"",
+            "height": "omitted",
+            "radius": "0.1"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Collision"
+    },
+    "directional-light-component": {
+      "slug": "directional-light-component",
+      "componentName": "DirectionalLightComponent",
+      "componentId": "RealityKit.DirectionalLight",
+      "primSignature": "def RealityKitComponent \"DirectionalLight\"",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"DirectionalLight\"\n{\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+      "sparseExamples": "# Color.usda\ndef RealityKitComponent \"DirectionalLight\"\n{\n    float3 color = (1, 1, 0)\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}\n\n# Intensity.usda\ndef RealityKitComponent \"DirectionalLight\"\n{\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n    float intensity = 70000\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+      "fields": [
+        {
+          "name": "color",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(1, 1, 0)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "cullMode",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Back\", \"Front\", \"None\"",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "depthBias",
+          "type": "float",
+          "base": "omitted",
+          "variants": "2",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "intensity",
+          "type": "float",
+          "base": "omitted",
+          "variants": "70000",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "isEnabled",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "orthographicScale",
+          "type": "float",
+          "base": "omitted",
+          "variants": "2",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "projectionType",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Fixed\", \"Automatic\"",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "zBounds",
+          "type": "float2",
+          "base": "omitted",
+          "variants": "(0.02, 20)",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "omitted",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "Color.usda",
+          "note": "1 field change",
+          "values": {
+            "color": "(1, 1, 0)",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "omitted",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "Intensity.usda",
+          "note": "1 field change",
+          "values": {
+            "color": "omitted",
+            "intensity": "70000",
+            "cullMode": "omitted",
+            "isEnabled": "omitted",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsCullingModeBack.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "\"Back\"",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsCullingModeDefault.usda",
+          "note": "1 field change",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsCullingModeFront.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "\"Front\"",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsCullingModeNone.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "\"None\"",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsDepthBias.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "2",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsEnabled.usda",
+          "note": "1 field change",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "omitted",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsOrtographicScale.usda",
+          "note": "3 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "2",
+            "projectionType": "\"Fixed\"",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsProjectionTypeAutomatic.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "\"Automatic\"",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsProjectionTypeFixed.usda",
+          "note": "2 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "\"Fixed\"",
+            "zBounds": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsZBounds.usda",
+          "note": "3 field changes",
+          "values": {
+            "color": "omitted",
+            "intensity": "omitted",
+            "cullMode": "omitted",
+            "isEnabled": "1",
+            "depthBias": "omitted",
+            "orthographicScale": "omitted",
+            "projectionType": "\"Fixed\"",
+            "zBounds": "(0.02, 20)"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Directional Light"
+    },
+    "docking-region-component": {
+      "slug": "docking-region-component",
+      "componentName": "DockingRegionComponent",
+      "componentId": "RealityKit.CustomDockingRegion",
+      "primSignature": "def RealityKitComponent \"CustomDockingRegion\"",
+      "coverage": "Partial",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"CustomDockingRegion\"\n{\n    uniform token info:id = \"RealityKit.CustomDockingRegion\"\n\n    def RealityKitStruct \"m_bounds\"\n    {\n        float3 max = (2.4, 1, 0)\n        float3 min = (-2.4, -1, -0)\n    }\n}",
+      "sparseExamples": "# Width.usda\ndef RealityKitComponent \"CustomDockingRegion\"\n{\n    uniform token info:id = \"RealityKit.CustomDockingRegion\"\n\n    def RealityKitStruct \"m_bounds\"\n    {\n        float3 max = (2.4, 1, 0)\n        float3 min = (-2.4, -1, -0)\n    }\n}",
+      "fields": [
+        {
+          "name": "max",
+          "type": "float3",
+          "base": "(2.4, 1, 0)",
+          "variants": "(2.4, 1, 0)",
+          "notes": ""
+        },
+        {
+          "name": "min",
+          "type": "float3",
+          "base": "(-2.4, -1, -0)",
+          "variants": "(-2.4, -1, -0)",
+          "notes": ""
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "Width.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "max": "(2.4, 1, 0)",
+            "min": "(-2.4, -1, -0)"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Docking Region"
+    },
+    "input-target-component": {
+      "slug": "input-target-component",
+      "componentName": "InputTargetComponent",
+      "componentId": "RealityKit.InputTarget",
+      "primSignature": "def RealityKitComponent \"InputTarget\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"InputTarget\"\n{\n    uniform token info:id = \"RealityKit.InputTarget\"\n}",
+      "sparseExamples": "# AllowedInput/All.usda\ndef RealityKitComponent \"InputTarget\"\n{\n    uniform token info:id = \"RealityKit.InputTarget\"\n}\n\n# AllowedInput/direct.usda\ndef RealityKitComponent \"InputTarget\"\n{\n    bool allowsDirectInput = 1\n    bool allowsIndirectInput = 0\n    uniform token info:id = \"RealityKit.InputTarget\"\n}",
+      "fields": [
+        {
+          "name": "allowsDirectInput",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1, 0",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "allowsIndirectInput",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "0, 1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "enabled",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1, 0",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "AllowedInput/All.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "allowsDirectInput": "omitted",
+            "allowsIndirectInput": "omitted",
+            "enabled": "omitted"
+          }
+        },
+        {
+          "variant": "AllowedInput/direct.usda",
+          "note": "2 field changes",
+          "values": {
+            "allowsDirectInput": "1",
+            "allowsIndirectInput": "0",
+            "enabled": "omitted"
+          }
+        },
+        {
+          "variant": "AllowedInput/Indirect.usda",
+          "note": "3 field changes",
+          "values": {
+            "allowsDirectInput": "0",
+            "allowsIndirectInput": "1",
+            "enabled": "1"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "allowsDirectInput": "omitted",
+            "allowsIndirectInput": "omitted",
+            "enabled": "omitted"
+          }
+        },
+        {
+          "variant": "Enabled_false.usda",
+          "note": "1 field change",
+          "values": {
+            "allowsDirectInput": "omitted",
+            "allowsIndirectInput": "omitted",
+            "enabled": "0"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Input Target"
+    },
+    "model-sort-group-component": {
+      "slug": "model-sort-group-component",
+      "componentName": "ModelSortGroupComponent",
+      "componentId": "RealityKit.MeshSorting",
+      "primSignature": "def RealityKitComponent \"MeshSorting\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"MeshSorting\"\n{\n    uniform token info:id = \"RealityKit.MeshSorting\"\n}",
+      "sparseExamples": "# Group.usda\ndef RealityKitComponent \"MeshSorting\"\n{\n    rel group = </Root/Model_Sorting_Group>\n    uniform token info:id = \"RealityKit.MeshSorting\"\n    int priorityInGroup = 1\n}\n\n# GroupPostPass.usda\ndef RealityKitComponent \"MeshSorting\"\n{\n    rel group = </Root/Model_Sorting_Group>\n    uniform token info:id = \"RealityKit.MeshSorting\"\n}",
+      "fields": [
+        {
+          "name": "group",
+          "type": "rel",
+          "base": "omitted",
+          "variants": "</Root/Model_Sorting_Group>",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "priorityInGroup",
+          "type": "int",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "group": "omitted",
+            "priorityInGroup": "omitted"
+          }
+        },
+        {
+          "variant": "Group.usda",
+          "note": "2 field changes",
+          "values": {
+            "group": "</Root/Model_Sorting_Group>",
+            "priorityInGroup": "1"
+          }
+        },
+        {
+          "variant": "GroupPostPass.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "</Root/Model_Sorting_Group>",
+            "priorityInGroup": "omitted"
+          }
+        },
+        {
+          "variant": "GroupPrePass.usda",
+          "note": "1 field change",
+          "values": {
+            "group": "</Root/Model_Sorting_Group>",
+            "priorityInGroup": "omitted"
+          }
+        },
+        {
+          "variant": "GroupSort.usda",
+          "note": "2 field changes",
+          "values": {
+            "group": "</Root/Model_Sorting_Group>",
+            "priorityInGroup": "1"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Model Sorting"
+    },
+    "opacity-component": {
+      "slug": "opacity-component",
+      "componentName": "OpacityComponent",
+      "componentId": "RealityKit.HierarchicalFade",
+      "primSignature": "def RealityKitComponent \"HierarchicalFade\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"HierarchicalFade\"\n{\n    uniform token info:id = \"RealityKit.HierarchicalFade\"\n}",
+      "sparseExamples": "# Opacity.usda\ndef RealityKitComponent \"HierarchicalFade\"\n{\n    uniform token info:id = \"RealityKit.HierarchicalFade\"\n    float opacity = 0.50348955\n}",
+      "fields": [
+        {
+          "name": "opacity",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.50348955",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "opacity": "omitted"
+          }
+        },
+        {
+          "variant": "Opacity.usda",
+          "note": "1 field change",
+          "values": {
+            "opacity": "0.50348955"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Opacity"
+    },
+    "physics-body-component": {
+      "slug": "physics-body-component",
+      "componentName": "PhysicsBodyComponent",
+      "componentId": "RealityKit.RigidBody",
+      "primSignature": "def RealityKitComponent \"RigidBody\"",
+      "coverage": "Observed",
+      "risk": "High",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"RigidBody\"\n{\n    uniform token info:id = \"RealityKit.RigidBody\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float m_mass = 1\n\n        def RealityKitStruct \"m_pose\"\n        {\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n    }\n}",
+      "sparseExamples": "# Affected by Gravity.usda\ndef RealityKitComponent \"RigidBody\"\n{\n    bool gravityEnabled = 0\n    uniform token info:id = \"RealityKit.RigidBody\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float m_mass = 1\n\n        def RealityKitStruct \"m_pose\"\n        {\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n    }\n}\n\n# ALL.usda\ndef RealityKitComponent \"RigidBody\"\n{\n    float angularDamping = 0.1\n    bool gravityEnabled = 0\n    uniform token info:id = \"RealityKit.RigidBody\"\n    bool isCCDEnabled = 1\n    float linearDamping = 0.04\n    bool lockRotationX = 1\n    bool lockRotationY = 1\n    bool lockRotationZ = 1\n    bool lockTranslationX = 1\n    bool lockTranslationY = 1\n    bool lockTranslationZ = 1\n    token motionType = \"Kinematic\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float3 m_inertia = (0.2, 0.2, 0.2)\n        float m_mass = 2\n\n        def RealityKitStruct \"m_pose\"\n        {\n            quatf orientation = (0.9999238, 0.008726202, 0.008726204, -0.000076152406)\n            float3 position = (0.01, 0.01, 0.01)\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n        double dynamicFriction = 1\n        double restitution = 1\n        double staticFriction = 1\n    }\n}",
+      "fields": [
+        {
+          "name": "angularDamping",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "dynamicFriction",
+          "type": "double",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "gravityEnabled",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "0",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "isCCDEnabled",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "linearDamping",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.04",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockRotationX",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockRotationY",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockRotationZ",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockTranslationX",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockTranslationY",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "lockTranslationZ",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "m_inertia",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(0.2, 0.2, 0.2)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "m_mass",
+          "type": "float",
+          "base": "1",
+          "variants": "2",
+          "notes": ""
+        },
+        {
+          "name": "motionType",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Kinematic\", \"Static\"",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "orientation",
+          "type": "quatf",
+          "base": "omitted",
+          "variants": "(0.9999238, 0.008726202, 0.008726204, -0.000076152406), (0.99988645, 0.008649719, 0.008802022, 0.008649721)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "position",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(0.01, 0.01, 0.01)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "restitution",
+          "type": "double",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "staticFriction",
+          "type": "double",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "Affected by Gravity.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "0",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "ALL.usda",
+          "note": "18 field changes",
+          "values": {
+            "gravityEnabled": "0",
+            "m_mass": "2",
+            "angularDamping": "0.1",
+            "isCCDEnabled": "1",
+            "linearDamping": "0.04",
+            "lockRotationX": "1",
+            "lockRotationY": "1",
+            "lockRotationZ": "1",
+            "lockTranslationX": "1",
+            "lockTranslationY": "1",
+            "lockTranslationZ": "1",
+            "motionType": "\"Kinematic\"",
+            "m_inertia": "(0.2, 0.2, 0.2)",
+            "orientation": "(0.9999238, 0.008726202, 0.008726204, -0.000076152406)",
+            "position": "(0.01, 0.01, 0.01)",
+            "dynamicFriction": "1",
+            "restitution": "1",
+            "staticFriction": "1"
+          }
+        },
+        {
+          "variant": "Angular Damping.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "0.1",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Detect Continuous Collision.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "1",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Linear Damping.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "0.04",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mass Properties/Center of Mass/Orientation.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "(0.99988645, 0.008649719, 0.008802022, 0.008649721)",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mass Properties/Center of Mass/Position.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "(0.01, 0.01, 0.01)",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mass Properties/Intertia.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "(0.2, 0.2, 0.2)",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mass Properties/Mass.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "2",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Material/Dynamic Friction.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "1",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Material/Restitution.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "1",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Material/Static Friction.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "1"
+          }
+        },
+        {
+          "variant": "Mode/Dynamic.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mode/Kinematic.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "\"Kinematic\"",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Mode/Static.usda",
+          "note": "1 field change",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "\"Static\"",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Movement Locking/Rotation Locked.usda",
+          "note": "3 field changes",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "1",
+            "lockRotationY": "1",
+            "lockRotationZ": "1",
+            "lockTranslationX": "omitted",
+            "lockTranslationY": "omitted",
+            "lockTranslationZ": "omitted",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        },
+        {
+          "variant": "Movement Locking/Translation Locked.usda",
+          "note": "3 field changes",
+          "values": {
+            "gravityEnabled": "omitted",
+            "m_mass": "1",
+            "angularDamping": "omitted",
+            "isCCDEnabled": "omitted",
+            "linearDamping": "omitted",
+            "lockRotationX": "omitted",
+            "lockRotationY": "omitted",
+            "lockRotationZ": "omitted",
+            "lockTranslationX": "1",
+            "lockTranslationY": "1",
+            "lockTranslationZ": "1",
+            "motionType": "omitted",
+            "m_inertia": "omitted",
+            "orientation": "omitted",
+            "position": "omitted",
+            "dynamicFriction": "omitted",
+            "restitution": "omitted",
+            "staticFriction": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Physics Body"
+    },
+    "physics-motion-component": {
+      "slug": "physics-motion-component",
+      "componentName": "PhysicsMotionComponent",
+      "componentId": "RealityKit.MotionState",
+      "primSignature": "def RealityKitComponent \"MotionState\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n}",
+      "sparseExamples": "# ALL.usda\ndef RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n    float3 m_userSetAngularVelocity = (1, 1, 1)\n    uint m_userSetAngularVelocityVersion = 1\n    float3 m_userSetLinearVelocity = (1, 1, 1)\n    uint m_userSetLinearVelocityVersion = 1\n}\n\n# Angular Velocity.usda\ndef RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n    float3 m_userSetAngularVelocity = (1, 1, 1)\n    uint m_userSetAngularVelocityVersion = 1\n}",
+      "fields": [
+        {
+          "name": "m_userSetAngularVelocity",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(1, 1, 1)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "m_userSetAngularVelocityVersion",
+          "type": "uint",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "m_userSetLinearVelocity",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(1, 1, 1)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "m_userSetLinearVelocityVersion",
+          "type": "uint",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "ALL.usda",
+          "note": "4 field changes",
+          "values": {
+            "m_userSetAngularVelocity": "(1, 1, 1)",
+            "m_userSetAngularVelocityVersion": "1",
+            "m_userSetLinearVelocity": "(1, 1, 1)",
+            "m_userSetLinearVelocityVersion": "1"
+          }
+        },
+        {
+          "variant": "Angular Velocity.usda",
+          "note": "2 field changes",
+          "values": {
+            "m_userSetAngularVelocity": "(1, 1, 1)",
+            "m_userSetAngularVelocityVersion": "1",
+            "m_userSetLinearVelocity": "omitted",
+            "m_userSetLinearVelocityVersion": "omitted"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "m_userSetAngularVelocity": "omitted",
+            "m_userSetAngularVelocityVersion": "omitted",
+            "m_userSetLinearVelocity": "omitted",
+            "m_userSetLinearVelocityVersion": "omitted"
+          }
+        },
+        {
+          "variant": "Linear Velocity.usda",
+          "note": "2 field changes",
+          "values": {
+            "m_userSetAngularVelocity": "omitted",
+            "m_userSetAngularVelocityVersion": "omitted",
+            "m_userSetLinearVelocity": "(1, 1, 1)",
+            "m_userSetLinearVelocityVersion": "1"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Physics Motion"
+    },
+    "point-light-component": {
+      "slug": "point-light-component",
+      "componentName": "PointLightComponent",
+      "componentId": "RealityKit.PointLight",
+      "primSignature": "def RealityKitComponent \"PointLight\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"PointLight\"\n{\n    uniform token info:id = \"RealityKit.PointLight\"\n}",
+      "sparseExamples": "# Attenuation Falloff.usda\ndef RealityKitComponent \"PointLight\"\n{\n    float attenuationFalloffExponent = 4\n    uniform token info:id = \"RealityKit.PointLight\"\n}\n\n# Attenuation Radius.usda\ndef RealityKitComponent \"PointLight\"\n{\n    float attenuationRadius = 20\n    uniform token info:id = \"RealityKit.PointLight\"\n}",
+      "fields": [
+        {
+          "name": "attenuationFalloffExponent",
+          "type": "float",
+          "base": "omitted",
+          "variants": "4",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "attenuationRadius",
+          "type": "float",
+          "base": "omitted",
+          "variants": "20",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "color",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(0.722041, 0.92509, 0)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "intensity",
+          "type": "float",
+          "base": "omitted",
+          "variants": "470000",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "Attenuation Falloff.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "4",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "intensity": "omitted"
+          }
+        },
+        {
+          "variant": "Attenuation Radius.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "20",
+            "color": "omitted",
+            "intensity": "omitted"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "intensity": "omitted"
+          }
+        },
+        {
+          "variant": "Color.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "(0.722041, 0.92509, 0)",
+            "intensity": "omitted"
+          }
+        },
+        {
+          "variant": "Intensity.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "intensity": "470000"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Point Light"
+    },
+    "scene-understanding-component": {
+      "slug": "scene-understanding-component",
+      "componentName": "SceneUnderstandingComponent",
+      "componentId": "RealityKit.SceneUnderstanding",
+      "primSignature": "def RealityKitComponent \"SceneUnderstanding\"",
+      "coverage": "Partial",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"SceneUnderstanding\"\n{\n    uniform token info:id = \"RealityKit.SceneUnderstanding\"\n}",
+      "sparseExamples": "# Variant patch examples not available yet.",
+      "fields": [],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {}
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Scene Understanding"
+    },
+    "spatial-audio-component": {
+      "slug": "spatial-audio-component",
+      "componentName": "SpatialAudioComponent",
+      "componentId": "RealityKit.SpatialAudio",
+      "primSignature": "def RealityKitComponent \"SpatialAudio\"",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"SpatialAudio\"\n{\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}",
+      "sparseExamples": "# Direct Level.usda\ndef RealityKitComponent \"SpatialAudio\"\n{\n    float directLevel = -34.559376\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}\n\n# Focus.usda\ndef RealityKitComponent \"SpatialAudio\"\n{\n    float directivityFocus = 0.66572917\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}",
+      "fields": [
+        {
+          "name": "directivityFocus",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.66572917",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "directLevel",
+          "type": "float",
+          "base": "omitted",
+          "variants": "-34.559376",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "gain",
+          "type": "float",
+          "base": "omitted",
+          "variants": "-32.60521",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "reverbLevel",
+          "type": "float",
+          "base": "omitted",
+          "variants": "-27.275",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "rolloffFactor",
+          "type": "float",
+          "base": "omitted",
+          "variants": "3.141493",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "omitted",
+            "gain": "omitted",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Direct Level.usda",
+          "note": "1 field change",
+          "values": {
+            "directLevel": "-34.559376",
+            "directivityFocus": "omitted",
+            "gain": "omitted",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Focus.usda",
+          "note": "1 field change",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "0.66572917",
+            "gain": "omitted",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Gaiin.usda",
+          "note": "1 field change",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "omitted",
+            "gain": "-32.60521",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Resource.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "omitted",
+            "gain": "omitted",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Reverb Level.usda",
+          "note": "1 field change",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "omitted",
+            "gain": "omitted",
+            "reverbLevel": "-27.275",
+            "rolloffFactor": "omitted"
+          }
+        },
+        {
+          "variant": "Rolloff Factor.usda",
+          "note": "1 field change",
+          "values": {
+            "directLevel": "omitted",
+            "directivityFocus": "omitted",
+            "gain": "omitted",
+            "reverbLevel": "omitted",
+            "rolloffFactor": "3.141493"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Spatial Audio"
+    },
+    "spot-light-component": {
+      "slug": "spot-light-component",
+      "componentName": "SpotLightComponent",
+      "componentId": "RealityKit.SpotLight",
+      "primSignature": "def RealityKitComponent \"SpotLight\"",
+      "coverage": "Observed",
+      "risk": "High",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"SpotLight\"\n{\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+      "sparseExamples": "# Attenuation Falloff.usda\ndef RealityKitComponent \"SpotLight\"\n{\n    float attenuationFalloffExponent = 4\n    float attenuationRadius = 10\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}\n\n# Attenuation Radius.usda\ndef RealityKitComponent \"SpotLight\"\n{\n    float attenuationRadius = 20\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+      "fields": [
+        {
+          "name": "attenuationFalloffExponent",
+          "type": "float",
+          "base": "omitted",
+          "variants": "4",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "attenuationRadius",
+          "type": "float",
+          "base": "omitted",
+          "variants": "10, 20",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "color",
+          "type": "float3",
+          "base": "omitted",
+          "variants": "(0.071195416, 1, 1)",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "cullMode",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Back\", \"Front\", \"None\"",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "depthBias",
+          "type": "float",
+          "base": "omitted",
+          "variants": "2",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "innerAngle",
+          "type": "float",
+          "base": "omitted",
+          "variants": "90",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "intensity",
+          "type": "float",
+          "base": "omitted",
+          "variants": "70000",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "isEnabled",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1, 0",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "outerAngle",
+          "type": "float",
+          "base": "omitted",
+          "variants": "120",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "zFar",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Fixed\"",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "zNear",
+          "type": "token",
+          "base": "omitted",
+          "variants": "\"Fixed\"",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "Attenuation Falloff.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "4",
+            "attenuationRadius": "10",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "Attenuation Radius.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "20",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "Color.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "(0.071195416, 1, 1)",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "Inner Angle.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "90",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "Intensity.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "70000",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "Outer Angle.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "120",
+            "depthBias": "omitted",
+            "isEnabled": "omitted",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowBias.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "2",
+            "isEnabled": "1",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowCullingModeBack.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "\"Back\"",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowCullingModeDefault.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowCullingModeFront.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "\"Front\"",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowCullingModeNone.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "\"None\"",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowFar.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "omitted",
+            "zFar": "\"Fixed\"",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowNear.usda",
+          "note": "2 field changes",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "\"Fixed\""
+          }
+        },
+        {
+          "variant": "ShadowsDisabledAfterEnabled.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "0",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        },
+        {
+          "variant": "ShadowsEnabled.usda",
+          "note": "1 field change",
+          "values": {
+            "attenuationFalloffExponent": "omitted",
+            "attenuationRadius": "omitted",
+            "color": "omitted",
+            "innerAngle": "omitted",
+            "intensity": "omitted",
+            "outerAngle": "omitted",
+            "depthBias": "omitted",
+            "isEnabled": "1",
+            "cullMode": "omitted",
+            "zFar": "omitted",
+            "zNear": "omitted"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Spot Light"
+    }
+  },
+  "unmatchedFolders": [
+    "Behaviors"
+  ]
+}
