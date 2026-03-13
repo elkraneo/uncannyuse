@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 import rkData from "../data/features/realitykit-components.json";
@@ -31,6 +32,19 @@ const vosOnly = features.filter(
 const iosOnly = features.filter(
 	(f) => f.support.visionos.status === "n" && f.support.ios.status === "y",
 ).length;
+const latestClaims = (await getCollection("rcp-claims"))
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.slice(0, 3)
+	.map((claim) => {
+		const feature = features.find((item) => item.id === claim.data.componentId);
+		return {
+			slug: claim.slug,
+			claim: claim.data.claim,
+			summary: claim.data.summary,
+			date: claim.data.date.toISOString().slice(0, 10),
+			componentName: feature?.name ?? claim.data.componentId,
+		};
+	});
 ---
 
 <Base
@@ -82,6 +96,33 @@ const iosOnly = features.filter(
 					<span class="stat-label">new&nbsp;in&nbsp;26.0</span>
 				</div>
 			</div>
+
+			<section class="hero-notes" aria-labelledby="latest-notes-title">
+				<div class="hero-notes-head">
+					<div>
+						<p class="hero-notes-kicker">latest RCP findings</p>
+						<h2 id="latest-notes-title">Evidence-backed reverse-engineering notes</h2>
+					</div>
+					<a href="/research/" class="hero-notes-link">browse all notes</a>
+				</div>
+
+				<div class="hero-notes-grid">
+					{
+						latestClaims.map((claim) => (
+							<article class="hero-note-card">
+								<div class="hero-note-meta">
+									<span>{claim.componentName}</span>
+									<span>{claim.date}</span>
+								</div>
+								<h3>
+									<a href={`/research/${claim.slug}/`}>{claim.claim}</a>
+								</h3>
+								<p>{claim.summary}</p>
+							</article>
+						))
+					}
+				</div>
+			</section>
 		</div>
 	</section>
 
@@ -412,6 +453,86 @@ const iosOnly = features.filter(
 		flex-shrink: 0;
 	}
 
+	.hero-notes {
+		margin-top: 1.4rem;
+		padding: 1rem;
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		background:
+			linear-gradient(180deg, rgba(48, 209, 88, 0.08), rgba(48, 209, 88, 0.02)),
+			var(--surface);
+	}
+
+	.hero-notes-head {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.hero-notes-kicker {
+		margin: 0;
+		font-size: 0.72rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #30d158;
+	}
+
+	.hero-notes-head h2 {
+		margin: 0.3rem 0 0;
+		font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+	}
+
+	.hero-notes-link {
+		color: var(--text);
+		text-decoration: none;
+		font-size: 0.85rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.hero-notes-grid {
+		margin-top: 0.9rem;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.8rem;
+	}
+
+	.hero-note-card {
+		padding: 0.85rem 0.9rem;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--surface-up) 82%, transparent);
+	}
+
+	.hero-note-meta {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.75rem;
+		font-size: 0.72rem;
+		color: var(--muted);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.hero-note-card h3 {
+		margin: 0.55rem 0 0;
+		font-size: 0.95rem;
+		line-height: 1.35;
+	}
+
+	.hero-note-card h3 a {
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.hero-note-card p {
+		margin: 0.55rem 0 0;
+		font-size: 0.84rem;
+		line-height: 1.5;
+		color: var(--muted);
+	}
+
 	/* ── Page layout ─────────────────────────────── */
 	.page-layout {
 		max-width: 1200px;
@@ -715,6 +836,10 @@ const iosOnly = features.filter(
 		.sidebar-filter-head {
 			align-items: baseline;
 		}
+
+		.hero-notes-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	/* ── Mobile ──────────────────────────────────── */
@@ -728,6 +853,16 @@ const iosOnly = features.filter(
 			font-size: 0.9375rem;
 			line-height: 1.6;
 			margin-bottom: 1.25rem;
+		}
+
+		.hero-notes {
+			margin-top: 1rem;
+			padding: 0.85rem;
+		}
+
+		.hero-note-meta {
+			flex-direction: column;
+			gap: 0.2rem;
 		}
 
 		/* Stats: compact card grid */
