@@ -164,6 +164,170 @@ function resolveFeatureIdForFolder(folderName, features) {
 }
 
 function buildDraftForFolder(folderPath, feature) {
+  if (feature.id === "audio-mix-groups-component") {
+    return {
+      slug: feature.id,
+      componentName: feature.name,
+      componentId: "RealityKit.AudioMixGroups",
+      primSignature: 'def RealityKitComponent "AudioMixGroups"',
+      coverage: "Observed",
+      risk: "Medium",
+      baseline: "BASE.usda",
+      introducedBlock:
+        'def RealityKitComponent "AudioMixGroups"\n{\n    uniform token info:id = "RealityKit.AudioMixGroups"\n}',
+      sparseExamples:
+        '# AddMixGroup.usda\n' +
+        'def RealityKitComponent "AudioMixGroups"\n' +
+        '{\n' +
+        '    uniform token info:id = "RealityKit.AudioMixGroups"\n' +
+        '\n' +
+        '    def RealityKitAudioMixGroup "MixGroup"\n' +
+        '    {\n' +
+        '        float gain = 0\n' +
+        '        bool mute = 0\n' +
+        '        float speed = 1\n' +
+        '    }\n' +
+        '}\n\n' +
+        '# AssignSingleAudio.usda\n' +
+        'def RealityKitAudioFile "_1bells_wav"\n' +
+        '{\n' +
+        '    uniform asset file = @../1bells.wav@\n' +
+        '    rel mixGroup = </Root/Cube/AudioMixGroups/MixGroup>\n' +
+        '    uniform bool shouldLoop = 0\n' +
+        '}',
+      fields: [
+        {
+          name: "MixGroup.gain",
+          type: "float",
+          base: "omitted",
+          variants: "0, -15.505303",
+          notes: "Authored on child RealityKitAudioMixGroup prims after a mix group exists.",
+        },
+        {
+          name: "MixGroup.mute",
+          type: "bool",
+          base: "omitted",
+          variants: "0, 1",
+          notes: "Authored on child RealityKitAudioMixGroup prims after a mix group exists.",
+        },
+        {
+          name: "MixGroup.speed",
+          type: "float",
+          base: "omitted",
+          variants: "1, 2.4326851",
+          notes: "Authored on child RealityKitAudioMixGroup prims after a mix group exists.",
+        },
+        {
+          name: "AudioFile.file",
+          type: "asset",
+          base: "omitted",
+          variants: "@../1bells.wav@, @../MUI POP UP Bubbly.wav@",
+          notes: "Authored on external RealityKitAudioFile prims, not on the component prim.",
+        },
+        {
+          name: "AudioFile.mixGroup",
+          type: "rel",
+          base: "omitted",
+          variants:
+            "</Root/Cube/AudioMixGroups/MixGroup>, </Root/Cube/AudioMixGroups/MixGroup_2>",
+          notes: "Routes external audio-file prims to a specific mix-group child prim.",
+        },
+      ],
+      matrix: [
+        {
+          variant: "BASE.usda",
+          values: {
+            "MixGroup.gain": "omitted",
+            "MixGroup.mute": "omitted",
+            "MixGroup.speed": "omitted",
+            "AudioFile.file": "omitted",
+            "AudioFile.mixGroup": "omitted",
+          },
+          note: "Inspector launcher only; no mix groups or routed files authored yet",
+        },
+        {
+          variant: "AddMixGroup.usda",
+          values: {
+            "MixGroup.gain": "0",
+            "MixGroup.mute": "0",
+            "MixGroup.speed": "1",
+            "AudioFile.file": "omitted",
+            "AudioFile.mixGroup": "omitted",
+          },
+          note: "Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",
+        },
+        {
+          variant: "AssignSingleAudio.usda",
+          values: {
+            "MixGroup.gain": "0",
+            "MixGroup.mute": "0",
+            "MixGroup.speed": "1",
+            "AudioFile.file": "@../1bells.wav@",
+            "AudioFile.mixGroup": "</Root/Cube/AudioMixGroups/MixGroup>",
+          },
+          note: "Creates one external RealityKitAudioFile prim and routes it to MixGroup",
+        },
+        {
+          variant: "AssignSecondAudioSameGroup.usda",
+          values: {
+            "MixGroup.gain": "0",
+            "MixGroup.mute": "0",
+            "MixGroup.speed": "1",
+            "AudioFile.file": "@../1bells.wav@ + @../MUI POP UP Bubbly.wav@",
+            "AudioFile.mixGroup": "</Root/Cube/AudioMixGroups/MixGroup>",
+          },
+          note: "Two external audio files can route to the same mix group",
+        },
+        {
+          variant: "CreateSecondGroupAndAssign.usda",
+          values: {
+            "MixGroup.gain": "0 + 0",
+            "MixGroup.mute": "0 + 0",
+            "MixGroup.speed": "1 + 1",
+            "AudioFile.file": "@../1bells.wav@ + @../MUI POP UP Bubbly.wav@",
+            "AudioFile.mixGroup":
+              "</Root/Cube/AudioMixGroups/MixGroup> + </Root/Cube/AudioMixGroups/MixGroup_2>",
+          },
+          note: "Adds a second mix-group child and routes one audio file to each group",
+        },
+        {
+          variant: "Gain.usda",
+          values: {
+            "MixGroup.gain": "-15.505303",
+            "MixGroup.mute": "0",
+            "MixGroup.speed": "1",
+            "AudioFile.file": "@../1bells.wav@",
+            "AudioFile.mixGroup": "</Root/Cube/AudioMixGroups/MixGroup>",
+          },
+          note: "Group-level gain changes on the child mix-group prim, not on the component prim",
+        },
+        {
+          variant: "Mute.usda",
+          values: {
+            "MixGroup.gain": "0",
+            "MixGroup.mute": "1",
+            "MixGroup.speed": "1",
+            "AudioFile.file": "@../1bells.wav@",
+            "AudioFile.mixGroup": "</Root/Cube/AudioMixGroups/MixGroup>",
+          },
+          note: "Mute is a group-level child-prim field",
+        },
+        {
+          variant: "Speed.usda",
+          values: {
+            "MixGroup.gain": "0",
+            "MixGroup.mute": "0",
+            "MixGroup.speed": "2.4326851",
+            "AudioFile.file": "@../1bells.wav@",
+            "AudioFile.mixGroup": "</Root/Cube/AudioMixGroups/MixGroup>",
+          },
+          note: "Speed is a group-level child-prim field",
+        },
+      ],
+      sourceFolder: toRelativeFixturePath(folderPath),
+    };
+  }
+
   const files = walkUsdFiles(folderPath);
   if (files.length === 0) return null;
 

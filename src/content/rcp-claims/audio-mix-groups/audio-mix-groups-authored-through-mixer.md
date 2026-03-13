@@ -1,8 +1,8 @@
 ---
 componentId: audio-mix-groups-component
 axis: rcp
-claim: Audio Mix Groups is authored through the Audio Mixer editor, not as inline inspector parameters.
-summary: Fixture diffs show the inspector card acts as a launcher while authored data lands in child `RealityKitAudioMixGroup` prims and external `RealityKitAudioFile` prims related by `mixGroup`.
+claim: "Audio Mix Groups is a mixer-driven component: the inspector launches the editor, but the authored state lives outside a normal inline parameter block."
+summary: "Fixture diffs show the inspector card is only a launcher. Real state lands in child `RealityKitAudioMixGroup` prims (`gain`, `mute`, `speed`) plus external `RealityKitAudioFile` prims routed with `rel mixGroup`."
 scope: USDA authored
 sourceType: direct-diff
 confidence: high
@@ -33,4 +33,12 @@ evidence:
 supersedes: []
 ---
 
-The current evidence supports treating Audio Mix Groups as a mixer-backed authoring flow rather than a standard inline inspector parameter block.
+Audio Mix Groups behaves differently from the usual Reality Composer Pro component pattern. The inspector does not expose an inline field list to edit. Instead, it hands off authoring to the Audio Mixer.
+
+The clean fixture diffs show a two-part authored shape:
+
+- The component prim itself is mostly structural: `RealityKit.AudioMixGroups`.
+- Group controls are authored as child `RealityKitAudioMixGroup` prims with `gain`, `mute`, and `speed`.
+- File routing is authored separately as top-level `RealityKitAudioFile` prims that point back to a mix group through `rel mixGroup`.
+
+That means the interesting authored state is split across child mixer-group prims and external audio-file prims, not stored as a flat set of component attributes in the inspector card.
