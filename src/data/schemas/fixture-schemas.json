@@ -575,6 +575,100 @@
       ],
       "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Environment Lighting Configuration"
     },
+    "grounding-shadow-component": {
+      "slug": "grounding-shadow-component",
+      "componentName": "GroundingShadowComponent",
+      "componentId": "RealityKit.GroundingShadow",
+      "primSignature": "def RealityKitComponent \"GroundingShadow\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"GroundingShadow\"\n{\n    uniform token info:id = \"RealityKit.GroundingShadow\"\n}",
+      "sparseExamples": "# All.usda\ndef RealityKitComponent \"GroundingShadow\"\n{\n    bool enableIBLShadow = 1\n    bool enableMeshShadow = 1\n    uniform token info:id = \"RealityKit.GroundingShadow\"\n}\n\n# Casts Shadow.usda\ndef RealityKitComponent \"GroundingShadow\"\n{\n    bool enableIBLShadow = 1\n    bool enableMeshShadow = 1\n    bool enableReceiveIBLShadow = 0\n    bool enableReceiveMeshShadow = 0\n    uniform token info:id = \"RealityKit.GroundingShadow\"\n}",
+      "fields": [
+        {
+          "name": "enableIBLShadow",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "enableMeshShadow",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "1",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "enableReceiveIBLShadow",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "0",
+          "notes": "Not authored in baseline fixture."
+        },
+        {
+          "name": "enableReceiveMeshShadow",
+          "type": "bool",
+          "base": "omitted",
+          "variants": "0",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "enableIBLShadow": "omitted",
+            "enableMeshShadow": "omitted",
+            "enableReceiveIBLShadow": "omitted",
+            "enableReceiveMeshShadow": "omitted"
+          }
+        },
+        {
+          "variant": "None.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "enableIBLShadow": "omitted",
+            "enableMeshShadow": "omitted",
+            "enableReceiveIBLShadow": "omitted",
+            "enableReceiveMeshShadow": "omitted"
+          }
+        },
+        {
+          "variant": "All.usda",
+          "note": "2 field changes",
+          "values": {
+            "enableIBLShadow": "1",
+            "enableMeshShadow": "1",
+            "enableReceiveIBLShadow": "omitted",
+            "enableReceiveMeshShadow": "omitted"
+          }
+        },
+        {
+          "variant": "Receives Shadow.usda",
+          "note": "2 field changes",
+          "values": {
+            "enableIBLShadow": "omitted",
+            "enableMeshShadow": "omitted",
+            "enableReceiveIBLShadow": "0",
+            "enableReceiveMeshShadow": "0"
+          }
+        },
+        {
+          "variant": "Casts Shadow.usda",
+          "note": "4 field changes",
+          "values": {
+            "enableIBLShadow": "1",
+            "enableMeshShadow": "1",
+            "enableReceiveIBLShadow": "0",
+            "enableReceiveMeshShadow": "0"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Grounding Shadow"
+    },
     "reverb-component": {
       "slug": "reverb-component",
       "componentName": "ReverbComponent",
