@@ -538,6 +538,43 @@
       ],
       "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Channel Audio"
     },
+    "environment-lighting-configuration-component": {
+      "slug": "environment-lighting-configuration-component",
+      "componentName": "EnvironmentLightingConfigurationComponent",
+      "componentId": "RealityKit.EnvironmentLightingConfiguration",
+      "primSignature": "def RealityKitComponent \"EnvironmentLightingConfiguration\"",
+      "coverage": "Observed",
+      "risk": "Low",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"EnvironmentLightingConfiguration\"\n{\n    uniform token info:id = \"RealityKit.EnvironmentLightingConfiguration\"\n}",
+      "sparseExamples": "# Weight.usda\ndef RealityKitComponent \"EnvironmentLightingConfiguration\"\n{\n    float environmentLightingWeight = 0.48552084\n    uniform token info:id = \"RealityKit.EnvironmentLightingConfiguration\"\n}",
+      "fields": [
+        {
+          "name": "environmentLightingWeight",
+          "type": "float",
+          "base": "omitted",
+          "variants": "0.48552084",
+          "notes": "Not authored in baseline fixture."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "environmentLightingWeight": "omitted"
+          }
+        },
+        {
+          "variant": "Weight.usda",
+          "note": "1 field change",
+          "values": {
+            "environmentLightingWeight": "0.48552084"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Environment Lighting Configuration"
+    },
     "reverb-component": {
       "slug": "reverb-component",
       "componentName": "ReverbComponent",
