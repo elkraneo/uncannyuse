@@ -10,7 +10,7 @@
 
 A [caniuse.com](https://caniuse.com)-style compatibility matrix for Apple developer APIs, verified directly from Xcode SDK `.swiftinterface` files — not documentation.
 
-Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 RC with:
+Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 with:
 
 - iOS / visionOS / macOS version support (minimum SDK version)
 - Reality Composer Pro Add Component menu coverage (28/62)
@@ -22,7 +22,7 @@ Browse notes at `/research` on the site.
 
 ## Data source
 
-All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode 26.3 RC SDK and from binary string analysis of `RealityToolsFoundation.framework`. macOS versions are inferred from SDK era — verify against Apple documentation.
+All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode 26.3 SDK and from binary string analysis of `RealityToolsFoundation.framework`. macOS versions are inferred from SDK era — verify against Apple documentation.
 
 ## Stack
 

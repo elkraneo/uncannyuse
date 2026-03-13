@@ -33,7 +33,7 @@ confidence: high
 status: confirmed
 author: your-name
 date: 2026-02-19
-rcpVersion: "26.3 RC"
+rcpVersion: "26.3"
 xcodeBuild: "26C..."
 reproSteps:
   - Step 1
