@@ -909,6 +909,64 @@
       ],
       "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Image Based Light"
     },
+    "image-based-light-receiver-component": {
+      "slug": "image-based-light-receiver-component",
+      "componentName": "ImageBasedLightReceiverComponent",
+      "componentId": "RealityKit.ImageBasedLightReceiver",
+      "primSignature": "def RealityKitComponent \"ImageBasedLightReceiver\"",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "baseline": "BASE.usda",
+      "introducedBlock": "def RealityKitComponent \"ImageBasedLightReceiver\"\n{\n    uniform token info:id = \"RealityKit.ImageBasedLightReceiver\"\n}",
+      "sparseExamples": "# IBL.usda\ndef RealityKitComponent \"ImageBasedLightReceiver\"\n{\n    rel iblEntity = </Root/Cube>\n    uniform token info:id = \"RealityKit.ImageBasedLightReceiver\"\n}\n\n# OtherEntityIBL.usda\ndef RealityKitComponent \"ImageBasedLightReceiver\"\n{\n    rel iblEntity = </Root/Sphere>\n    uniform token info:id = \"RealityKit.ImageBasedLightReceiver\"\n}",
+      "fields": [
+        {
+          "name": "iblEntity",
+          "type": "rel",
+          "base": "omitted",
+          "variants": "</Root/Cube>, </Root/Sphere>",
+          "notes": "Targets an entity path that carries an ImageBasedLight component."
+        }
+      ],
+      "matrix": [
+        {
+          "variant": "BASE.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "iblEntity": "omitted"
+          }
+        },
+        {
+          "variant": "IBL.usda",
+          "note": "1 field change",
+          "values": {
+            "iblEntity": "</Root/Cube>"
+          }
+        },
+        {
+          "variant": "OtherEntityIBL.usda",
+          "note": "1 field change",
+          "values": {
+            "iblEntity": "</Root/Sphere>"
+          }
+        },
+        {
+          "variant": "InvalidTargetNoIBL.usda",
+          "note": "Baseline or equivalent state",
+          "values": {
+            "iblEntity": "omitted"
+          }
+        },
+        {
+          "variant": "RemoveIBLAfterAssign.usda",
+          "note": "Stale relationship persists after source IBL removal",
+          "values": {
+            "iblEntity": "</Root/Sphere>"
+          }
+        }
+      ],
+      "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Image Based Light Receiver"
+    },
     "reverb-component": {
       "slug": "reverb-component",
       "componentName": "ReverbComponent",
