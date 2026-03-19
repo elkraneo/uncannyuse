@@ -1,0 +1,18 @@
+{
+  "slug": "character-controller-component",
+  "componentName": "CharacterControllerComponent",
+  "componentId": "RealityKit.CharacterController",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/character-controller-component/schema.json",
+    "fields": "/api/components/character-controller-component/fields.csv",
+    "matrix": "/api/components/character-controller-component/matrix.csv",
+    "fixtures": "/api/components/character-controller-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 5,
+    "matrixRows": 70,
+    "fixtureRows": 6
+  }
+}

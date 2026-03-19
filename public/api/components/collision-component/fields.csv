@@ -1,0 +1,8 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+collision-component,CollisionComponent,RealityKit.Collider,extent,float3,"(0.2, 0.2, 0.2)","(0.2, 0.2, 0.2)",,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,group,uint,1,4294967295,,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,height,float,omitted,0.2,Not authored in baseline fixture.,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,mask,uint,4294967295,1,,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,radius,float,omitted,0.1,Not authored in baseline fixture.,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,shapeType,token,"""Box""","""Capsule"", ""Sphere""",,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,type,token,"""Default""","""Trigger""",,Medium,Observed

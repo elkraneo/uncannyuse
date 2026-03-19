@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Falloff.usda,Attenuation Falloff,,,Attenuation Falloff,component,attenuationFalloffExponent,float,4,PointLight.attenuationFalloffExponent
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Radius.usda,Attenuation Radius,,,Attenuation Radius,component,attenuationRadius,float,20,PointLight.attenuationRadius
+point-light-component,PointLightComponent,RealityKit.PointLight,Color.usda,Color,,,Color,component,color,float3,"(0.722041, 0.92509, 0)",PointLight.color
+point-light-component,PointLightComponent,RealityKit.PointLight,Intensity.usda,Intensity,,,Intensity,component,intensity,float,470000,PointLight.intensity

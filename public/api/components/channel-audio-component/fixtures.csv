@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,ALL.usda,ALL,,,ALL,component,gain,float,-21.279995,ChannelAudio.gain
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,Gain.usda,Gain,,,Gain,component,gain,float,-23.45,ChannelAudio.gain

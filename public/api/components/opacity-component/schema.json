@@ -1,0 +1,37 @@
+{
+  "slug": "opacity-component",
+  "componentName": "OpacityComponent",
+  "componentId": "RealityKit.HierarchicalFade",
+  "primSignature": "def RealityKitComponent \"HierarchicalFade\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"HierarchicalFade\"\n{\n    uniform token info:id = \"RealityKit.HierarchicalFade\"\n}",
+  "sparseExamples": "# Opacity.usda\ndef RealityKitComponent \"HierarchicalFade\"\n{\n    uniform token info:id = \"RealityKit.HierarchicalFade\"\n    float opacity = 0.50348955\n}",
+  "fields": [
+    {
+      "name": "opacity",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.50348955",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "opacity": "omitted"
+      }
+    },
+    {
+      "variant": "Opacity.usda",
+      "note": "1 field change",
+      "values": {
+        "opacity": "0.50348955"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Opacity"
+}

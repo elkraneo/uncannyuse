@@ -1,0 +1,41 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,BASE.usda,Inspector launcher only; no mix groups or routed files authored yet,MixGroup.gain,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,BASE.usda,Inspector launcher only; no mix groups or routed files authored yet,MixGroup.mute,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,BASE.usda,Inspector launcher only; no mix groups or routed files authored yet,MixGroup.speed,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,BASE.usda,Inspector launcher only; no mix groups or routed files authored yet,AudioFile.file,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,BASE.usda,Inspector launcher only; no mix groups or routed files authored yet,AudioFile.mixGroup,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AddMixGroup.usda,"Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",MixGroup.gain,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AddMixGroup.usda,"Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",MixGroup.mute,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AddMixGroup.usda,"Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",MixGroup.speed,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AddMixGroup.usda,"Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",AudioFile.file,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AddMixGroup.usda,"Adds first RealityKitAudioMixGroup child with default gain, mute, and speed",AudioFile.mixGroup,omitted
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSingleAudio.usda,Creates one external RealityKitAudioFile prim and routes it to MixGroup,MixGroup.gain,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSingleAudio.usda,Creates one external RealityKitAudioFile prim and routes it to MixGroup,MixGroup.mute,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSingleAudio.usda,Creates one external RealityKitAudioFile prim and routes it to MixGroup,MixGroup.speed,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSingleAudio.usda,Creates one external RealityKitAudioFile prim and routes it to MixGroup,AudioFile.file,@../1bells.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSingleAudio.usda,Creates one external RealityKitAudioFile prim and routes it to MixGroup,AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup>
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSecondAudioSameGroup.usda,Two external audio files can route to the same mix group,MixGroup.gain,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSecondAudioSameGroup.usda,Two external audio files can route to the same mix group,MixGroup.mute,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSecondAudioSameGroup.usda,Two external audio files can route to the same mix group,MixGroup.speed,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSecondAudioSameGroup.usda,Two external audio files can route to the same mix group,AudioFile.file,@../1bells.wav@ + @../MUI POP UP Bubbly.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AssignSecondAudioSameGroup.usda,Two external audio files can route to the same mix group,AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup>
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,CreateSecondGroupAndAssign.usda,Adds a second mix-group child and routes one audio file to each group,MixGroup.gain,0 + 0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,CreateSecondGroupAndAssign.usda,Adds a second mix-group child and routes one audio file to each group,MixGroup.mute,0 + 0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,CreateSecondGroupAndAssign.usda,Adds a second mix-group child and routes one audio file to each group,MixGroup.speed,1 + 1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,CreateSecondGroupAndAssign.usda,Adds a second mix-group child and routes one audio file to each group,AudioFile.file,@../1bells.wav@ + @../MUI POP UP Bubbly.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,CreateSecondGroupAndAssign.usda,Adds a second mix-group child and routes one audio file to each group,AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup> + </Root/Cube/AudioMixGroups/MixGroup_2>
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Gain.usda,"Group-level gain changes on the child mix-group prim, not on the component prim",MixGroup.gain,-15.505303
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Gain.usda,"Group-level gain changes on the child mix-group prim, not on the component prim",MixGroup.mute,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Gain.usda,"Group-level gain changes on the child mix-group prim, not on the component prim",MixGroup.speed,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Gain.usda,"Group-level gain changes on the child mix-group prim, not on the component prim",AudioFile.file,@../1bells.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Gain.usda,"Group-level gain changes on the child mix-group prim, not on the component prim",AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup>
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Mute.usda,Mute is a group-level child-prim field,MixGroup.gain,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Mute.usda,Mute is a group-level child-prim field,MixGroup.mute,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Mute.usda,Mute is a group-level child-prim field,MixGroup.speed,1
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Mute.usda,Mute is a group-level child-prim field,AudioFile.file,@../1bells.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Mute.usda,Mute is a group-level child-prim field,AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup>
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Speed.usda,Speed is a group-level child-prim field,MixGroup.gain,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Speed.usda,Speed is a group-level child-prim field,MixGroup.mute,0
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Speed.usda,Speed is a group-level child-prim field,MixGroup.speed,2.4326851
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Speed.usda,Speed is a group-level child-prim field,AudioFile.file,@../1bells.wav@
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,Speed.usda,Speed is a group-level child-prim field,AudioFile.mixGroup,</Root/Cube/AudioMixGroups/MixGroup>

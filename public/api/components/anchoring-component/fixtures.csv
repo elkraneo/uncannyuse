@@ -1,0 +1,8 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Orientation.usda,Orientation,,,Orientation,component,transform,matrix4d,"( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )",Anchoring.descriptor.transform
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Position.usda,Position,,,Position,component,transform,matrix4d,"( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )",Anchoring.descriptor.transform
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Scale.usda,Scale,,,Scale,component,transform,matrix4d,"( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",Anchoring.descriptor.transform
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Hand.usda,Hand,Target,,Hand,component,type,token,"""Hand""",Anchoring.descriptor.type
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Head.usda,Head,Target,,Head,component,type,token,"""Head""",Anchoring.descriptor.type
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Object.usda,Object,Target,,Object,component,type,token,"""Object""",Anchoring.descriptor.type
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Plane.usda,Plane,Target,,Plane,component,type,token,"""Plane""",Anchoring.descriptor.type

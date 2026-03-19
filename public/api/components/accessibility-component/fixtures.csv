@@ -1,0 +1,9 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,AccessibilityElement,,,AccessibilityElement,component,isEnabled,bool,1,Accessibility.isEnabled
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,AccessibilityElement,,,AccessibilityElement,component,label,string,"""Custom Label""",Accessibility.label
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,AccessibilityElement,,,AccessibilityElement,component,value,string,"""This component makes my entity accessible """,Accessibility.value
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,BASE,,,BASE,component,isEnabled,bool,0,Accessibility.isEnabled
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,BASE,,,BASE,component,label,string,"""""",Accessibility.label
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,BASE,,,BASE,component,value,string,"""""",Accessibility.value
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Label.usda,Label,,,Label,component,label,string,"""Some Label""",Accessibility.label
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Value.usda,Value,,,Value,component,value,string,"""Some Value""",Accessibility.value

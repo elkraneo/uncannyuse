@@ -1,0 +1,18 @@
+{
+  "slug": "reverb-component",
+  "componentName": "ReverbComponent",
+  "componentId": "RealityKit.Reverb",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/reverb-component/schema.json",
+    "fields": "/api/components/reverb-component/fields.csv",
+    "matrix": "/api/components/reverb-component/matrix.csv",
+    "fixtures": "/api/components/reverb-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 11,
+    "fixtureRows": 11
+  }
+}

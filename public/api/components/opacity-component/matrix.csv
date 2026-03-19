@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+opacity-component,OpacityComponent,RealityKit.HierarchicalFade,BASE.usda,Baseline or equivalent state,opacity,omitted
+opacity-component,OpacityComponent,RealityKit.HierarchicalFade,Opacity.usda,1 field change,opacity,0.50348955

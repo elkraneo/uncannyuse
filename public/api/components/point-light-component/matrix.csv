@@ -1,0 +1,21 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Falloff.usda,1 field change,attenuationFalloffExponent,4
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Falloff.usda,1 field change,attenuationRadius,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Falloff.usda,1 field change,color,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Falloff.usda,1 field change,intensity,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Radius.usda,1 field change,attenuationFalloffExponent,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Radius.usda,1 field change,attenuationRadius,20
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Radius.usda,1 field change,color,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Attenuation Radius.usda,1 field change,intensity,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,BASE.usda,Baseline or equivalent state,attenuationFalloffExponent,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,BASE.usda,Baseline or equivalent state,attenuationRadius,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,BASE.usda,Baseline or equivalent state,color,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,BASE.usda,Baseline or equivalent state,intensity,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Color.usda,1 field change,attenuationFalloffExponent,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Color.usda,1 field change,attenuationRadius,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Color.usda,1 field change,color,"(0.722041, 0.92509, 0)"
+point-light-component,PointLightComponent,RealityKit.PointLight,Color.usda,1 field change,intensity,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Intensity.usda,1 field change,attenuationFalloffExponent,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Intensity.usda,1 field change,attenuationRadius,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Intensity.usda,1 field change,color,omitted
+point-light-component,PointLightComponent,RealityKit.PointLight,Intensity.usda,1 field change,intensity,470000

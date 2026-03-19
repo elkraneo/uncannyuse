@@ -1,0 +1,97 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,blendMode,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,enableBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,Baseline or equivalent state,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,blendMode,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,enableBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,1 field change,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,enableRotation,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,blendMode,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,enableBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,1 field change,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,intensityExponent,-6.6197915
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,blendMode,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,enableBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,1 field change,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,blendIBLsFactor,0.55164933
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,5 field changes,iblBlend,@../cayley_lookout_2k.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,4 field changes,iblBlend,@../cayley_lookout_2k.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,3 field changes,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,2 field changes,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,3 field changes,iblBlend,@../cayley_lookout_2k.hdr@
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,blendMode,"""blend"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,enableBlend,1
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,2 field changes,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,blendMode,"""none"""
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,enableBlend,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,2 field changes,iblBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,isGlobalIBL,0
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,ibl,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,enableRotation,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,intensityExponent,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,blendIBLsFactor,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,blendMode,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,enableBlend,omitted
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Baseline or equivalent state,iblBlend,omitted

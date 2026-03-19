@@ -1,0 +1,94 @@
+{
+  "slug": "point-light-component",
+  "componentName": "PointLightComponent",
+  "componentId": "RealityKit.PointLight",
+  "primSignature": "def RealityKitComponent \"PointLight\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"PointLight\"\n{\n    uniform token info:id = \"RealityKit.PointLight\"\n}",
+  "sparseExamples": "# Attenuation Falloff.usda\ndef RealityKitComponent \"PointLight\"\n{\n    float attenuationFalloffExponent = 4\n    uniform token info:id = \"RealityKit.PointLight\"\n}\n\n# Attenuation Radius.usda\ndef RealityKitComponent \"PointLight\"\n{\n    float attenuationRadius = 20\n    uniform token info:id = \"RealityKit.PointLight\"\n}",
+  "fields": [
+    {
+      "name": "attenuationFalloffExponent",
+      "type": "float",
+      "base": "omitted",
+      "variants": "4",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "attenuationRadius",
+      "type": "float",
+      "base": "omitted",
+      "variants": "20",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "color",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(0.722041, 0.92509, 0)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "base": "omitted",
+      "variants": "470000",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "Attenuation Falloff.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "4",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "intensity": "omitted"
+      }
+    },
+    {
+      "variant": "Attenuation Radius.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "20",
+        "color": "omitted",
+        "intensity": "omitted"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "intensity": "omitted"
+      }
+    },
+    {
+      "variant": "Color.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "(0.722041, 0.92509, 0)",
+        "intensity": "omitted"
+      }
+    },
+    {
+      "variant": "Intensity.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "intensity": "470000"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Point Light"
+}

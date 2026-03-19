@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+billboard-component,BillboardComponent,RealityKit.Billboard,BASE.usda,BASE,,,BASE,component,blendFactor,float,0,Billboard.blendFactor
+billboard-component,BillboardComponent,RealityKit.Billboard,BlendFactor.usda,BlendFactor,,,BlendFactor,component,blendFactor,float,2,Billboard.blendFactor

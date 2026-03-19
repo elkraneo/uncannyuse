@@ -1,0 +1,4 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,IBL.usda,IBL,,,IBL,component,iblEntity,rel,</Root/Cube>,ImageBasedLightReceiver.iblEntity
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,OtherEntityIBL.usda,OtherEntityIBL,,,OtherEntityIBL,component,iblEntity,rel,</Root/Sphere>,ImageBasedLightReceiver.iblEntity
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,RemoveIBLAfterAssign.usda,RemoveIBLAfterAssign,,,RemoveIBLAfterAssign,component,iblEntity,rel,</Root/Sphere>,ImageBasedLightReceiver.iblEntity

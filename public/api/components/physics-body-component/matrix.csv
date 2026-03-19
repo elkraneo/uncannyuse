@@ -1,0 +1,325 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,gravityEnabled,0
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,gravityEnabled,0
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,m_mass,2
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,angularDamping,0.1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,isCCDEnabled,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,linearDamping,0.04
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockRotationX,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockRotationY,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockRotationZ,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockTranslationX,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockTranslationY,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,lockTranslationZ,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,motionType,"""Kinematic"""
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,m_inertia,"(0.2, 0.2, 0.2)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,orientation,"(0.9999238, 0.008726202, 0.008726204, -0.000076152406)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,position,"(0.01, 0.01, 0.01)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,dynamicFriction,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,restitution,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,18 field changes,staticFriction,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,angularDamping,0.1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,Baseline or equivalent state,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,isCCDEnabled,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,linearDamping,0.04
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,orientation,"(0.99988645, 0.008649719, 0.008802022, 0.008649721)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,position,"(0.01, 0.01, 0.01)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,m_inertia,"(0.2, 0.2, 0.2)"
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,m_mass,2
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,dynamicFriction,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,restitution,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,1 field change,staticFriction,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Baseline or equivalent state,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,motionType,"""Kinematic"""
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,motionType,"""Static"""
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,1 field change,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockRotationX,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockRotationY,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockRotationZ,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockTranslationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockTranslationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,lockTranslationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,3 field changes,staticFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,gravityEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,m_mass,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,angularDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,isCCDEnabled,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,linearDamping,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockRotationX,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockRotationY,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockRotationZ,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockTranslationX,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockTranslationY,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,lockTranslationZ,1
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,motionType,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,m_inertia,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,orientation,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,position,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,dynamicFriction,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,restitution,omitted
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,3 field changes,staticFriction,omitted

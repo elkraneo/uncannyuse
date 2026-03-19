@@ -1,0 +1,45 @@
+{
+  "slug": "animation-library-component",
+  "componentName": "AnimationLibraryComponent",
+  "componentId": "RealityKit.AnimationLibrary",
+  "primSignature": "def RealityKitComponent \"AnimationLibrary\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n}",
+  "sparseExamples": "# AddOne.usda\ndef RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n\n    def RealityKitAnimationFile \"blendshape\"\n    {\n        uniform asset file = @../blendshape.usdc@\n        uniform string name = \"blendshape\"\n    }\n}\n\n# AddTwo.usda\ndef RealityKitComponent \"AnimationLibrary\"\n{\n    uniform token info:id = \"RealityKit.AnimationLibrary\"\n\n    def RealityKitAnimationFile \"blendshape\"\n    {\n        uniform asset file = @../blendshape.usdc@\n        uniform string name = \"blendshape\"\n    }\n\n    def RealityKitAnimationFile \"keyframe__rotation_\"\n    {\n        uniform asset file = @../keyframe (rotation).usdc@\n        uniform string name = \"keyframe (rotation)\"\n    }\n}",
+  "fields": [],
+  "matrix": [
+    {
+      "variant": "AddOne.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    },
+    {
+      "variant": "AddTwo.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    },
+    {
+      "variant": "MissingResource.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    },
+    {
+      "variant": "RemoveOne.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    },
+    {
+      "variant": "UnitsSeconds.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Animation Library"
+}

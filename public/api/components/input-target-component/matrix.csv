@@ -1,0 +1,16 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/All.usda,Baseline or equivalent state,allowsDirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/All.usda,Baseline or equivalent state,allowsIndirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/All.usda,Baseline or equivalent state,enabled,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/direct.usda,2 field changes,allowsDirectInput,1
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/direct.usda,2 field changes,allowsIndirectInput,0
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/direct.usda,2 field changes,enabled,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,3 field changes,allowsDirectInput,0
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,3 field changes,allowsIndirectInput,1
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,3 field changes,enabled,1
+input-target-component,InputTargetComponent,RealityKit.InputTarget,BASE.usda,Baseline or equivalent state,allowsDirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,BASE.usda,Baseline or equivalent state,allowsIndirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,BASE.usda,Baseline or equivalent state,enabled,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,Enabled_false.usda,1 field change,allowsDirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,Enabled_false.usda,1 field change,allowsIndirectInput,omitted
+input-target-component,InputTargetComponent,RealityKit.InputTarget,Enabled_false.usda,1 field change,enabled,0

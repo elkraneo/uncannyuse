@@ -1,0 +1,21 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,2 field changes,enableIBLShadow,1
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,2 field changes,enableMeshShadow,1
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,2 field changes,enableReceiveIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,2 field changes,enableReceiveMeshShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,BASE.usda,Baseline or equivalent state,enableIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,BASE.usda,Baseline or equivalent state,enableMeshShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,BASE.usda,Baseline or equivalent state,enableReceiveIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,BASE.usda,Baseline or equivalent state,enableReceiveMeshShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,4 field changes,enableIBLShadow,1
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,4 field changes,enableMeshShadow,1
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,4 field changes,enableReceiveIBLShadow,0
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,4 field changes,enableReceiveMeshShadow,0
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,2 field changes,enableIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,2 field changes,enableMeshShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,2 field changes,enableReceiveIBLShadow,0
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,2 field changes,enableReceiveMeshShadow,0
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Receives Shadow.usda,Baseline or equivalent state,enableIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Receives Shadow.usda,Baseline or equivalent state,enableMeshShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Receives Shadow.usda,Baseline or equivalent state,enableReceiveIBLShadow,omitted
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Receives Shadow.usda,Baseline or equivalent state,enableReceiveMeshShadow,omitted

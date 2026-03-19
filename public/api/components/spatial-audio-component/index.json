@@ -1,0 +1,18 @@
+{
+  "slug": "spatial-audio-component",
+  "componentName": "SpatialAudioComponent",
+  "componentId": "RealityKit.SpatialAudio",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/spatial-audio-component/schema.json",
+    "fields": "/api/components/spatial-audio-component/fields.csv",
+    "matrix": "/api/components/spatial-audio-component/matrix.csv",
+    "fixtures": "/api/components/spatial-audio-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 5,
+    "matrixRows": 35,
+    "fixtureRows": 5
+  }
+}

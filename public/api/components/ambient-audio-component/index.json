@@ -1,0 +1,18 @@
+{
+  "slug": "ambient-audio-component",
+  "componentName": "AmbientAudioComponent",
+  "componentId": "RealityKit.AmbientAudio",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/ambient-audio-component/schema.json",
+    "fields": "/api/components/ambient-audio-component/fields.csv",
+    "matrix": "/api/components/ambient-audio-component/matrix.csv",
+    "fixtures": "/api/components/ambient-audio-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 3,
+    "fixtureRows": 2
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "docking-region-component",
+  "componentName": "DockingRegionComponent",
+  "componentId": "RealityKit.CustomDockingRegion",
+  "primSignature": "def RealityKitComponent \"CustomDockingRegion\"",
+  "coverage": "Partial",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"CustomDockingRegion\"\n{\n    uniform token info:id = \"RealityKit.CustomDockingRegion\"\n\n    def RealityKitStruct \"m_bounds\"\n    {\n        float3 max = (2.4, 1, 0)\n        float3 min = (-2.4, -1, -0)\n    }\n}",
+  "sparseExamples": "# Width.usda\ndef RealityKitComponent \"CustomDockingRegion\"\n{\n    uniform token info:id = \"RealityKit.CustomDockingRegion\"\n\n    def RealityKitStruct \"m_bounds\"\n    {\n        float3 max = (2.4, 1, 0)\n        float3 min = (-2.4, -1, -0)\n    }\n}",
+  "fields": [
+    {
+      "name": "max",
+      "type": "float3",
+      "base": "(2.4, 1, 0)",
+      "variants": "(2.4, 1, 0)",
+      "notes": ""
+    },
+    {
+      "name": "min",
+      "type": "float3",
+      "base": "(-2.4, -1, -0)",
+      "variants": "(-2.4, -1, -0)",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "Width.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "max": "(2.4, 1, 0)",
+        "min": "(-2.4, -1, -0)"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Docking Region"
+}

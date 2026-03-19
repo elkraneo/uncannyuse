@@ -1,0 +1,84 @@
+{
+  "slug": "physics-motion-component",
+  "componentName": "PhysicsMotionComponent",
+  "componentId": "RealityKit.MotionState",
+  "primSignature": "def RealityKitComponent \"MotionState\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n}",
+  "sparseExamples": "# ALL.usda\ndef RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n    float3 m_userSetAngularVelocity = (1, 1, 1)\n    uint m_userSetAngularVelocityVersion = 1\n    float3 m_userSetLinearVelocity = (1, 1, 1)\n    uint m_userSetLinearVelocityVersion = 1\n}\n\n# Angular Velocity.usda\ndef RealityKitComponent \"MotionState\"\n{\n    uniform token info:id = \"RealityKit.MotionState\"\n    float3 m_userSetAngularVelocity = (1, 1, 1)\n    uint m_userSetAngularVelocityVersion = 1\n}",
+  "fields": [
+    {
+      "name": "m_userSetAngularVelocity",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(1, 1, 1)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "m_userSetAngularVelocityVersion",
+      "type": "uint",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "m_userSetLinearVelocity",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(1, 1, 1)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "m_userSetLinearVelocityVersion",
+      "type": "uint",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "ALL.usda",
+      "note": "4 field changes",
+      "values": {
+        "m_userSetAngularVelocity": "(1, 1, 1)",
+        "m_userSetAngularVelocityVersion": "1",
+        "m_userSetLinearVelocity": "(1, 1, 1)",
+        "m_userSetLinearVelocityVersion": "1"
+      }
+    },
+    {
+      "variant": "Angular Velocity.usda",
+      "note": "2 field changes",
+      "values": {
+        "m_userSetAngularVelocity": "(1, 1, 1)",
+        "m_userSetAngularVelocityVersion": "1",
+        "m_userSetLinearVelocity": "omitted",
+        "m_userSetLinearVelocityVersion": "omitted"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "m_userSetAngularVelocity": "omitted",
+        "m_userSetAngularVelocityVersion": "omitted",
+        "m_userSetLinearVelocity": "omitted",
+        "m_userSetLinearVelocityVersion": "omitted"
+      }
+    },
+    {
+      "variant": "Linear Velocity.usda",
+      "note": "2 field changes",
+      "values": {
+        "m_userSetAngularVelocity": "omitted",
+        "m_userSetAngularVelocityVersion": "omitted",
+        "m_userSetLinearVelocity": "(1, 1, 1)",
+        "m_userSetLinearVelocityVersion": "1"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Physics Motion"
+}

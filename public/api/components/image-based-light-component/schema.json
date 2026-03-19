@@ -1,0 +1,240 @@
+{
+  "slug": "image-based-light-component",
+  "componentName": "ImageBasedLightComponent",
+  "componentId": "RealityKit.ImageBasedLight",
+  "primSignature": "def RealityKitComponent \"ImageBasedLight\"",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"ImageBasedLight\"\n{\n    uniform token info:id = \"RealityKit.ImageBasedLight\"\n    bool isGlobalIBL = 0\n}",
+  "sparseExamples": "# Environment Resource.usda\ndef RealityKitComponent \"ImageBasedLight\"\n{\n    asset ibl = @../RenderCrate-HDRI_Orbital_40_4K.hdr@\n    uniform token info:id = \"RealityKit.ImageBasedLight\"\n    bool isGlobalIBL = 0\n}\n\n# Inherits Rotation.usda\ndef RealityKitComponent \"ImageBasedLight\"\n{\n    bool enableRotation = 1\n    uniform token info:id = \"RealityKit.ImageBasedLight\"\n    bool isGlobalIBL = 0\n}",
+  "fields": [
+    {
+      "name": "blendIBLsFactor",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.55164933",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "blendMode",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"blend\", \"none\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "enableBlend",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1, 0",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "enableRotation",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "ibl",
+      "type": "asset",
+      "base": "omitted",
+      "variants": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "iblBlend",
+      "type": "asset",
+      "base": "omitted",
+      "variants": "@../cayley_lookout_2k.hdr@",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "intensityExponent",
+      "type": "float",
+      "base": "omitted",
+      "variants": "-6.6197915",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "isGlobalIBL",
+      "type": "bool",
+      "base": "0",
+      "variants": "0",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "omitted",
+        "enableBlend": "omitted",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Environment Resource.usda",
+      "note": "1 field change",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "omitted",
+        "enableBlend": "omitted",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Inherits Rotation.usda",
+      "note": "1 field change",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "1",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "omitted",
+        "enableBlend": "omitted",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Intensity Exponent.usda",
+      "note": "1 field change",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "-6.6197915",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "omitted",
+        "enableBlend": "omitted",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend All Custom Blend.usda",
+      "note": "5 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "0.55164933",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "@../cayley_lookout_2k.hdr@"
+      }
+    },
+    {
+      "variant": "Mode Blend All.usda",
+      "note": "4 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "@../cayley_lookout_2k.hdr@"
+      }
+    },
+    {
+      "variant": "Mode Blend First.usda",
+      "note": "3 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend None.usda",
+      "note": "2 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend Second.usda",
+      "note": "3 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "@../cayley_lookout_2k.hdr@"
+      }
+    },
+    {
+      "variant": "Mode Blend.usda",
+      "note": "2 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"blend\"",
+        "enableBlend": "1",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Mode None.usda",
+      "note": "2 field changes",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "\"none\"",
+        "enableBlend": "0",
+        "iblBlend": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Single.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "isGlobalIBL": "0",
+        "ibl": "omitted",
+        "enableRotation": "omitted",
+        "intensityExponent": "omitted",
+        "blendIBLsFactor": "omitted",
+        "blendMode": "omitted",
+        "enableBlend": "omitted",
+        "iblBlend": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Image Based Light"
+}

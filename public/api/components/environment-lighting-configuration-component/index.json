@@ -1,0 +1,18 @@
+{
+  "slug": "environment-lighting-configuration-component",
+  "componentName": "EnvironmentLightingConfigurationComponent",
+  "componentId": "RealityKit.EnvironmentLightingConfiguration",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/environment-lighting-configuration-component/schema.json",
+    "fields": "/api/components/environment-lighting-configuration-component/fields.csv",
+    "matrix": "/api/components/environment-lighting-configuration-component/matrix.csv",
+    "fixtures": "/api/components/environment-lighting-configuration-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 2,
+    "fixtureRows": 1
+  }
+}

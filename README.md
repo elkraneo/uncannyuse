@@ -20,7 +20,7 @@ Currently covers **62 public RealityKit `Component` types** from Xcode 26.3 with
 Also includes:
 
 - **RCP development notes** — PR-driven documentation of Reality Composer Pro authored behavior (USDA schema internals, field matrices). Browse at `/research` on the site.
-- **Fixture schema exports** — Machine-readable CSV/JSON data for all 28 documented components, including 62-field particle-emitter schema. Available at `/data/schemas/`.
+- **Static schema API** — Build-time JSON/CSV exports for all documented RCP components. Aggregate exports live at `/data/schemas/`; per-component artifacts live at `/api/components/<slug>/`.
 
 ## Data source
 
@@ -33,13 +33,34 @@ All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode
 - SF Mono — system font, zero network requests
 - Dark mode default + `prefers-color-scheme` light mode
 
+## Static Data Exports
+
+uncannyuse ships a build-time static data layer. There is no runtime backend today.
+
+Aggregate exports:
+
+- `/data/schemas/index.json`
+- `/data/schemas/fields.csv`
+- `/data/schemas/matrix.csv`
+
+Per-component exports:
+
+- `/api/index.json`
+- `/api/components/index.json`
+- `/api/components/<slug>/schema.json`
+- `/api/components/<slug>/fields.csv`
+- `/api/components/<slug>/matrix.csv`
+- `/api/components/<slug>/fixtures.csv`
+
+`fixtures.csv` is the rawest useful export for large components such as `particle-emitter-component`: one row per authored USDA field observed in a fixture file, including fixture path, UI section, struct scope, and authored value.
+
 ## Roadmap
 
 - [ ] ARKit — session configs, anchor types, hardware tiers (LiDAR, chip generation)
 - [ ] Metal — GPU feature sets, ray tracing, mesh shaders per Apple GPU family
 - [ ] Hardware tier dimension (A-series chip, LiDAR, camera)
 - [ ] Compare view
-- [ ] API layer for programmatic access (see [#12](https://github.com/elkraneo/uncannyuse/issues/12))
+- [ ] Stabilize and version the static schema API shape (see [#12](https://github.com/elkraneo/uncannyuse/issues/12))
 - [ ] Interactive schema lookup page
 
 ## Commands
@@ -48,9 +69,9 @@ All data is extracted from `RealityFoundation.swiftinterface` files in the Xcode
 npm install
 npm run dev           # localhost:4321
 npm run build         # Build site
-npm run build:all     # Build + regenerate schemas + CSV exports
+npm run build:all     # Regenerate schema/API artifacts, then build site
 npm run generate:schemas  # Regenerate fixture schemas from Deconstructed fixtures
-npm run generate:csv      # Generate CSV exports (fields.csv, matrix.csv)
+npm run generate:csv      # Generate aggregate + per-component JSON/CSV exports
 npm run preview
 ```
 

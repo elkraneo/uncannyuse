@@ -1,0 +1,177 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,attenuationFalloffExponent,4
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,attenuationRadius,10
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,attenuationRadius,20
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,BASE.usda,Baseline or equivalent state,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,color,"(0.071195416, 1, 1)"
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,innerAngle,90
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,intensity,70000
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,outerAngle,120
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,isEnabled,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,depthBias,2
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,cullMode,"""Back"""
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,cullMode,"""Front"""
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,cullMode,"""None"""
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,zFar,"""Fixed"""
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,2 field changes,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,2 field changes,zNear,"""Fixed"""
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,isEnabled,0
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,1 field change,zNear,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,attenuationFalloffExponent,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,attenuationRadius,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,color,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,innerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,intensity,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,outerAngle,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,depthBias,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,isEnabled,1
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,cullMode,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,zFar,omitted
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,1 field change,zNear,omitted

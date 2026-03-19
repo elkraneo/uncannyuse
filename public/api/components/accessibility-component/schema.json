@@ -1,0 +1,73 @@
+{
+  "slug": "accessibility-component",
+  "componentName": "AccessibilityComponent",
+  "componentId": "RealityKit.Accessibility",
+  "primSignature": "def RealityKitComponent \"Accessibility\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    bool isEnabled = 0\n    string label = \"\"\n    string value = \"\"\n}",
+  "sparseExamples": "# AccessibilityElement.usda\ndef RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    bool isEnabled = 1\n    string label = \"Custom Label\"\n    string value = \"This component makes my entity accessible \"\n}\n\n# Label.usda\ndef RealityKitComponent \"Accessibility\"\n{\n    uniform token info:id = \"RealityKit.Accessibility\"\n    string label = \"Some Label\"\n}",
+  "fields": [
+    {
+      "name": "isEnabled",
+      "type": "bool",
+      "base": "0",
+      "variants": "1",
+      "notes": ""
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "base": "\"\"",
+      "variants": "\"Custom Label\", \"Some Label\"",
+      "notes": ""
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "base": "\"\"",
+      "variants": "\"This component makes my entity accessible \", \"Some Value\"",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "AccessibilityElement.usda",
+      "note": "3 field changes",
+      "values": {
+        "isEnabled": "1",
+        "label": "\"Custom Label\"",
+        "value": "\"This component makes my entity accessible \""
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "isEnabled": "0",
+        "label": "\"\"",
+        "value": "\"\""
+      }
+    },
+    {
+      "variant": "Label.usda",
+      "note": "3 field changes",
+      "values": {
+        "isEnabled": "omitted",
+        "label": "\"Some Label\"",
+        "value": "omitted"
+      }
+    },
+    {
+      "variant": "Value.usda",
+      "note": "3 field changes",
+      "values": {
+        "isEnabled": "omitted",
+        "label": "omitted",
+        "value": "\"Some Value\""
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Accessibility"
+}

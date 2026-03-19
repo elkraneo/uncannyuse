@@ -1,0 +1,154 @@
+{
+  "slug": "virtual-environment-probe-component",
+  "componentName": "VirtualEnvironmentProbeComponent",
+  "componentId": "RealityKit.VirtualEnvironmentProbe",
+  "primSignature": "def RealityKitComponent \"VirtualEnvironmentProbe\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"VirtualEnvironmentProbe\"\n{\n    token blendMode = \"single\"\n    uniform token info:id = \"RealityKit.VirtualEnvironmentProbe\"\n\n    def RealityKitStruct \"Resource1\"\n    {\n    }\n\n    def RealityKitStruct \"Resource2\"\n    {\n    }\n}",
+  "sparseExamples": "# Environment Resource.usda\ndef RealityKitComponent \"VirtualEnvironmentProbe\"\n{\n    token blendMode = \"single\"\n    uniform token info:id = \"RealityKit.VirtualEnvironmentProbe\"\n\n    def RealityKitStruct \"Resource1\"\n    {\n        asset ibl = @../RenderCrate-HDRI_Orbital_40_4K.hdr@\n    }\n\n    def RealityKitStruct \"Resource2\"\n    {\n    }\n}\n\n# Intensity Exponent.usda\ndef RealityKitComponent \"VirtualEnvironmentProbe\"\n{\n    token blendMode = \"single\"\n    uniform token info:id = \"RealityKit.VirtualEnvironmentProbe\"\n\n    def RealityKitStruct \"Resource1\"\n    {\n        float intensityExponent = 5.511979\n    }\n\n    def RealityKitStruct \"Resource2\"\n    {\n    }\n}",
+  "fields": [
+    {
+      "name": "blendMode",
+      "type": "token",
+      "base": "\"single\"",
+      "variants": "\"blend\", \"none\"",
+      "notes": ""
+    },
+    {
+      "name": "ibl",
+      "type": "asset",
+      "base": "omitted",
+      "variants": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@, @../cayley_lookout_2k.hdr@",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "intensityExponent",
+      "type": "float",
+      "base": "omitted",
+      "variants": "5.511979, 8.561459",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "relativeWeight",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.2804514",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "blendMode": "\"single\"",
+        "ibl": "omitted",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Environment Resource.usda",
+      "note": "1 field change",
+      "values": {
+        "blendMode": "\"single\"",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Intensity Exponent.usda",
+      "note": "1 field change",
+      "values": {
+        "blendMode": "\"single\"",
+        "ibl": "omitted",
+        "intensityExponent": "5.511979",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend All Custom Blend.usda",
+      "note": "3 field changes",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "@../cayley_lookout_2k.hdr@",
+        "intensityExponent": "omitted",
+        "relativeWeight": "0.2804514"
+      }
+    },
+    {
+      "variant": "Mode Blend All.usda",
+      "note": "2 field changes",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "@../cayley_lookout_2k.hdr@",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend One.usda",
+      "note": "2 field changes",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "@../RenderCrate-HDRI_Orbital_40_4K.hdr@",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend Two Intensity Exponent.usda",
+      "note": "3 field changes",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "@../cayley_lookout_2k.hdr@",
+        "intensityExponent": "8.561459",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend Two.usda",
+      "note": "2 field changes",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "@../cayley_lookout_2k.hdr@",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Blend.usda",
+      "note": "1 field change",
+      "values": {
+        "blendMode": "\"blend\"",
+        "ibl": "omitted",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode None.usda",
+      "note": "1 field change",
+      "values": {
+        "blendMode": "\"none\"",
+        "ibl": "omitted",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    },
+    {
+      "variant": "Mode Single.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "blendMode": "\"single\"",
+        "ibl": "omitted",
+        "intensityExponent": "omitted",
+        "relativeWeight": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Virtual Environment Probe"
+}

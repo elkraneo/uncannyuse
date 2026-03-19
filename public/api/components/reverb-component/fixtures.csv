@@ -1,0 +1,12 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+reverb-component,ReverbComponent,RealityKit.Reverb,Anechoic.usda,Anechoic,,,Anechoic,component,reverbPreset,token,"""Anechoic""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,BASE.usda,BASE,,,BASE,component,reverbPreset,token,"""MediumRoomTreated""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,ConcertHall.usda,ConcertHall,,,ConcertHall,component,reverbPreset,token,"""ConcertHall""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,LargeRoom.usda,LargeRoom,,,LargeRoom,component,reverbPreset,token,"""LargeRoom""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,LargeRoomTreated.usda,LargeRoomTreated,,,LargeRoomTreated,component,reverbPreset,token,"""LargeRoomTreated""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,MediumRoomDry.usda,MediumRoomDry,,,MediumRoomDry,component,reverbPreset,token,"""MediumRoomDry""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,Outside.usda,Outside,,,Outside,component,reverbPreset,token,"""Outside""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,SmallRoom.usda,SmallRoom,,,SmallRoom,component,reverbPreset,token,"""SmallRoom""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,SmallRoomBright.usda,SmallRoomBright,,,SmallRoomBright,component,reverbPreset,token,"""SmallRoomBright""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,VeryLargeRoom.usda,VeryLargeRoom,,,VeryLargeRoom,component,reverbPreset,token,"""VeryLargeRoom""",Reverb.reverbPreset
+reverb-component,ReverbComponent,RealityKit.Reverb,VerySmallRoomBright.usda,VerySmallRoomBright,,,VerySmallRoomBright,component,reverbPreset,token,"""VerySmallRoomBright""",Reverb.reverbPreset

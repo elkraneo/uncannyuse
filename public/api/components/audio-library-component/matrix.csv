@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,BASE.usda,Baseline or equivalent state,keys,omitted
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,BASE.usda,Baseline or equivalent state,values,omitted
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,Files.usda,2 field changes,keys,"[""1bells.wav""]"
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,Files.usda,2 field changes,values,</Root/_1bells_wav>

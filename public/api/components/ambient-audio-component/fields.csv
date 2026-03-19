@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,gain,float,0,-35.13125,,Low,Observed

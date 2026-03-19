@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+reverb-component,ReverbComponent,RealityKit.Reverb,reverbPreset,token,"""MediumRoomTreated""","""Anechoic"", ""ConcertHall"", ""LargeRoom""",,Low,Observed

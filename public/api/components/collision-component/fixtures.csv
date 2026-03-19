@@ -1,0 +1,54 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,BASE,,,BASE,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,BASE,,,BASE,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,BASE,,,BASE,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,BASE,,,BASE,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,BASE,,,BASE,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,All,Filter,Group,All,component,group,uint,4294967295,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,All,Filter,Group,All,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,All,Filter,Group,All,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,All,Filter,Group,All,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,All,Filter,Group,All,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Default,Filter,Group,Default,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Default,Filter,Group,Default,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Default,Filter,Group,Default,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Default,Filter,Group,Default,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Default,Filter,Group,Default,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,All,Filter,Mask,All,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,All,Filter,Mask,All,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,All,Filter,Mask,All,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,All,Filter,Mask,All,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,All,Filter,Mask,All,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,Default,Filter,Mask,Default,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,Default,Filter,Mask,Default,component,mask,uint,1,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,Default,Filter,Mask,Default,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,Default,Filter,Mask,Default,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,Default,Filter,Mask,Default,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Default,Mode,,Default,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Default,Mode,,Default,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Default,Mode,,Default,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Default,Mode,,Default,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Default,Mode,,Default,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,Trigger,Mode,,Trigger,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,Trigger,Mode,,Trigger,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,Trigger,Mode,,Trigger,component,type,token,"""Trigger""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,Trigger,Mode,,Trigger,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,Trigger,Mode,,Trigger,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Box,Shape,,Box,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Box,Shape,,Box,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Box,Shape,,Box,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Box,Shape,,Box,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Box,Shape,,Box,component,shapeType,token,"""Box""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,height,float,0.2,Collider.Shape.height
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,radius,float,0.1,Collider.Shape.radius
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,Capsule,Shape,,Capsule,component,shapeType,token,"""Capsule""",Collider.Shape.shapeType
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,group,uint,1,Collider.group
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,mask,uint,4294967295,Collider.mask
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,type,token,"""Default""",Collider.type
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,extent,float3,"(0.2, 0.2, 0.2)",Collider.Shape.extent
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,radius,float,0.1,Collider.Shape.radius
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,Sphere,Shape,,Sphere,component,shapeType,token,"""Sphere""",Collider.Shape.shapeType

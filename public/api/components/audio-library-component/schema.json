@@ -1,0 +1,46 @@
+{
+  "slug": "audio-library-component",
+  "componentName": "AudioLibraryComponent",
+  "componentId": "RealityKit.AudioLibrary",
+  "primSignature": "def RealityKitComponent \"AudioLibrary\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"AudioLibrary\"\n{\n    uniform token info:id = \"RealityKit.AudioLibrary\"\n}",
+  "sparseExamples": "# Files.usda\ndef RealityKitComponent \"AudioLibrary\"\n{\n    uniform token info:id = \"RealityKit.AudioLibrary\"\n\n    def RealityKitDict \"resources\"\n    {\n        string[] keys = [\"1bells.wav\"]\n        rel values = </Root/_1bells_wav>\n    }\n}",
+  "fields": [
+    {
+      "name": "keys",
+      "type": "string[]",
+      "base": "omitted",
+      "variants": "[\"1bells.wav\"]",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "values",
+      "type": "rel",
+      "base": "omitted",
+      "variants": "</Root/_1bells_wav>",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "keys": "omitted",
+        "values": "omitted"
+      }
+    },
+    {
+      "variant": "Files.usda",
+      "note": "2 field changes",
+      "values": {
+        "keys": "[\"1bells.wav\"]",
+        "values": "</Root/_1bells_wav>"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Audio Library"
+}

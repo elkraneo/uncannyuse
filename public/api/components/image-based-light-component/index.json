@@ -1,0 +1,18 @@
+{
+  "slug": "image-based-light-component",
+  "componentName": "ImageBasedLightComponent",
+  "componentId": "RealityKit.ImageBasedLight",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/image-based-light-component/schema.json",
+    "fields": "/api/components/image-based-light-component/fields.csv",
+    "matrix": "/api/components/image-based-light-component/matrix.csv",
+    "fixtures": "/api/components/image-based-light-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 8,
+    "matrixRows": 96,
+    "fixtureRows": 36
+  }
+}

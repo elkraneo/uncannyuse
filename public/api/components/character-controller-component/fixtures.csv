@@ -1,0 +1,7 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,GroupAll,Collision Filter,,GroupAll,component,group,uint,4294967295,CharacterController.m_controllerDesc.collisionFilter.group
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,Height,,,Height,component,extents,float3,"(0.05, 0, 0)",CharacterController.m_controllerDesc.extents
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,Radius,,,Radius,component,extents,float3,"(0, 0.03, 0)",CharacterController.m_controllerDesc.extents
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,SkinWidth,,,SkinWidth,component,skinWidth,float,0.02,CharacterController.m_controllerDesc.skinWidth
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,SlopeLimit,,,SlopeLimit,component,slopeLimit,float,1.5707964,CharacterController.m_controllerDesc.slopeLimit
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,StepLimit,,,StepLimit,component,stepLimit,float,0.4,CharacterController.m_controllerDesc.stepLimit

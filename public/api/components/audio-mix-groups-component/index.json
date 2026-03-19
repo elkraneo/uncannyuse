@@ -1,0 +1,18 @@
+{
+  "slug": "audio-mix-groups-component",
+  "componentName": "AudioMixGroupsComponent",
+  "componentId": "RealityKit.AudioMixGroups",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/audio-mix-groups-component/schema.json",
+    "fields": "/api/components/audio-mix-groups-component/fields.csv",
+    "matrix": "/api/components/audio-mix-groups-component/matrix.csv",
+    "fixtures": "/api/components/audio-mix-groups-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 5,
+    "matrixRows": 40,
+    "fixtureRows": 24
+  }
+}

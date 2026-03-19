@@ -1,0 +1,19 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,BASE.usda,Baseline or equivalent state,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,BASE.usda,Baseline or equivalent state,type,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Orientation.usda,1 field change,transform,"( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )"
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Orientation.usda,1 field change,type,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Position.usda,1 field change,transform,"( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )"
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Position.usda,1 field change,type,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Scale.usda,1 field change,transform,"( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )"
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Scale.usda,1 field change,type,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Hand.usda,1 field change,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Hand.usda,1 field change,type,"""Hand"""
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Head.usda,1 field change,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Head.usda,1 field change,type,"""Head"""
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Object.usda,1 field change,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Object.usda,1 field change,type,"""Object"""
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Plane.usda,1 field change,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/Plane.usda,1 field change,type,"""Plane"""
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/World.usda,Baseline or equivalent state,transform,omitted
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,Target/World.usda,Baseline or equivalent state,type,omitted

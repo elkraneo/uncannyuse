@@ -1,0 +1,20 @@
+{
+  "slug": "scene-understanding-component",
+  "componentName": "SceneUnderstandingComponent",
+  "componentId": "RealityKit.SceneUnderstanding",
+  "primSignature": "def RealityKitComponent \"SceneUnderstanding\"",
+  "coverage": "Partial",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"SceneUnderstanding\"\n{\n    uniform token info:id = \"RealityKit.SceneUnderstanding\"\n}",
+  "sparseExamples": "# Variant patch examples not available yet.",
+  "fields": [],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {}
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Scene Understanding"
+}

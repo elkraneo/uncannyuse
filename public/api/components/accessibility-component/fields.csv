@@ -1,0 +1,4 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,isEnabled,bool,0,1,,Low,Observed
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,label,string,"""""","""Custom Label"", ""Some Label""",,Low,Observed
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,value,string,"""""","""This component makes my entity accessible "", ""Some Value""",,Low,Observed

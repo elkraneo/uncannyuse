@@ -1,0 +1,7 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/direct.usda,direct,AllowedInput,,direct,component,allowsDirectInput,bool,1,InputTarget.allowsDirectInput
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/direct.usda,direct,AllowedInput,,direct,component,allowsIndirectInput,bool,0,InputTarget.allowsIndirectInput
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,Indirect,AllowedInput,,Indirect,component,allowsDirectInput,bool,0,InputTarget.allowsDirectInput
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,Indirect,AllowedInput,,Indirect,component,allowsIndirectInput,bool,1,InputTarget.allowsIndirectInput
+input-target-component,InputTargetComponent,RealityKit.InputTarget,AllowedInput/Indirect.usda,Indirect,AllowedInput,,Indirect,component,enabled,bool,1,InputTarget.enabled
+input-target-component,InputTargetComponent,RealityKit.InputTarget,Enabled_false.usda,Enabled_false,,,Enabled_false,component,enabled,bool,0,InputTarget.enabled

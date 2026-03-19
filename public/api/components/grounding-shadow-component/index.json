@@ -1,0 +1,18 @@
+{
+  "slug": "grounding-shadow-component",
+  "componentName": "GroundingShadowComponent",
+  "componentId": "RealityKit.GroundingShadow",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/grounding-shadow-component/schema.json",
+    "fields": "/api/components/grounding-shadow-component/fields.csv",
+    "matrix": "/api/components/grounding-shadow-component/matrix.csv",
+    "fixtures": "/api/components/grounding-shadow-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 4,
+    "matrixRows": 20,
+    "fixtureRows": 8
+  }
+}

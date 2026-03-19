@@ -1,0 +1,205 @@
+{
+  "slug": "character-controller-component",
+  "componentName": "CharacterControllerComponent",
+  "componentId": "RealityKit.CharacterController",
+  "primSignature": "def RealityKitComponent \"CharacterController\"",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n        }\n    }\n}",
+  "sparseExamples": "# Collision Filter/BASE.usda\ndef RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n        }\n    }\n}\n\n# Collision Filter/GroupAll.usda\ndef RealityKitComponent \"CharacterController\"\n{\n    uniform token info:id = \"RealityKit.CharacterController\"\n\n    def RealityKitStruct \"m_controllerDesc\"\n    {\n        def RealityKitStruct \"collisionFilter\"\n        {\n            uint group = 4294967295\n        }\n    }\n}",
+  "fields": [
+    {
+      "name": "extents",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(0.05, 0, 0), (0, 0.03, 0)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "group",
+      "type": "uint",
+      "base": "omitted",
+      "variants": "4294967295",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "skinWidth",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.02",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "slopeLimit",
+      "type": "float",
+      "base": "omitted",
+      "variants": "1.5707964",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "stepLimit",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.4",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Collision Filter/BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Collision Filter/GroupAll.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "4294967295",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Collision Filter/GroupDefault.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Collision Filter/MaskAll.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Collision Filter/MaskDefault.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Height.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "omitted",
+        "extents": "(0.05, 0, 0)",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "Radius.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "omitted",
+        "extents": "(0, 0.03, 0)",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "SkinWidth.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "0.02",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "SlopeLimit.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "1.5707964",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "StepLimit.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "0.4"
+      }
+    },
+    {
+      "variant": "UpVector.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "UpVectorOnly_Z.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    },
+    {
+      "variant": "UpVectorOnly.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "extents": "omitted",
+        "skinWidth": "omitted",
+        "slopeLimit": "omitted",
+        "stepLimit": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Character Controller"
+}

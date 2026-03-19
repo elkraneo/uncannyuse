@@ -1,0 +1,6 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,extents,float3,omitted,"(0.05, 0, 0), (0, 0.03, 0)",Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,group,uint,omitted,4294967295,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,skinWidth,float,omitted,0.02,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,slopeLimit,float,omitted,1.5707964,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,stepLimit,float,omitted,0.4,Not authored in baseline fixture.,Medium,Observed

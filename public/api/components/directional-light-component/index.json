@@ -1,0 +1,18 @@
+{
+  "slug": "directional-light-component",
+  "componentName": "DirectionalLightComponent",
+  "componentId": "RealityKit.DirectionalLight",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/directional-light-component/schema.json",
+    "fields": "/api/components/directional-light-component/fields.csv",
+    "matrix": "/api/components/directional-light-component/matrix.csv",
+    "fixtures": "/api/components/directional-light-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 8,
+    "matrixRows": 104,
+    "fixtureRows": 22
+  }
+}

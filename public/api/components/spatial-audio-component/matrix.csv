@@ -1,0 +1,36 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,BASE.usda,Baseline or equivalent state,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,BASE.usda,Baseline or equivalent state,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,BASE.usda,Baseline or equivalent state,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,BASE.usda,Baseline or equivalent state,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,BASE.usda,Baseline or equivalent state,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,1 field change,directLevel,-34.559376
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,1 field change,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,1 field change,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,1 field change,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,1 field change,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,1 field change,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,1 field change,directivityFocus,0.66572917
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,1 field change,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,1 field change,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,1 field change,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,1 field change,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,1 field change,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,1 field change,gain,-32.60521
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,1 field change,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,1 field change,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Resource.usda,Baseline or equivalent state,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Resource.usda,Baseline or equivalent state,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Resource.usda,Baseline or equivalent state,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Resource.usda,Baseline or equivalent state,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Resource.usda,Baseline or equivalent state,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,1 field change,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,1 field change,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,1 field change,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,1 field change,reverbLevel,-27.275
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,1 field change,rolloffFactor,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,1 field change,directLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,1 field change,directivityFocus,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,1 field change,gain,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,1 field change,reverbLevel,omitted
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,1 field change,rolloffFactor,3.141493

@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+billboard-component,BillboardComponent,RealityKit.Billboard,blendFactor,float,0,2,,Low,Observed

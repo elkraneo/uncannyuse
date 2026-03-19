@@ -1,0 +1,18 @@
+{
+  "slug": "physics-body-component",
+  "componentName": "PhysicsBodyComponent",
+  "componentId": "RealityKit.RigidBody",
+  "coverage": "Observed",
+  "risk": "High",
+  "paths": {
+    "schema": "/api/components/physics-body-component/schema.json",
+    "fields": "/api/components/physics-body-component/fields.csv",
+    "matrix": "/api/components/physics-body-component/matrix.csv",
+    "fixtures": "/api/components/physics-body-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 18,
+    "matrixRows": 324,
+    "fixtureRows": 53
+  }
+}

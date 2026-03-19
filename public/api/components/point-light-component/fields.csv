@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+point-light-component,PointLightComponent,RealityKit.PointLight,attenuationFalloffExponent,float,omitted,4,Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,attenuationRadius,float,omitted,20,Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,color,float3,omitted,"(0.722041, 0.92509, 0)",Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,intensity,float,omitted,470000,Not authored in baseline fixture.,Low,Observed

@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,iblEntity,rel,omitted,"</Root/Cube>, </Root/Sphere>",Not authored in baseline fixture.,Low,Observed

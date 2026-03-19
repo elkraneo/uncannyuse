@@ -1,0 +1,365 @@
+{
+  "slug": "spot-light-component",
+  "componentName": "SpotLightComponent",
+  "componentId": "RealityKit.SpotLight",
+  "primSignature": "def RealityKitComponent \"SpotLight\"",
+  "coverage": "Observed",
+  "risk": "High",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"SpotLight\"\n{\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+  "sparseExamples": "# Attenuation Falloff.usda\ndef RealityKitComponent \"SpotLight\"\n{\n    float attenuationFalloffExponent = 4\n    float attenuationRadius = 10\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}\n\n# Attenuation Radius.usda\ndef RealityKitComponent \"SpotLight\"\n{\n    float attenuationRadius = 20\n    uniform token info:id = \"RealityKit.SpotLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+  "fields": [
+    {
+      "name": "attenuationFalloffExponent",
+      "type": "float",
+      "base": "omitted",
+      "variants": "4",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "attenuationRadius",
+      "type": "float",
+      "base": "omitted",
+      "variants": "10, 20",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "color",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(0.071195416, 1, 1)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "cullMode",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Back\", \"Front\", \"None\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "depthBias",
+      "type": "float",
+      "base": "omitted",
+      "variants": "2",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "innerAngle",
+      "type": "float",
+      "base": "omitted",
+      "variants": "90",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "base": "omitted",
+      "variants": "70000",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "isEnabled",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1, 0",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "outerAngle",
+      "type": "float",
+      "base": "omitted",
+      "variants": "120",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "zFar",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Fixed\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "zNear",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Fixed\"",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "Attenuation Falloff.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "4",
+        "attenuationRadius": "10",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "Attenuation Radius.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "20",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "Color.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "(0.071195416, 1, 1)",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "Inner Angle.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "90",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "Intensity.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "70000",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "Outer Angle.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "120",
+        "depthBias": "omitted",
+        "isEnabled": "omitted",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowBias.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "2",
+        "isEnabled": "1",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowCullingModeBack.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "\"Back\"",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowCullingModeDefault.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowCullingModeFront.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "\"Front\"",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowCullingModeNone.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "\"None\"",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowFar.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "omitted",
+        "zFar": "\"Fixed\"",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowNear.usda",
+      "note": "2 field changes",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "\"Fixed\""
+      }
+    },
+    {
+      "variant": "ShadowsDisabledAfterEnabled.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "0",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsEnabled.usda",
+      "note": "1 field change",
+      "values": {
+        "attenuationFalloffExponent": "omitted",
+        "attenuationRadius": "omitted",
+        "color": "omitted",
+        "innerAngle": "omitted",
+        "intensity": "omitted",
+        "outerAngle": "omitted",
+        "depthBias": "omitted",
+        "isEnabled": "1",
+        "cullMode": "omitted",
+        "zFar": "omitted",
+        "zNear": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Spot Light"
+}

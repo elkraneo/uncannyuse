@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,Files.usda,Files,,,Files,component,keys,string[],"[""1bells.wav""]",AudioLibrary.resources.keys
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,Files.usda,Files,,,Files,component,values,rel,</Root/_1bells_wav>,AudioLibrary.resources.values

@@ -1,0 +1,18 @@
+{
+  "slug": "spot-light-component",
+  "componentName": "SpotLightComponent",
+  "componentId": "RealityKit.SpotLight",
+  "coverage": "Observed",
+  "risk": "High",
+  "paths": {
+    "schema": "/api/components/spot-light-component/schema.json",
+    "fields": "/api/components/spot-light-component/fields.csv",
+    "matrix": "/api/components/spot-light-component/matrix.csv",
+    "fixtures": "/api/components/spot-light-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 11,
+    "matrixRows": 176,
+    "fixtureRows": 22
+  }
+}

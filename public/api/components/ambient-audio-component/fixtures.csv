@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,BASE.usda,BASE,,,BASE,component,gain,float,0,AmbientAudio.gain
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,Gain.usda,Gain,,,Gain,component,gain,float,-35.13125,AmbientAudio.gain

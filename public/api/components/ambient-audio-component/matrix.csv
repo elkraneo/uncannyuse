@@ -1,0 +1,4 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,BASE.usda,Baseline or equivalent state,gain,0
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,Gain.usda,1 field change,gain,-35.13125
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,Resource.usda,1 field change,gain,omitted

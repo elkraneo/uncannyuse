@@ -1,0 +1,18 @@
+{
+  "slug": "collision-component",
+  "componentName": "CollisionComponent",
+  "componentId": "RealityKit.Collider",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "paths": {
+    "schema": "/api/components/collision-component/schema.json",
+    "fields": "/api/components/collision-component/fields.csv",
+    "matrix": "/api/components/collision-component/matrix.csv",
+    "fixtures": "/api/components/collision-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 7,
+    "matrixRows": 70,
+    "fixtureRows": 53
+  }
+}

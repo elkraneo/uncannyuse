@@ -1,0 +1,18 @@
+{
+  "slug": "anchoring-component",
+  "componentName": "AnchoringComponent",
+  "componentId": "RealityKit.Anchoring",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/anchoring-component/schema.json",
+    "fields": "/api/components/anchoring-component/fields.csv",
+    "matrix": "/api/components/anchoring-component/matrix.csv",
+    "fixtures": "/api/components/anchoring-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 2,
+    "matrixRows": 18,
+    "fixtureRows": 7
+  }
+}

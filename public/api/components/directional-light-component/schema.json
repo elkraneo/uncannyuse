@@ -1,0 +1,254 @@
+{
+  "slug": "directional-light-component",
+  "componentName": "DirectionalLightComponent",
+  "componentId": "RealityKit.DirectionalLight",
+  "primSignature": "def RealityKitComponent \"DirectionalLight\"",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"DirectionalLight\"\n{\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+  "sparseExamples": "# Color.usda\ndef RealityKitComponent \"DirectionalLight\"\n{\n    float3 color = (1, 1, 0)\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}\n\n# Intensity.usda\ndef RealityKitComponent \"DirectionalLight\"\n{\n    uniform token info:id = \"RealityKit.DirectionalLight\"\n    float intensity = 70000\n\n    def RealityKitStruct \"Shadow\"\n    {\n    }\n}",
+  "fields": [
+    {
+      "name": "color",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(1, 1, 0)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "cullMode",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Back\", \"Front\", \"None\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "depthBias",
+      "type": "float",
+      "base": "omitted",
+      "variants": "2",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "base": "omitted",
+      "variants": "70000",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "isEnabled",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "orthographicScale",
+      "type": "float",
+      "base": "omitted",
+      "variants": "2",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "projectionType",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Fixed\", \"Automatic\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "zBounds",
+      "type": "float2",
+      "base": "omitted",
+      "variants": "(0.02, 20)",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "omitted",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "Color.usda",
+      "note": "1 field change",
+      "values": {
+        "color": "(1, 1, 0)",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "omitted",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "Intensity.usda",
+      "note": "1 field change",
+      "values": {
+        "color": "omitted",
+        "intensity": "70000",
+        "cullMode": "omitted",
+        "isEnabled": "omitted",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsCullingModeBack.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "\"Back\"",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsCullingModeDefault.usda",
+      "note": "1 field change",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsCullingModeFront.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "\"Front\"",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsCullingModeNone.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "\"None\"",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsDepthBias.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "2",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsEnabled.usda",
+      "note": "1 field change",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "omitted",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsOrtographicScale.usda",
+      "note": "3 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "2",
+        "projectionType": "\"Fixed\"",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsProjectionTypeAutomatic.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "\"Automatic\"",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsProjectionTypeFixed.usda",
+      "note": "2 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "\"Fixed\"",
+        "zBounds": "omitted"
+      }
+    },
+    {
+      "variant": "ShadowsZBounds.usda",
+      "note": "3 field changes",
+      "values": {
+        "color": "omitted",
+        "intensity": "omitted",
+        "cullMode": "omitted",
+        "isEnabled": "1",
+        "depthBias": "omitted",
+        "orthographicScale": "omitted",
+        "projectionType": "\"Fixed\"",
+        "zBounds": "(0.02, 20)"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Directional Light"
+}

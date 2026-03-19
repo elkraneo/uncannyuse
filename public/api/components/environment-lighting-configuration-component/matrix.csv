@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+environment-lighting-configuration-component,EnvironmentLightingConfigurationComponent,RealityKit.EnvironmentLightingConfiguration,BASE.usda,Baseline or equivalent state,environmentLightingWeight,omitted
+environment-lighting-configuration-component,EnvironmentLightingConfigurationComponent,RealityKit.EnvironmentLightingConfiguration,Weight.usda,1 field change,environmentLightingWeight,0.48552084

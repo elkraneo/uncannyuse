@@ -1,0 +1,12 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,attenuationFalloffExponent,float,omitted,4,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,attenuationRadius,float,omitted,"10, 20",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,color,float3,omitted,"(0.071195416, 1, 1)",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,cullMode,token,omitted,"""Back"", ""Front"", ""None""",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,depthBias,float,omitted,2,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,innerAngle,float,omitted,90,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,intensity,float,omitted,70000,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,isEnabled,bool,omitted,"1, 0",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,outerAngle,float,omitted,120,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,zFar,token,omitted,"""Fixed""",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,zNear,token,omitted,"""Fixed""",Not authored in baseline fixture.,High,Observed

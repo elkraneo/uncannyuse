@@ -1,0 +1,18 @@
+{
+  "slug": "scene-understanding-component",
+  "componentName": "SceneUnderstandingComponent",
+  "componentId": "RealityKit.SceneUnderstanding",
+  "coverage": "Partial",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/scene-understanding-component/schema.json",
+    "fields": "/api/components/scene-understanding-component/fields.csv",
+    "matrix": "/api/components/scene-understanding-component/matrix.csv",
+    "fixtures": "/api/components/scene-understanding-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 0,
+    "matrixRows": 0,
+    "fixtureRows": 0
+  }
+}

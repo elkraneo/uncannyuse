@@ -1,0 +1,18 @@
+{
+  "slug": "physics-motion-component",
+  "componentName": "PhysicsMotionComponent",
+  "componentId": "RealityKit.MotionState",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/physics-motion-component/schema.json",
+    "fields": "/api/components/physics-motion-component/fields.csv",
+    "matrix": "/api/components/physics-motion-component/matrix.csv",
+    "fixtures": "/api/components/physics-motion-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 4,
+    "matrixRows": 16,
+    "fixtureRows": 8
+  }
+}

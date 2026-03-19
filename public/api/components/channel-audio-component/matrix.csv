@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,ALL.usda,1 field change,gain,-21.279995
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,BASE.usda,Baseline or equivalent state,gain,omitted
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,Gain.usda,1 field change,gain,-23.45
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,Resource.usda,Baseline or equivalent state,gain,omitted

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "build:all": "astro build && node scripts/generate-fixture-schemas.mjs && node scripts/generate-csv-exports.mjs",
+    "build:all": "node scripts/generate-fixture-schemas.mjs && node scripts/generate-csv-exports.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "start": "serve dist -l 3000",

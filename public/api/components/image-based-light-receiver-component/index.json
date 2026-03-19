@@ -1,0 +1,18 @@
+{
+  "slug": "image-based-light-receiver-component",
+  "componentName": "ImageBasedLightReceiverComponent",
+  "componentId": "RealityKit.ImageBasedLightReceiver",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/image-based-light-receiver-component/schema.json",
+    "fields": "/api/components/image-based-light-receiver-component/fields.csv",
+    "matrix": "/api/components/image-based-light-receiver-component/matrix.csv",
+    "fixtures": "/api/components/image-based-light-receiver-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 5,
+    "fixtureRows": 3
+  }
+}

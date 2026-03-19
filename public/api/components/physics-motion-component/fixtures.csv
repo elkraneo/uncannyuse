@@ -1,0 +1,9 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,ALL,,,ALL,component,m_userSetAngularVelocity,float3,"(1, 1, 1)",MotionState.m_userSetAngularVelocity
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,ALL,,,ALL,component,m_userSetAngularVelocityVersion,uint,1,MotionState.m_userSetAngularVelocityVersion
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,ALL,,,ALL,component,m_userSetLinearVelocity,float3,"(1, 1, 1)",MotionState.m_userSetLinearVelocity
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,ALL,,,ALL,component,m_userSetLinearVelocityVersion,uint,1,MotionState.m_userSetLinearVelocityVersion
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,Angular Velocity,,,Angular Velocity,component,m_userSetAngularVelocity,float3,"(1, 1, 1)",MotionState.m_userSetAngularVelocity
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,Angular Velocity,,,Angular Velocity,component,m_userSetAngularVelocityVersion,uint,1,MotionState.m_userSetAngularVelocityVersion
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,Linear Velocity,,,Linear Velocity,component,m_userSetLinearVelocity,float3,"(1, 1, 1)",MotionState.m_userSetLinearVelocity
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,Linear Velocity,,,Linear Velocity,component,m_userSetLinearVelocityVersion,uint,1,MotionState.m_userSetLinearVelocityVersion

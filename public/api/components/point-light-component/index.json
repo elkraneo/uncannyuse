@@ -1,0 +1,18 @@
+{
+  "slug": "point-light-component",
+  "componentName": "PointLightComponent",
+  "componentId": "RealityKit.PointLight",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/point-light-component/schema.json",
+    "fields": "/api/components/point-light-component/fields.csv",
+    "matrix": "/api/components/point-light-component/matrix.csv",
+    "fixtures": "/api/components/point-light-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 4,
+    "matrixRows": 20,
+    "fixtureRows": 4
+  }
+}

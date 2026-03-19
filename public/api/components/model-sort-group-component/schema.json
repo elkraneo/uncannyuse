@@ -1,0 +1,70 @@
+{
+  "slug": "model-sort-group-component",
+  "componentName": "ModelSortGroupComponent",
+  "componentId": "RealityKit.MeshSorting",
+  "primSignature": "def RealityKitComponent \"MeshSorting\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"MeshSorting\"\n{\n    uniform token info:id = \"RealityKit.MeshSorting\"\n}",
+  "sparseExamples": "# Group.usda\ndef RealityKitComponent \"MeshSorting\"\n{\n    rel group = </Root/Model_Sorting_Group>\n    uniform token info:id = \"RealityKit.MeshSorting\"\n    int priorityInGroup = 1\n}\n\n# GroupPostPass.usda\ndef RealityKitComponent \"MeshSorting\"\n{\n    rel group = </Root/Model_Sorting_Group>\n    uniform token info:id = \"RealityKit.MeshSorting\"\n}",
+  "fields": [
+    {
+      "name": "group",
+      "type": "rel",
+      "base": "omitted",
+      "variants": "</Root/Model_Sorting_Group>",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "priorityInGroup",
+      "type": "int",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "omitted",
+        "priorityInGroup": "omitted"
+      }
+    },
+    {
+      "variant": "Group.usda",
+      "note": "2 field changes",
+      "values": {
+        "group": "</Root/Model_Sorting_Group>",
+        "priorityInGroup": "1"
+      }
+    },
+    {
+      "variant": "GroupPostPass.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "</Root/Model_Sorting_Group>",
+        "priorityInGroup": "omitted"
+      }
+    },
+    {
+      "variant": "GroupPrePass.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "</Root/Model_Sorting_Group>",
+        "priorityInGroup": "omitted"
+      }
+    },
+    {
+      "variant": "GroupSort.usda",
+      "note": "2 field changes",
+      "values": {
+        "group": "</Root/Model_Sorting_Group>",
+        "priorityInGroup": "1"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Model Sorting"
+}

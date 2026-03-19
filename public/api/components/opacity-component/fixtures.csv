@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+opacity-component,OpacityComponent,RealityKit.HierarchicalFade,Opacity.usda,Opacity,,,Opacity,component,opacity,float,0.50348955,HierarchicalFade.opacity

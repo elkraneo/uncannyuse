@@ -1,0 +1,574 @@
+{
+  "slug": "physics-body-component",
+  "componentName": "PhysicsBodyComponent",
+  "componentId": "RealityKit.RigidBody",
+  "primSignature": "def RealityKitComponent \"RigidBody\"",
+  "coverage": "Observed",
+  "risk": "High",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"RigidBody\"\n{\n    uniform token info:id = \"RealityKit.RigidBody\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float m_mass = 1\n\n        def RealityKitStruct \"m_pose\"\n        {\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n    }\n}",
+  "sparseExamples": "# Affected by Gravity.usda\ndef RealityKitComponent \"RigidBody\"\n{\n    bool gravityEnabled = 0\n    uniform token info:id = \"RealityKit.RigidBody\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float m_mass = 1\n\n        def RealityKitStruct \"m_pose\"\n        {\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n    }\n}\n\n# ALL.usda\ndef RealityKitComponent \"RigidBody\"\n{\n    float angularDamping = 0.1\n    bool gravityEnabled = 0\n    uniform token info:id = \"RealityKit.RigidBody\"\n    bool isCCDEnabled = 1\n    float linearDamping = 0.04\n    bool lockRotationX = 1\n    bool lockRotationY = 1\n    bool lockRotationZ = 1\n    bool lockTranslationX = 1\n    bool lockTranslationY = 1\n    bool lockTranslationZ = 1\n    token motionType = \"Kinematic\"\n\n    def RealityKitStruct \"massFrame\"\n    {\n        float3 m_inertia = (0.2, 0.2, 0.2)\n        float m_mass = 2\n\n        def RealityKitStruct \"m_pose\"\n        {\n            quatf orientation = (0.9999238, 0.008726202, 0.008726204, -0.000076152406)\n            float3 position = (0.01, 0.01, 0.01)\n        }\n    }\n\n    def RealityKitStruct \"material\"\n    {\n        double dynamicFriction = 1\n        double restitution = 1\n        double staticFriction = 1\n    }\n}",
+  "fields": [
+    {
+      "name": "angularDamping",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "dynamicFriction",
+      "type": "double",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "gravityEnabled",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "0",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "isCCDEnabled",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "linearDamping",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.04",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockRotationX",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockRotationY",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockRotationZ",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockTranslationX",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockTranslationY",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "lockTranslationZ",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "m_inertia",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(0.2, 0.2, 0.2)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "m_mass",
+      "type": "float",
+      "base": "1",
+      "variants": "2",
+      "notes": ""
+    },
+    {
+      "name": "motionType",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Kinematic\", \"Static\"",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "orientation",
+      "type": "quatf",
+      "base": "omitted",
+      "variants": "(0.9999238, 0.008726202, 0.008726204, -0.000076152406), (0.99988645, 0.008649719, 0.008802022, 0.008649721)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "position",
+      "type": "float3",
+      "base": "omitted",
+      "variants": "(0.01, 0.01, 0.01)",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "restitution",
+      "type": "double",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "staticFriction",
+      "type": "double",
+      "base": "omitted",
+      "variants": "1",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "Affected by Gravity.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "0",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "ALL.usda",
+      "note": "18 field changes",
+      "values": {
+        "gravityEnabled": "0",
+        "m_mass": "2",
+        "angularDamping": "0.1",
+        "isCCDEnabled": "1",
+        "linearDamping": "0.04",
+        "lockRotationX": "1",
+        "lockRotationY": "1",
+        "lockRotationZ": "1",
+        "lockTranslationX": "1",
+        "lockTranslationY": "1",
+        "lockTranslationZ": "1",
+        "motionType": "\"Kinematic\"",
+        "m_inertia": "(0.2, 0.2, 0.2)",
+        "orientation": "(0.9999238, 0.008726202, 0.008726204, -0.000076152406)",
+        "position": "(0.01, 0.01, 0.01)",
+        "dynamicFriction": "1",
+        "restitution": "1",
+        "staticFriction": "1"
+      }
+    },
+    {
+      "variant": "Angular Damping.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "0.1",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Detect Continuous Collision.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "1",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Linear Damping.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "0.04",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mass Properties/Center of Mass/Orientation.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "(0.99988645, 0.008649719, 0.008802022, 0.008649721)",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mass Properties/Center of Mass/Position.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "(0.01, 0.01, 0.01)",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mass Properties/Intertia.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "(0.2, 0.2, 0.2)",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mass Properties/Mass.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "2",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Material/Dynamic Friction.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "1",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Material/Restitution.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "1",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Material/Static Friction.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "1"
+      }
+    },
+    {
+      "variant": "Mode/Dynamic.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mode/Kinematic.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "\"Kinematic\"",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Mode/Static.usda",
+      "note": "1 field change",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "\"Static\"",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Movement Locking/Rotation Locked.usda",
+      "note": "3 field changes",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "1",
+        "lockRotationY": "1",
+        "lockRotationZ": "1",
+        "lockTranslationX": "omitted",
+        "lockTranslationY": "omitted",
+        "lockTranslationZ": "omitted",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    },
+    {
+      "variant": "Movement Locking/Translation Locked.usda",
+      "note": "3 field changes",
+      "values": {
+        "gravityEnabled": "omitted",
+        "m_mass": "1",
+        "angularDamping": "omitted",
+        "isCCDEnabled": "omitted",
+        "linearDamping": "omitted",
+        "lockRotationX": "omitted",
+        "lockRotationY": "omitted",
+        "lockRotationZ": "omitted",
+        "lockTranslationX": "1",
+        "lockTranslationY": "1",
+        "lockTranslationZ": "1",
+        "motionType": "omitted",
+        "m_inertia": "omitted",
+        "orientation": "omitted",
+        "position": "omitted",
+        "dynamicFriction": "omitted",
+        "restitution": "omitted",
+        "staticFriction": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Physics Body"
+}

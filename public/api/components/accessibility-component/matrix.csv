@@ -1,0 +1,13 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,3 field changes,isEnabled,1
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,3 field changes,label,"""Custom Label"""
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,AccessibilityElement.usda,3 field changes,value,"""This component makes my entity accessible """
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,Baseline or equivalent state,isEnabled,0
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,Baseline or equivalent state,label,""""""
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,BASE.usda,Baseline or equivalent state,value,""""""
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Label.usda,3 field changes,isEnabled,omitted
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Label.usda,3 field changes,label,"""Some Label"""
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Label.usda,3 field changes,value,omitted
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Value.usda,3 field changes,isEnabled,omitted
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Value.usda,3 field changes,label,omitted
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,Value.usda,3 field changes,value,"""Some Value"""

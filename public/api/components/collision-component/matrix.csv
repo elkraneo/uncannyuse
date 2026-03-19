@@ -1,0 +1,71 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,group,1
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,BASE.usda,Baseline or equivalent state,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,group,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/All.usda,1 field change,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Group/Default.usda,Baseline or equivalent state,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/All.usda,Baseline or equivalent state,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,mask,1
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Filter/Mask/Default.usda,1 field change,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Default.usda,Baseline or equivalent state,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,type,"""Trigger"""
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Mode/Trigger.usda,1 field change,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,shapeType,"""Box"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Box.usda,Baseline or equivalent state,radius,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,shapeType,"""Capsule"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,height,0.2
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Capsule.usda,3 field changes,radius,0.1
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,group,1
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,mask,4294967295
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,type,"""Default"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,extent,"(0.2, 0.2, 0.2)"
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,shapeType,"""Sphere"""
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,height,omitted
+collision-component,CollisionComponent,RealityKit.Collider,Shape/Sphere.usda,2 field changes,radius,0.1

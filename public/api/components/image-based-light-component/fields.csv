@@ -1,0 +1,9 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,blendIBLsFactor,float,omitted,0.55164933,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,blendMode,token,omitted,"""blend"", ""none""",Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,enableBlend,bool,omitted,"1, 0",Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,enableRotation,bool,omitted,1,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,ibl,asset,omitted,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,iblBlend,asset,omitted,@../cayley_lookout_2k.hdr@,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,intensityExponent,float,omitted,-6.6197915,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,isGlobalIBL,bool,0,0,,Medium,Observed

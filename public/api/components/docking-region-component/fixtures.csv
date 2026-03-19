@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,BASE.usda,BASE,,,BASE,component,previewVideo,asset,@/Users/elkraneo/Library/Mobile Documents/com~apple~CloudDocs/Developer/Reality check/Escape Space/material/The_Green_Spurt_x_Auggies.mp4@,CustomDockingRegion.previewVideo
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,PreviewVideo.usda,PreviewVideo,,,PreviewVideo,component,previewVideo,asset,@../../../../../../../../../../Users/elkraneo/Library/Mobile Documents/com~apple~CloudDocs/Developer/Reality check/Escape Space/material/The_Green_Spurt_x_Auggies.mp4@,CustomDockingRegion.previewVideo
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,Width.usda,Width,,,Width,component,max,float3,"(2.4, 1, 0)",CustomDockingRegion.m_bounds.max
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,Width.usda,Width,,,Width,component,min,float3,"(-2.4, -1, -0)",CustomDockingRegion.m_bounds.min

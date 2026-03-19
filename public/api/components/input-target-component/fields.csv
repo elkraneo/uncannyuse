@@ -1,0 +1,4 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+input-target-component,InputTargetComponent,RealityKit.InputTarget,allowsDirectInput,bool,omitted,"1, 0",Not authored in baseline fixture.,Low,Observed
+input-target-component,InputTargetComponent,RealityKit.InputTarget,allowsIndirectInput,bool,omitted,"0, 1",Not authored in baseline fixture.,Low,Observed
+input-target-component,InputTargetComponent,RealityKit.InputTarget,enabled,bool,omitted,"1, 0",Not authored in baseline fixture.,Low,Observed

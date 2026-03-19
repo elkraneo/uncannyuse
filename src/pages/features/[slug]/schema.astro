@@ -126,6 +126,11 @@ const fixtureLinkLabel = draft?.sourceFolder
 	? draft.sourceFolder.split("/").pop() ?? draft.sourceFolder
 	: null;
 const isWip = draft ? draft.fields.length === 0 : false;
+const componentApiBase = `/api/components/${feature.id}`;
+const componentSchemaJsonPath = `${componentApiBase}/schema.json`;
+const componentFieldsCsvPath = `${componentApiBase}/fields.csv`;
+const componentMatrixCsvPath = `${componentApiBase}/matrix.csv`;
+const componentFixturesCsvPath = `${componentApiBase}/fixtures.csv`;
 ---
 
 <Base
@@ -168,6 +173,12 @@ const isWip = draft ? draft.fields.length === 0 : false;
 								)
 							}
 						</div>
+						<div class="export-links" aria-label="Schema exports">
+							<a href={componentSchemaJsonPath}>schema.json</a>
+							<a href={componentFieldsCsvPath}>fields.csv</a>
+							<a href={componentMatrixCsvPath}>matrix.csv</a>
+							<a href={componentFixturesCsvPath}>fixtures.csv</a>
+						</div>
 					</header>
 
 					{isWip && (
@@ -189,6 +200,11 @@ const isWip = draft ? draft.fields.length === 0 : false;
 						</p>
 						<p>
 							Authored as <code>{draft.primSignature}</code> with <code>info:id = "{draft.componentId}"</code>.
+						</p>
+						<p>
+							For large components, prefer <a href={componentFixturesCsvPath}>fixtures.csv</a> for
+							fixture-by-fixture authored rows and <a href={componentMatrixCsvPath}>matrix.csv</a> for the
+							derived variant matrix.
 						</p>
 					</section>
 
@@ -427,6 +443,28 @@ const isWip = draft ? draft.fields.length === 0 : false;
 		color: var(--ios);
 		text-decoration: underline;
 		text-underline-offset: 0.12em;
+	}
+
+	.export-links {
+		margin-top: 0.8rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+	}
+
+	.export-links a {
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.32rem 0.62rem;
+		background: color-mix(in srgb, var(--surface-up) 82%, var(--ios) 18%);
+		color: var(--text);
+		font-size: 0.78rem;
+		text-decoration: none;
+	}
+
+	.export-links a:hover {
+		border-color: color-mix(in srgb, var(--ios) 50%, var(--border));
+		color: var(--ios);
 	}
 
 	.panel {

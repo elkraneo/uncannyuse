@@ -1,0 +1,17 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,4 field changes,m_userSetAngularVelocity,"(1, 1, 1)"
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,4 field changes,m_userSetAngularVelocityVersion,1
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,4 field changes,m_userSetLinearVelocity,"(1, 1, 1)"
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,ALL.usda,4 field changes,m_userSetLinearVelocityVersion,1
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,2 field changes,m_userSetAngularVelocity,"(1, 1, 1)"
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,2 field changes,m_userSetAngularVelocityVersion,1
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,2 field changes,m_userSetLinearVelocity,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Angular Velocity.usda,2 field changes,m_userSetLinearVelocityVersion,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,BASE.usda,Baseline or equivalent state,m_userSetAngularVelocity,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,BASE.usda,Baseline or equivalent state,m_userSetAngularVelocityVersion,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,BASE.usda,Baseline or equivalent state,m_userSetLinearVelocity,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,BASE.usda,Baseline or equivalent state,m_userSetLinearVelocityVersion,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,2 field changes,m_userSetAngularVelocity,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,2 field changes,m_userSetAngularVelocityVersion,omitted
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,2 field changes,m_userSetLinearVelocity,"(1, 1, 1)"
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,Linear Velocity.usda,2 field changes,m_userSetLinearVelocityVersion,1

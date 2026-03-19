@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+billboard-component,BillboardComponent,RealityKit.Billboard,BASE.usda,Baseline or equivalent state,blendFactor,0
+billboard-component,BillboardComponent,RealityKit.Billboard,BlendFactor.usda,1 field change,blendFactor,2

@@ -1,0 +1,18 @@
+{
+  "slug": "accessibility-component",
+  "componentName": "AccessibilityComponent",
+  "componentId": "RealityKit.Accessibility",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/accessibility-component/schema.json",
+    "fields": "/api/components/accessibility-component/fields.csv",
+    "matrix": "/api/components/accessibility-component/matrix.csv",
+    "fixtures": "/api/components/accessibility-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 3,
+    "matrixRows": 12,
+    "fixtureRows": 8
+  }
+}

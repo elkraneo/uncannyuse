@@ -1,0 +1,44 @@
+{
+  "slug": "ambient-audio-component",
+  "componentName": "AmbientAudioComponent",
+  "componentId": "RealityKit.AmbientAudio",
+  "primSignature": "def RealityKitComponent \"AmbientAudio\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"AmbientAudio\"\n{\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n    float gain = 0\n}",
+  "sparseExamples": "# Gain.usda\ndef RealityKitComponent \"AmbientAudio\"\n{\n    float gain = -35.13125\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n}\n\n# Resource.usda\ndef RealityKitComponent \"AmbientAudio\"\n{\n    uniform token info:id = \"RealityKit.AmbientAudio\"\n}",
+  "fields": [
+    {
+      "name": "gain",
+      "type": "float",
+      "base": "0",
+      "variants": "-35.13125",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "gain": "0"
+      }
+    },
+    {
+      "variant": "Gain.usda",
+      "note": "1 field change",
+      "values": {
+        "gain": "-35.13125"
+      }
+    },
+    {
+      "variant": "Resource.usda",
+      "note": "1 field change",
+      "values": {
+        "gain": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Ambient Audio"
+}

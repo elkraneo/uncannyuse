@@ -1,0 +1,18 @@
+{
+  "slug": "input-target-component",
+  "componentName": "InputTargetComponent",
+  "componentId": "RealityKit.InputTarget",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/input-target-component/schema.json",
+    "fields": "/api/components/input-target-component/fields.csv",
+    "matrix": "/api/components/input-target-component/matrix.csv",
+    "fixtures": "/api/components/input-target-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 3,
+    "matrixRows": 15,
+    "fixtureRows": 6
+  }
+}

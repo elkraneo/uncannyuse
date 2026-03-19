@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+opacity-component,OpacityComponent,RealityKit.HierarchicalFade,opacity,float,omitted,0.50348955,Not authored in baseline fixture.,Low,Observed

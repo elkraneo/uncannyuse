@@ -1,0 +1,18 @@
+{
+  "slug": "docking-region-component",
+  "componentName": "DockingRegionComponent",
+  "componentId": "RealityKit.CustomDockingRegion",
+  "coverage": "Partial",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/docking-region-component/schema.json",
+    "fields": "/api/components/docking-region-component/fields.csv",
+    "matrix": "/api/components/docking-region-component/matrix.csv",
+    "fixtures": "/api/components/docking-region-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 2,
+    "matrixRows": 2,
+    "fixtureRows": 4
+  }
+}

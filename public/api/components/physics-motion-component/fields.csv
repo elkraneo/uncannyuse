@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetAngularVelocity,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetAngularVelocityVersion,uint,omitted,1,Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetLinearVelocity,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetLinearVelocityVersion,uint,omitted,1,Not authored in baseline fixture.,Low,Observed

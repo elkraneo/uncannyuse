@@ -1,0 +1,9 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,All,,,All,component,enableIBLShadow,bool,1,GroundingShadow.enableIBLShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,All.usda,All,,,All,component,enableMeshShadow,bool,1,GroundingShadow.enableMeshShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,Casts Shadow,,,Casts Shadow,component,enableIBLShadow,bool,1,GroundingShadow.enableIBLShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,Casts Shadow,,,Casts Shadow,component,enableMeshShadow,bool,1,GroundingShadow.enableMeshShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,Casts Shadow,,,Casts Shadow,component,enableReceiveIBLShadow,bool,0,GroundingShadow.enableReceiveIBLShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,Casts Shadow.usda,Casts Shadow,,,Casts Shadow,component,enableReceiveMeshShadow,bool,0,GroundingShadow.enableReceiveMeshShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,None,,,None,component,enableReceiveIBLShadow,bool,0,GroundingShadow.enableReceiveIBLShadow
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,None.usda,None,,,None,component,enableReceiveMeshShadow,bool,0,GroundingShadow.enableReceiveMeshShadow

@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+environment-lighting-configuration-component,EnvironmentLightingConfigurationComponent,RealityKit.EnvironmentLightingConfiguration,environmentLightingWeight,float,omitted,0.48552084,Not authored in baseline fixture.,Low,Observed

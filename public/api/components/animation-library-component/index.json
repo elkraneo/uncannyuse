@@ -1,0 +1,18 @@
+{
+  "slug": "animation-library-component",
+  "componentName": "AnimationLibraryComponent",
+  "componentId": "RealityKit.AnimationLibrary",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/animation-library-component/schema.json",
+    "fields": "/api/components/animation-library-component/fields.csv",
+    "matrix": "/api/components/animation-library-component/matrix.csv",
+    "fixtures": "/api/components/animation-library-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 0,
+    "matrixRows": 0,
+    "fixtureRows": 0
+  }
+}

@@ -1,0 +1,2 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+environment-lighting-configuration-component,EnvironmentLightingConfigurationComponent,RealityKit.EnvironmentLightingConfiguration,Weight.usda,Weight,,,Weight,component,environmentLightingWeight,float,0.48552084,EnvironmentLightingConfiguration.environmentLightingWeight

@@ -1,0 +1,45 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,BASE.usda,Baseline or equivalent state,blendMode,"""single"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,BASE.usda,Baseline or equivalent state,ibl,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,BASE.usda,Baseline or equivalent state,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,BASE.usda,Baseline or equivalent state,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Environment Resource.usda,1 field change,blendMode,"""single"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Environment Resource.usda,1 field change,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Environment Resource.usda,1 field change,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Environment Resource.usda,1 field change,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Intensity Exponent.usda,1 field change,blendMode,"""single"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Intensity Exponent.usda,1 field change,ibl,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Intensity Exponent.usda,1 field change,intensityExponent,5.511979
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Intensity Exponent.usda,1 field change,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All Custom Blend.usda,3 field changes,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All Custom Blend.usda,3 field changes,ibl,@../cayley_lookout_2k.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All Custom Blend.usda,3 field changes,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All Custom Blend.usda,3 field changes,relativeWeight,0.2804514
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All.usda,2 field changes,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All.usda,2 field changes,ibl,@../cayley_lookout_2k.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All.usda,2 field changes,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend All.usda,2 field changes,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend One.usda,2 field changes,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend One.usda,2 field changes,ibl,@../RenderCrate-HDRI_Orbital_40_4K.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend One.usda,2 field changes,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend One.usda,2 field changes,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two Intensity Exponent.usda,3 field changes,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two Intensity Exponent.usda,3 field changes,ibl,@../cayley_lookout_2k.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two Intensity Exponent.usda,3 field changes,intensityExponent,8.561459
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two Intensity Exponent.usda,3 field changes,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two.usda,2 field changes,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two.usda,2 field changes,ibl,@../cayley_lookout_2k.hdr@
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two.usda,2 field changes,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend Two.usda,2 field changes,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend.usda,1 field change,blendMode,"""blend"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend.usda,1 field change,ibl,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend.usda,1 field change,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Blend.usda,1 field change,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode None.usda,1 field change,blendMode,"""none"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode None.usda,1 field change,ibl,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode None.usda,1 field change,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode None.usda,1 field change,relativeWeight,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Single.usda,Baseline or equivalent state,blendMode,"""single"""
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Single.usda,Baseline or equivalent state,ibl,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Single.usda,Baseline or equivalent state,intensityExponent,omitted
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,Mode Single.usda,Baseline or equivalent state,relativeWeight,omitted

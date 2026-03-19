@@ -1,0 +1,6 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,BASE.usda,Baseline or equivalent state,iblEntity,omitted
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,IBL.usda,1 field change,iblEntity,</Root/Cube>
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,InvalidTargetNoIBL.usda,Baseline or equivalent state,iblEntity,omitted
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,OtherEntityIBL.usda,1 field change,iblEntity,</Root/Sphere>
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,RemoveIBLAfterAssign.usda,1 field change,iblEntity,</Root/Sphere>

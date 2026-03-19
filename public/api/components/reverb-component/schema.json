@@ -1,0 +1,100 @@
+{
+  "slug": "reverb-component",
+  "componentName": "ReverbComponent",
+  "componentId": "RealityKit.Reverb",
+  "primSignature": "def RealityKitComponent \"Reverb\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"Reverb\"\n{\n    uniform token info:id = \"RealityKit.Reverb\"\n    token reverbPreset = \"MediumRoomTreated\"\n}",
+  "sparseExamples": "# Anechoic.usda\ndef RealityKitComponent \"Reverb\"\n{\n    uniform token info:id = \"RealityKit.Reverb\"\n    token reverbPreset = \"Anechoic\"\n}\n\n# ConcertHall.usda\ndef RealityKitComponent \"Reverb\"\n{\n    uniform token info:id = \"RealityKit.Reverb\"\n    token reverbPreset = \"ConcertHall\"\n}",
+  "fields": [
+    {
+      "name": "reverbPreset",
+      "type": "token",
+      "base": "\"MediumRoomTreated\"",
+      "variants": "\"Anechoic\", \"ConcertHall\", \"LargeRoom\"",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "Anechoic.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"Anechoic\""
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "reverbPreset": "\"MediumRoomTreated\""
+      }
+    },
+    {
+      "variant": "ConcertHall.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"ConcertHall\""
+      }
+    },
+    {
+      "variant": "LargeRoom.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"LargeRoom\""
+      }
+    },
+    {
+      "variant": "LargeRoomTreated.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"LargeRoomTreated\""
+      }
+    },
+    {
+      "variant": "MediumRoomDry.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"MediumRoomDry\""
+      }
+    },
+    {
+      "variant": "Outside.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"Outside\""
+      }
+    },
+    {
+      "variant": "SmallRoom.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"SmallRoom\""
+      }
+    },
+    {
+      "variant": "SmallRoomBright.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"SmallRoomBright\""
+      }
+    },
+    {
+      "variant": "VeryLargeRoom.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"VeryLargeRoom\""
+      }
+    },
+    {
+      "variant": "VerySmallRoomBright.usda",
+      "note": "1 field change",
+      "values": {
+        "reverbPreset": "\"VerySmallRoomBright\""
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Reverb"
+}

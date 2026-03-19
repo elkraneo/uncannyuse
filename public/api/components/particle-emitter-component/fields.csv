@@ -1,0 +1,72 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,acceleration,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,animationRepeatMode,token,omitted,"""AutoReverse"", ""Looping"", ""PlayOnce""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,billboardMode,token,omitted,"""BillboardYAligned"", ""Billboard"", ""Free""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthDirection,token,omitted,"""Local"", ""Constant""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthLocation,token,omitted,"""Vertices"", ""Volume""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthRate,float,omitted,"30, 77",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthRateVariation,float,omitted,"15, 3",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,blendMode,token,omitted,"""Additive"", ""Opaque""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,burstCount,int64,omitted,42,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,burstCountVariation,int64,omitted,7,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,colorEvolutionPower,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,columnCount,int64,omitted,"5, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,dampingFactor,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emissionDuration,double,omitted,2,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emissionDurationVariation,double,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emitterShape,token,omitted,"""Box"", ""Cone"", ""Cylinder""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,endColorA,float4,omitted,"(0.0013006331, 0.9246575, 1, 1), (0.0013006331, 0.032195132, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,endColorB,float4,omitted,"(0.87537456, 0.092653036, 1, 1), (1, 1, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,frameRate,float,omitted,"12, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,frameRateVariation,float,omitted,"5, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,idleDuration,double,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,idleDurationVariation,double,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,initialFrame,int64,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,initialFrameVariation,int64,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isAnimated,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLightingEnabled,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLocal,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLocalFields,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isSpawningEnabled,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,loops,bool,omitted,0,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseAnimationSpeed,float,omitted,"7, 3",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseScale,float,omitted,"5, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseStrength,float,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,opacityOverLife,token,omitted,"""Constant"", ""EaseFadeIn"", ""EaseFadeOut""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngle,float,omitted,"0.5235988, 0.7853982",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngleVariation,float,omitted,"0.7330383, 0.2268928",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngularVelocity,float,omitted,"7, 5",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngularVelocityVariation,float,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleImage,asset,omitted,"@../../../../Sonic_explosion_(atlas).png@, @../../Sonic_explosion_(atlas).png@",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleLifeSpan,double,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleLifeSpanVariation,double,omitted,"0.7, 0.5",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleMass,float,omitted,"2, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleMassVariation,float,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSize,float,omitted,"0.04, 0.03",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSizeVariation,float,omitted,"0.02, 0.01",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSpeed,float,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSpeedVariation,float,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialAmount,float,omitted,"3.1415927, 4.712389, 1.5707964",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialGravityCenter,float3,omitted,"(2, 3, 1), (0, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialGravityStrength,float,omitted,"1, 4",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,rowCount,int64,omitted,"5, 6",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,shapeSize,float3,omitted,"(0.5, 0.25, 0.3)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sizeMultiplierAtEndOfLifespan,float,omitted,"0.3, 0.7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sizeMultiplierAtEndOfLifespanPower,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sortOrder,token,omitted,"""DecreasingAge"", ""DecreasingDepth"", ""DecreasingID""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnInheritParentColor,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnOccasion,token,omitted,"""OnBirth"", ""OnUpdate""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnSpreadFactor,float,omitted,0.017453292,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnSpreadFactorVariation,float,omitted,0.04363323,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnVelocityFactor,float,omitted,2,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spreadingAngle,float,omitted,0.05235988,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,startColorA,float4,omitted,"(1, 0.046666723, 0.37124115, 1), (0.10755565, 0.29358652, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,startColorB,float4,omitted,"(1, 1, 1, 1), (0.44521102, 0.67951274, 0.99998397, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,stretchFactor,float,omitted,"3, 6",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,torusInnerRadius,float,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useEndColor,bool,omitted,"1, 0",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useEndColorRange,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useStartColorRange,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,vortexDirection,float3,omitted,"(1, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,vortexStrength,float,omitted,"8, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,warmupDuration,double,omitted,1,Not authored in baseline fixture.,High,Observed

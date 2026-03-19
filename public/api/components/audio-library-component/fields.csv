@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,keys,string[],omitted,"[""1bells.wav""]",Not authored in baseline fixture.,Low,Observed
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,values,rel,omitted,</Root/_1bells_wav>,Not authored in baseline fixture.,Low,Observed

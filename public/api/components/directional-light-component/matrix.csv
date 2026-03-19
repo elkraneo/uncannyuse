@@ -1,0 +1,105 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,isEnabled,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,BASE.usda,Baseline or equivalent state,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,color,"(1, 1, 0)"
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,isEnabled,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Color.usda,1 field change,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,intensity,70000
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,isEnabled,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,Intensity.usda,1 field change,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,cullMode,"""Back"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeBack.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeDefault.usda,1 field change,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,cullMode,"""Front"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeFront.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,cullMode,"""None"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsCullingModeNone.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,depthBias,2
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsDepthBias.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,projectionType,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsEnabled.usda,1 field change,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,orthographicScale,2
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,projectionType,"""Fixed"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsOrtographicScale.usda,3 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,projectionType,"""Automatic"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeAutomatic.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,projectionType,"""Fixed"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsProjectionTypeFixed.usda,2 field changes,zBounds,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,color,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,intensity,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,cullMode,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,isEnabled,1
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,depthBias,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,orthographicScale,omitted
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,projectionType,"""Fixed"""
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,ShadowsZBounds.usda,3 field changes,zBounds,"(0.02, 20)"

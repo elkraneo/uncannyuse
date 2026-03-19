@@ -1,0 +1,15 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,Group,,,Group,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,Group,,,Group,component,priorityInGroup,int,1,MeshSorting.priorityInGroup
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,Group,,,Group,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,Group,,,Group,component,priorityInGroup,int,0,MeshSorting.priorityInGroup
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPostPass.usda,GroupPostPass,,,GroupPostPass,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPostPass.usda,GroupPostPass,,,GroupPostPass,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPostPass.usda,GroupPostPass,,,GroupPostPass,component,priorityInGroup,int,1,MeshSorting.priorityInGroup
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPrePass.usda,GroupPrePass,,,GroupPrePass,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPrePass.usda,GroupPrePass,,,GroupPrePass,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPrePass.usda,GroupPrePass,,,GroupPrePass,component,priorityInGroup,int,1,MeshSorting.priorityInGroup
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,GroupSort,,,GroupSort,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,GroupSort,,,GroupSort,component,priorityInGroup,int,1,MeshSorting.priorityInGroup
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,GroupSort,,,GroupSort,component,group,rel,</Root/Model_Sorting_Group>,MeshSorting.group
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,GroupSort,,,GroupSort,component,priorityInGroup,int,0,MeshSorting.priorityInGroup

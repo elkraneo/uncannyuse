@@ -1,0 +1,18 @@
+{
+  "slug": "channel-audio-component",
+  "componentName": "ChannelAudioComponent",
+  "componentId": "RealityKit.ChannelAudio",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/channel-audio-component/schema.json",
+    "fields": "/api/components/channel-audio-component/fields.csv",
+    "matrix": "/api/components/channel-audio-component/matrix.csv",
+    "fixtures": "/api/components/channel-audio-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 4,
+    "fixtureRows": 2
+  }
+}

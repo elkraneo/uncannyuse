@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-03-19T14:59:29.258Z",
+  "paths": {
+    "components": "/api/components/index.json",
+    "aggregateFields": "/data/schemas/fields.csv",
+    "aggregateMatrix": "/data/schemas/matrix.csv"
+  },
+  "componentCount": 28
+}

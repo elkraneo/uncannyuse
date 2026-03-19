@@ -1,0 +1,23 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,Attenuation Falloff,,,Attenuation Falloff,component,attenuationFalloffExponent,float,4,SpotLight.attenuationFalloffExponent
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Falloff.usda,Attenuation Falloff,,,Attenuation Falloff,component,attenuationRadius,float,10,SpotLight.attenuationRadius
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Attenuation Radius.usda,Attenuation Radius,,,Attenuation Radius,component,attenuationRadius,float,20,SpotLight.attenuationRadius
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Color.usda,Color,,,Color,component,color,float3,"(0.071195416, 1, 1)",SpotLight.color
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Inner Angle.usda,Inner Angle,,,Inner Angle,component,innerAngle,float,90,SpotLight.innerAngle
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Intensity.usda,Intensity,,,Intensity,component,intensity,float,70000,SpotLight.intensity
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,Outer Angle.usda,Outer Angle,,,Outer Angle,component,outerAngle,float,120,SpotLight.outerAngle
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,ShadowBias,,,ShadowBias,component,depthBias,float,2,SpotLight.Shadow.depthBias
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowBias.usda,ShadowBias,,,ShadowBias,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,ShadowCullingModeBack,,,ShadowCullingModeBack,component,cullMode,token,"""Back""",SpotLight.Shadow.cullMode
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeBack.usda,ShadowCullingModeBack,,,ShadowCullingModeBack,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeDefault.usda,ShadowCullingModeDefault,,,ShadowCullingModeDefault,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,ShadowCullingModeFront,,,ShadowCullingModeFront,component,cullMode,token,"""Front""",SpotLight.Shadow.cullMode
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeFront.usda,ShadowCullingModeFront,,,ShadowCullingModeFront,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,ShadowCullingModeNone,,,ShadowCullingModeNone,component,cullMode,token,"""None""",SpotLight.Shadow.cullMode
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowCullingModeNone.usda,ShadowCullingModeNone,,,ShadowCullingModeNone,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,ShadowFar,,,ShadowFar,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowFar.usda,ShadowFar,,,ShadowFar,component,zFar,token,"""Fixed""",SpotLight.Shadow.zFar
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,ShadowNear,,,ShadowNear,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowNear.usda,ShadowNear,,,ShadowNear,component,zNear,token,"""Fixed""",SpotLight.Shadow.zNear
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsDisabledAfterEnabled.usda,ShadowsDisabledAfterEnabled,,,ShadowsDisabledAfterEnabled,component,isEnabled,bool,0,SpotLight.Shadow.isEnabled
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,ShadowsEnabled.usda,ShadowsEnabled,,,ShadowsEnabled,component,isEnabled,bool,1,SpotLight.Shadow.isEnabled

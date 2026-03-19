@@ -1,0 +1,128 @@
+{
+  "slug": "spatial-audio-component",
+  "componentName": "SpatialAudioComponent",
+  "componentId": "RealityKit.SpatialAudio",
+  "primSignature": "def RealityKitComponent \"SpatialAudio\"",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"SpatialAudio\"\n{\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}",
+  "sparseExamples": "# Direct Level.usda\ndef RealityKitComponent \"SpatialAudio\"\n{\n    float directLevel = -34.559376\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}\n\n# Focus.usda\ndef RealityKitComponent \"SpatialAudio\"\n{\n    float directivityFocus = 0.66572917\n    uniform token info:id = \"RealityKit.SpatialAudio\"\n}",
+  "fields": [
+    {
+      "name": "directivityFocus",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.66572917",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "directLevel",
+      "type": "float",
+      "base": "omitted",
+      "variants": "-34.559376",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "gain",
+      "type": "float",
+      "base": "omitted",
+      "variants": "-32.60521",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "reverbLevel",
+      "type": "float",
+      "base": "omitted",
+      "variants": "-27.275",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "rolloffFactor",
+      "type": "float",
+      "base": "omitted",
+      "variants": "3.141493",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "omitted",
+        "gain": "omitted",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Direct Level.usda",
+      "note": "1 field change",
+      "values": {
+        "directLevel": "-34.559376",
+        "directivityFocus": "omitted",
+        "gain": "omitted",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Focus.usda",
+      "note": "1 field change",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "0.66572917",
+        "gain": "omitted",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Gaiin.usda",
+      "note": "1 field change",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "omitted",
+        "gain": "-32.60521",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Resource.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "omitted",
+        "gain": "omitted",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Reverb Level.usda",
+      "note": "1 field change",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "omitted",
+        "gain": "omitted",
+        "reverbLevel": "-27.275",
+        "rolloffFactor": "omitted"
+      }
+    },
+    {
+      "variant": "Rolloff Factor.usda",
+      "note": "1 field change",
+      "values": {
+        "directLevel": "omitted",
+        "directivityFocus": "omitted",
+        "gain": "omitted",
+        "reverbLevel": "omitted",
+        "rolloffFactor": "3.141493"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Spatial Audio"
+}

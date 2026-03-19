@@ -1,0 +1,71 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,BASE.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,BASE.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,BASE.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,BASE.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,BASE.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/BASE.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/BASE.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/BASE.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/BASE.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/BASE.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,1 field change,group,4294967295
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,1 field change,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,1 field change,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,1 field change,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupAll.usda,1 field change,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupDefault.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupDefault.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupDefault.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupDefault.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/GroupDefault.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskAll.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskAll.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskAll.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskAll.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskAll.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskDefault.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskDefault.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskDefault.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskDefault.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Collision Filter/MaskDefault.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,1 field change,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,1 field change,extents,"(0.05, 0, 0)"
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,1 field change,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,1 field change,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Height.usda,1 field change,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,1 field change,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,1 field change,extents,"(0, 0.03, 0)"
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,1 field change,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,1 field change,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,Radius.usda,1 field change,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,1 field change,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,1 field change,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,1 field change,skinWidth,0.02
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,1 field change,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SkinWidth.usda,1 field change,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,1 field change,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,1 field change,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,1 field change,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,1 field change,slopeLimit,1.5707964
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,SlopeLimit.usda,1 field change,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,1 field change,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,1 field change,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,1 field change,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,1 field change,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,StepLimit.usda,1 field change,stepLimit,0.4
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVector.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVector.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVector.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVector.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVector.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly_Z.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly_Z.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly_Z.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly_Z.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly_Z.usda,Baseline or equivalent state,stepLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly.usda,Baseline or equivalent state,group,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly.usda,Baseline or equivalent state,extents,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly.usda,Baseline or equivalent state,skinWidth,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly.usda,Baseline or equivalent state,slopeLimit,omitted
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,UpVectorOnly.usda,Baseline or equivalent state,stepLimit,omitted

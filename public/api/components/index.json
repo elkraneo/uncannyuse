@@ -1,0 +1,509 @@
+{
+  "generatedAt": "2026-03-19T14:59:29.258Z",
+  "components": [
+    {
+      "slug": "accessibility-component",
+      "componentName": "AccessibilityComponent",
+      "componentId": "RealityKit.Accessibility",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/accessibility-component/schema.json",
+        "fields": "/api/components/accessibility-component/fields.csv",
+        "matrix": "/api/components/accessibility-component/matrix.csv",
+        "fixtures": "/api/components/accessibility-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 3,
+        "matrixRows": 12,
+        "fixtureRows": 8
+      }
+    },
+    {
+      "slug": "ambient-audio-component",
+      "componentName": "AmbientAudioComponent",
+      "componentId": "RealityKit.AmbientAudio",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/ambient-audio-component/schema.json",
+        "fields": "/api/components/ambient-audio-component/fields.csv",
+        "matrix": "/api/components/ambient-audio-component/matrix.csv",
+        "fixtures": "/api/components/ambient-audio-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 3,
+        "fixtureRows": 2
+      }
+    },
+    {
+      "slug": "anchoring-component",
+      "componentName": "AnchoringComponent",
+      "componentId": "RealityKit.Anchoring",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/anchoring-component/schema.json",
+        "fields": "/api/components/anchoring-component/fields.csv",
+        "matrix": "/api/components/anchoring-component/matrix.csv",
+        "fixtures": "/api/components/anchoring-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 2,
+        "matrixRows": 18,
+        "fixtureRows": 7
+      }
+    },
+    {
+      "slug": "animation-library-component",
+      "componentName": "AnimationLibraryComponent",
+      "componentId": "RealityKit.AnimationLibrary",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/animation-library-component/schema.json",
+        "fields": "/api/components/animation-library-component/fields.csv",
+        "matrix": "/api/components/animation-library-component/matrix.csv",
+        "fixtures": "/api/components/animation-library-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 0,
+        "matrixRows": 0,
+        "fixtureRows": 0
+      }
+    },
+    {
+      "slug": "audio-library-component",
+      "componentName": "AudioLibraryComponent",
+      "componentId": "RealityKit.AudioLibrary",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/audio-library-component/schema.json",
+        "fields": "/api/components/audio-library-component/fields.csv",
+        "matrix": "/api/components/audio-library-component/matrix.csv",
+        "fixtures": "/api/components/audio-library-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 2,
+        "matrixRows": 4,
+        "fixtureRows": 2
+      }
+    },
+    {
+      "slug": "audio-mix-groups-component",
+      "componentName": "AudioMixGroupsComponent",
+      "componentId": "RealityKit.AudioMixGroups",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/audio-mix-groups-component/schema.json",
+        "fields": "/api/components/audio-mix-groups-component/fields.csv",
+        "matrix": "/api/components/audio-mix-groups-component/matrix.csv",
+        "fixtures": "/api/components/audio-mix-groups-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 5,
+        "matrixRows": 40,
+        "fixtureRows": 24
+      }
+    },
+    {
+      "slug": "billboard-component",
+      "componentName": "BillboardComponent",
+      "componentId": "RealityKit.Billboard",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/billboard-component/schema.json",
+        "fields": "/api/components/billboard-component/fields.csv",
+        "matrix": "/api/components/billboard-component/matrix.csv",
+        "fixtures": "/api/components/billboard-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 2,
+        "fixtureRows": 2
+      }
+    },
+    {
+      "slug": "channel-audio-component",
+      "componentName": "ChannelAudioComponent",
+      "componentId": "RealityKit.ChannelAudio",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/channel-audio-component/schema.json",
+        "fields": "/api/components/channel-audio-component/fields.csv",
+        "matrix": "/api/components/channel-audio-component/matrix.csv",
+        "fixtures": "/api/components/channel-audio-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 4,
+        "fixtureRows": 2
+      }
+    },
+    {
+      "slug": "character-controller-component",
+      "componentName": "CharacterControllerComponent",
+      "componentId": "RealityKit.CharacterController",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/character-controller-component/schema.json",
+        "fields": "/api/components/character-controller-component/fields.csv",
+        "matrix": "/api/components/character-controller-component/matrix.csv",
+        "fixtures": "/api/components/character-controller-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 5,
+        "matrixRows": 70,
+        "fixtureRows": 6
+      }
+    },
+    {
+      "slug": "collision-component",
+      "componentName": "CollisionComponent",
+      "componentId": "RealityKit.Collider",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/collision-component/schema.json",
+        "fields": "/api/components/collision-component/fields.csv",
+        "matrix": "/api/components/collision-component/matrix.csv",
+        "fixtures": "/api/components/collision-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 7,
+        "matrixRows": 70,
+        "fixtureRows": 53
+      }
+    },
+    {
+      "slug": "directional-light-component",
+      "componentName": "DirectionalLightComponent",
+      "componentId": "RealityKit.DirectionalLight",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/directional-light-component/schema.json",
+        "fields": "/api/components/directional-light-component/fields.csv",
+        "matrix": "/api/components/directional-light-component/matrix.csv",
+        "fixtures": "/api/components/directional-light-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 8,
+        "matrixRows": 104,
+        "fixtureRows": 22
+      }
+    },
+    {
+      "slug": "docking-region-component",
+      "componentName": "DockingRegionComponent",
+      "componentId": "RealityKit.CustomDockingRegion",
+      "coverage": "Partial",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/docking-region-component/schema.json",
+        "fields": "/api/components/docking-region-component/fields.csv",
+        "matrix": "/api/components/docking-region-component/matrix.csv",
+        "fixtures": "/api/components/docking-region-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 2,
+        "matrixRows": 2,
+        "fixtureRows": 4
+      }
+    },
+    {
+      "slug": "environment-lighting-configuration-component",
+      "componentName": "EnvironmentLightingConfigurationComponent",
+      "componentId": "RealityKit.EnvironmentLightingConfiguration",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/environment-lighting-configuration-component/schema.json",
+        "fields": "/api/components/environment-lighting-configuration-component/fields.csv",
+        "matrix": "/api/components/environment-lighting-configuration-component/matrix.csv",
+        "fixtures": "/api/components/environment-lighting-configuration-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 2,
+        "fixtureRows": 1
+      }
+    },
+    {
+      "slug": "grounding-shadow-component",
+      "componentName": "GroundingShadowComponent",
+      "componentId": "RealityKit.GroundingShadow",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/grounding-shadow-component/schema.json",
+        "fields": "/api/components/grounding-shadow-component/fields.csv",
+        "matrix": "/api/components/grounding-shadow-component/matrix.csv",
+        "fixtures": "/api/components/grounding-shadow-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 4,
+        "matrixRows": 20,
+        "fixtureRows": 8
+      }
+    },
+    {
+      "slug": "image-based-light-component",
+      "componentName": "ImageBasedLightComponent",
+      "componentId": "RealityKit.ImageBasedLight",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/image-based-light-component/schema.json",
+        "fields": "/api/components/image-based-light-component/fields.csv",
+        "matrix": "/api/components/image-based-light-component/matrix.csv",
+        "fixtures": "/api/components/image-based-light-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 8,
+        "matrixRows": 96,
+        "fixtureRows": 36
+      }
+    },
+    {
+      "slug": "image-based-light-receiver-component",
+      "componentName": "ImageBasedLightReceiverComponent",
+      "componentId": "RealityKit.ImageBasedLightReceiver",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/image-based-light-receiver-component/schema.json",
+        "fields": "/api/components/image-based-light-receiver-component/fields.csv",
+        "matrix": "/api/components/image-based-light-receiver-component/matrix.csv",
+        "fixtures": "/api/components/image-based-light-receiver-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 5,
+        "fixtureRows": 3
+      }
+    },
+    {
+      "slug": "input-target-component",
+      "componentName": "InputTargetComponent",
+      "componentId": "RealityKit.InputTarget",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/input-target-component/schema.json",
+        "fields": "/api/components/input-target-component/fields.csv",
+        "matrix": "/api/components/input-target-component/matrix.csv",
+        "fixtures": "/api/components/input-target-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 3,
+        "matrixRows": 15,
+        "fixtureRows": 6
+      }
+    },
+    {
+      "slug": "model-sort-group-component",
+      "componentName": "ModelSortGroupComponent",
+      "componentId": "RealityKit.MeshSorting",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/model-sort-group-component/schema.json",
+        "fields": "/api/components/model-sort-group-component/fields.csv",
+        "matrix": "/api/components/model-sort-group-component/matrix.csv",
+        "fixtures": "/api/components/model-sort-group-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 2,
+        "matrixRows": 10,
+        "fixtureRows": 14
+      }
+    },
+    {
+      "slug": "opacity-component",
+      "componentName": "OpacityComponent",
+      "componentId": "RealityKit.HierarchicalFade",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/opacity-component/schema.json",
+        "fields": "/api/components/opacity-component/fields.csv",
+        "matrix": "/api/components/opacity-component/matrix.csv",
+        "fixtures": "/api/components/opacity-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 2,
+        "fixtureRows": 1
+      }
+    },
+    {
+      "slug": "particle-emitter-component",
+      "componentName": "ParticleEmitterComponent",
+      "componentId": "RealityKit.VFXEmitter",
+      "coverage": "Observed",
+      "risk": "High",
+      "paths": {
+        "schema": "/api/components/particle-emitter-component/schema.json",
+        "fields": "/api/components/particle-emitter-component/fields.csv",
+        "matrix": "/api/components/particle-emitter-component/matrix.csv",
+        "fixtures": "/api/components/particle-emitter-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 71,
+        "matrixRows": 7668,
+        "fixtureRows": 185
+      }
+    },
+    {
+      "slug": "physics-body-component",
+      "componentName": "PhysicsBodyComponent",
+      "componentId": "RealityKit.RigidBody",
+      "coverage": "Observed",
+      "risk": "High",
+      "paths": {
+        "schema": "/api/components/physics-body-component/schema.json",
+        "fields": "/api/components/physics-body-component/fields.csv",
+        "matrix": "/api/components/physics-body-component/matrix.csv",
+        "fixtures": "/api/components/physics-body-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 18,
+        "matrixRows": 324,
+        "fixtureRows": 53
+      }
+    },
+    {
+      "slug": "physics-motion-component",
+      "componentName": "PhysicsMotionComponent",
+      "componentId": "RealityKit.MotionState",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/physics-motion-component/schema.json",
+        "fields": "/api/components/physics-motion-component/fields.csv",
+        "matrix": "/api/components/physics-motion-component/matrix.csv",
+        "fixtures": "/api/components/physics-motion-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 4,
+        "matrixRows": 16,
+        "fixtureRows": 8
+      }
+    },
+    {
+      "slug": "point-light-component",
+      "componentName": "PointLightComponent",
+      "componentId": "RealityKit.PointLight",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/point-light-component/schema.json",
+        "fields": "/api/components/point-light-component/fields.csv",
+        "matrix": "/api/components/point-light-component/matrix.csv",
+        "fixtures": "/api/components/point-light-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 4,
+        "matrixRows": 20,
+        "fixtureRows": 4
+      }
+    },
+    {
+      "slug": "reverb-component",
+      "componentName": "ReverbComponent",
+      "componentId": "RealityKit.Reverb",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/reverb-component/schema.json",
+        "fields": "/api/components/reverb-component/fields.csv",
+        "matrix": "/api/components/reverb-component/matrix.csv",
+        "fixtures": "/api/components/reverb-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 1,
+        "matrixRows": 11,
+        "fixtureRows": 11
+      }
+    },
+    {
+      "slug": "scene-understanding-component",
+      "componentName": "SceneUnderstandingComponent",
+      "componentId": "RealityKit.SceneUnderstanding",
+      "coverage": "Partial",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/scene-understanding-component/schema.json",
+        "fields": "/api/components/scene-understanding-component/fields.csv",
+        "matrix": "/api/components/scene-understanding-component/matrix.csv",
+        "fixtures": "/api/components/scene-understanding-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 0,
+        "matrixRows": 0,
+        "fixtureRows": 0
+      }
+    },
+    {
+      "slug": "spatial-audio-component",
+      "componentName": "SpatialAudioComponent",
+      "componentId": "RealityKit.SpatialAudio",
+      "coverage": "Observed",
+      "risk": "Medium",
+      "paths": {
+        "schema": "/api/components/spatial-audio-component/schema.json",
+        "fields": "/api/components/spatial-audio-component/fields.csv",
+        "matrix": "/api/components/spatial-audio-component/matrix.csv",
+        "fixtures": "/api/components/spatial-audio-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 5,
+        "matrixRows": 35,
+        "fixtureRows": 5
+      }
+    },
+    {
+      "slug": "spot-light-component",
+      "componentName": "SpotLightComponent",
+      "componentId": "RealityKit.SpotLight",
+      "coverage": "Observed",
+      "risk": "High",
+      "paths": {
+        "schema": "/api/components/spot-light-component/schema.json",
+        "fields": "/api/components/spot-light-component/fields.csv",
+        "matrix": "/api/components/spot-light-component/matrix.csv",
+        "fixtures": "/api/components/spot-light-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 11,
+        "matrixRows": 176,
+        "fixtureRows": 22
+      }
+    },
+    {
+      "slug": "virtual-environment-probe-component",
+      "componentName": "VirtualEnvironmentProbeComponent",
+      "componentId": "RealityKit.VirtualEnvironmentProbe",
+      "coverage": "Observed",
+      "risk": "Low",
+      "paths": {
+        "schema": "/api/components/virtual-environment-probe-component/schema.json",
+        "fields": "/api/components/virtual-environment-probe-component/fields.csv",
+        "matrix": "/api/components/virtual-environment-probe-component/matrix.csv",
+        "fixtures": "/api/components/virtual-environment-probe-component/fixtures.csv"
+      },
+      "counts": {
+        "fields": 4,
+        "matrixRows": 44,
+        "fixtureRows": 25
+      }
+    }
+  ]
+}

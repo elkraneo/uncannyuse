@@ -1,0 +1,54 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,Affected by Gravity,,,Affected by Gravity,component,gravityEnabled,bool,0,RigidBody.gravityEnabled
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Affected by Gravity.usda,Affected by Gravity,,,Affected by Gravity,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,angularDamping,float,0.1,RigidBody.angularDamping
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,gravityEnabled,bool,0,RigidBody.gravityEnabled
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,isCCDEnabled,bool,1,RigidBody.isCCDEnabled
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,linearDamping,float,0.04,RigidBody.linearDamping
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockRotationX,bool,1,RigidBody.lockRotationX
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockRotationY,bool,1,RigidBody.lockRotationY
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockRotationZ,bool,1,RigidBody.lockRotationZ
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockTranslationX,bool,1,RigidBody.lockTranslationX
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockTranslationY,bool,1,RigidBody.lockTranslationY
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,lockTranslationZ,bool,1,RigidBody.lockTranslationZ
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,motionType,token,"""Kinematic""",RigidBody.motionType
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,m_inertia,float3,"(0.2, 0.2, 0.2)",RigidBody.massFrame.m_inertia
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,m_mass,float,2,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,orientation,quatf,"(0.9999238, 0.008726202, 0.008726204, -0.000076152406)",RigidBody.massFrame.m_pose.orientation
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,position,float3,"(0.01, 0.01, 0.01)",RigidBody.massFrame.m_pose.position
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,dynamicFriction,double,1,RigidBody.material.dynamicFriction
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,restitution,double,1,RigidBody.material.restitution
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,ALL.usda,ALL,,,ALL,component,staticFriction,double,1,RigidBody.material.staticFriction
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,Angular Damping,,,Angular Damping,component,angularDamping,float,0.1,RigidBody.angularDamping
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Angular Damping.usda,Angular Damping,,,Angular Damping,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,BASE.usda,BASE,,,BASE,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,Detect Continuous Collision,,,Detect Continuous Collision,component,isCCDEnabled,bool,1,RigidBody.isCCDEnabled
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Detect Continuous Collision.usda,Detect Continuous Collision,,,Detect Continuous Collision,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,Linear Damping,,,Linear Damping,component,linearDamping,float,0.04,RigidBody.linearDamping
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Linear Damping.usda,Linear Damping,,,Linear Damping,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,Orientation,Mass Properties,Center of Mass,Orientation,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Orientation.usda,Orientation,Mass Properties,Center of Mass,Orientation,component,orientation,quatf,"(0.99988645, 0.008649719, 0.008802022, 0.008649721)",RigidBody.massFrame.m_pose.orientation
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,Position,Mass Properties,Center of Mass,Position,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Center of Mass/Position.usda,Position,Mass Properties,Center of Mass,Position,component,position,float3,"(0.01, 0.01, 0.01)",RigidBody.massFrame.m_pose.position
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,Intertia,Mass Properties,,Intertia,component,m_inertia,float3,"(0.2, 0.2, 0.2)",RigidBody.massFrame.m_inertia
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Intertia.usda,Intertia,Mass Properties,,Intertia,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mass Properties/Mass.usda,Mass,Mass Properties,,Mass,component,m_mass,float,2,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,Dynamic Friction,Material,,Dynamic Friction,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Dynamic Friction.usda,Dynamic Friction,Material,,Dynamic Friction,component,dynamicFriction,double,1,RigidBody.material.dynamicFriction
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,Restitution,Material,,Restitution,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Restitution.usda,Restitution,Material,,Restitution,component,restitution,double,1,RigidBody.material.restitution
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,Static Friction,Material,,Static Friction,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Material/Static Friction.usda,Static Friction,Material,,Static Friction,component,staticFriction,double,1,RigidBody.material.staticFriction
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Dynamic.usda,Dynamic,Mode,,Dynamic,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,Kinematic,Mode,,Kinematic,component,motionType,token,"""Kinematic""",RigidBody.motionType
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Kinematic.usda,Kinematic,Mode,,Kinematic,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,Static,Mode,,Static,component,motionType,token,"""Static""",RigidBody.motionType
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Mode/Static.usda,Static,Mode,,Static,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,Rotation Locked,Movement Locking,,Rotation Locked,component,lockRotationX,bool,1,RigidBody.lockRotationX
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,Rotation Locked,Movement Locking,,Rotation Locked,component,lockRotationY,bool,1,RigidBody.lockRotationY
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,Rotation Locked,Movement Locking,,Rotation Locked,component,lockRotationZ,bool,1,RigidBody.lockRotationZ
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Rotation Locked.usda,Rotation Locked,Movement Locking,,Rotation Locked,component,m_mass,float,1,RigidBody.massFrame.m_mass
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,Translation Locked,Movement Locking,,Translation Locked,component,lockTranslationX,bool,1,RigidBody.lockTranslationX
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,Translation Locked,Movement Locking,,Translation Locked,component,lockTranslationY,bool,1,RigidBody.lockTranslationY
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,Translation Locked,Movement Locking,,Translation Locked,component,lockTranslationZ,bool,1,RigidBody.lockTranslationZ
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,Movement Locking/Translation Locked.usda,Translation Locked,Movement Locking,,Translation Locked,component,m_mass,float,1,RigidBody.massFrame.m_mass

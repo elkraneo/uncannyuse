@@ -1,0 +1,12 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+reverb-component,ReverbComponent,RealityKit.Reverb,Anechoic.usda,1 field change,reverbPreset,"""Anechoic"""
+reverb-component,ReverbComponent,RealityKit.Reverb,BASE.usda,Baseline or equivalent state,reverbPreset,"""MediumRoomTreated"""
+reverb-component,ReverbComponent,RealityKit.Reverb,ConcertHall.usda,1 field change,reverbPreset,"""ConcertHall"""
+reverb-component,ReverbComponent,RealityKit.Reverb,LargeRoom.usda,1 field change,reverbPreset,"""LargeRoom"""
+reverb-component,ReverbComponent,RealityKit.Reverb,LargeRoomTreated.usda,1 field change,reverbPreset,"""LargeRoomTreated"""
+reverb-component,ReverbComponent,RealityKit.Reverb,MediumRoomDry.usda,1 field change,reverbPreset,"""MediumRoomDry"""
+reverb-component,ReverbComponent,RealityKit.Reverb,Outside.usda,1 field change,reverbPreset,"""Outside"""
+reverb-component,ReverbComponent,RealityKit.Reverb,SmallRoom.usda,1 field change,reverbPreset,"""SmallRoom"""
+reverb-component,ReverbComponent,RealityKit.Reverb,SmallRoomBright.usda,1 field change,reverbPreset,"""SmallRoomBright"""
+reverb-component,ReverbComponent,RealityKit.Reverb,VeryLargeRoom.usda,1 field change,reverbPreset,"""VeryLargeRoom"""
+reverb-component,ReverbComponent,RealityKit.Reverb,VerySmallRoomBright.usda,1 field change,reverbPreset,"""VerySmallRoomBright"""

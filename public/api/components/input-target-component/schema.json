@@ -1,0 +1,82 @@
+{
+  "slug": "input-target-component",
+  "componentName": "InputTargetComponent",
+  "componentId": "RealityKit.InputTarget",
+  "primSignature": "def RealityKitComponent \"InputTarget\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"InputTarget\"\n{\n    uniform token info:id = \"RealityKit.InputTarget\"\n}",
+  "sparseExamples": "# AllowedInput/All.usda\ndef RealityKitComponent \"InputTarget\"\n{\n    uniform token info:id = \"RealityKit.InputTarget\"\n}\n\n# AllowedInput/direct.usda\ndef RealityKitComponent \"InputTarget\"\n{\n    bool allowsDirectInput = 1\n    bool allowsIndirectInput = 0\n    uniform token info:id = \"RealityKit.InputTarget\"\n}",
+  "fields": [
+    {
+      "name": "allowsDirectInput",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1, 0",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "allowsIndirectInput",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "0, 1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "enabled",
+      "type": "bool",
+      "base": "omitted",
+      "variants": "1, 0",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "AllowedInput/All.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "allowsDirectInput": "omitted",
+        "allowsIndirectInput": "omitted",
+        "enabled": "omitted"
+      }
+    },
+    {
+      "variant": "AllowedInput/direct.usda",
+      "note": "2 field changes",
+      "values": {
+        "allowsDirectInput": "1",
+        "allowsIndirectInput": "0",
+        "enabled": "omitted"
+      }
+    },
+    {
+      "variant": "AllowedInput/Indirect.usda",
+      "note": "3 field changes",
+      "values": {
+        "allowsDirectInput": "0",
+        "allowsIndirectInput": "1",
+        "enabled": "1"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "allowsDirectInput": "omitted",
+        "allowsIndirectInput": "omitted",
+        "enabled": "omitted"
+      }
+    },
+    {
+      "variant": "Enabled_false.usda",
+      "note": "1 field change",
+      "values": {
+        "allowsDirectInput": "omitted",
+        "allowsIndirectInput": "omitted",
+        "enabled": "0"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Input Target"
+}

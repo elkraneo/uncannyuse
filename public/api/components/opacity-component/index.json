@@ -1,0 +1,18 @@
+{
+  "slug": "opacity-component",
+  "componentName": "OpacityComponent",
+  "componentId": "RealityKit.HierarchicalFade",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/opacity-component/schema.json",
+    "fields": "/api/components/opacity-component/fields.csv",
+    "matrix": "/api/components/opacity-component/matrix.csv",
+    "fixtures": "/api/components/opacity-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 1,
+    "matrixRows": 2,
+    "fixtureRows": 1
+  }
+}

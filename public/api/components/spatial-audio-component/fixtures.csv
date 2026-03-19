@@ -1,0 +1,6 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Direct Level.usda,Direct Level,,,Direct Level,component,directLevel,float,-34.559376,SpatialAudio.directLevel
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Focus.usda,Focus,,,Focus,component,directivityFocus,float,0.66572917,SpatialAudio.directivityFocus
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Gaiin.usda,Gaiin,,,Gaiin,component,gain,float,-32.60521,SpatialAudio.gain
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Reverb Level.usda,Reverb Level,,,Reverb Level,component,reverbLevel,float,-27.275,SpatialAudio.reverbLevel
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,Rolloff Factor.usda,Rolloff Factor,,,Rolloff Factor,component,rolloffFactor,float,3.141493,SpatialAudio.rolloffFactor

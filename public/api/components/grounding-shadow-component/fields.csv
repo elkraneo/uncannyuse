@@ -1,0 +1,5 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableIBLShadow,bool,omitted,1,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableMeshShadow,bool,omitted,1,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableReceiveIBLShadow,bool,omitted,0,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableReceiveMeshShadow,bool,omitted,0,Not authored in baseline fixture.,Low,Observed

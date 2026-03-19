@@ -1,0 +1,11 @@
+componentSlug,componentName,componentId,variant,variantNote,fieldName,fieldValue
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,BASE.usda,Baseline or equivalent state,group,omitted
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,BASE.usda,Baseline or equivalent state,priorityInGroup,omitted
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,2 field changes,group,</Root/Model_Sorting_Group>
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,Group.usda,2 field changes,priorityInGroup,1
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPostPass.usda,1 field change,group,</Root/Model_Sorting_Group>
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPostPass.usda,1 field change,priorityInGroup,omitted
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPrePass.usda,1 field change,group,</Root/Model_Sorting_Group>
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupPrePass.usda,1 field change,priorityInGroup,omitted
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,2 field changes,group,</Root/Model_Sorting_Group>
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,GroupSort.usda,2 field changes,priorityInGroup,1

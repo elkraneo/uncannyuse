@@ -1,0 +1,102 @@
+{
+  "slug": "anchoring-component",
+  "componentName": "AnchoringComponent",
+  "componentId": "RealityKit.Anchoring",
+  "primSignature": "def RealityKitComponent \"Anchoring\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n    }\n}",
+  "sparseExamples": "# Orientation.usda\ndef RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n        matrix4d transform = ( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )\n    }\n}\n\n# Position.usda\ndef RealityKitComponent \"Anchoring\"\n{\n    uniform token info:id = \"RealityKit.Anchoring\"\n\n    def RealityKitStruct \"descriptor\"\n    {\n        matrix4d transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )\n    }\n}",
+  "fields": [
+    {
+      "name": "transform",
+      "type": "matrix4d",
+      "base": "omitted",
+      "variants": "( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) ), ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) ), ( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "type",
+      "type": "token",
+      "base": "omitted",
+      "variants": "\"Hand\", \"Head\", \"Object\"",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "transform": "omitted",
+        "type": "omitted"
+      }
+    },
+    {
+      "variant": "Orientation.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) )",
+        "type": "omitted"
+      }
+    },
+    {
+      "variant": "Position.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) )",
+        "type": "omitted"
+      }
+    },
+    {
+      "variant": "Scale.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",
+        "type": "omitted"
+      }
+    },
+    {
+      "variant": "Target/Hand.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "omitted",
+        "type": "\"Hand\""
+      }
+    },
+    {
+      "variant": "Target/Head.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "omitted",
+        "type": "\"Head\""
+      }
+    },
+    {
+      "variant": "Target/Object.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "omitted",
+        "type": "\"Object\""
+      }
+    },
+    {
+      "variant": "Target/Plane.usda",
+      "note": "1 field change",
+      "values": {
+        "transform": "omitted",
+        "type": "\"Plane\""
+      }
+    },
+    {
+      "variant": "Target/World.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "transform": "omitted",
+        "type": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Anchoring"
+}

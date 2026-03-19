@@ -1,0 +1,18 @@
+{
+  "slug": "virtual-environment-probe-component",
+  "componentName": "VirtualEnvironmentProbeComponent",
+  "componentId": "RealityKit.VirtualEnvironmentProbe",
+  "coverage": "Observed",
+  "risk": "Low",
+  "paths": {
+    "schema": "/api/components/virtual-environment-probe-component/schema.json",
+    "fields": "/api/components/virtual-environment-probe-component/fields.csv",
+    "matrix": "/api/components/virtual-environment-probe-component/matrix.csv",
+    "fixtures": "/api/components/virtual-environment-probe-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 4,
+    "matrixRows": 44,
+    "fixtureRows": 25
+  }
+}

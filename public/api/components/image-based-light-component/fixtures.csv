@@ -1,0 +1,37 @@
+componentSlug,componentName,componentId,fixturePath,fixtureName,uiSection,uiSubsection,uiLabel,structScope,fieldName,usdType,authoredValue,componentPath
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,BASE.usda,BASE,,,BASE,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,Environment Resource,,,Environment Resource,component,ibl,asset,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,ImageBasedLight.ibl
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Environment Resource.usda,Environment Resource,,,Environment Resource,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,Inherits Rotation,,,Inherits Rotation,component,enableRotation,bool,1,ImageBasedLight.enableRotation
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Inherits Rotation.usda,Inherits Rotation,,,Inherits Rotation,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,Intensity Exponent,,,Intensity Exponent,component,intensityExponent,float,-6.6197915,ImageBasedLight.intensityExponent
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Intensity Exponent.usda,Intensity Exponent,,,Intensity Exponent,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,blendIBLsFactor,float,0.55164933,ImageBasedLight.blendIBLsFactor
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,ibl,asset,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,ImageBasedLight.ibl
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,iblBlend,asset,@../cayley_lookout_2k.hdr@,ImageBasedLight.iblBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All Custom Blend.usda,Mode Blend All Custom Blend,,,Mode Blend All Custom Blend,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,Mode Blend All,,,Mode Blend All,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,Mode Blend All,,,Mode Blend All,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,Mode Blend All,,,Mode Blend All,component,ibl,asset,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,ImageBasedLight.ibl
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,Mode Blend All,,,Mode Blend All,component,iblBlend,asset,@../cayley_lookout_2k.hdr@,ImageBasedLight.iblBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend All.usda,Mode Blend All,,,Mode Blend All,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,Mode Blend First,,,Mode Blend First,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,Mode Blend First,,,Mode Blend First,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,Mode Blend First,,,Mode Blend First,component,ibl,asset,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,ImageBasedLight.ibl
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend First.usda,Mode Blend First,,,Mode Blend First,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,Mode Blend None,,,Mode Blend None,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,Mode Blend None,,,Mode Blend None,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend None.usda,Mode Blend None,,,Mode Blend None,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,Mode Blend Second,,,Mode Blend Second,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,Mode Blend Second,,,Mode Blend Second,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,Mode Blend Second,,,Mode Blend Second,component,iblBlend,asset,@../cayley_lookout_2k.hdr@,ImageBasedLight.iblBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend Second.usda,Mode Blend Second,,,Mode Blend Second,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,Mode Blend,,,Mode Blend,component,blendMode,token,"""blend""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,Mode Blend,,,Mode Blend,component,enableBlend,bool,1,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Blend.usda,Mode Blend,,,Mode Blend,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,Mode None,,,Mode None,component,blendMode,token,"""none""",ImageBasedLight.blendMode
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,Mode None,,,Mode None,component,enableBlend,bool,0,ImageBasedLight.enableBlend
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode None.usda,Mode None,,,Mode None,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,Mode Single.usda,Mode Single,,,Mode Single,component,isGlobalIBL,bool,0,ImageBasedLight.isGlobalIBL

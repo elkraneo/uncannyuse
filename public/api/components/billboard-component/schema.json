@@ -1,0 +1,37 @@
+{
+  "slug": "billboard-component",
+  "componentName": "BillboardComponent",
+  "componentId": "RealityKit.Billboard",
+  "primSignature": "def RealityKitComponent \"Billboard\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"Billboard\"\n{\n    float blendFactor = 0\n    uniform token info:id = \"RealityKit.Billboard\"\n}",
+  "sparseExamples": "# BlendFactor.usda\ndef RealityKitComponent \"Billboard\"\n{\n    float blendFactor = 2\n    uniform token info:id = \"RealityKit.Billboard\"\n}",
+  "fields": [
+    {
+      "name": "blendFactor",
+      "type": "float",
+      "base": "0",
+      "variants": "2",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "blendFactor": "0"
+      }
+    },
+    {
+      "variant": "BlendFactor.usda",
+      "note": "1 field change",
+      "values": {
+        "blendFactor": "2"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Billboard"
+}

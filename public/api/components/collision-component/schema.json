@@ -1,0 +1,195 @@
+{
+  "slug": "collision-component",
+  "componentName": "CollisionComponent",
+  "componentId": "RealityKit.Collider",
+  "primSignature": "def RealityKitComponent \"Collider\"",
+  "coverage": "Observed",
+  "risk": "Medium",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"Collider\"\n{\n    uint group = 1\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}",
+  "sparseExamples": "# Filter/Group/All.usda\ndef RealityKitComponent \"Collider\"\n{\n    uint group = 4294967295\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}\n\n# Filter/Group/Default.usda\ndef RealityKitComponent \"Collider\"\n{\n    uint group = 1\n    uniform token info:id = \"RealityKit.Collider\"\n    uint mask = 4294967295\n    token type = \"Default\"\n\n    def RealityKitStruct \"Shape\"\n    {\n        float3 extent = (0.2, 0.2, 0.2)\n        token shapeType = \"Box\"\n\n        def RealityKitStruct \"pose\"\n        {\n        }\n    }\n}",
+  "fields": [
+    {
+      "name": "extent",
+      "type": "float3",
+      "base": "(0.2, 0.2, 0.2)",
+      "variants": "(0.2, 0.2, 0.2)",
+      "notes": ""
+    },
+    {
+      "name": "group",
+      "type": "uint",
+      "base": "1",
+      "variants": "4294967295",
+      "notes": ""
+    },
+    {
+      "name": "height",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.2",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "mask",
+      "type": "uint",
+      "base": "4294967295",
+      "variants": "1",
+      "notes": ""
+    },
+    {
+      "name": "radius",
+      "type": "float",
+      "base": "omitted",
+      "variants": "0.1",
+      "notes": "Not authored in baseline fixture."
+    },
+    {
+      "name": "shapeType",
+      "type": "token",
+      "base": "\"Box\"",
+      "variants": "\"Capsule\", \"Sphere\"",
+      "notes": ""
+    },
+    {
+      "name": "type",
+      "type": "token",
+      "base": "\"Default\"",
+      "variants": "\"Trigger\"",
+      "notes": ""
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Filter/Group/All.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "4294967295",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Filter/Group/Default.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Filter/Mask/All.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Filter/Mask/Default.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "1",
+        "mask": "1",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Mode/Default.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Mode/Trigger.usda",
+      "note": "1 field change",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Trigger\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Shape/Box.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Box\"",
+        "height": "omitted",
+        "radius": "omitted"
+      }
+    },
+    {
+      "variant": "Shape/Capsule.usda",
+      "note": "3 field changes",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Capsule\"",
+        "height": "0.2",
+        "radius": "0.1"
+      }
+    },
+    {
+      "variant": "Shape/Sphere.usda",
+      "note": "2 field changes",
+      "values": {
+        "group": "1",
+        "mask": "4294967295",
+        "type": "\"Default\"",
+        "extent": "(0.2, 0.2, 0.2)",
+        "shapeType": "\"Sphere\"",
+        "height": "omitted",
+        "radius": "0.1"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Collision"
+}

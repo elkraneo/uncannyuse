@@ -1,0 +1,18 @@
+{
+  "slug": "particle-emitter-component",
+  "componentName": "ParticleEmitterComponent",
+  "componentId": "RealityKit.VFXEmitter",
+  "coverage": "Observed",
+  "risk": "High",
+  "paths": {
+    "schema": "/api/components/particle-emitter-component/schema.json",
+    "fields": "/api/components/particle-emitter-component/fields.csv",
+    "matrix": "/api/components/particle-emitter-component/matrix.csv",
+    "fixtures": "/api/components/particle-emitter-component/fixtures.csv"
+  },
+  "counts": {
+    "fields": 71,
+    "matrixRows": 7668,
+    "fixtureRows": 185
+  }
+}

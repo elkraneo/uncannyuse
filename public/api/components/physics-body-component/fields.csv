@@ -1,0 +1,19 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,angularDamping,float,omitted,0.1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,dynamicFriction,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,gravityEnabled,bool,omitted,0,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,isCCDEnabled,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,linearDamping,float,omitted,0.04,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationX,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationY,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationZ,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationX,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationY,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationZ,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,m_inertia,float3,omitted,"(0.2, 0.2, 0.2)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,m_mass,float,1,2,,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,motionType,token,omitted,"""Kinematic"", ""Static""",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,orientation,quatf,omitted,"(0.9999238, 0.008726202, 0.008726204, -0.000076152406), (0.99988645, 0.008649719, 0.008802022, 0.008649721)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,position,float3,omitted,"(0.01, 0.01, 0.01)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,restitution,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,staticFriction,double,omitted,1,Not authored in baseline fixture.,High,Observed

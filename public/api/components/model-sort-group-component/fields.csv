@@ -1,0 +1,3 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,group,rel,omitted,</Root/Model_Sorting_Group>,Not authored in baseline fixture.,Low,Observed
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,priorityInGroup,int,omitted,1,Not authored in baseline fixture.,Low,Observed

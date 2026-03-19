@@ -1,0 +1,6 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.gain,float,omitted,"0, -15.505303",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.mute,bool,omitted,"0, 1",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.speed,float,omitted,"1, 2.4326851",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AudioFile.file,asset,omitted,"@../1bells.wav@, @../MUI POP UP Bubbly.wav@","Authored on external RealityKitAudioFile prims, not on the component prim.",Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AudioFile.mixGroup,rel,omitted,"</Root/Cube/AudioMixGroups/MixGroup>, </Root/Cube/AudioMixGroups/MixGroup_2>",Routes external audio-file prims to a specific mix-group child prim.,Medium,Observed

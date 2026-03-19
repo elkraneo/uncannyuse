@@ -1,0 +1,51 @@
+{
+  "slug": "channel-audio-component",
+  "componentName": "ChannelAudioComponent",
+  "componentId": "RealityKit.ChannelAudio",
+  "primSignature": "def RealityKitComponent \"ChannelAudio\"",
+  "coverage": "Observed",
+  "risk": "Low",
+  "baseline": "BASE.usda",
+  "introducedBlock": "def RealityKitComponent \"ChannelAudio\"\n{\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}",
+  "sparseExamples": "# ALL.usda\ndef RealityKitComponent \"ChannelAudio\"\n{\n    float gain = -21.279995\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}\n\n# Gain.usda\ndef RealityKitComponent \"ChannelAudio\"\n{\n    float gain = -23.45\n    uniform token info:id = \"RealityKit.ChannelAudio\"\n}",
+  "fields": [
+    {
+      "name": "gain",
+      "type": "float",
+      "base": "omitted",
+      "variants": "-21.279995, -23.45",
+      "notes": "Not authored in baseline fixture."
+    }
+  ],
+  "matrix": [
+    {
+      "variant": "ALL.usda",
+      "note": "1 field change",
+      "values": {
+        "gain": "-21.279995"
+      }
+    },
+    {
+      "variant": "BASE.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "gain": "omitted"
+      }
+    },
+    {
+      "variant": "Gain.usda",
+      "note": "1 field change",
+      "values": {
+        "gain": "-23.45"
+      }
+    },
+    {
+      "variant": "Resource.usda",
+      "note": "Baseline or equivalent state",
+      "values": {
+        "gain": "omitted"
+      }
+    }
+  ],
+  "sourceFolder": "RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets/Channel Audio"
+}
