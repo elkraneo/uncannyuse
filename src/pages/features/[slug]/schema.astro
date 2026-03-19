@@ -16,6 +16,14 @@ type MatrixRow = {
 	variant: string;
 	values: Record<string, string>;
 	note: string;
+	changedFields?: string[];
+};
+
+type SparseExampleRow = {
+	variant: string;
+	note: string;
+	changedFields?: string[];
+	block: string;
 };
 
 type SchemaDraft = {
@@ -28,6 +36,7 @@ type SchemaDraft = {
 	baseline: string;
 	introducedBlock: string;
 	sparseExamples: string;
+	sparseExampleRows?: SparseExampleRow[];
 	fields: SchemaField[];
 	matrix: MatrixRow[];
 	sourceFolder?: string;
@@ -91,9 +100,25 @@ const draft = generatedDrafts[feature.id];
 const highlightedIntroducedBlock = draft ? highlightUsda(draft.introducedBlock) : "";
 
 // Split sparseExamples into individual variant blocks for annotated display
-type SparseVariant = { filename: string; block: string; highlighted: string };
+type SparseVariant = {
+	filename: string;
+	note?: string;
+	changedFields?: string[];
+	block: string;
+	highlighted: string;
+};
 const sparseVariants: SparseVariant[] = [];
-if (draft?.sparseExamples) {
+if (draft?.sparseExampleRows?.length) {
+	for (const row of draft.sparseExampleRows) {
+		sparseVariants.push({
+			filename: row.variant,
+			note: row.note,
+			changedFields: row.changedFields,
+			block: row.block,
+			highlighted: highlightUsda(row.block),
+		});
+	}
+} else if (draft?.sparseExamples) {
 	const parts = draft.sparseExamples.split(/(?=^# )/m);
 	for (const part of parts) {
 		const trimmed = part.trim();
@@ -224,11 +249,18 @@ const componentFixturesCsvPath = `${componentApiBase}/fixtures.csv`;
 							<p class="panel-desc">Each fixture shows the USDA block RCP writes when a single parameter is changed in the inspector.</p>
 							<div class="variant-stack">
 								{sparseVariants.map((v) => (
-									<div class="variant-card">
-										<div class="variant-label">{v.filename}</div>
-										<div class="code-shell">
-											<div class="code-head">
-												<span class="code-lang">USDA</span>
+								<div class="variant-card">
+									<div class="variant-label">{v.filename}</div>
+									{v.note && <p class="variant-note">{v.note}</p>}
+									{v.changedFields && v.changedFields.length > 0 && (
+										<p class="variant-note">
+											Changed field{v.changedFields.length !== 1 ? "s" : ""}:{" "}
+											<code>{v.changedFields.join(", ")}</code>
+										</p>
+									)}
+									<div class="code-shell">
+										<div class="code-head">
+											<span class="code-lang">USDA</span>
 											</div>
 											<pre><code set:html={v.highlighted}></code></pre>
 										</div>
@@ -622,6 +654,13 @@ const componentFixturesCsvPath = `${componentApiBase}/fixtures.csv`;
 	.panel-desc {
 		margin: 0 0 0.6rem;
 		font-size: 0.85rem;
+		color: var(--muted);
+		line-height: 1.5;
+	}
+
+	.variant-note {
+		margin: 0.35rem 0 0.55rem;
+		font-size: 0.82rem;
 		color: var(--muted);
 		line-height: 1.5;
 	}

@@ -150,6 +150,50 @@ function toRelativeFixturePath(filePath) {
   return filePath.replace("/Volumes/Plutonian/_Developer/Deconstructed/source/", "");
 }
 
+function topLevelVariantSection(relativePath) {
+  const [first] = relativePath.split("/");
+  return first ?? "";
+}
+
+function summarizeChangedFields(changedFields) {
+  if (changedFields.length === 0) return "No authored delta from baseline";
+  if (changedFields.length <= 3) return `Changes: ${changedFields.join(", ")}`;
+  return `Changes: ${changedFields.slice(0, 3).join(", ")} + ${changedFields.length - 3} more`;
+}
+
+function selectSparseExampleRows(matrix, baselineVariant) {
+  const changedRows = matrix.filter((row) => row.variant !== baselineVariant && row.changedFields.length > 0);
+  if (changedRows.length === 0) return [];
+
+  const bySection = new Map();
+  for (const row of changedRows) {
+    const section = topLevelVariantSection(row.variant);
+    if (!bySection.has(section)) bySection.set(section, []);
+    bySection.get(section).push(row);
+  }
+
+  const selected = [];
+
+  for (const sectionRows of bySection.values()) {
+    sectionRows.sort((lhs, rhs) => {
+      if (lhs.changedFields.length !== rhs.changedFields.length) {
+        return lhs.changedFields.length - rhs.changedFields.length;
+      }
+      return lhs.variant.localeCompare(rhs.variant);
+    });
+    selected.push(sectionRows[0]);
+  }
+
+  selected.sort((lhs, rhs) => {
+    if (lhs.changedFields.length !== rhs.changedFields.length) {
+      return lhs.changedFields.length - rhs.changedFields.length;
+    }
+    return lhs.variant.localeCompare(rhs.variant);
+  });
+
+  return selected.slice(0, 6);
+}
+
 function resolveFeatureIdForFolder(folderName, features) {
   if (aliasByFolder.has(folderName)) return aliasByFolder.get(folderName);
 
@@ -383,8 +427,18 @@ function buildDraftForFolder(folderPath, feature) {
       if (field && field.value !== info.base) info.variants.add(field.value);
     }
 
-    const changedCount = Object.entries(row.values).filter(([name, value]) => value !== fieldMap.get(name).base).length;
-    row.note = changedCount === 0 ? "Baseline or equivalent state" : `${changedCount} field change${changedCount > 1 ? "s" : ""}`;
+    const changedFields = Object.entries(row.values)
+      .filter(([name, value]) => value !== fieldMap.get(name).base)
+      .map(([name]) => name)
+      .sort((a, b) => a.localeCompare(b));
+
+    row.changedFields = changedFields;
+    row.note =
+      changedFields.length === 0
+        ? row.variant === path.relative(folderPath, baselineFile)
+          ? "Canonical baseline fixture"
+          : "Equivalent to baseline; empty scaffold only"
+        : summarizeChangedFields(changedFields);
     matrix.push(row);
   }
 
@@ -395,15 +449,26 @@ function buildDraftForFolder(folderPath, feature) {
       type: field.type,
       base: field.base,
       variants: field.variants.size > 0 ? Array.from(field.variants).slice(0, 3).join(", ") : field.base,
-      notes: field.base === "omitted" ? "Not authored in baseline fixture." : "",
+      notes: field.base === "omitted" ? "Sparse only; not authored in the baseline fixture." : "",
     }));
 
-  const variantExamples = matrix.filter((row) => row.variant !== path.relative(folderPath, baselineFile)).slice(0, 2);
-  const sparseBlocks = variantExamples
+  const baselineVariant = path.relative(folderPath, baselineFile);
+  const sparseExampleRows = selectSparseExampleRows(matrix, baselineVariant).map((row) => {
+    const full = path.join(folderPath, row.variant);
+    const parsed = parsedByFile.get(full);
+    return parsed
+      ? {
+          variant: row.variant,
+          note: row.note,
+          changedFields: row.changedFields,
+          block: parsed.block,
+        }
+      : null;
+  }).filter(Boolean);
+
+  const sparseBlocks = sparseExampleRows
     .map((row) => {
-      const full = path.join(folderPath, row.variant);
-      const parsed = parsedByFile.get(full);
-      return parsed ? `# ${row.variant}\n${parsed.block}` : null;
+      return `# ${row.variant}\n# ${row.note}\n${row.block}`;
     })
     .filter(Boolean)
     .join("\n\n");
@@ -411,6 +476,7 @@ function buildDraftForFolder(folderPath, feature) {
   const fullMatrix = matrix.map((row) => ({
     variant: row.variant,
     note: row.note,
+    changedFields: row.changedFields,
     values: row.values,
   }));
 
@@ -423,9 +489,10 @@ function buildDraftForFolder(folderPath, feature) {
     primSignature: `def RealityKitComponent "${baselineParsed.primName}"`,
     coverage,
     risk: fields.length <= 4 ? "Low" : fields.length <= 8 ? "Medium" : "High",
-    baseline: path.relative(folderPath, baselineFile),
+    baseline: baselineVariant,
     introducedBlock: baselineParsed.block,
     sparseExamples: sparseBlocks || "# Variant patch examples not available yet.",
+    sparseExampleRows,
     fields,
     matrix: fullMatrix,
     sourceFolder: toRelativeFixturePath(folderPath),
