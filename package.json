@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:all": "astro build && node scripts/generate-fixture-schemas.mjs && node scripts/generate-csv-exports.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "start": "serve dist -l 3000"
+    "start": "serve dist -l 3000",
+    "generate:schemas": "node scripts/generate-fixture-schemas.mjs",
+    "generate:csv": "node scripts/generate-csv-exports.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-03-19T12:55:46.129Z",
+  "endpoints": [
+    {
+      "name": "fields",
+      "path": "/data/schemas/fields.csv",
+      "description": "One row per component×field. Columns: componentSlug, componentName, componentId, fieldName, fieldType, baseValue, variants, notes, risk, coverage",
+      "rowCount": 175
+    },
+    {
+      "name": "matrix",
+      "path": "/data/schemas/matrix.csv",
+      "description": "One row per component×variant×field. Columns: componentSlug, componentName, componentId, variant, variantNote, fieldName, fieldValue",
+      "rowCount": 8773
+    }
+  ]
+}

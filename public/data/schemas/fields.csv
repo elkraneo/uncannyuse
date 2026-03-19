@@ -1,0 +1,176 @@
+componentSlug,componentName,componentId,fieldName,fieldType,baseValue,variants,notes,risk,coverage
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,isEnabled,bool,0,1,,Low,Observed
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,label,string,"""""","""Custom Label"", ""Some Label""",,Low,Observed
+accessibility-component,AccessibilityComponent,RealityKit.Accessibility,value,string,"""""","""This component makes my entity accessible "", ""Some Value""",,Low,Observed
+ambient-audio-component,AmbientAudioComponent,RealityKit.AmbientAudio,gain,float,0,-35.13125,,Low,Observed
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,transform,matrix4d,omitted,"( (0.969846248626709, 0.17101003229618073, -0.1736481487751007, 0), (-0.14131446182727814, 0.9750823378562927, 0.17101003229618073, 0), (0.19856569170951843, -0.14131446182727814, 0.969846248626709, 0), (0, 0, 0, 1) ), ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1) ), ( (2, 0, 0, 0), (0, 2, 0, 0), (0, 0, 2, 0), (0, 0, 0, 1) )",Not authored in baseline fixture.,Low,Observed
+anchoring-component,AnchoringComponent,RealityKit.Anchoring,type,token,omitted,"""Hand"", ""Head"", ""Object""",Not authored in baseline fixture.,Low,Observed
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,keys,string[],omitted,"[""1bells.wav""]",Not authored in baseline fixture.,Low,Observed
+audio-library-component,AudioLibraryComponent,RealityKit.AudioLibrary,values,rel,omitted,</Root/_1bells_wav>,Not authored in baseline fixture.,Low,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.gain,float,omitted,"0, -15.505303",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.mute,bool,omitted,"0, 1",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,MixGroup.speed,float,omitted,"1, 2.4326851",Authored on child RealityKitAudioMixGroup prims after a mix group exists.,Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AudioFile.file,asset,omitted,"@../1bells.wav@, @../MUI POP UP Bubbly.wav@","Authored on external RealityKitAudioFile prims, not on the component prim.",Medium,Observed
+audio-mix-groups-component,AudioMixGroupsComponent,RealityKit.AudioMixGroups,AudioFile.mixGroup,rel,omitted,"</Root/Cube/AudioMixGroups/MixGroup>, </Root/Cube/AudioMixGroups/MixGroup_2>",Routes external audio-file prims to a specific mix-group child prim.,Medium,Observed
+billboard-component,BillboardComponent,RealityKit.Billboard,blendFactor,float,0,2,,Low,Observed
+channel-audio-component,ChannelAudioComponent,RealityKit.ChannelAudio,gain,float,omitted,"-21.279995, -23.45",Not authored in baseline fixture.,Low,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,extents,float3,omitted,"(0.05, 0, 0), (0, 0.03, 0)",Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,group,uint,omitted,4294967295,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,skinWidth,float,omitted,0.02,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,slopeLimit,float,omitted,1.5707964,Not authored in baseline fixture.,Medium,Observed
+character-controller-component,CharacterControllerComponent,RealityKit.CharacterController,stepLimit,float,omitted,0.4,Not authored in baseline fixture.,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,extent,float3,"(0.2, 0.2, 0.2)","(0.2, 0.2, 0.2)",,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,group,uint,1,4294967295,,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,height,float,omitted,0.2,Not authored in baseline fixture.,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,mask,uint,4294967295,1,,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,radius,float,omitted,0.1,Not authored in baseline fixture.,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,shapeType,token,"""Box""","""Capsule"", ""Sphere""",,Medium,Observed
+collision-component,CollisionComponent,RealityKit.Collider,type,token,"""Default""","""Trigger""",,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,color,float3,omitted,"(1, 1, 0)",Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,cullMode,token,omitted,"""Back"", ""Front"", ""None""",Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,depthBias,float,omitted,2,Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,intensity,float,omitted,70000,Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,isEnabled,bool,omitted,1,Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,orthographicScale,float,omitted,2,Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,projectionType,token,omitted,"""Fixed"", ""Automatic""",Not authored in baseline fixture.,Medium,Observed
+directional-light-component,DirectionalLightComponent,RealityKit.DirectionalLight,zBounds,float2,omitted,"(0.02, 20)",Not authored in baseline fixture.,Medium,Observed
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,max,float3,"(2.4, 1, 0)","(2.4, 1, 0)",,Low,Partial
+docking-region-component,DockingRegionComponent,RealityKit.CustomDockingRegion,min,float3,"(-2.4, -1, -0)","(-2.4, -1, -0)",,Low,Partial
+environment-lighting-configuration-component,EnvironmentLightingConfigurationComponent,RealityKit.EnvironmentLightingConfiguration,environmentLightingWeight,float,omitted,0.48552084,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableIBLShadow,bool,omitted,1,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableMeshShadow,bool,omitted,1,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableReceiveIBLShadow,bool,omitted,0,Not authored in baseline fixture.,Low,Observed
+grounding-shadow-component,GroundingShadowComponent,RealityKit.GroundingShadow,enableReceiveMeshShadow,bool,omitted,0,Not authored in baseline fixture.,Low,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,blendIBLsFactor,float,omitted,0.55164933,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,blendMode,token,omitted,"""blend"", ""none""",Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,enableBlend,bool,omitted,"1, 0",Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,enableRotation,bool,omitted,1,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,ibl,asset,omitted,@../RenderCrate-HDRI_Orbital_40_4K.hdr@,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,iblBlend,asset,omitted,@../cayley_lookout_2k.hdr@,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,intensityExponent,float,omitted,-6.6197915,Not authored in baseline fixture.,Medium,Observed
+image-based-light-component,ImageBasedLightComponent,RealityKit.ImageBasedLight,isGlobalIBL,bool,0,0,,Medium,Observed
+image-based-light-receiver-component,ImageBasedLightReceiverComponent,RealityKit.ImageBasedLightReceiver,iblEntity,rel,omitted,"</Root/Cube>, </Root/Sphere>",Not authored in baseline fixture.,Low,Observed
+input-target-component,InputTargetComponent,RealityKit.InputTarget,allowsDirectInput,bool,omitted,"1, 0",Not authored in baseline fixture.,Low,Observed
+input-target-component,InputTargetComponent,RealityKit.InputTarget,allowsIndirectInput,bool,omitted,"0, 1",Not authored in baseline fixture.,Low,Observed
+input-target-component,InputTargetComponent,RealityKit.InputTarget,enabled,bool,omitted,"1, 0",Not authored in baseline fixture.,Low,Observed
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,group,rel,omitted,</Root/Model_Sorting_Group>,Not authored in baseline fixture.,Low,Observed
+model-sort-group-component,ModelSortGroupComponent,RealityKit.MeshSorting,priorityInGroup,int,omitted,1,Not authored in baseline fixture.,Low,Observed
+opacity-component,OpacityComponent,RealityKit.HierarchicalFade,opacity,float,omitted,0.50348955,Not authored in baseline fixture.,Low,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,acceleration,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,animationRepeatMode,token,omitted,"""AutoReverse"", ""Looping"", ""PlayOnce""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,billboardMode,token,omitted,"""BillboardYAligned"", ""Billboard"", ""Free""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthDirection,token,omitted,"""Local"", ""Constant""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthLocation,token,omitted,"""Vertices"", ""Volume""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthRate,float,omitted,"30, 77",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,birthRateVariation,float,omitted,"15, 3",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,blendMode,token,omitted,"""Additive"", ""Opaque""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,burstCount,int64,omitted,42,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,burstCountVariation,int64,omitted,7,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,colorEvolutionPower,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,columnCount,int64,omitted,"5, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,dampingFactor,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emissionDuration,double,omitted,2,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emissionDurationVariation,double,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,emitterShape,token,omitted,"""Box"", ""Cone"", ""Cylinder""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,endColorA,float4,omitted,"(0.0013006331, 0.9246575, 1, 1), (0.0013006331, 0.032195132, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,endColorB,float4,omitted,"(0.87537456, 0.092653036, 1, 1), (1, 1, 1, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,frameRate,float,omitted,"12, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,frameRateVariation,float,omitted,"5, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,idleDuration,double,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,idleDurationVariation,double,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,initialFrame,int64,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,initialFrameVariation,int64,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isAnimated,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLightingEnabled,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLocal,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isLocalFields,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,isSpawningEnabled,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,loops,bool,omitted,0,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseAnimationSpeed,float,omitted,"7, 3",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseScale,float,omitted,"5, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,noiseStrength,float,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,opacityOverLife,token,omitted,"""Constant"", ""EaseFadeIn"", ""EaseFadeOut""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngle,float,omitted,"0.5235988, 0.7853982",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngleVariation,float,omitted,"0.7330383, 0.2268928",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngularVelocity,float,omitted,"7, 5",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleAngularVelocityVariation,float,omitted,"3, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleImage,asset,omitted,"@../../../../Sonic_explosion_(atlas).png@, @../../Sonic_explosion_(atlas).png@",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleLifeSpan,double,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleLifeSpanVariation,double,omitted,"0.7, 0.5",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleMass,float,omitted,"2, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleMassVariation,float,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSize,float,omitted,"0.04, 0.03",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSizeVariation,float,omitted,"0.02, 0.01",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSpeed,float,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,particleSpeedVariation,float,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialAmount,float,omitted,"3.1415927, 4.712389, 1.5707964",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialGravityCenter,float3,omitted,"(2, 3, 1), (0, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,radialGravityStrength,float,omitted,"1, 4",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,rowCount,int64,omitted,"5, 6",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,shapeSize,float3,omitted,"(0.5, 0.25, 0.3)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sizeMultiplierAtEndOfLifespan,float,omitted,"0.3, 0.7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sizeMultiplierAtEndOfLifespanPower,float,omitted,"3, 2",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,sortOrder,token,omitted,"""DecreasingAge"", ""DecreasingDepth"", ""DecreasingID""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnInheritParentColor,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnOccasion,token,omitted,"""OnBirth"", ""OnUpdate""",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnSpreadFactor,float,omitted,0.017453292,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnSpreadFactorVariation,float,omitted,0.04363323,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spawnVelocityFactor,float,omitted,2,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,spreadingAngle,float,omitted,0.05235988,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,startColorA,float4,omitted,"(1, 0.046666723, 0.37124115, 1), (0.10755565, 0.29358652, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,startColorB,float4,omitted,"(1, 1, 1, 1), (0.44521102, 0.67951274, 0.99998397, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,stretchFactor,float,omitted,"3, 6",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,torusInnerRadius,float,omitted,0.5,Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useEndColor,bool,omitted,"1, 0",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useEndColorRange,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,useStartColorRange,bool,omitted,"0, 1",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,vortexDirection,float3,omitted,"(1, 0, 1)",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,vortexStrength,float,omitted,"8, 7",Not authored in baseline fixture.,High,Observed
+particle-emitter-component,ParticleEmitterComponent,RealityKit.VFXEmitter,warmupDuration,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,angularDamping,float,omitted,0.1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,dynamicFriction,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,gravityEnabled,bool,omitted,0,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,isCCDEnabled,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,linearDamping,float,omitted,0.04,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationX,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationY,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockRotationZ,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationX,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationY,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,lockTranslationZ,bool,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,m_inertia,float3,omitted,"(0.2, 0.2, 0.2)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,m_mass,float,1,2,,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,motionType,token,omitted,"""Kinematic"", ""Static""",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,orientation,quatf,omitted,"(0.9999238, 0.008726202, 0.008726204, -0.000076152406), (0.99988645, 0.008649719, 0.008802022, 0.008649721)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,position,float3,omitted,"(0.01, 0.01, 0.01)",Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,restitution,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-body-component,PhysicsBodyComponent,RealityKit.RigidBody,staticFriction,double,omitted,1,Not authored in baseline fixture.,High,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetAngularVelocity,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetAngularVelocityVersion,uint,omitted,1,Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetLinearVelocity,float3,omitted,"(1, 1, 1)",Not authored in baseline fixture.,Low,Observed
+physics-motion-component,PhysicsMotionComponent,RealityKit.MotionState,m_userSetLinearVelocityVersion,uint,omitted,1,Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,attenuationFalloffExponent,float,omitted,4,Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,attenuationRadius,float,omitted,20,Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,color,float3,omitted,"(0.722041, 0.92509, 0)",Not authored in baseline fixture.,Low,Observed
+point-light-component,PointLightComponent,RealityKit.PointLight,intensity,float,omitted,470000,Not authored in baseline fixture.,Low,Observed
+reverb-component,ReverbComponent,RealityKit.Reverb,reverbPreset,token,"""MediumRoomTreated""","""Anechoic"", ""ConcertHall"", ""LargeRoom""",,Low,Observed
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,directivityFocus,float,omitted,0.66572917,Not authored in baseline fixture.,Medium,Observed
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,directLevel,float,omitted,-34.559376,Not authored in baseline fixture.,Medium,Observed
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,gain,float,omitted,-32.60521,Not authored in baseline fixture.,Medium,Observed
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,reverbLevel,float,omitted,-27.275,Not authored in baseline fixture.,Medium,Observed
+spatial-audio-component,SpatialAudioComponent,RealityKit.SpatialAudio,rolloffFactor,float,omitted,3.141493,Not authored in baseline fixture.,Medium,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,attenuationFalloffExponent,float,omitted,4,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,attenuationRadius,float,omitted,"10, 20",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,color,float3,omitted,"(0.071195416, 1, 1)",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,cullMode,token,omitted,"""Back"", ""Front"", ""None""",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,depthBias,float,omitted,2,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,innerAngle,float,omitted,90,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,intensity,float,omitted,70000,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,isEnabled,bool,omitted,"1, 0",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,outerAngle,float,omitted,120,Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,zFar,token,omitted,"""Fixed""",Not authored in baseline fixture.,High,Observed
+spot-light-component,SpotLightComponent,RealityKit.SpotLight,zNear,token,omitted,"""Fixed""",Not authored in baseline fixture.,High,Observed
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,blendMode,token,"""single""","""blend"", ""none""",,Low,Observed
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,ibl,asset,omitted,"@../RenderCrate-HDRI_Orbital_40_4K.hdr@, @../cayley_lookout_2k.hdr@",Not authored in baseline fixture.,Low,Observed
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,intensityExponent,float,omitted,"5.511979, 8.561459",Not authored in baseline fixture.,Low,Observed
+virtual-environment-probe-component,VirtualEnvironmentProbeComponent,RealityKit.VirtualEnvironmentProbe,relativeWeight,float,omitted,0.2804514,Not authored in baseline fixture.,Low,Observed
