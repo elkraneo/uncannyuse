@@ -4,7 +4,7 @@
       "id": "realitykit-components",
       "name": "RealityKit Components",
       "shortName": "Components",
-      "description": "Public Component types in the RealityFoundation framework, verified against Xcode 26.3",
+      "description": "Public Component types in the RealityFoundation framework, verified against Xcode 26.4",
       "icon": "cube",
       "subcategories": [
         { "id": "rendering",    "name": "Rendering",    "color": "#007AFF" },

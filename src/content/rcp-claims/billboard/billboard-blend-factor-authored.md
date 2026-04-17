@@ -10,7 +10,7 @@ status: confirmed
 author: elkraneo
 date: 2026-02-19
 rcpVersion: "26.3"
-xcodeBuild: "Xcode 26.3 (17C529)"
+xcodeBuild: "Xcode 26.4 (17C529)"
 reproSteps:
   - Open the ComponentFieldExploration fixture in Reality Composer Pro.
   - Add or select a Billboard component.

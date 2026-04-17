@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
 import typeData from "../../data/features/custom-component-types.json";
 
 type TypeEntry = { swift: string; usd: string; supported: boolean | null; note?: string };
@@ -10,6 +11,8 @@ const supportedCount = allTypes.filter((t) => t.supported === true).length;
 const unsupportedCount = allTypes.filter((t) => t.supported === false).length;
 const untestedCount = allTypes.filter((t) => t.supported === null).length;
 const totalTypes = allTypes.length;
+
+const color = "#30D158";
 
 function rowClass(t: TypeEntry): string {
 	if (t.supported === false) return "row-unsupported";
@@ -31,13 +34,63 @@ function noteHtml(t: TypeEntry): string {
 	if (!t.note) return "";
 	return `<span class="badge-note">${t.note}</span>`;
 }
+
+const componentClaims = (await getCollection("rcp-claims"))
+	.filter((entry) => entry.data.componentId === "custom-component-types")
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+type ComponentNote =
+	| {
+			kind: "development-note";
+			axis: "rcp" | "runtime" | "general";
+			text: string;
+			summary: string;
+			author: string;
+			date: string;
+			link: string;
+	  }
+	| {
+			kind: "system";
+			axis: "rcp";
+			text: string;
+			summary: string;
+			author: string;
+			date: string;
+	  };
+
+const unifiedNotes: ComponentNote[] = [
+	{
+		kind: "system",
+		axis: "rcp",
+		text: "Custom component field data does not appear as USD attributes",
+		summary: "The USDA file only contains the component scaffold with info:id. Field data is serialized in the Swift/Xcode build pipeline, not the USD authoring layer.",
+		author: "system",
+		date: "current",
+	},
+];
+
+for (const claim of componentClaims) {
+	unifiedNotes.push({
+		kind: "development-note",
+		axis: claim.data.axis,
+		text: claim.data.claim,
+		summary: claim.data.summary,
+		author: claim.data.author,
+		date: claim.data.date.toISOString().slice(0, 10),
+		link: `/research/${claim.slug}/`,
+	});
+}
+
+const docsUrl = "https://developer.apple.com/documentation/realitykit/component";
 ---
 
-<Base title={typeData.title} description={typeData.description}>
+<Base title="Custom Component Type Support" description={typeData.description}>
 	<article class="detail">
 		<!-- Breadcrumb -->
 		<nav class="breadcrumb" aria-label="Breadcrumb">
 			<a href="/" class="bc-link">realitykit</a>
+			<span class="bc-sep">/</span>
+			<a href="/?cat=interaction" class="bc-cat" style={`color: ${color}`}>ecs</a>
 			<span class="bc-sep">/</span>
 			<span class="bc-current">custom component types</span>
 		</nav>
@@ -45,29 +98,33 @@ function noteHtml(t: TypeEntry): string {
 		<!-- Header -->
 		<header class="detail-header">
 			<div class="header-meta">
-				<span class="cat-tag" style="color: var(--rcp); border-color: rgba(48, 209, 88, 0.33)">
+				<span class="cat-tag" style={`color: ${color}; border-color: ${color}33`}>
 					ECS
 				</span>
-				<span class="era-tag">RCP authored</span>
-				<span class="rcp-tag">empirical</span>
+				<span class="rcp-tag">✓ RCP</span>
 			</div>
 
 			<h1 class="detail-title">Custom Component Type Support</h1>
+			<div class="detail-links">
+				<a
+					class="doc-chip"
+					href={docsUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span class="doc-chip-label">documentation</span>
+					<span class="doc-external" aria-hidden="true">↗</span>
+				</a>
+			</div>
 			<p class="detail-desc">
 				Which Swift field types can RCP serialize in custom components? Empirically tested
 				by intersecting OpenUSD types with Swift equivalents and compiling directly in Reality Composer Pro.
 			</p>
-			<p class="detail-claim">
-				<span class="claim-label">Claim:</span>
-				Custom component type support is a RealityKit ECS feature — the serialization pipeline
-				is in the Swift/Xcode build layer, not in the USD authoring layer. The field data itself
-				never appears as USD attributes; only the component scaffold is written to USDA.
-			</p>
 		</header>
 
-		<!-- Stats -->
+		<!-- Type coverage stats -->
 		<section class="section">
-			<h2 class="section-label">/// summary</h2>
+			<h2 class="section-label">/// type coverage</h2>
 			<div class="stats-row">
 				<div class="stat">
 					<span class="stat-num" style="color: var(--text)">{totalTypes}</span>
@@ -89,47 +146,17 @@ function noteHtml(t: TypeEntry): string {
 					<span class="stat-label">untested</span>
 				</div>
 			</div>
-
-			<div class="key-discovery">
-				<p class="key-discovery-label">Key Discovery</p>
-				<p>
-					Custom component field data does <strong>not</strong> appear as USD attributes.
-					The USDA file only contains the component scaffold with <code>info:id</code>.
-					The actual field data is serialized in the Swift/Xcode build pipeline.
-					This means the type limitation is what RCP's codegen + Xcode validation
-					accepts at Swift compile time — not what OpenUSD can store.
-				</p>
-			</div>
 		</section>
 
-		<!-- Methodology -->
-		<section class="section">
-			<h2 class="section-label">/// methodology</h2>
-			<div class="methodology-grid">
-				<div class="methodology-card">
-					<span class="methodology-num">1</span>
-					<h3>Map OpenUSD Types</h3>
-					<p>Enumerate all 13 scalar types, 18 dimensioned types, and array variants from the OpenUSD Sdf specification.</p>
-				</div>
-				<div class="methodology-card">
-					<span class="methodology-num">2</span>
-					<h3>Map Swift Equivalents</h3>
-					<p>Map each USD type to its Swift counterpart — SIMD vectors, integer widths, quaternion types.</p>
-				</div>
-				<div class="methodology-card">
-					<span class="methodology-num">3</span>
-					<h3>Compile in RCP</h3>
-					<p>Create test fixture components with every type variant. Build in Xcode. Compile errors = unsupported.</p>
-				</div>
-				<div class="methodology-card">
-					<span class="methodology-num">4</span>
-					<h3>Inspect in RCP</h3>
-					<p>Open in Reality Composer Pro. Observe which fields appear in the inspector and what widgets are rendered.</p>
-				</div>
-			</div>
+		<!-- RCP authored schema — type matrix -->
+		<section class="section schema-intro">
+			<h2 class="section-label">/// rcp authored schema</h2>
+			<p class="schema-intro-copy">
+				Type support matrix for custom component fields in Reality Composer Pro.
+				Each Swift type was compiled in an RCP test fixture and inspected for field survival.
+			</p>
 		</section>
 
-		<!-- Type Groups -->
 		{typeData.groups.map((group: TypeGroup) => (
 			<section class="section">
 				<h2 class="section-label">/// {group.name.toLowerCase()}</h2>
@@ -161,7 +188,7 @@ function noteHtml(t: TypeEntry): string {
 
 		<!-- Source Reference -->
 		<section class="section">
-			<h2 class="section-label">/// source</h2>
+			<h2 class="section-label">/// usda scaffold</h2>
 			<div class="source-block">
 				<div class="code-shell">
 					<div class="code-head">
@@ -177,6 +204,80 @@ function noteHtml(t: TypeEntry): string {
 			</div>
 		</section>
 
+		<div class="section-divider" aria-hidden="true"></div>
+
+		<!-- Notes & Resources -->
+		<section class="section">
+			<div class="section-head">
+				<h2 class="section-label">/// notes & resources</h2>
+				<div class="claim-actions">
+					<a href="/research/" class="claim-action-link">browse all notes</a>
+				</div>
+			</div>
+
+			<ul class="claim-list">
+				{unifiedNotes.map((note) => (
+					<li class="claim-item">
+						<p class="claim-text">{note.text}</p>
+						{note.summary && (
+							<p class="claim-summary">{note.summary}</p>
+						)}
+						<p class="claim-byline">
+							<span class:list={[
+								"note-tag",
+								note.axis === "rcp" ? "note-tag-rcp" : "note-tag-general",
+							]}>
+								{note.axis === "rcp" ? "RCP" : note.axis === "runtime" ? "runtime" : "general"}
+							</span>{" "}
+							by {note.author} · {note.date}
+						</p>
+						{"link" in note && note.link && (
+							<a class="claim-link" href={note.link}>
+								details →
+							</a>
+						)}
+					</li>
+				))}
+			</ul>
+
+			<ul class="resource-list">
+				<li class="resource-item">
+					<a
+						href="https://openusd.org/release/api/sdf_page_front.html"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="resource-link"
+					>
+						<span class="resource-preview-media" aria-hidden="true">
+							<span class="resource-preview-fallback">OU</span>
+						</span>
+						<span class="resource-preview-body">
+							<span class="resource-preview-title">OpenUSD SdfValueTypeNames</span>
+							<span class="resource-meta">openusd.org · Reference</span>
+						</span>
+						<span class="resource-preview-external" aria-hidden="true">↗</span>
+					</a>
+				</li>
+				<li class="resource-item">
+					<a
+						href={docsUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="resource-link"
+					>
+						<span class="resource-preview-media" aria-hidden="true">
+							<span class="resource-preview-fallback">AD</span>
+						</span>
+						<span class="resource-preview-body">
+							<span class="resource-preview-title">Apple Developer Documentation — Component</span>
+							<span class="resource-meta">developer.apple.com · Official</span>
+						</span>
+						<span class="resource-preview-external" aria-hidden="true">↗</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+
 		<!-- Footer nav -->
 		<div class="detail-footer">
 			<div class="detail-actions">
@@ -185,9 +286,6 @@ function noteHtml(t: TypeEntry): string {
 						<path d="M7.5 2L3 6l4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 					</svg>
 					all components
-				</a>
-				<a href="/research/" class="back-link">
-					research notes
 				</a>
 			</div>
 		</div>
@@ -225,6 +323,15 @@ function noteHtml(t: TypeEntry): string {
 		color: var(--subtle);
 	}
 
+	.bc-cat {
+		text-transform: lowercase;
+		text-decoration: none;
+	}
+
+	.bc-cat:hover {
+		text-decoration: underline;
+	}
+
 	.bc-current {
 		color: var(--text);
 		font-weight: 500;
@@ -259,15 +366,6 @@ function noteHtml(t: TypeEntry): string {
 		border-radius: 3px;
 	}
 
-	.era-tag {
-		font-size: 0.875rem;
-		color: var(--muted);
-		background: var(--surface-up);
-		border: 1px solid var(--border);
-		padding: 2px 7px;
-		border-radius: 3px;
-	}
-
 	.rcp-tag {
 		font-size: 0.875rem;
 		font-weight: 600;
@@ -289,6 +387,39 @@ function noteHtml(t: TypeEntry): string {
 		word-break: break-word;
 	}
 
+	.detail-links {
+		margin-bottom: 0.75rem;
+	}
+
+	.doc-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: var(--ios);
+		text-decoration: none;
+		padding: 0;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease;
+	}
+
+	.doc-chip:hover {
+		color: #005ec9;
+	}
+
+	.doc-chip-label {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.doc-external {
+		font-size: 0.75em;
+		line-height: 1;
+		opacity: 0.9;
+	}
+
 	.detail-desc {
 		font-size: 1.0625rem;
 		color: var(--muted);
@@ -296,24 +427,15 @@ function noteHtml(t: TypeEntry): string {
 		max-width: 60ch;
 	}
 
-	.detail-claim {
-		margin-top: 0.85rem;
-		font-size: 0.9375rem;
-		line-height: 1.6;
-		color: var(--muted);
-		border-left: 2px solid color-mix(in srgb, var(--ios) 40%, transparent);
-		padding-left: 0.7rem;
-		max-width: 62ch;
-	}
-
-	.claim-label {
-		color: var(--ios);
-		font-weight: 600;
-	}
-
 	/* Section */
 	.section {
 		margin-bottom: 2rem;
+	}
+
+	.section-divider {
+		height: 1px;
+		background: var(--border);
+		margin: 0 0 2rem 0;
 	}
 
 	.section-label {
@@ -324,6 +446,15 @@ function noteHtml(t: TypeEntry): string {
 		margin-bottom: 1rem;
 	}
 
+	.section-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		margin-bottom: 0.55rem;
+	}
+
 	/* Stats */
 	.stats-row {
 		display: flex;
@@ -331,7 +462,6 @@ function noteHtml(t: TypeEntry): string {
 		gap: 0;
 		flex-wrap: wrap;
 		row-gap: 0.75rem;
-		margin-bottom: 1.25rem;
 	}
 
 	.stat {
@@ -364,79 +494,52 @@ function noteHtml(t: TypeEntry): string {
 		flex-shrink: 0;
 	}
 
-	/* Key discovery */
-	.key-discovery {
-		border: 1px solid var(--border);
-		border-radius: 10px;
-		padding: 0.85rem;
-		background:
-			linear-gradient(180deg, rgba(48, 209, 88, 0.06), rgba(48, 209, 88, 0.01)),
-			var(--surface);
-	}
-
-	.key-discovery-label {
-		font-size: 0.72rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--rcp);
-		font-weight: 600;
-		margin-bottom: 0.45rem;
-	}
-
-	.key-discovery p {
-		font-size: 0.9375rem;
-		color: var(--muted);
-		line-height: 1.6;
-	}
-
-	.key-discovery strong {
-		color: var(--text);
-	}
-
-	.key-discovery code {
-		font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
-		font-size: 0.82em;
-	}
-
-	/* Methodology */
-	.methodology-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 0.55rem;
-	}
-
-	.methodology-card {
-		border: 1px solid var(--border);
-		border-radius: 8px;
-		padding: 0.75rem 0.85rem;
-		background: var(--surface);
+	/* Schema intro */
+	.schema-intro {
 		position: relative;
+		overflow: hidden;
+		background:
+			radial-gradient(circle at top right, rgba(0, 122, 255, 0.16), transparent 34%),
+			radial-gradient(circle at bottom left, rgba(48, 209, 88, 0.12), transparent 30%),
+			linear-gradient(180deg, color-mix(in srgb, var(--surface-top) 72%, black) 0%, var(--surface) 100%);
+		border: 1px solid color-mix(in srgb, var(--border-up) 78%, rgba(142, 208, 192, 0.28));
+		border-radius: 16px;
+		padding: 1.35rem 1.5rem;
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.04),
+			0 18px 40px rgba(0, 0, 0, 0.28);
 	}
 
-	.methodology-num {
-		position: absolute;
-		top: 0.55rem;
-		right: 0.65rem;
-		font-size: 0.7rem;
-		font-weight: 700;
-		color: var(--subtle);
-		width: 22px;
-		height: 22px;
-		border: 1px solid var(--border);
-		border-radius: 50%;
-		display: grid;
-		place-items: center;
-	}
-
-	.methodology-card h3 {
-		font-size: 0.9rem;
+	.schema-intro .section-label {
 		margin-bottom: 0.35rem;
 	}
 
-	.methodology-card p {
-		font-size: 0.84rem;
+	.schema-intro-copy {
+		margin: 0;
+		font-size: 0.96rem;
 		color: var(--muted);
-		line-height: 1.5;
+		line-height: 1.55;
+		max-width: 42rem;
+	}
+
+	@media (prefers-color-scheme: light) {
+		.schema-intro {
+			background:
+				radial-gradient(circle at top right, rgba(0, 85, 204, 0.12), transparent 34%),
+				radial-gradient(circle at bottom left, rgba(22, 106, 47, 0.1), transparent 30%),
+				linear-gradient(120deg, #fbfffd 0%, #f3f7ff 100%);
+			border-color: color-mix(in srgb, var(--border-up) 78%, rgba(22, 106, 47, 0.2));
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.75),
+				0 16px 32px rgba(29, 29, 31, 0.08);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.schema-intro {
+			padding: 1.15rem 1rem;
+			border-radius: 14px;
+		}
 	}
 
 	/* Group description */
@@ -592,6 +695,169 @@ function noteHtml(t: TypeEntry): string {
 		font-size: 0.82em;
 	}
 
+	/* Notes & Resources — matches [slug].astro */
+	.claim-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.claim-item {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 0.75rem 0.85rem;
+		background: var(--surface);
+	}
+
+	.claim-text {
+		font-size: 0.9375rem;
+		color: var(--text);
+		line-height: 1.55;
+	}
+
+	.claim-summary {
+		margin-top: 0.35rem;
+		font-size: 0.875rem;
+		color: var(--muted);
+		line-height: 1.55;
+	}
+
+	.claim-byline {
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+
+	.note-tag {
+		display: inline-flex;
+		align-items: center;
+		font-size: 0.72rem;
+		line-height: 1;
+		padding: 0.12rem 0.35rem;
+		border-radius: 999px;
+		border: 1px solid var(--border);
+		margin-right: 0.32rem;
+	}
+
+	.note-tag-rcp {
+		color: #34c759;
+		border-color: rgba(52, 199, 89, 0.35);
+		background: rgba(52, 199, 89, 0.09);
+	}
+
+	.note-tag-general {
+		color: var(--muted);
+	}
+
+	.claim-link {
+		display: inline-block;
+		margin-top: 0.6rem;
+		font-size: 0.875rem;
+		color: var(--ios);
+		text-decoration: none;
+	}
+
+	.claim-link:hover {
+		text-decoration: underline;
+	}
+
+	.claim-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.claim-action-link {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		text-decoration: none;
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 0.22rem 0.5rem;
+	}
+
+	.claim-action-link:hover {
+		color: var(--text);
+		background: var(--surface-up);
+	}
+
+	.resource-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.resource-item {
+		padding: 0;
+	}
+
+	.resource-item + .resource-item {
+		border-top: 1px dashed var(--border);
+	}
+
+	.resource-link {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		gap: 0.7rem;
+		align-items: center;
+		padding: 0.62rem 0;
+		color: var(--text);
+		text-decoration: none;
+		border-radius: 6px;
+	}
+
+	.resource-link:hover {
+		background: color-mix(in srgb, var(--surface-up) 72%, transparent);
+	}
+
+	.resource-preview-media {
+		width: 48px;
+		height: 48px;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+		overflow: hidden;
+		background: var(--surface-up);
+		display: grid;
+		place-items: center;
+	}
+
+	.resource-preview-fallback {
+		font-size: 0.72rem;
+		color: var(--muted);
+		letter-spacing: 0.06em;
+	}
+
+	.resource-preview-body {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		gap: 0.2rem;
+	}
+
+	.resource-preview-title {
+		font-size: 0.92rem;
+		line-height: 1.35;
+		color: var(--text);
+	}
+
+	.resource-meta {
+		color: var(--muted);
+		font-size: 0.75rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.resource-preview-external {
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+
 	/* Footer nav */
 	.detail-footer {
 		margin-top: 2.5rem;
@@ -627,10 +893,6 @@ function noteHtml(t: TypeEntry): string {
 		.detail-header {
 			padding-bottom: 1.5rem;
 			margin-bottom: 1.5rem;
-		}
-
-		.methodology-grid {
-			grid-template-columns: 1fr;
 		}
 
 		.stats-row {

@@ -3,6 +3,7 @@ import featureData from "./data/features/realitykit-components.json";
 
 const componentIds = [
 	...new Set(featureData.features.map((feature) => feature.id)),
+	"custom-component-types",
 ];
 
 if (componentIds.length === 0) {

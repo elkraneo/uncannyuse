@@ -10,7 +10,7 @@ status: confirmed
 author: elkraneo
 date: 2026-03-19
 rcpVersion: "26.3"
-xcodeBuild: "Xcode 26.3 (17C529)"
+xcodeBuild: "Xcode 26.4 (17C529)"
 reproSteps:
   - Open the Particle Emitter fixture set in Reality Composer Pro.
   - Explore fixtures across Timing, Shape, Spawning, and Particles subfolders.
