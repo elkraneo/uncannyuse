@@ -1,7 +1,7 @@
 ---
 componentId: custom-component-types
 axis: general
-claim: "WWDC 2023 officially documented that custom components support only 'simpler data' types — scalars, strings, SIMD values, and enums — with Xcode build-time errors for unsupported types."
+claim: "Custom components support only 'simpler data' types — scalars, strings, SIMD values, and enums — with Xcode build-time errors for unsupported types."
 summary: "Apple's WWDC 2023 session 'Work with Reality Composer Pro content in Xcode' explicitly defines custom component type constraints. The session demonstrates PointOfInterestComponent with String, custom enum, and Optional<String> fields, and warns that Xcode produces errors for types RCP cannot serialize."
 scope: USDA authored
 sourceType: inference
@@ -31,19 +31,19 @@ evidence:
 supersedes: []
 ---
 
-## Official Statement from Apple
+## Source
 
-At WWDC 2023, Apple explicitly defined the boundaries of custom component type support in the session **"Work with Reality Composer Pro content in Xcode"** (wwdc2023-10273).
+WWDC 2023 session **"Work with Reality Composer Pro content in Xcode"** (wwdc2023-10273).
 
-At approximately **22:31**, the speaker states:
+At **22:31**:
 
-> **"Design-time components are for housing simpler data, such as ints, strings, and SIMD values, things that 3D artists and designers will make use of."**
+> "Design-time components are for housing simpler data, such as ints, strings, and SIMD values, things that 3D artists and designers will make use of."
 
-And crucially:
+And:
 
-> **"You'll see an error in your Xcode project if you add a property to your custom component that's of a type that Reality Composer Pro won't serialize."**
+> "You'll see an error in your Xcode project if you add a property to your custom component that's of a type that Reality Composer Pro won't serialize."
 
-## Verified Types from the Session
+## Example from the Session
 
 The session demonstrates a `PointOfInterestComponent` example:
 
