@@ -1,0 +1,110 @@
+{
+  "title": "Custom Component Type Support",
+  "description": "Which Swift field types can RCP serialize in custom components? Empirically tested by intersecting OpenUSD types with Swift equivalents.",
+  "slug": "custom-component-types",
+  "introduction": "Custom components in RealityKit use the ECS (Entity Component System) pattern. Their field type support is determined by what RCP's codegen + Xcode validation accepts at Swift compile time — not by what OpenUSD can store. The field data itself never appears as USD attributes; only the component scaffold is written to USDA.",
+  "claim": "Custom component type support is a RealityKit ECS feature — the serialization pipeline is in the Swift/Xcode build layer, not in the USD authoring layer.",
+  "groups": [
+    {
+      "id": "scalar",
+      "name": "Scalar Types",
+      "description": "Primitive integer, floating-point, boolean, and string types.",
+      "types": [
+        { "swift": "Bool", "usd": "bool", "supported": true },
+        { "swift": "Int", "usd": "int", "supported": true },
+        { "swift": "Int8", "usd": "int", "supported": true },
+        { "swift": "Int16", "usd": "int", "supported": true },
+        { "swift": "Int32", "usd": "int", "supported": true },
+        { "swift": "Int64", "usd": "int64", "supported": true },
+        { "swift": "UInt", "usd": "uint", "supported": true },
+        { "swift": "UInt8", "usd": "uchar", "supported": true },
+        { "swift": "UInt16", "usd": "uint", "supported": true },
+        { "swift": "UInt32", "usd": "uint", "supported": true },
+        { "swift": "UInt64", "usd": "uint64", "supported": true },
+        { "swift": "Float", "usd": "float", "supported": true },
+        { "swift": "Double", "usd": "double", "supported": true },
+        { "swift": "Float16", "usd": "half", "supported": false },
+        { "swift": "String", "usd": "string", "supported": true }
+      ]
+    },
+    {
+      "id": "vector",
+      "name": "Vector Types",
+      "description": "SIMD vector types for positions, directions, and colors.",
+      "types": [
+        { "swift": "SIMD2<Float>", "usd": "float2", "supported": true },
+        { "swift": "SIMD3<Float>", "usd": "float3", "supported": true },
+        { "swift": "SIMD4<Float>", "usd": "float4", "supported": true },
+        { "swift": "SIMD2<Double>", "usd": "double2", "supported": true },
+        { "swift": "SIMD3<Double>", "usd": "double3", "supported": true },
+        { "swift": "SIMD4<Double>", "usd": "double4", "supported": true },
+        { "swift": "SIMD2<Float16>", "usd": "half2", "supported": false },
+        { "swift": "SIMD3<Float16>", "usd": "half3", "supported": false },
+        { "swift": "SIMD4<Float16>", "usd": "half4", "supported": false },
+        { "swift": "SIMD2<Int32>", "usd": "int2", "supported": false },
+        { "swift": "SIMD3<Int32>", "usd": "int3", "supported": false },
+        { "swift": "SIMD4<Int32>", "usd": "int4", "supported": false }
+      ]
+    },
+    {
+      "id": "quaternion",
+      "name": "Quaternion Types",
+      "description": "Rotation representations used in transforms.",
+      "types": [
+        { "swift": "simd_quatf", "usd": "quatf", "supported": true },
+        { "swift": "simd_quatd", "usd": "quatd", "supported": true },
+        { "swift": "simd_quath", "usd": "quath", "supported": false }
+      ]
+    },
+    {
+      "id": "array",
+      "name": "Array Types",
+      "description": "Collections of scalar or vector values.",
+      "types": [
+        { "swift": "[Bool]", "usd": "bool[]", "supported": false },
+        { "swift": "[Int]", "usd": "int[]", "supported": false },
+        { "swift": "[Float]", "usd": "float[]", "supported": false },
+        { "swift": "[Double]", "usd": "double[]", "supported": false },
+        { "swift": "[String]", "usd": "string[]", "supported": false },
+        { "swift": "[SIMD3<Float>]", "usd": "float3[]", "supported": false }
+      ]
+    },
+    {
+      "id": "enum",
+      "name": "Enum Types",
+      "description": "String-based and Int-based raw value enums.",
+      "types": [
+        { "swift": "String enum (RawRepresentable)", "usd": "token", "supported": true },
+        { "swift": "Int enum (RawRepresentable)", "usd": "int", "supported": true }
+      ]
+    },
+    {
+      "id": "optional",
+      "name": "Optional Types",
+      "description": "Nullable wrappers — partial support, needs confirmation.",
+      "types": [
+        { "swift": "Bool?", "usd": "bool", "supported": false, "note": "needs confirmation" },
+        { "swift": "Int?", "usd": "int", "supported": true, "note": "needs confirmation" },
+        { "swift": "Float?", "usd": "float", "supported": true, "note": "needs confirmation" },
+        { "swift": "Double?", "usd": "double", "supported": false, "note": "needs confirmation" },
+        { "swift": "String?", "usd": "string", "supported": true, "note": "needs confirmation" },
+        { "swift": "SIMD3<Float>?", "usd": "float3", "supported": true, "note": "needs confirmation" }
+      ]
+    },
+    {
+      "id": "untested",
+      "name": "Not Yet Tested",
+      "description": "Types that exist in OpenUSD but have not been empirically tested in RCP.",
+      "types": [
+        { "swift": "simd_double2x2", "usd": "matrix2d", "supported": null },
+        { "swift": "simd_double3x3", "usd": "matrix3d", "supported": null },
+        { "swift": "simd_double4x4", "usd": "matrix4d", "supported": null },
+        { "swift": "URL?", "usd": "asset", "supported": null },
+        { "swift": "UUID?", "usd": "—", "supported": null },
+        { "swift": "Date?", "usd": "—", "supported": null },
+        { "swift": "Data?", "usd": "—", "supported": null },
+        { "swift": "nested Codable struct", "usd": "—", "supported": null }
+      ]
+    }
+  ]
+}
