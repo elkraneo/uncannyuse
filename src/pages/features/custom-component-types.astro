@@ -177,12 +177,6 @@ const resourcesList: ResourceEntry[] = [
 		source: "Apple",
 		title: "Apple Developer Documentation — Component",
 	},
-	{
-		url: "https://elkraneo.com/compiling-reality-the-technical-reality/",
-		type: "article",
-		source: "elkraneo.com",
-		title: "Compiling Reality: The Technical Reality",
-	},
 	...(resourcesEntry?.data.resources ?? []),
 ];
 
@@ -330,8 +324,9 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 				</a>
 			</div>
 			<p class="detail-desc">
-				Which Swift field types can RCP serialize in custom components? Empirically tested
-				by intersecting OpenUSD types with Swift equivalents and compiling directly in Reality Composer Pro.
+				Swift field type support for custom components is determined by Reality Composer Pro's
+				codegen and Xcode validation pipeline. Types are tested by compiling fixtures in RCP and
+				inspecting which fields survive the build process.
 			</p>
 		</header>
 
