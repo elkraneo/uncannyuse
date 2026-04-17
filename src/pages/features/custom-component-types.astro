@@ -14,6 +14,182 @@ const totalTypes = allTypes.length;
 
 const color = "#30D158";
 
+// Resource preview fetching (mirrors [slug].astro)
+type ResourceEntry = {
+	title?: string;
+	url: string;
+	type: string;
+	source: string;
+	verifiedAt?: string;
+	description?: string;
+	image?: string;
+};
+
+type ResourcePreview = ResourceEntry & {
+	previewTitle: string;
+	previewDescription?: string;
+	previewImage?: string;
+	domain: string;
+};
+
+const resourcePreviewCache = new Map<string, Promise<ResourcePreview>>();
+
+function decodeHtmlEntities(value: string): string {
+	return value
+		.replace(/&amp;/g, "&")
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;/g, "'")
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">");
+}
+
+function stripHtml(value: string): string {
+	return decodeHtmlEntities(
+		value
+			.replace(/<[^>]*>/g, " ")
+			.replace(/\s+/g, " ")
+			.trim(),
+	);
+}
+
+function getMetaContent(html: string, key: string): string | undefined {
+	const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	const patterns = [
+		new RegExp(
+			`<meta[^>]+(?:property|name)=["']${escapedKey}["'][^>]*content=["']([^"']+)["'][^>]*>`,
+			"i",
+		),
+		new RegExp(
+			`<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${escapedKey}["'][^>]*>`,
+			"i",
+		),
+	];
+	for (const pattern of patterns) {
+		const match = html.match(pattern);
+		if (match?.[1]) return stripHtml(match[1]);
+	}
+	return undefined;
+}
+
+function getHtmlTitle(html: string): string | undefined {
+	const match = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+	return match?.[1] ? stripHtml(match[1]) : undefined;
+}
+
+function getDomain(url: string): string {
+	try {
+		return new URL(url).hostname.replace(/^www\./, "");
+	} catch {
+		return url;
+	}
+}
+
+function initialsFromDomain(domain: string): string {
+	return domain
+		.split(".")
+		.filter(Boolean)
+		.slice(0, 2)
+		.map((part) => part[0]?.toUpperCase() ?? "")
+		.join("");
+}
+
+async function fetchResourcePreview(
+	resource: ResourceEntry,
+): Promise<ResourcePreview> {
+	const cached = resourcePreviewCache.get(resource.url);
+	if (cached) return cached;
+
+	const fallback: ResourcePreview = {
+		...resource,
+		previewTitle: resource.title ?? resource.url,
+		previewDescription: resource.description,
+		previewImage: resource.image,
+		domain: getDomain(resource.url),
+	};
+
+	const request = (async () => {
+		try {
+			const response = await fetch(resource.url, {
+				redirect: "follow",
+				headers: {
+					"User-Agent": "Mozilla/5.0 (compatible; uncannyuse-link-preview/1.0)",
+				},
+				signal: AbortSignal.timeout(3500),
+			});
+			if (!response.ok) return fallback;
+			const contentType = response.headers.get("content-type") ?? "";
+			if (!contentType.includes("text/html")) return fallback;
+			const html = (await response.text()).slice(0, 250_000);
+
+			const ogTitle =
+				getMetaContent(html, "og:title") ??
+				getMetaContent(html, "twitter:title") ??
+				getHtmlTitle(html) ??
+				resource.url;
+			const ogDescription =
+				resource.description ??
+				getMetaContent(html, "og:description") ??
+				getMetaContent(html, "twitter:description") ??
+				getMetaContent(html, "description");
+
+			const rawImage =
+				resource.image ??
+				getMetaContent(html, "og:image") ??
+				getMetaContent(html, "twitter:image");
+			let ogImage = rawImage;
+			if (rawImage) {
+				try {
+					ogImage = new URL(rawImage, resource.url).toString();
+				} catch {
+					ogImage = undefined;
+				}
+			}
+
+			return {
+				...resource,
+				previewTitle: resource.title ?? ogTitle,
+				previewDescription: ogDescription,
+				previewImage: ogImage,
+				domain: getDomain(resource.url),
+			};
+		} catch {
+			return fallback;
+		}
+	})();
+
+	resourcePreviewCache.set(resource.url, request);
+	return request;
+}
+
+const resourcesEntry = (await getCollection("resources")).find(
+	(r) => r.data.componentId === "custom-component-types",
+);
+const resourcesList: ResourceEntry[] = [
+	{
+		url: "https://openusd.org/release/api/sdf_page_front.html#sdf_metadata_types",
+		type: "official-docs",
+		source: "Apple",
+		title: "OpenUSD SdfValueTypeNames",
+	},
+	{
+		url: "https://developer.apple.com/documentation/realitykit/component",
+		type: "official-docs",
+		source: "Apple",
+		title: "Apple Developer Documentation — Component",
+	},
+	{
+		url: "https://elkraneo.com/compiling-reality-the-technical-reality/",
+		type: "article",
+		source: "elkraneo.com",
+		title: "Compiling Reality: The Technical Reality",
+	},
+	...(resourcesEntry?.data.resources ?? []),
+];
+
+const resourcesWithPreview = await Promise.all(
+	resourcesList.map((resource) => fetchResourcePreview(resource)),
+);
+
 function rowClass(t: TypeEntry): string {
 	if (t.supported === false) return "row-unsupported";
 	if (t.supported === null) return "row-untested";
@@ -278,57 +454,49 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 			</ul>
 
 			<ul class="resource-list">
-				<li class="resource-item">
-					<a
-						href="https://openusd.org/release/api/sdf_page_front.html"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="resource-link"
-					>
-						<span class="resource-preview-media" aria-hidden="true">
-							<span class="resource-preview-fallback">OU</span>
-						</span>
-						<span class="resource-preview-body">
-							<span class="resource-preview-title">OpenUSD SdfValueTypeNames</span>
-							<span class="resource-meta">openusd.org · Reference</span>
-						</span>
-						<span class="resource-preview-external" aria-hidden="true">↗</span>
-					</a>
-				</li>
-				<li class="resource-item">
-					<a
-						href={docsUrl}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="resource-link"
-					>
-						<span class="resource-preview-media" aria-hidden="true">
-							<span class="resource-preview-fallback">AD</span>
-						</span>
-						<span class="resource-preview-body">
-							<span class="resource-preview-title">Apple Developer Documentation — Component</span>
-							<span class="resource-meta">developer.apple.com · Official</span>
-						</span>
-						<span class="resource-preview-external" aria-hidden="true">↗</span>
-					</a>
-				</li>
-				<li class="resource-item">
-					<a
-						href="https://elkraneo.com/compiling-reality-the-technical-reality/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="resource-link"
-					>
-						<span class="resource-preview-media" aria-hidden="true">
-							<span class="resource-preview-fallback">ER</span>
-						</span>
-						<span class="resource-preview-body">
-							<span class="resource-preview-title">Compiling Reality: The Technical Reality</span>
-							<span class="resource-meta">elkraneo.com · Article</span>
-						</span>
-						<span class="resource-preview-external" aria-hidden="true">↗</span>
-					</a>
-				</li>
+				{resourcesWithPreview.map((resource) => (
+					<li class="resource-item">
+						<a
+							href={resource.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="resource-link"
+						>
+							<span class="resource-preview-media" aria-hidden="true">
+								{resource.previewImage ? (
+									<img
+										src={resource.previewImage}
+										alt=""
+										class="resource-preview-image"
+										loading="lazy"
+										decoding="async"
+										referrerpolicy="no-referrer"
+									/>
+								) : (
+									<span class="resource-preview-fallback">
+										{initialsFromDomain(resource.domain)}
+									</span>
+								)}
+							</span>
+							<span class="resource-preview-body">
+								<span class="resource-preview-title">
+									{resource.previewTitle}
+								</span>
+								{resource.previewDescription && (
+									<span class="resource-preview-description">
+										{resource.previewDescription}
+									</span>
+								)}
+								<span class="resource-meta">
+									{resource.domain}
+									{" · "}
+									{resource.source}
+								</span>
+							</span>
+							<span class="resource-preview-external" aria-hidden="true">↗</span>
+						</a>
+					</li>
+				))}
 			</ul>
 		</section>
 
