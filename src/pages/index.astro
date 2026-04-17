@@ -2,16 +2,33 @@
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
-import rkData from "../data/features/realitykit-components.json";
+import { getAllFeatures } from "../lib/components";
 import categoriesData from "../data/categories.json";
 import type { Feature } from "../types";
 
-const features = rkData.features as Feature[];
+const features = await getAllFeatures();
+
+// Inject custom component types as a synthetic feature
+const customComponentFeature: Feature = {
+	id: "custom-component-types",
+	name: "Custom Component",
+	description: "Which Swift field types can RCP serialize in custom components?",
+	subcategory: "custom",
+	era: "Original",
+	rcp: true,
+	support: {
+		ios: { status: "y", since: "13.0" },
+		visionos: { status: "y", since: "1.0" },
+		macos: { status: "y", since: "12.0" },
+	},
+};
+const allFeatures = [...features, customComponentFeature];
+
 const rkCategory = categoriesData.categories[0];
 const subcats = rkCategory.subcategories;
 const subcatOrder = new Map(subcats.map((subcategory, index) => [subcategory.id, index]));
 
-const sortedFeatures = [...features].sort((a, b) => {
+const sortedFeatures = [...allFeatures].sort((a, b) => {
 	const groupOrderDiff =
 		(subcatOrder.get(a.subcategory) ?? Number.MAX_SAFE_INTEGER) -
 		(subcatOrder.get(b.subcategory) ?? Number.MAX_SAFE_INTEGER);
@@ -21,7 +38,7 @@ const sortedFeatures = [...features].sort((a, b) => {
 
 const countByCat = subcats.map((s) => ({
 	...s,
-	count: features.filter((f) => f.subcategory === s.id).length,
+	count: allFeatures.filter((f) => f.subcategory === s.id).length,
 }));
 
 const totalRcp = features.filter((f) => f.rcp).length;

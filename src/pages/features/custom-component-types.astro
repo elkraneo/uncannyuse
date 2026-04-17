@@ -20,14 +20,51 @@ function rowClass(t: TypeEntry): string {
 	return "";
 }
 
+function escapeHtml(value: string): string {
+	return value
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
+}
+
+function highlightUsda(source: string): string {
+	let html = escapeHtml(source);
+	const placeholders: string[] = [];
+
+	function stash(pattern: RegExp, className: string) {
+		html = html.replace(pattern, (match) => {
+			const idx = placeholders.push(`<span class="${className}">${match}</span>`) - 1;
+			return `@@TOKEN_${idx}@@`;
+		});
+	}
+
+	// Protect strings and comments first so later passes don't style inside them.
+	stash(/"([^"\\]|\\.)*"/g, "usda-string");
+	stash(/#[^\n]*/g, "usda-comment");
+
+	html = html
+		.replace(
+			/\b(def|uniform|rel|prepend|token|bool|string|double|float|float2|float3|float4|int|uint)\b/g,
+			'<span class="usda-key">$1</span>',
+		)
+		.replace(
+			/\b(RealityKitComponent|RealityKitDict|RealityKit[A-Za-z0-9_]+)\b/g,
+			'<span class="usda-type">$1</span>',
+		)
+		.replace(/\b(-?\d+(?:\.\d+)?)\b/g, '<span class="usda-number">$1</span>');
+
+	html = html.replace(/@@TOKEN_(\d+)@@/g, (_, n) => placeholders[Number(n)] ?? "");
+	return html;
+}
+
 function badgeHtml(t: TypeEntry): string {
 	if (t.supported === true) {
-		return `<span class="badge badge-supported">supported</span>`;
+		return `<span class="badge badge-supported" aria-label="supported">✓</span>`;
 	}
 	if (t.supported === false) {
-		return `<span class="badge badge-unsupported">unsupported</span>`;
+		return `<span class="badge badge-unsupported" aria-label="unsupported">✗</span>`;
 	}
-	return `<span class="badge badge-untested">not tested</span>`;
+	return `<span class="badge badge-untested" aria-label="not tested">?</span>`;
 }
 
 function noteHtml(t: TypeEntry): string {
@@ -84,27 +121,27 @@ for (const claim of componentClaims) {
 const docsUrl = "https://developer.apple.com/documentation/realitykit/component";
 ---
 
-<Base title="Custom Component Type Support" description={typeData.description}>
+<Base title="Custom Component" description={typeData.description}>
 	<article class="detail">
 		<!-- Breadcrumb -->
 		<nav class="breadcrumb" aria-label="Breadcrumb">
 			<a href="/" class="bc-link">realitykit</a>
 			<span class="bc-sep">/</span>
-			<a href="/?cat=interaction" class="bc-cat" style={`color: ${color}`}>ecs</a>
+			<a href="/?cat=custom" class="bc-cat" style={`color: ${color}`}>custom</a>
 			<span class="bc-sep">/</span>
-			<span class="bc-current">custom component types</span>
+			<span class="bc-current">custom component</span>
 		</nav>
 
 		<!-- Header -->
 		<header class="detail-header">
 			<div class="header-meta">
-				<span class="cat-tag" style={`color: ${color}; border-color: ${color}33`}>
-					ECS
-				</span>
+			<span class="cat-tag" style={`color: ${color}; border-color: ${color}33`}>
+				Custom
+			</span>
 				<span class="rcp-tag">✓ RCP</span>
 			</div>
 
-			<h1 class="detail-title">Custom Component Type Support</h1>
+			<h1 class="detail-title">Custom Component</h1>
 			<div class="detail-links">
 				<a
 					class="doc-chip"
@@ -176,7 +213,7 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 									<td><code>{t.swift}</code></td>
 									<td><code class="usd-type">{t.usd}</code></td>
 									<td>
-										<Fragment set:html={badgeHtml(t) + noteHtml(t)} />
+										<Fragment set:html={badgeHtml(t) + " " + noteHtml(t)} />
 									</td>
 								</tr>
 							))}
@@ -194,7 +231,7 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 					<div class="code-head">
 						<span class="code-lang">USDA</span>
 					</div>
-					<pre><code set:html={'def RealityKitCustomComponent "ModuleName_ComponentName" (\n    active = true\n)\n{\n    uniform token info:id = "ModuleName.ComponentName"\n}'} /></pre>
+					<pre><code set:html={highlightUsda('def RealityKitCustomComponent "ModuleName_ComponentName" (\n    active = true\n)\n{\n    uniform token info:id = "ModuleName.ComponentName"\n}')} /></pre>
 				</div>
 				<p class="source-note">
 					A custom component with an <code>Int</code> field produces this USDA —
@@ -271,6 +308,23 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 						<span class="resource-preview-body">
 							<span class="resource-preview-title">Apple Developer Documentation — Component</span>
 							<span class="resource-meta">developer.apple.com · Official</span>
+						</span>
+						<span class="resource-preview-external" aria-hidden="true">↗</span>
+					</a>
+				</li>
+				<li class="resource-item">
+					<a
+						href="https://elkraneo.com/compiling-reality-the-technical-reality/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="resource-link"
+					>
+						<span class="resource-preview-media" aria-hidden="true">
+							<span class="resource-preview-fallback">ER</span>
+						</span>
+						<span class="resource-preview-body">
+							<span class="resource-preview-title">Compiling Reality: The Technical Reality</span>
+							<span class="resource-meta">elkraneo.com · Article</span>
 						</span>
 						<span class="resource-preview-external" aria-hidden="true">↗</span>
 					</a>
@@ -595,47 +649,67 @@ const docsUrl = "https://developer.apple.com/documentation/realitykit/component"
 	}
 
 	.row-unsupported {
-		opacity: 0.72;
+		background: rgba(255, 69, 58, 0.04);
 	}
 
 	.row-untested {
-		opacity: 0.55;
+		background: rgba(142, 142, 147, 0.06);
 	}
 
 	/* Badges */
 	.badge {
 		display: inline-flex;
 		align-items: center;
-		font-size: 0.72rem;
+		justify-content: center;
+		font-size: 0.85rem;
 		line-height: 1;
-		padding: 0.18rem 0.42rem;
+		padding: 0.2rem 0.5rem;
 		border-radius: 999px;
-		font-weight: 600;
-		letter-spacing: 0.02em;
+		font-weight: 700;
+		min-width: 1.6rem;
+		min-height: 1.6rem;
 	}
 
 	.badge-supported {
-		color: var(--rcp);
-		background: rgba(48, 209, 88, 0.1);
-		border: 1px solid rgba(48, 209, 88, 0.25);
+		color: #30d158;
+		background: rgba(48, 209, 88, 0.12);
+		border: 1.5px solid rgba(48, 209, 88, 0.35);
 	}
 
 	.badge-unsupported {
-		color: var(--macos);
-		background: rgba(255, 159, 10, 0.08);
-		border: 1px solid rgba(255, 159, 10, 0.2);
+		color: #ff453a;
+		background: rgba(255, 69, 58, 0.1);
+		border: 1.5px solid rgba(255, 69, 58, 0.3);
 	}
 
 	.badge-untested {
-		color: var(--muted);
-		background: var(--surface-up);
-		border: 1px solid var(--border);
+		color: #8e8e93;
+		background: rgba(142, 142, 147, 0.1);
+		border: 1.5px solid rgba(142, 142, 147, 0.25);
 	}
 
 	.badge-note {
 		margin-left: 0.35rem;
 		font-size: 0.68rem;
 		color: var(--macos);
+		font-style: italic;
+	}
+
+	/* USDA Syntax Highlighting */
+	:global(.usda-key) {
+		color: #ff7b72;
+	}
+	:global(.usda-type) {
+		color: #79c0ff;
+	}
+	:global(.usda-string) {
+		color: #a5d6ff;
+	}
+	:global(.usda-number) {
+		color: #79c0ff;
+	}
+	:global(.usda-comment) {
+		color: #8b949e;
 		font-style: italic;
 	}
 

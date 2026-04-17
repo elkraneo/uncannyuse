@@ -15,7 +15,8 @@
         { "id": "interaction",  "name": "Interaction",  "color": "#FF6B2B" },
         { "id": "camera",       "name": "Camera",       "color": "#5AC8FA" },
         { "id": "animation",    "name": "Animation",    "color": "#5856D6" },
-        { "id": "media",        "name": "Media",        "color": "#FF2D55" }
+        { "id": "media",        "name": "Media",        "color": "#FF2D55" },
+        { "id": "custom",       "name": "Custom",       "color": "var(--text)" }
       ]
     }
   ]

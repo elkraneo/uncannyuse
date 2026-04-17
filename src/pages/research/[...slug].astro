@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { getAllFeatures } from "../../lib/components";
 
 export async function getStaticPaths() {
 	const claims = await getCollection("rcp-claims");
@@ -12,6 +13,11 @@ export async function getStaticPaths() {
 
 const { claim } = Astro.props;
 const { Content } = await render(claim);
+
+const features = await getAllFeatures();
+const featureNames = new Map(features.map((f) => [f.id, f.name]));
+featureNames.set("custom-component-types", "Custom Component");
+const componentName = featureNames.get(claim.data.componentId) ?? claim.data.componentId;
 
 function formatDate(date: Date): string {
 	return date.toISOString().slice(0, 10);
@@ -28,16 +34,16 @@ function isAbsoluteLocalPath(path: string): boolean {
 ---
 
 <Base
-	title={`Development Note · ${claim.data.componentId}`}
+	title={`${componentName}: ${claim.data.claim}`}
 	description={claim.data.summary}
 >
 	<article class="claim-page">
 		<nav class="claim-breadcrumb">
-			<a href={`/features/${claim.data.componentId}`}>← back to component</a>
+			<a href={`/features/${claim.data.componentId}`}>← back to {componentName}</a>
 		</nav>
 
 		<header class="claim-header">
-			<p class="claim-kicker">Development note</p>
+			<p class="claim-kicker">Development note · {componentName}</p>
 			<h1>{claim.data.claim}</h1>
 			<p class="claim-author">
 				by {claim.data.author} · {formatDate(claim.data.date)}
@@ -50,7 +56,7 @@ function isAbsoluteLocalPath(path: string): boolean {
 			<ul class="meta-list">
 				<li>
 					<strong>Component:</strong>
-					<code>{claim.data.componentId}</code>
+					<a href={`/features/${claim.data.componentId}`}>{componentName}</a>
 				</li>
 				<li><strong>Status:</strong> {claim.data.status}</li>
 				<li><strong>Confidence:</strong> {claim.data.confidence}</li>
@@ -84,27 +90,23 @@ function isAbsoluteLocalPath(path: string): boolean {
 						}) => (
 							<li>
 								<div>
-									<strong>{item.artifactLabel ?? item.type}</strong>
-								</div>
-								{item.publicUrl ? (
-									<div>
-										<a
-											href={item.publicUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											open evidence ↗
+									{item.publicUrl ? (
+										<a href={item.publicUrl} target="_blank" rel="noopener noreferrer">
+											<strong>{item.artifactLabel ?? item.type}</strong>
 										</a>
-									</div>
-								) : isAbsoluteLocalPath(item.path) ? (
+									) : (
+										<strong>{item.artifactLabel ?? item.type}</strong>
+									)}
+								</div>
+								{!item.publicUrl && isAbsoluteLocalPath(item.path) ? (
 									<div>
 										<em>local-only evidence path (not publicly exposed)</em>
 									</div>
-								) : (
+								) : !item.publicUrl ? (
 									<div>
 										<code>{item.path}</code>
 									</div>
-								)}
+								) : null}
 								{item.note && <p>{item.note}</p>}
 							</li>
 						),
@@ -199,5 +201,35 @@ function isAbsoluteLocalPath(path: string): boolean {
 	.prose :global(li) {
 		color: var(--text);
 		line-height: 1.6;
+	}
+
+	.prose :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1rem 0;
+		font-size: 0.9rem;
+	}
+
+	.prose :global(th),
+	.prose :global(td) {
+		border: 1px solid var(--border);
+		padding: 0.5rem 0.75rem;
+		text-align: left;
+	}
+
+	.prose :global(th) {
+		background: var(--surface-up);
+		font-weight: 600;
+		font-size: 0.8rem;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+
+	.prose :global(tr:nth-child(even)) {
+		background: var(--surface);
+	}
+
+	.prose :global(tr:hover) {
+		background: var(--surface-up);
 	}
 </style>

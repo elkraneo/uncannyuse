@@ -2,13 +2,13 @@
 import Base from "../../layouts/Base.astro";
 import SupportBadge from "../../components/SupportBadge.astro";
 import { getCollection } from "astro:content";
-import rkData from "../../data/features/realitykit-components.json";
+import { getAllFeatures } from "../../lib/components";
 import docsMapData from "../../data/mappings/realitykit-docs-url-map.json";
-import resourcesData from "../../data/resources/realitykit-resources.json";
 import type { Feature } from "../../types";
 
-export function getStaticPaths() {
-	return (rkData.features as Feature[]).map((f) => ({
+export async function getStaticPaths() {
+	const features = await getAllFeatures();
+	return features.map((f) => ({
 		params: { slug: f.id },
 		props: { feature: f },
 	}));
@@ -63,6 +63,12 @@ function parseSinceValue(since?: string): number {
 const defaultDocsUrl = `https://developer.apple.com/documentation/realitykit/${feature.name.toLowerCase().replace(/\./g, "/")}`;
 const docsUrl = feature.docsUrl ?? defaultDocsUrl;
 const officialAbstract = docsMapById.get(feature.id)?.summary ?? null;
+
+const resourcesEntry = (await getCollection("resources")).find(
+	(r) => r.data.componentId === feature.id,
+);
+const customResources = resourcesEntry?.data.resources ?? [];
+
 type ResourceEntry = {
 	title?: string;
 	url: string;
@@ -72,11 +78,7 @@ type ResourceEntry = {
 	description?: string;
 	image?: string;
 };
-const customResources = ((
-	resourcesData as {
-		resources?: Record<string, ResourceEntry[]>;
-	}
-).resources?.[feature.id] ?? []) as ResourceEntry[];
+
 const resourcesList: ResourceEntry[] = [
 	{
 		url: docsUrl,

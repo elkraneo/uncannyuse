@@ -1,10 +1,15 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { getAllFeatures } from "../../lib/components";
 
 const claims = (await getCollection("rcp-claims")).sort(
 	(a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
+
+const features = await getAllFeatures();
+const featureNames = new Map(features.map((f) => [f.id, f.name]));
+featureNames.set("custom-component-types", "Custom Component");
 
 const groups = new Map<string, typeof claims>();
 for (const claim of claims) {
@@ -14,9 +19,12 @@ for (const claim of claims) {
 }
 
 const groupedClaims = [...groups.entries()].sort((a, b) =>
-	a[0].localeCompare(b[0]),
+	(featureNames.get(a[0]) ?? a[0]).localeCompare(featureNames.get(b[0]) ?? b[0]),
 );
-const componentOptions = groupedClaims.map(([componentId]) => componentId);
+const componentOptions = groupedClaims.map(([componentId]) => ({
+	id: componentId,
+	name: featureNames.get(componentId) ?? componentId,
+}));
 const proposeNoteBody = [
 	"### Component",
 	"[component-id]",
@@ -91,8 +99,8 @@ function formatDate(date: Date): string {
 				<select id="component-filter" aria-label="Filter by component">
 					<option value="all">all components</option>
 					{
-						componentOptions.map((componentId) => (
-							<option value={componentId}>{componentId}</option>
+						componentOptions.map((opt) => (
+							<option value={opt.id as string}>{opt.name}</option>
 						))
 					}
 				</select>
@@ -100,37 +108,40 @@ function formatDate(date: Date): string {
 		</header>
 
 		{
-			groupedClaims.map(([componentId, entries]) => (
-				<section class="claim-group" data-claim-group data-component={componentId}>
-					<h2>
-						<a href={`/features/${componentId}`}>{componentId}</a>
-						<span>
-							{entries.length} note{entries.length > 1 ? "s" : ""}
-						</span>
-					</h2>
-					<ul class="claim-list">
-						{entries.map((claim) => (
-							<li
-								class="claim-item"
-								data-claim-item
-								data-component={componentId}
-								data-search={`${claim.data.claim} ${claim.data.summary}`.toLowerCase()}
-							>
-								<a href={`/research/${claim.slug}/`} class="claim-title">
-									{claim.data.claim}
-								</a>
-								<p>{claim.data.summary}</p>
-								<div class="claim-meta">
-									<span>{claim.data.status}</span>
-									<span>{claim.data.confidence}</span>
-									<span>{claim.data.scope}</span>
-									<span>{formatDate(claim.data.date)}</span>
-								</div>
-							</li>
-						))}
-					</ul>
-				</section>
-			))
+			groupedClaims.map(([componentId, entries]) => {
+				const componentName = featureNames.get(componentId) ?? componentId;
+				return (
+					<section class="claim-group" data-claim-group data-component={componentId}>
+						<h2>
+							<a href={`/features/${componentId}`}>{componentName}</a>
+							<span>
+								{entries.length} note{entries.length > 1 ? "s" : ""}
+							</span>
+						</h2>
+						<ul class="claim-list">
+							{entries.map((claim) => (
+								<li
+									class="claim-item"
+									data-claim-item
+									data-component={componentId}
+									data-search={`${claim.data.claim} ${claim.data.summary}`.toLowerCase()}
+								>
+									<a href={`/research/${claim.slug}/`} class="claim-title">
+										{claim.data.claim}
+									</a>
+									<p>{claim.data.summary}</p>
+									<div class="claim-meta">
+										<span>{claim.data.status}</span>
+										<span>{claim.data.confidence}</span>
+										<span>{claim.data.scope}</span>
+										<span>{formatDate(claim.data.date)}</span>
+									</div>
+								</li>
+							))}
+						</ul>
+					</section>
+				);
+			})
 		}
 	</article>
 </Base>

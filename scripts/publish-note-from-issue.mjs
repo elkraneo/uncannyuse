@@ -46,7 +46,7 @@ function normalizeComponentId(raw, validIds) {
 	if (validIds.has(withSuffix)) return withSuffix;
 
 	throw new Error(
-		`Component id "${raw}" is not valid. Provide a value from src/data/features/realitykit-components.json`,
+		`Component id "${raw}" is not valid. Provide a value from src/content/components/`,
 	);
 }
 
@@ -87,9 +87,11 @@ const issueBody = requiredEnv("ISSUE_BODY");
 const issueAuthor = requiredEnv("ISSUE_AUTHOR");
 const issueDate = requiredEnv("ISSUE_CREATED_AT").slice(0, 10);
 
-const featuresPath = path.resolve("src/data/features/realitykit-components.json");
-const featuresData = JSON.parse(fs.readFileSync(featuresPath, "utf8"));
-const validIds = new Set(featuresData.features.map((feature) => feature.id));
+const componentsDir = path.resolve("src/content/components");
+const validIds = new Set([
+  ...fs.readdirSync(componentsDir).filter(f => f.endsWith(".md")).map(f => f.replace(/\.md$/, "")),
+  "custom-component-types",
+]);
 
 const sections = parseIssueSections(issueBody);
 const rawComponent = firstSectionValue(sections, ["component"]);

@@ -9,7 +9,7 @@ confidence: high
 status: confirmed
 author: elkraneo
 date: 2026-03-19
-rcpVersion: "26.3"
+rcpVersion: "26.4"
 xcodeBuild: "Xcode 26.4 (17C529)"
 reproSteps:
   - Open the Particle Emitter fixture set in Reality Composer Pro.

@@ -4,7 +4,7 @@ import path from "node:path";
 const SITE_ROOT = "/Volumes/Plutonian/_Developer/uncannyuse-Workspace/source/uncannyuse.com";
 const FIXTURES_ROOT =
   "/Volumes/Plutonian/_Developer/Deconstructed/source/RCPComponentDiffFixtures/Sources/RCPComponentDiffFixtures/RCPComponentDiffFixtures.rkassets";
-const FEATURES_JSON = path.join(SITE_ROOT, "src/data/features/realitykit-components.json");
+const FEATURES_DIR = path.join(SITE_ROOT, "src/content/components");
 const OUT_JSON = path.join(SITE_ROOT, "src/data/schemas/fixture-schemas.json");
 
 const aliasByFolder = new Map([
@@ -20,8 +20,56 @@ function simplifyFeatureName(name) {
   return name.replace(/Component$/i, "").replace(/State$/i, "");
 }
 
-function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+function readFeaturesFromCollection(dir) {
+  const features = [];
+  for (const file of fs.readdirSync(dir).filter(f => f.endsWith(".md"))) {
+    const raw = fs.readFileSync(path.join(dir, file), "utf8");
+    const match = raw.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) continue;
+    // Simple YAML frontmatter parse for our flat schema
+    const yaml = match[1];
+    const data = {};
+    let currentKey = null;
+    let currentObj = null;
+    let inSupport = false;
+    let platformKey = null;
+    for (const line of yaml.split("\n")) {
+      const trimmed = line.trimStart();
+      const indent = line.length - trimmed.length;
+      if (indent === 0 && trimmed.includes(":")) {
+        const [key, ...rest] = trimmed.split(":");
+        const val = rest.join(":").trim();
+        if (key === "support") {
+          inSupport = true;
+          data.support = {};
+          currentObj = data.support;
+        } else {
+          inSupport = false;
+          if (val) {
+            try { data[key] = JSON.parse(val); } catch { data[key] = val; }
+          }
+          currentKey = key;
+        }
+      } else if (inSupport && indent === 2 && trimmed.includes(":")) {
+        const [key, ...rest] = trimmed.split(":");
+        const val = rest.join(":").trim();
+        if (["ios", "visionos", "macos"].includes(key)) {
+          platformKey = key;
+          data.support[platformKey] = {};
+          currentObj = data.support[platformKey];
+          if (val) {
+            try { currentObj.status = JSON.parse(val); } catch { /* object follows */ }
+          }
+        }
+      } else if (inSupport && indent === 4 && trimmed.includes(":") && currentObj) {
+        const [key, ...rest] = trimmed.split(":");
+        const val = rest.join(":").trim();
+        try { currentObj[key] = JSON.parse(val); } catch { currentObj[key] = val; }
+      }
+    }
+    features.push({ id: file.replace(/\.md$/, ""), ...data });
+  }
+  return features;
 }
 
 function dedentBlock(value) {
@@ -500,8 +548,7 @@ function buildDraftForFolder(folderPath, feature) {
 }
 
 function main() {
-  const featuresData = readJson(FEATURES_JSON);
-  const features = featuresData.features ?? [];
+  const features = readFeaturesFromCollection(FEATURES_DIR);
 
   const folders = fs
     .readdirSync(FIXTURES_ROOT, { withFileTypes: true })

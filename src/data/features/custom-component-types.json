@@ -1,6 +1,6 @@
 {
   "title": "Custom Component Type Support",
-  "description": "Which Swift field types can RCP serialize in custom components? Empirically tested by intersecting OpenUSD types with Swift equivalents.",
+  "description": "A RealityKit ECS component that extends the USDA schema with an info:id token referencing a Swift type. Field serialization is handled in the Swift/Xcode build layer, not as USD attributes — with strict limitations on which Swift types survive codegen.",
   "slug": "custom-component-types",
   "introduction": "Custom components in RealityKit use the ECS (Entity Component System) pattern. Their field type support is determined by what RCP's codegen + Xcode validation accepts at Swift compile time — not by what OpenUSD can store. The field data itself never appears as USD attributes; only the component scaffold is written to USDA.",
   "claim": "Custom component type support is a RealityKit ECS feature — the serialization pipeline is in the Swift/Xcode build layer, not in the USD authoring layer.",

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-FEATURES_JSON="$ROOT_DIR/src/data/features/realitykit-components.json"
+FEATURES_DIR="$ROOT_DIR/src/content/components"
 OUTPUT_JSON="$ROOT_DIR/src/data/mappings/realitykit-docs-url-map.json"
 OUTPUT_MD="$ROOT_DIR/src/data/mappings/realitykit-docs-url-map-report.md"
 INSPECTOR_BIN="${INSPECTOR_BIN:-/Volumes/Plutonian/_Developer/Smith-Tools/smith-doc-inspector/.build/debug/smith-doc-inspector}"
@@ -12,8 +12,8 @@ if [[ ! -x "$INSPECTOR_BIN" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$FEATURES_JSON" ]]; then
-  echo "Error: features file not found at $FEATURES_JSON" >&2
+if [[ ! -d "$FEATURES_DIR" ]]; then
+  echo "Error: components directory not found at $FEATURES_DIR" >&2
   exit 1
 fi
 
@@ -22,7 +22,11 @@ trap 'rm -rf "$tmp_dir"' EXIT
 
 rows_file="$tmp_dir/rows.ndjson"
 
-jq -r '.features[] | [.id, .name] | @tsv' "$FEATURES_JSON" | while IFS=$'\t' read -r id name; do
+# Read component id and name from frontmatter of each .md file
+for md_file in "$FEATURES_DIR"/*.md; do
+  [[ -f "$md_file" ]] || continue
+  id="$(basename "$md_file" .md)"
+  name="$(grep -m1 '^name:' "$md_file" | sed 's/^name:[[:space:]]*//' | tr -d '"')"
   symbol_path="$(echo "$name" | tr '[:upper:]' '[:lower:]' | tr '.' '/')"
   docs_url="https://developer.apple.com/documentation/realitykit/$symbol_path"
 

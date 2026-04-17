@@ -1,6 +1,6 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import rkData from "../../../data/features/realitykit-components.json";
+import { getAllFeatures } from "../../../lib/components";
 import fixtureSchemas from "../../../data/schemas/fixture-schemas.json";
 import type { Feature } from "../../../types";
 
@@ -86,8 +86,9 @@ const generatedDrafts = (
 	}
 ).bySlug ?? {};
 
-export function getStaticPaths() {
-	return (rkData.features as Feature[])
+export async function getStaticPaths() {
+	const features = await getAllFeatures();
+	return features
 		.filter((feature) => feature.rcp)
 		.map((feature) => ({
 			params: { slug: feature.id },
