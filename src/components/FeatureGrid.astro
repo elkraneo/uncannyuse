@@ -72,6 +72,7 @@ function rowAriaLabel(f: typeof features[number]): string {
           class="grid-row"
           aria-label={rowAriaLabel(f)}
           data-subcategory={f.subcategory}
+          data-era={f.era}
           data-name={f.name.toLowerCase()}
           style={`--cat-color: ${color}; --row-i: ${i};`}
         >
@@ -81,8 +82,8 @@ function rowAriaLabel(f: typeof features[number]): string {
               <span class="feature-name" title={f.name}>{withSoftBreaks(f.name)}</span>
               <span class="cat-label" style={`color: ${color}`}>{f.subcategory}</span>
             </div>
-            {f.era === '26.0' && (
-              <span class="new-badge">↑26</span>
+            {f.era === '27.0' && (
+              <span class="new-badge">↑27</span>
             )}
           </div>
 

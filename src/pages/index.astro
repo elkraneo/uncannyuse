@@ -42,7 +42,7 @@ const countByCat = subcats.map((s) => ({
 }));
 
 const totalRcp = features.filter((f) => f.rcp).length;
-const totalNew26 = features.filter((f) => f.era === "26.0").length;
+const totalNew27 = features.filter((f) => f.era === "27.0").length;
 const vosOnly = features.filter(
 	(f) => f.support.ios.status === "n" && f.support.visionos.status === "y",
 ).length;
@@ -108,38 +108,11 @@ const latestClaims = (await getCollection("rcp-claims"))
 					<span class="stat-label">iOS-only</span>
 				</div>
 				<div class="stat-divider"></div>
-				<div class="stat">
-					<span class="stat-num" style="color: var(--macos)">{totalNew26}</span>
-					<span class="stat-label">new&nbsp;in&nbsp;26.0</span>
-				</div>
+				<a class="stat stat-link" href="/?new=27.0" title="Filter to components new in 27.0">
+					<span class="stat-num" style="color: var(--macos)">{totalNew27}</span>
+					<span class="stat-label">new&nbsp;in&nbsp;27.0&nbsp;↗</span>
+				</a>
 			</div>
-
-			<section class="hero-notes" aria-labelledby="latest-notes-title">
-				<div class="hero-notes-head">
-					<div>
-						<p class="hero-notes-kicker">latest RCP findings</p>
-						<h2 id="latest-notes-title">Evidence-backed reverse-engineering notes</h2>
-					</div>
-					<a href="/research/" class="hero-notes-link">browse all notes</a>
-				</div>
-
-				<div class="hero-notes-grid">
-					{
-						latestClaims.map((claim) => (
-							<article class="hero-note-card">
-								<div class="hero-note-meta">
-									<span>{claim.componentName}</span>
-									<span>{claim.date}</span>
-								</div>
-								<h3>
-									<a href={`/research/${claim.slug}/`}>{claim.claim}</a>
-								</h3>
-								<p>{claim.summary}</p>
-							</article>
-						))
-					}
-				</div>
-			</section>
 		</div>
 	</section>
 
@@ -192,8 +165,8 @@ const latestClaims = (await getCollection("rcp-claims"))
 					<span class="legend-lbl">in RCP menu</span>
 				</div>
 				<div class="legend-item">
-					<span class="legend-new">↑26</span>
-					<span class="legend-lbl">new in 26.0</span>
+					<span class="legend-new">↑27</span>
+					<span class="legend-lbl">new in 27.0</span>
 				</div>
 			</div>
 		</aside>
@@ -233,11 +206,14 @@ const latestClaims = (await getCollection("rcp-claims"))
 				<kbd class="search-hint">⌘K</kbd>
 			</div>
 
-			<!-- Count -->
+			<!-- Count + active version filter -->
 			<div class="result-count" id="result-count">
 				showing <span id="count-num">{sortedFeatures.length}</span> of {
 					sortedFeatures.length
 				}
+				<button id="era-chip" class="era-chip" type="button" hidden>
+					new in 27.0 <span class="era-chip-x" aria-hidden="true">×</span>
+				</button>
 			</div>
 
 			<div id="grid-wrapper">
@@ -251,6 +227,35 @@ const latestClaims = (await getCollection("rcp-claims"))
 			</p>
 		</div>
 	</div>
+	<!-- ── Latest RCP findings (below the table) ── -->
+	<div class="notes-wrap">
+		<section class="hero-notes" aria-labelledby="latest-notes-title">
+			<div class="hero-notes-head">
+				<div>
+					<p class="hero-notes-kicker">latest RCP findings</p>
+					<h2 id="latest-notes-title">Evidence-backed reverse-engineering notes</h2>
+				</div>
+				<a href="/research/" class="hero-notes-link">browse all notes</a>
+			</div>
+
+			<div class="hero-notes-grid">
+				{
+					latestClaims.map((claim) => (
+						<article class="hero-note-card">
+							<div class="hero-note-meta">
+								<span>{claim.componentName}</span>
+								<span>{claim.date}</span>
+							</div>
+							<h3>
+								<a href={`/research/${claim.slug}/`}>{claim.claim}</a>
+							</h3>
+							<p>{claim.summary}</p>
+						</article>
+					))
+				}
+			</div>
+		</section>
+	</div>
 </Base>
 
 <script>
@@ -262,8 +267,10 @@ const latestClaims = (await getCollection("rcp-claims"))
 	const emptyMsg = document.getElementById("empty-msg") as HTMLParagraphElement;
 	const countNum = document.getElementById("count-num") as HTMLSpanElement;
 	const resetBtn = document.getElementById("reset-btn") as HTMLButtonElement;
+	const eraChip = document.getElementById("era-chip") as HTMLButtonElement | null;
 
 	let activeCat = "all";
+	let activeEra = "";
 	let query = "";
 	const validCats = new Set([
 		"all",
@@ -327,14 +334,35 @@ const latestClaims = (await getCollection("rcp-claims"))
 		rows.forEach((row) => {
 			const cat = row.dataset.subcategory ?? "";
 			const name = row.dataset.name ?? "";
+			const era = row.dataset.era ?? "";
 			const show =
-				(activeCat === "all" || cat === activeCat) && name.includes(query);
+				(activeCat === "all" || cat === activeCat) &&
+				(activeEra === "" || era === activeEra) &&
+				name.includes(query);
 			row.hidden = !show;
 			if (show) visible++;
 		});
 		emptyMsg.hidden = visible > 0;
 		countNum.textContent = String(visible);
 	}
+
+	// Version ("new in …") filter. Reflected in the URL as ?new=<era>
+	// so a pre-filtered view can be shared as a link.
+	function setEra(era: string, updateUrl = true) {
+		activeEra = era;
+		if (eraChip) eraChip.hidden = era === "";
+		if (updateUrl) {
+			const url = new URL(window.location.href);
+			if (era) url.searchParams.set("new", era);
+			else url.searchParams.delete("new");
+			history.replaceState(null, "", url);
+		}
+	}
+
+	eraChip?.addEventListener("click", () => {
+		setEra("");
+		applyFilter();
+	});
 
 	// Category buttons
 	catBtns.forEach((btn) => {
@@ -364,13 +392,22 @@ const latestClaims = (await getCollection("rcp-claims"))
 		search.value = "";
 		query = "";
 		setActiveCategory("all");
+		setEra("");
 		applyFilter();
 	});
 
-	// URL-driven initial category, e.g. /?cat=rendering
-	const initialCat = new URLSearchParams(window.location.search).get("cat");
+	// URL-driven initial state, e.g. /?cat=rendering or /?new=27.0
+	const params = new URLSearchParams(window.location.search);
+	const initialCat = params.get("cat");
 	if (initialCat) {
 		setActiveCategory(initialCat);
+	}
+	const initialNew = params.get("new");
+	if (initialNew) {
+		// Accept "27" as shorthand for "27.0"
+		setEra(/^\d+$/.test(initialNew) ? `${initialNew}.0` : initialNew, false);
+	}
+	if (initialCat || initialNew) {
 		applyFilter();
 	}
 
@@ -447,6 +484,19 @@ const latestClaims = (await getCollection("rcp-claims"))
 		padding-right: 1.5rem;
 	}
 
+	/* The "new in 27.0" stat doubles as a shareable filter link */
+	.stat-link {
+		text-decoration: none;
+		border-radius: 6px;
+		margin: -4px -4px -4px 0;
+		padding: 4px 1.5rem 4px 4px;
+		transition: background 0.1s;
+	}
+
+	.stat-link:hover {
+		background: var(--surface-up);
+	}
+
 	.stat-num {
 		font-size: 1.6923rem;
 		font-weight: 500;
@@ -470,8 +520,15 @@ const latestClaims = (await getCollection("rcp-claims"))
 		flex-shrink: 0;
 	}
 
+	/* Wrapper centers the findings section below the table */
+	.notes-wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem 5rem;
+	}
+
 	.hero-notes {
-		margin-top: 1.4rem;
+		margin-top: 0;
 		padding: 1rem;
 		border: 1px solid var(--border);
 		border-radius: 10px;
@@ -554,7 +611,7 @@ const latestClaims = (await getCollection("rcp-claims"))
 	.page-layout {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 1.5rem 1.5rem 5rem;
+		padding: 1.5rem 1.5rem 2.5rem;
 		display: grid;
 		grid-template-columns: 188px 1fr;
 		gap: 1.75rem;
@@ -785,6 +842,36 @@ const latestClaims = (await getCollection("rcp-claims"))
 		font-size: 0.875rem;
 		color: var(--muted);
 		padding-left: 2px;
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	/* Active version-filter chip (shown when ?new= is active) */
+	.era-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--macos);
+		background: rgba(255, 159, 10, 0.1);
+		border: 1px solid rgba(255, 159, 10, 0.25);
+		border-radius: 999px;
+		padding: 2px 8px;
+		cursor: pointer;
+		letter-spacing: 0.02em;
+		transition: background 0.1s;
+	}
+
+	.era-chip:hover {
+		background: rgba(255, 159, 10, 0.18);
+	}
+
+	.era-chip-x {
+		font-size: 0.9rem;
+		line-height: 1;
 	}
 
 	/* Empty state */
@@ -900,6 +987,12 @@ const latestClaims = (await getCollection("rcp-claims"))
 
 		.stat:last-child {
 			grid-column: 1 / -1;
+		}
+
+		/* Reset the desktop link insets so it behaves like a normal stat card */
+		.stat-link {
+			margin: 0;
+			padding: 0.5rem 0.625rem;
 		}
 
 		.stat-divider {
