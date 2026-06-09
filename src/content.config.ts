@@ -15,6 +15,8 @@ const subcategory = z.enum([
 	"animation",
 	"media",
 	"custom",
+	"preliminary",
+	"anchoring",
 ]);
 
 const era = z.enum([
@@ -22,6 +24,8 @@ const era = z.enum([
 	"visionOS 1",
 	"visionOS 2",
 	"26.0",
+	"27.0",
+	"Preliminary",
 	"iOS 15",
 	"iOS 17",
 ]);
@@ -46,6 +50,7 @@ const components = defineCollection({
 		subcategory,
 		era,
 		rcp: z.boolean(),
+		schemaType: z.enum(["component", "preliminary-schema"]).default("component"),
 		support: z.object({
 			ios: platformSupport,
 			visionos: platformSupport,
@@ -53,7 +58,9 @@ const components = defineCollection({
 		}),
 		docsUrl: z.string().url().optional(),
 		notes: z.array(z.string()).optional(),
-		links: z.array(z.object({ text: z.string(), url: z.string().url() })).optional(),
+		links: z
+			.array(z.object({ text: z.string(), url: z.string().url() }))
+			.optional(),
 	}),
 });
 
@@ -98,17 +105,27 @@ const resources = defineCollection({
 	type: "content",
 	schema: z.object({
 		componentId: z.enum(componentIds as [string, ...string[]]),
-		resources: z.array(
-			z.object({
-				title: z.string().min(1),
-				url: z.string().url(),
-				type: z.enum(["official-docs", "wwdc-session", "article", "tutorial", "sample-code", "video", "other"]),
-				source: z.string().min(1),
-				verifiedAt: z.union([z.string(), z.date()]).optional(),
-				description: z.string().optional(),
-				image: z.string().optional(),
-			}),
-		).min(1),
+		resources: z
+			.array(
+				z.object({
+					title: z.string().min(1),
+					url: z.string().url(),
+					type: z.enum([
+						"official-docs",
+						"wwdc-session",
+						"article",
+						"tutorial",
+						"sample-code",
+						"video",
+						"other",
+					]),
+					source: z.string().min(1),
+					verifiedAt: z.union([z.string(), z.date()]).optional(),
+					description: z.string().optional(),
+					image: z.string().optional(),
+				}),
+			)
+			.min(1),
 	}),
 });
 
